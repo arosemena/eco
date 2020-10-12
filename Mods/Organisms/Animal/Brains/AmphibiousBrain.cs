@@ -50,13 +50,13 @@ namespace Eco.Mods.Organisms
                             // floating amphibious need time to flip back over before doing other things
                             Anim(AnimalState.SurfaceSwimming, true, TimeToStopFloating)),
                         BT.If("Flee Dive", x => (x.Alertness > DiveAlertness, $"alert {x.Alertness.ToString("0.#")} > {DiveAlertness.ToString("0.#")}"),
-                            StopFloating,
+                            stopFloating,
                             BT.Selector("Flee or Wander",
                                 MovementBehaviors.SwimFlee, 
                                 MovementBehaviors.SwimWander)),
                         MovementBehaviors.AmphibiousFlee,
                         BT.If("Random Dive", x => AIUtil.Chance(ChanceToDive), 
-                            StopFloating,
+                            stopFloating,
                             MovementBehaviors.SwimWander),
                         BT.If("Return Home", MovementBehaviors.ShouldReturnHome,
                             MovementBehaviors.AmphibiousWanderHome),
@@ -67,10 +67,10 @@ namespace Eco.Mods.Organisms
             DivingTree = BT.Selector("Diving",
                     MovementBehaviors.SwimFlee,
                     BT.If("Return Home", MovementBehaviors.ShouldReturnHome,
-                        StartFloating,
+                        startFloating,
                         MovementBehaviors.SwimWanderHomeSurface),
                     BT.If("Surface", x => (x.Alertness < DiveAlertness && RandomUtil.Chance(ChanceToSurface), $"alert {x.Alertness.ToString("0.#")} < {DiveAlertness.ToString("0.#")} and {ChanceToSurface.ToString("P0")} chance"),
-                        StartFloating,
+                        startFloating,
                         MovementBehaviors.SwimWanderSurface),
                     BT.If("Wander", x => AIUtil.Chance(1 - ChanceToIdle),
                         MovementBehaviors.SwimWander),
@@ -107,7 +107,7 @@ namespace Eco.Mods.Organisms
                 RelaxBehaviors.Idle); 
         }
 
-        static Behavior<Animal> StopFloating = BT.Success("Stop Floating", x => x.Floating = false);
-        static Behavior<Animal> StartFloating = BT.Success("Start Floating", x => x.Floating = true);
+        static Behavior<Animal> stopFloating = BT.Success("Stop Floating", x => x.Floating = false);
+        static Behavior<Animal> startFloating = BT.Success("Start Floating", x => x.Floating = true);
     }
 }

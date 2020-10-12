@@ -10,7 +10,7 @@ using Eco.Shared.Serialization;
 [Serialized]
 [LocDisplayName("Garbage")]
 [Weight(30000)]
-[MaxStackSize(20)]
+[MaxStackSize(10)]
 [RequiresTool(typeof(ShovelItem))]
 [Ecopedia("Blocks", "Byproducts", true, InPageTooltip.DynamicTooltip)]
 public partial class GarbageItem : BlockItem<GarbageBlock>
