@@ -68,14 +68,14 @@ namespace Eco.Mods.Organisms
                 this.Name = "Redwood";
                 this.DisplayName = Localizer.DoStr("Redwood");
                 // Lifetime
-                this.MaturityAgeDays = 6;
+                this.MaturityAgeDays = 3;
                 // Generation
                 this.Height = 1;
                 // Food
                 this.CalorieValue = 15;
                 // Resources
                 this.PostHarvestingGrowth = 0;
-                this.ScythingKills = false; 
+                this.ScythingKills = false;
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
@@ -89,10 +89,10 @@ namespace Eco.Mods.Organisms
                 this.MaxGrowthRate = 0.02f;
                 this.MaxDeathRate = 0.01f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.7f }); 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.7f });
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  20 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  26 }); 
-                this.BlanketSpawnPercent = 0.4f; 
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  26 });
+                this.BlanketSpawnPercent = 0.4f;
                 this.IdealTemperatureRange = new Range(0.35f, 0.48f);
                 this.IdealMoistureRange = new Range(0.52f, 0.58f);
                 this.IdealWaterRange = new Range(0, 0.1f);

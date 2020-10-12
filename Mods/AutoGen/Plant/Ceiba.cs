@@ -68,14 +68,14 @@ namespace Eco.Mods.Organisms
                 this.Name = "Ceiba";
                 this.DisplayName = Localizer.DoStr("Ceiba");
                 // Lifetime
-                this.MaturityAgeDays = 6;
+                this.MaturityAgeDays = 3;
                 // Generation
                 this.Height = 1;
                 // Food
                 this.CalorieValue = 15;
                 // Resources
                 this.PostHarvestingGrowth = 0;
-                this.ScythingKills = false; 
+                this.ScythingKills = false;
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
@@ -89,10 +89,10 @@ namespace Eco.Mods.Organisms
                 this.MaxGrowthRate = 0.02f;
                 this.MaxDeathRate = 0.01f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f }); 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f });
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  4 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  40 }); 
-                this.BlanketSpawnPercent = 0.5f; 
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  40 });
+                this.BlanketSpawnPercent = 0.5f;
                 this.IdealTemperatureRange = new Range(0.65f, 0.75f);
                 this.IdealMoistureRange = new Range(0.75f, 0.95f);
                 this.IdealWaterRange = new Range(0, 0.1f);
