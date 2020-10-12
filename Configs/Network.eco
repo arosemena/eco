@@ -1,0 +1,16 @@
+{
+  "PublicServer": false,
+  "Playtime": "",
+  "DiscordAddress": "",
+  "Password": "",
+  "Description": "<color=yellow><b>[Economik]</b></color> 2x exp and stack sizes",
+  "DetailedDescription": "Economy focused server, 2x exp and stack sizes, Medium collab. If you like building strong economies come join us!",
+  "ServerCategory": "None",
+  "IPAddress": "Any",
+  "RemoteAddress": "",
+  "GameServerPort": 3000,
+  "WebServerPort": 3001,
+  "Rate": 20,
+  "MaxConnections": -1,
+  "UPnPEnabled": false
+}
