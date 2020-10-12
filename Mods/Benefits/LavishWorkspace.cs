@@ -24,7 +24,8 @@ namespace Eco.Mods.TechTree
             foreach (var obj in WorldObjectManager.GetOwnedBy(user))
             {
                 var requirements = obj.GetComponent<RoomRequirementsComponent>();
-                requirements?.MarkDirty();
+                if (requirements != null)
+                    requirements.MarkDirty();
             }
         }
     }

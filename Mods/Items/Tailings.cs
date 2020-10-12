@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized, Weight(30), StartsDiscovered]
     [LocDisplayName("Tailings")]
-    [MaxStackSize(10)]
+    [MaxStackSize(20)]
     [RequiresTool(typeof(ShovelItem))]
     [Ecopedia("Blocks", "Byproducts", true, InPageTooltip.DynamicTooltip)]
     public class TailingsItem : BlockItem<TailingsBlock>

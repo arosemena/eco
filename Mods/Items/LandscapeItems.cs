@@ -20,7 +20,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Dirt")]
     [Weight(30000)]
-    [MaxStackSize(10)]
+    [MaxStackSize(20)]
     [RequiresTool(typeof(ShovelItem))]
     [MakesRoads]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
@@ -47,7 +47,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Sand")]
     [Weight(30000)]
-    [MaxStackSize(10)]
+    [MaxStackSize(20)]
     [RequiresTool(typeof(ShovelItem))]
     [StartsDiscovered]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
@@ -65,7 +65,7 @@ namespace Eco.Mods.TechTree
     [Serialized, Liquid]
     [LocDisplayName("Water")]
     [Category("Hidden")]
-    [MaxStackSize(10)]
+    [MaxStackSize(20)]
     [StartsDiscovered]
     [Tag("Liquid", 1)]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
@@ -94,7 +94,7 @@ namespace Eco.Mods.TechTree
                     waterBlock.PipeSupplied = true;
                     break;
             }
-            
+
             return payload.Amount;
         }
     }

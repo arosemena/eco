@@ -88,15 +88,12 @@ namespace Eco.Mods.Organisms
                 // Climate
                 this.ReleasesCO2TonsPerDay = -0.0001f;
                 // WorldLayers
-                this.MaxGrowthRate = 0.02f;
-                this.MaxDeathRate = 0.01f;
+                this.MaxGrowthRate = 0.01f;
+                this.MaxDeathRate = 0.005f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Nitrogen", HalfSpeedConcentration =  0.01f, MaxResourceContent =  0.01f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Phosphorus", HalfSpeedConcentration =  0.01f, MaxResourceContent =  0.01f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Potassium", HalfSpeedConcentration =  0.01f, MaxResourceContent =  0.01f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.01f, MaxResourceContent =  0.02f }); 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f }); 
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  1 }); 
-                this.BlanketSpawnPercent = 0.8f; 
+                this.BlanketSpawnPercent = 0.07f; 
                 this.IdealTemperatureRange = new Range(0.42f, 0.62f);
                 this.IdealMoistureRange = new Range(0.32f, 0.48f);
                 this.IdealWaterRange = new Range(0, 0.1f);

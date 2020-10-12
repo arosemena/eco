@@ -52,7 +52,7 @@ namespace Eco.Mods.TechTree
 
         private LiquidConverterComponent converter;
         StatusElement status;
-        
+
         PeriodicUpdate updateThrottle = new PeriodicUpdate(5, true);
 
         public override void Initialize()
@@ -85,7 +85,7 @@ namespace Eco.Mods.TechTree
                     return;
                 }
                 else
-                { 
+                {
                     this.ProcessedWater -= WasteFilterItem.WaterPerCompostBlock;
                     this.status.SetStatusMessage(true, this.DisplayStatus);
                 }
@@ -103,6 +103,6 @@ namespace Eco.Mods.TechTree
                 this.shutdownFromFullInv = false;
             }
         }
-        public bool Operating => this.converter.In.BufferAmount > 0 || this.converter.In.LastTickConsumed > 0;
+        public bool Operating { get { return this.converter.In.BufferAmount > 0 || this.converter.In.LastTickReceived > 0; } }
     }
 }

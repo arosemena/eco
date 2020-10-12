@@ -87,16 +87,12 @@ namespace Eco.Mods.Organisms
                 // Climate
                 this.ReleasesCO2TonsPerDay = -0.0002f;
                 // WorldLayers
-                this.MaxGrowthRate = 0.02f;
-                this.MaxDeathRate = 0.01f;
+                this.MaxGrowthRate = 0.01f;
+                this.MaxDeathRate = 0.005f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Nitrogen", HalfSpeedConcentration =  0.3f, MaxResourceContent =  0.3f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Phosphorus", HalfSpeedConcentration =  0.2f, MaxResourceContent =  0.1f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Potassium", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.1f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.15f, MaxResourceContent =  0.05f }); 
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  4 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "ShrubSpace", ConsumedCapacityPerPop =  4 }); 
-                this.BlanketSpawnPercent = 0.6f; 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f }); 
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  1 });
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "ShrubSpace", ConsumedCapacityPerPop =  5 }); 
                 this.IdealTemperatureRange = new Range(0.55f, 0.58f);
                 this.IdealMoistureRange = new Range(0.32f, 0.35f);
                 this.IdealWaterRange = new Range(0, 0.1f);
