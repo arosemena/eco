@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Ashlar Sandstone")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(30000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]

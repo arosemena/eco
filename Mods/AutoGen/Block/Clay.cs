@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Clay")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(15000)]
     [Ecopedia("Natural Resources", "Blocks", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]

@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Cedar Log")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(10000)]
     [Fuel(4000)][Tag("Fuel")]
     [Ecopedia("Natural Resources", "Logs", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

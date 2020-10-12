@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Mortared Shale")]
-    [MaxStackSize(15 * 2)]
+    [MaxStackSize(30)]
     [Category("Hidden")]
     public partial class MortaredShaleItem :
     BlockItem<MortaredShaleBlock>

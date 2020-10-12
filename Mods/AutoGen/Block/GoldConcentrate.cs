@@ -70,7 +70,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Gold Concentrate")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(22000)]
     [Ecopedia("Blocks", "Processed Rock", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]

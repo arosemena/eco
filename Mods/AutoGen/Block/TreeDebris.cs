@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Tree Debris")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(0)]
     [Category("Hidden")]
     [StartsDiscovered]

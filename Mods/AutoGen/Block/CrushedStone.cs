@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Crushed Stone")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(30000)]
     [Currency]
     [RequiresTool(typeof(ShovelItem))]

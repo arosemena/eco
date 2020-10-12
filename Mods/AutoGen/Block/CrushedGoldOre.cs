@@ -70,7 +70,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Crushed Gold Ore")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(30000)]
     [StartsDiscovered]
     [Ecopedia("Blocks", "Processed Rock", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

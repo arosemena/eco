@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Limestone")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(15000)]
     [ResourcePile]
     [Ecopedia("Natural Resources", "Stone", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

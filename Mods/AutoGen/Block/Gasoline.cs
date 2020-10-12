@@ -69,7 +69,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Gasoline")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(30000)]
     [Fuel(100000)][Tag("Fuel")]
     [Ecopedia("Blocks", "Liquids", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

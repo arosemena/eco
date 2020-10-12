@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Stone")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(15000)]
     [Category("Hidden")]
     [ResourcePile]

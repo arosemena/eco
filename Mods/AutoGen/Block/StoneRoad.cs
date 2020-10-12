@@ -71,7 +71,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Stone Road")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(30000)]
     [MakesRoads]
     [Ecopedia("Blocks", "Roads", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

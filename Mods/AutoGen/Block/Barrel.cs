@@ -69,7 +69,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Barrel")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(2000)]
     [Ecopedia("Blocks", "Liquids", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]

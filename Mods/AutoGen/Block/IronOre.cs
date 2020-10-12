@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Iron Ore")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(20000)]
     [ResourcePile]
     [Ecopedia("Natural Resources", "Ore", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

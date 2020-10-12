@@ -69,7 +69,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Corrugated Steel")]
-    [MaxStackSize(20 * 2)]
+    [MaxStackSize(40)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]

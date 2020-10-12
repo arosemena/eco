@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Crushed Coal")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(30000)]
     [Category("Hidden")]
     [RequiresTool(typeof(ShovelItem))]

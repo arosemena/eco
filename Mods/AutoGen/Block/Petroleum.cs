@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Petroleum")]
-    [MaxStackSize(10 * 2)]
+    [MaxStackSize(20)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Liquids", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Currency]
