@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Compost")]
     [Weight(30000)]
-    [MaxStackSize(10)]
+    [MaxStackSize(20)]
     [RequiresTool(typeof(ShovelItem))]
     [Ecopedia("Blocks", "Byproducts", true, InPageTooltip.DynamicTooltip)]
     public class CompostItem : BlockItem<CompostBlock>
