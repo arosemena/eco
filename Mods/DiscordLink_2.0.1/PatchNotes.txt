@@ -1,0 +1,56 @@
+******
+2.0.1
+******
+--- Bugfixes & Improvements ---
+* Fixed a rare crash that could occur if the Eco Status display was enabled and the Eco server stalled for an extended period of time.
+
+******
+2.0.0
+******
+--- Additions ---
+* Support for Eco 9.0
+  - WOHO!
+
+* Configuration Verification
+Upon startup and configuration changes, DiscordLink will now process your configuration to look for errors.
+The verification runs in two steps, one at the server start and one after all information from Discord has been received.
+Any detected errors will be sent to the server log and errors that can be fixed automatically will be resolved.
+The status of each channel link will be displayed at the end of the full verification pass.
+Configuration verification is also triggered by configuration changes made while the server is running.
+
+* DiscordInvite Command
+A new command for both Eco and Discord that displays a cofigurable message containing the invite link to the Discord server.
+Note that this command requires the Discord Address parameter from the Eco Network config to be set.
+
+* Discord mention/tagging support
+Use @NameOrRole or #ChannelName in Eco to tag users, roles or channels in Discord.
+Usage of the various types of mentions can be allowed or disallowed per channel link.
+
+* Live Eco Server Status Display
+A live updated and configurable display of the ?EcoStatus output can now be housed in a Discord channel.
+
+* Chatlog
+A chatlog that stores all messages sent in the linked channels.
+This feature is off by default and the path of the chatlog is configurable.
+
+--- Bugfixes & Improvements ---
+* Fixed messages from Eco sometimes not being sent to Discord.
+
+* Discord guild(server) and channel names are no longer case sensitive.
+
+--- Notes ---
+* Changed Config Name
+The config name has changed to "DiscordLink.eco".
+This means that your current config file will no longer be recognized.
+As the content of the config file has changed to some extent, we recommend that you do not simply rename your existing configuration file, but rather fill out the new one.
+
+* Multiple DLLs
+DiscordLink has previously been distributed as a single .dll file.
+Due to underlying changes, we will now also distrubute the .dll files of our dependencies. DSharpPlus.dll and DSharplus.CommandsNext.dll should simply be left in the same folder as DiscordLink.dll
+
+--- Known Issues ---
+* The Live Server Status feature may cause crashes if other messages already exist in the Discord channel when the plugin starts
+https://github.com/Spoffy/EcoDiscordPlugin/issues/68
+
+* Chatlog will sometimes fail to write.
+https://github.com/Spoffy/EcoDiscordPlugin/issues/58
