@@ -17,8 +17,8 @@
       "UseMeteorHasHit": false
     }
   ],
-  "ServerName": "<color=yellow><b>[Economik]</b></color> <color=red><b>[2x]</color></b> Help us build a strong economy!",
-  "ServerDescription": "<color=yellow><b>Economy</b></color> focused server, 2x exp, stack sizes and stockpile sizes, Medium collab. If you like building strong economies come join us! Friendly hand off admins, 30 days meteorite.",
+  "ServerName": "[Economik]",
+  "ServerDescription": "Economy focused server, increased stack and stockpile sizes, Medium collab",
   "ServerIP": "economik.pw",
   "ServerLogo": "http://github.com/Spoffy/EcoDiscordPlugin/raw/master/images/DiscordLinkLogo_Nameless.png",
   "ChatChannelLinks": [
@@ -35,5 +35,5 @@
   "LogChat": false,
   "ChatlogPath": "E:\\EcoServer\\Mods\\DiscordLink\\Chatlog.txt",
   "EcoCommandChannel": "general",
-  "InviteMessage": "Join us on Discord!\n https://discord.gg/h7JchER "
+  "InviteMessage": "Join us on Discord!\n [LINK]"
 }

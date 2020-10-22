@@ -53,7 +53,7 @@ namespace Eco.Mods.Organisms
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Behavior
                 this.BrainType = typeof(LandPredatorBrain);
-                this.IsPredator = true;
+                this.IsPredator = false;
                 this.WanderingSpeed = 1f;
                 this.Speed = 6.5f;
                 this.ClimbHeight = 1;
@@ -68,7 +68,7 @@ namespace Eco.Mods.Organisms
                 // Climate
                 this.ReleasesCO2TonsPerDay = 0.02f;
             }
-            
+
             // Jaguars can spawn on land or water
             public override bool IsValidSpawnPathPos(Vector3i pos) { return true; }
         }

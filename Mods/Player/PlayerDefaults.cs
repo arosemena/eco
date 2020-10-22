@@ -13,7 +13,7 @@ using Eco.Shared.Localization;
 public static class PlayerDefaults
 {
     public static Dictionary<Type, int> GetDefaultToolbar()
-    {        
+    {
         return new Dictionary<Type, int>
         {
         };
@@ -26,21 +26,20 @@ public static class PlayerDefaults
             { typeof(StarterCampItem), 1 },
         };
     }
-    
+
     public static Dictionary<Type, int> GetDefaultCampsiteInventory()
     {
         return new Dictionary<Type, int>
         {
-            { typeof(PropertyClaimItem), 6 },
+            { typeof(PropertyClaimItem), 10 },
             { typeof(PropertyToolItem), 1 },
             { typeof(StoneAxeItem), 1 },
             { typeof(WoodenShovelItem), 1 },
             { typeof(StoneHammerItem), 1 },
             { typeof(StonePickaxeItem), 1 },
-            { typeof(TorchItem), 1 },
-            { typeof(TorchStandItem), 1 },
+            { typeof(StoneRoadToolItem), 1 },
             { typeof(TomatoItem), 15 },
-            { typeof(RawFishItem), 15 },
+            { typeof(RawMeatItem), 15 },
         };
     }
     public static IEnumerable<Type> GetDefaultSpecialties()

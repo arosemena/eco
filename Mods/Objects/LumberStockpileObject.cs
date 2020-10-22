@@ -35,6 +35,7 @@ namespace Eco.Mods.TechTree
             base.PostInitialize();
 
             this.GetComponent<StockpileComponent>().Initialize(DefaultDim, 1);
+            this.GetComponent<LinkComponent>().Initialize(16);
 
             var storage = this.GetComponent<PublicStorageComponent>();
             storage.Initialize(DefaultDim.x * DefaultDim.z * 2);
