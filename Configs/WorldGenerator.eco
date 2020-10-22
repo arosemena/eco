@@ -1,7 +1,7 @@
 {
   "ConfigVersion": 1,
   "$id": "1",
-  "Seed": 39134792,
+  "Seed": 424242,
   "Dimensions": {
     "x": 144,
     "y": 144
@@ -18,8 +18,8 @@
         "$id": "4",
         "PointRadius": 10.0,
         "LandPercentRange": {
-          "min": 0.65,
-          "max": 0.75
+          "min": 0.75,
+          "max": 0.85
         },
         "CoastlineSize": 1,
         "ShallowOceanSize": 2,
@@ -38,7 +38,7 @@
           "max": 3.0
         },
         "ContinentAvoidRange": {
-          "min": 8.0,
+          "min": 4.0,
           "max": 16.0
         },
         "IslandPercent": 0.05,
@@ -47,7 +47,7 @@
           "max": 3.0
         },
         "IslandAvoidRange": {
-          "min": 4.0,
+          "min": 2.0,
           "max": 8.0
         },
         "NumRainforests": 2,
