@@ -133,9 +133,9 @@
   "NearbyFoodSpawnCount": 5,
   "UseExactSpawnLocation": false,
   "SpawnLocation": {
-    "x": 609,
-    "y": 63,
-    "z": 698
+    "x": 930,
+    "y": 65,
+    "z": 1428
   },
   "IgnoreVersionMismatch": false
 }
