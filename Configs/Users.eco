@@ -131,11 +131,11 @@
   "DelayNearbyFoodCheckMinutes": 4.0,
   "NearbyFoodSpawnLocationRadius": 20.0,
   "NearbyFoodSpawnCount": 5,
-  "UseExactSpawnLocation": false,
+  "UseExactSpawnLocation": true,
   "SpawnLocation": {
-    "x": 930,
-    "y": 65,
-    "z": 1428
+    "x": 913,
+    "y": 66,
+    "z": 1419
   },
   "IgnoreVersionMismatch": false
 }
