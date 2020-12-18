@@ -91,10 +91,10 @@ namespace Eco.Mods.Organisms
                 this.MaxDeathRate = 0.01f;
                 this.SpreadRate = 0.001f;
                 this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "Phosphorus", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.2f });
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.05f });
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.05f }); 
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  3 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "ShrubSpace", ConsumedCapacityPerPop =  3 });
-                this.BlanketSpawnPercent = 0.8f;
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "ShrubSpace", ConsumedCapacityPerPop =  3 }); 
+                this.BlanketSpawnPercent = 0.8f; 
                 this.IdealTemperatureRange = new Range(0.45f, 0.55f);
                 this.IdealMoistureRange = new Range(0.55f, 0.75f);
                 this.IdealWaterRange = new Range(0, 0.1f);
@@ -111,5 +111,5 @@ namespace Eco.Mods.Organisms
     [Serialized]
     [Clearable]
     public partial class AmanitaMushroomBlock :
-        InteractablePlantBlock { }
+        InteractablePlantBlock { } 
 }
