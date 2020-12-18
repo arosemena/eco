@@ -15,9 +15,9 @@ Finally, a base skill gain value is added to the total. This ensures that even w
 <b>Calories</b>
 Calories, unlike nutrients, are spent when you perform work, and when you run out of calories you’ll be unable to work until you eat more.  Calorie usage can be greatly reduced by upgraded tools and leveling-up skills.
 All food provides both calories and nutrients, so while gaining calories from food you’re also determining your skill multiplier, so watch that diet.
-</section >
-<section image="Illustration_nutrition">
-<b>Feeding the World</b>
+</section>
+  <section image="Illustration_nutrition" loc="349">
+    <b>Feeding the World</b>
 Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
 </section>
 </ecopedia>

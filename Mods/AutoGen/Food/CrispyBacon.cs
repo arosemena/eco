@@ -26,7 +26,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Crispy Bacon")]
-    [Weight(200)]
+    [Weight(400)]
     [Ecopedia("Food", "Meat", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     public partial class CrispyBaconItem : FoodItem
     {
@@ -34,7 +34,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Give me all the bacon and eggs you have."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 0, Fat = 26, Protein = 18, Vitamins = 0};
-        public override float Calories                          { get { return 600; } }
+        public override float Calories                          { get { return 800; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

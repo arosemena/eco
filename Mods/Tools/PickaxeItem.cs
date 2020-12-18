@@ -22,14 +22,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Objects;
     using Eco.Core.Items;
+    using Eco.Shared.Math;
 
     [Category("Hidden"), Tag("Excavation")]
-    public partial class PickaxeItem : ToolItem, IPerformsToolAction
+    public partial class PickaxeItem : ToolItem
     {
         private static SkillModifiedValue caloriesBurn = CreateCalorieValue(20, typeof(MiningSkill), typeof(PickaxeItem), new PickaxeItem().UILink());
         static PickaxeItem() { }
-
-        public ToolInteractAction MakeAction(ToolActionType tool)   => new DigOrMine();
 
         public override IDynamicValue CaloriesBurn                  => caloriesBurn;
 
@@ -71,10 +70,7 @@ namespace Eco.Mods.TechTree
                 var totalDamageToTarget = user.BlockHitCache.MemorizeHit(context.Block.GetType(), context.BlockPosition.Value, this.Tier.GetCurrentValue(context.Player.User) * this.Damage);
                 if (context.Block.Get<Minable>().Hardness <= totalDamageToTarget)
                 {
-                    using var pack = new GameActionPack();                    
-                    pack.DeleteBlock(context.BlockPosition.Value, context.Player, false, null, this);
-                    pack.UseTool(context.Player, this);
-                    var result = pack.TryPerform(false);                    
+                    var result = AtomicActions.DeleteBlockNow(this.CreateMultiblockContext(context), spawnRubble: false);
 
                     //Spawn the rubble if needed
                     if (result.Success)
@@ -91,12 +87,7 @@ namespace Eco.Mods.TechTree
 
                     return (InteractResult)result;
                 }
-                else
-                {
-                    using var pack = new GameActionPack();
-                    pack.UseTool(context.Player, this);
-                    return (InteractResult)pack.TryPerform(false);
-                }
+                else return (InteractResult) AtomicActions.UseToolNow(this.CreateMultiblockContext(context));
             }
             else if (context.Target is RubbleObject)
             {
@@ -104,7 +95,7 @@ namespace Eco.Mods.TechTree
                 if (rubble.IsBreakable)
                 {
                     using var pack = new GameActionPack();
-                    pack.UseTool(context.Player, this);
+                    pack.UseTool(this.CreateMultiblockContext(context));
                     pack.AddPostEffect(() => rubble.Breakup(context.Player));
                     return (InteractResult)pack.TryPerform(false);
                 }

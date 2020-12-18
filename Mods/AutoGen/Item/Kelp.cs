@@ -24,11 +24,12 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [LocDisplayName("Kelp")]
     [Weight(100)]      
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Products", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("NaturalFiber", 1)]                                 
     public partial class KelpItem :

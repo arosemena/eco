@@ -7,7 +7,7 @@
   <section image="IllustrationCraftingComponent" loc="69">
 After selecting an item and quantity to craft, resources and labor are required to start the project. These resources can be added manually (placing them directly on the crafting table) or by linking a [Storage Component] that contains them.
 
-Citizens with a related [Specialty|Specialties] require less calories to add labor. Some projects required skilled labor from a citizen with the corresponding specialty. This reduction is applied after the work order is started so citizens of various skill level can contribute to the same work party.
+Citizens with a related [Specialty|Specialties] require less calories to add labor. Some projects require skilled labor from a citizen with the corresponding specialty. This reduction is applied after the work order is started so citizens of various skill level can contribute to the same work party.
 
 By adding an upgrade in the [Modules Component], work orders on a crafting table will have reduced crafting time and resource costs.
 

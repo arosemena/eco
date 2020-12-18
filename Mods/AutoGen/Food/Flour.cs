@@ -49,7 +49,7 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Flour"),
                 new IngredientElement[]
                 {
-            new IngredientElement(typeof(WheatItem), 4, typeof(MillingSkill), typeof(MillingLavishResourcesTalent)),   
+            new IngredientElement(typeof(WheatItem), 2, typeof(MillingSkill), typeof(MillingLavishResourcesTalent)),   
                 },
                     new CraftingElement<FlourItem>(1),  
                     new CraftingElement<CerealGermItem>(1f)  

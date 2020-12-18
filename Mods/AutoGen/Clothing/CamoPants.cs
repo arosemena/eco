@@ -35,7 +35,7 @@ namespace Eco.Mods.TechTree
 
         private static Dictionary<UserStatType, float> flatStats = new Dictionary<UserStatType, float>()
     {
-                { UserStatType.DetectionRange, 1 }
+                { UserStatType.DetectionRange, 1 },
     };
 public override Dictionary<UserStatType, float> GetFlatStats() { return flatStats; }
     }

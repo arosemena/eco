@@ -100,6 +100,50 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(CorrugatedSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(CorrugatedSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(FenceFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelFenceBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(CorrugatedSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(DoubleWindowFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelDoubleWindowBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(CorrugatedSteelItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(CorrugatedSteelStairsBlock), typeof(CorrugatedSteelStairs90Block), typeof(CorrugatedSteelStairs180Block), typeof(CorrugatedSteelStairs270Block))]
     [Serialized]
@@ -152,6 +196,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(3)] 
     public partial class CorrugatedSteelLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(CorrugatedSteelRoofSideBlock), typeof(CorrugatedSteelRoofSide90Block), typeof(CorrugatedSteelRoofSide180Block), typeof(CorrugatedSteelRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofSideFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(CorrugatedSteelRoofTurnBlock), typeof(CorrugatedSteelRoofTurn90Block), typeof(CorrugatedSteelRoofTurn180Block), typeof(CorrugatedSteelRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(CorrugatedSteelRoofCornerBlock), typeof(CorrugatedSteelRoofCorner90Block), typeof(CorrugatedSteelRoofCorner180Block), typeof(CorrugatedSteelRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(CorrugatedSteelRoofPeakBlock), typeof(CorrugatedSteelRoofPeak90Block), typeof(CorrugatedSteelRoofPeak180Block), typeof(CorrugatedSteelRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(CorrugatedSteelItem))]
+    public partial class CorrugatedSteelRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(3)] 
+    public partial class CorrugatedSteelRoofPeak270Block : Block
     { }
 
 }

@@ -83,8 +83,13 @@ namespace Eco.Mods.TechTree
             new TagDefinition("Tools")                          { AutoHighlight = false, ShowInEcopedia = false },
 
             // Blocks: Tags for interaction context with blocks
+            new TagDefinition("Block")                          { AutoHighlight = false, ShowInEcopedia = false },
             new TagDefinition("Liquid")                         { AutoHighlight = false, ShowInEcopedia = false },
             new TagDefinition("Constructable")                  { AutoHighlight = false, ShowInEcopedia = false },
+            new TagDefinition("Excavatable")                    { AutoHighlight = false, ShowInEcopedia = false },
+            new TagDefinition("RoadType")                       { AutoHighlight = false, ShowInEcopedia = false },
+            new TagDefinition("Harvestable")                    { AutoHighlight = false, ShowInEcopedia = false },
+            new TagDefinition("Currency")                       { AutoHighlight = false, ShowInEcopedia = false },
 
             // Objects: Tags for interaction context with objects
             new TagDefinition("Economy")                        { AutoHighlight = false, ShowInEcopedia = false },

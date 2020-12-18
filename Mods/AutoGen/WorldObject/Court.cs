@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CourtObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A court where laws are decided."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A court where laws are decided.");
 
         static CourtItem()
         {

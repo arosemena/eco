@@ -80,7 +80,7 @@ namespace Eco.Mods.Organisms
                 this.ResourceList = new List<SpeciesResource>()
                 {
                     new SpeciesResource(typeof(PricklyPearFruitItem), new Range(1, 2), 1),
-                   new SpeciesResource(typeof(PricklyPearSeedItem), new Range(1, 2), 0.1f)
+                   new SpeciesResource(typeof(PricklyPearSeedItem), new Range(1, 2), 0.1f),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

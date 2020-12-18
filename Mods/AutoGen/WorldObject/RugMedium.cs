@@ -73,7 +73,8 @@ namespace Eco.Mods.TechTree
     public partial class RugMediumItem :
         WorldObjectItem<RugMediumObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A medium rug for medium uses."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A medium rug for medium uses.");
+        public override LocString DisplayNamePlural => Localizer.DoStr("Medium Rugs");
 
         static RugMediumItem()
         {

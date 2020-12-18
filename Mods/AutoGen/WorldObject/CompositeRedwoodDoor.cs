@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class CompositeRedwoodDoorItem :
         WorldObjectItem<CompositeRedwoodDoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A beautiful composite door built by an expert carpenter."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A beautiful composite door built by an expert carpenter.");
 
         static CompositeRedwoodDoorItem()
         {

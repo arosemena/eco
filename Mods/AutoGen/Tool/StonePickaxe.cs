@@ -58,9 +58,9 @@ namespace Eco.Mods.TechTree
     public partial class StonePickaxeItem : PickaxeItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(20, typeof(MiningSkill), typeof(StonePickaxeItem), new StonePickaxeItem().UILink());
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(StonePickaxeItem), typeof(MiningToolEfficiencyTalent)), CreateCalorieValue(20, typeof(MiningSkill), typeof(StonePickaxeItem), new StonePickaxeItem().UILink()));
         private static IDynamicValue exp = new ConstantValue(0.1f);
-        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(MiningToolStrengthTalent), 0));
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(StonePickaxeItem), typeof(MiningToolStrengthTalent), 0));
         private static IDynamicValue skilledRepairCost = new ConstantValue(5);  
         
 

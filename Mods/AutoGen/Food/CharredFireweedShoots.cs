@@ -31,7 +31,7 @@ namespace Eco.Mods.TechTree
     [Tag("CharredGreen", 1)]
     public partial class CharredFireweedShootsItem : FoodItem
     {
-        public override LocString DisplayDescription            { get { return Localizer.DoStr("Boiled in water to remove the inherent bitterness, this shoot is much tastier."); } }
+        public override LocString DisplayDescription            { get { return Localizer.DoStr("It tastes somewhat burnt but at least the fire has removed the bitter taste."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 5, Fat = 0, Protein = 1, Vitamins = 6};
         public override float Calories                          { get { return 350; } }

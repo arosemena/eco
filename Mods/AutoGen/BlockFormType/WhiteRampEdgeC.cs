@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class WhiteRampEdgeCFormType : FormType
     {
         public override string Name => "WhiteRampEdgeC";
-        public override LocString DisplayName => Localizer.DoStr("WhiteRampEdgeC");
+        public override LocString DisplayName => Localizer.DoStr("White Ramp Edge LineC");
         public override LocString DisplayDescription => Localizer.DoStr("White Ramp Edge LineC");
         public override Type GroupType => typeof(RampsFormGroup);
         public override int SortOrder => 78;

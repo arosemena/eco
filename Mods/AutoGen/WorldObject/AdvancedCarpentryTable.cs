@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<AdvancedCarpentryTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A modern carpentry table with an electric motor and heavy duty steel sawblades."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A modern carpentry table with an electric motor and heavy duty steel sawblades.");
 
         static AdvancedCarpentryTableItem()
         {

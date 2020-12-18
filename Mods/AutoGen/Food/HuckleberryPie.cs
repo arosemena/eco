@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A fantastic combination of flaky crust and scrumptious berries."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 9, Fat = 8, Protein = 5, Vitamins = 16};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 13, Fat = 10, Protein = 5, Vitamins = 16};
         public override float Calories                          { get { return 1300; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }

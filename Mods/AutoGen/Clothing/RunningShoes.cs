@@ -35,7 +35,7 @@ namespace Eco.Mods.TechTree
 
         private static Dictionary<UserStatType, float> flatStats = new Dictionary<UserStatType, float>()
     {
-                { UserStatType.MovementSpeed, 0.5f }
+                { UserStatType.MovementSpeed, 0.5f },
     };
 public override Dictionary<UserStatType, float> GetFlatStats() { return flatStats; }
     }

@@ -1,4 +1,4 @@
-0;Components related to the economy.
+0;Elementos relacionados con la economía.
 1;The Bank Component is where [Bank Accounts] are created and managed. Citizens can create multiple accounts for themselves or share accounts with other citizens. Accounts can also be assigned to [Titles] and [Demographics].
 2;Account Users can perform transactions using the account (adding and removing funds).
 
@@ -6,7 +6,7 @@ Account Managers can change the users in both the manager list and the user list
 
 In the Advanced Settings, you can set the account as a Government Account.  Government accounts can receive and pay out tax funds, and are ignored when collecting tax and calculating personal wealth. To set this, you must have government banking priviliges, assigned by an [Elected Title|Elected Titles].
 3;The Bank component is used to create and manage bank accounts
-4;The Contract Board Component allows citizens to post and accepts [Contracts] and [Work Parties], allowing enforced labor and other agreements between citizens.
+4;El elemento Tablero de contratación permite a los ciudadanos colgar y aceptar [Contracts] y [Work Parties], acceder a la realización de trabajos forzosos y otros tipos de acuerdos entre ciudadanos.
 5;Setting Up a Contract
 6;
 When posting a contract, it may have as many or as few clauses as desired, and each clause can be configured to describe the job requested.  Each clause must be satisfied before the contract is considered complete.
@@ -40,7 +40,7 @@ There are a variety of Payment options for a work party, and multiple payment op
 
 - When granting a [Title|Titles] as a payment, the citizen posting the contract must be a title manager for the title being offered. All citizens who contribute the minimum amount will be granted the new title. The Access Type determines if they will become a title manager or title user.
 
-10;The Contract Board Component allows citizens to post or accept contracts and work party offers
+10;El elemento Tablero de contratación permite a los ciudadanos colgar o aceptar contratos y ofertas para grupos de trabajo
 11;The Credit Component allows citizens to set the currency and bank account for all transactions on an object they own.
   
 12;
@@ -145,15 +145,15 @@ The Remove Official from Office action allows citizens who have be given the aut
 42;    
 The Civic Object Component allows citizens to propose, amend, and repeal various Civic Objects. 
 43;Civic Duties
-44;Within a Civic Object Component, you will see a list of your [Civic Duties]. This informs the citizen what permissions they have regarding civic objects, given the current [Constitution].The possibilities of different civic duties are:
-45;The Civic Object Component allows citizens to propose, amend, and repeal civic objects.
+44;En un elemento Objeto cívico, verás una lista de tus [Civic Duties]. En ella se informará a los ciudadanos de los permisos que tienen en relación a objetos cívicos, considerando la [Constitution] vigente. Los diferentes tipos de debes cívicos son los siguientes:
+45;El elemento de objeto cívico permite a los ciudadanos proponer, modificar y derogar objetos cívicos.
 46;The Registrar Component allows for the creation and management of non-elected [Titles].  These titles can be used for many of the same purposes as [Elected Titles], but they are appointed at the Registrar.
 47;Assigning Titles
 48;Title Managers can rename the title and assign new managers and title holders. Title Managers are not considered Title Users.
 
 Title Users are the citizens considered title holders and receive all associated benefits and conditions.
 	
-49;Advanced Settings
+49;Ajustes avanzados
 50;
 In the Advanced Settings, requirements for title holders can be set, and hourly wages can be assigned to title holders who qualify.
   
@@ -165,7 +165,7 @@ Wages are paid to Title Users from any [Bank Account|Bank Accounts] that a Title
 52;The Treasury Component allows [Elected Titles] that have been granted the right to 'Set Taxes at the Treasury' to adjust the tax rate and select the World Default Currency.
 53;Taxes
 54;After [Taxes] are set in the Treasury Component, they are automatically applied to all relevant transactions. All revenue goes into the Treasury [Bank Account|Bank Accounts]. Elected titles that have the setting 'Government Banking Privileges' can transact directly from the Treasury account (allowing selection of the account within the [Credit Component]).  Money can also come out of the treasury via [Laws] that make payments to citizens.
-55;World Default Currency
+55;Divisa mundial por defecto
 56;The World Default Currency is the default [Currency] used when placing a new object that contain the Credit Component. Citizens can still choose to use any currency in a [Trade], but having a World Default Currency makes it is easier to establish an economy with a common currency.
 57;Direct Taxes
 58;Elected Titles with rights to 'Set Taxes at the Treasury' can tax or allocate funds directly from citizens. This is done through managing the desired currency and selecting which citizens the action will apply to. An elected title must always give a reason why they are performing this action that is displayed to all citizens.
@@ -188,7 +188,7 @@ All placed objects have authorization components.
   
 (This feature is disabled by default on dedicated servers to prevent accelerating time when users are offline, but can be enabled by a server administrator.)
 65;Allows sleeping in single-player servers or servers where sleep is enabled.
-66;Components related to industry.
+66;Elementos relacionados con la industria.
 67;
     The Crafting Component is used to [Craft|Crafting] items, add resources or labor, and cancel existing projects. When contributing to a [Work Party|Work Parties], the Crafting Component can be accessed by citizens who have joined the work party.
   
@@ -202,7 +202,7 @@ By adding an upgrade in the [Modules Component], work orders on a crafting table
 
 If a project is cancelled early (by right clicking the order), the resources will be refunded but the spent labor will be lost.
   
-70;Adding Labor
+70;Añadiendo trabajo
 71;
 For every unit of labor needed, [Calories|Nutrition] are consumed. After a work order is started, citizens can add labor by pressing the 'Work' button in the Crafting Component. 
 
@@ -230,7 +230,7 @@ Crafting tables accept different types of upgrades. Early tables accept 'Basic U
 
 Some recipes have costs using Static Ingredients. Static ingredients are not affected by the resource cost reduction, but the recipes that contain them still get a reduction for crafting time. 
 		
-80;Specialty Upgrades
+80;Mejoras especializadas
 81;
 The highest level of upgrade can only be crafted by a citizen who has reached the maximum level in their chosen [Specialty|Specialties]. Unlike other upgrades, these upgrades recieve an additional cost reduction when crafting recipes using the specified profession.
 
@@ -300,12 +300,12 @@ When interacting with an object with a Status Component, citizens can quickly se
   
 105;Managing Storage
 106;
-Inventory can be moved between containers by dragging stacks of items from one container to another.
+Podrás mover tu inventario entre diferentes contenedores si arrastras pilas de objetos de un almacén a otro.
 
-Holding down the 'Shift' key while dragging items will move all stacks of the same item between containers. Right clicking a stack of items will allow a player to divide a stack into smaller quantities. Holding down ‘Ctrl’ when clicking a stack of items will split the stack in half.
+Si mantienes pulsado MÁYUS mientras arrastras los objetos, podrás mover TODAS las pilas de objetos del mismo tipo entre diferentes contenedores. Si haces clic derecho en una pila de objetos, podrás dividir dicha pila en grupos más pequeños. Si mantienes pulsado CTRL al hacer clic en una pila de objetos, dividirás dicha pila a la mitad.
 
-Some storage containers, like a [StockpileItem], can contain any type of item. Other storage containers, like a [StorageChestItem], can only contain non-carriable items.
-  
+Algunos almacenes, como la [StockpileItem], pueden guardar cualquier tipo de objeto; sin embargo, en otros solo podrás guardar objetos que no sean de carga (como en el caso del [StorageChestItem]).
+    
 107;Linking Storage Containers
 108;
 An object can be linked to containers in the Storage Component by selecting the check box for the container. Once linked, the object gain access to all items in the containers and can use the container for storage. When linking storage containers, the topmost container in the Storage Component will be used first for storage.  The order can be changed by clicking and dragging the storage displays in the list. 
@@ -319,11 +319,11 @@ Bank accounts are useful for organizing currency, allowing access to funds by mu
 112;Bank accounts serve as a storage and separation of currency for various uses by various citizens and government entities.
 113;
     A contract is an agreement between two citizens created at a [Contract Board|contract board component].  The agreement can have any number of clauses, and specify combinations of work to be performed and compensation to be paid.  It is posted by the client citizen, and can be accepted by any valid citizen asynchronously.
-114;Examples of contract include:
-    - Create a road between two designated points.
-    - Loan money between two parties with a given interest rate and due date.
-    - Build a room of given requirements at a specific location.
-    - Custom requirements described in text, and accepted/rejected by the client upon completion.
+114;Algunos ejemplos de contratos incluyen:
+    - Creación de carreteras entre dos puntos.
+    - Préstamos de dinero entre dos grupos (con un interés y una fecha de vencimiento asociados).
+    - Construir una sala con ciertos requisitos en una ubicación determinada.
+    - Requisitos personalizados detallados por escrito, y aceptados/rechazados por un cliente al ser completados.
   
 115;Contracts maintain an agreement between two citizens.
 116;
@@ -364,7 +364,7 @@ Currencies can be transferred to others in the Economy Viewer, as well as throug
   - [Bank Accounts]. Containers of currency with configurable access.
   - [Finance]. Providing capital to other citizens to help them progress while making a profit yourself.
   
-124;The economy consists of all resource usage, trade, and technological progress by citizens.
+124;La economía se basará en tu uso de todos los recursos, y en el comercio y el progreso tecnológico de tu sociedad.
 125;Through the use of [Contracts], Citizens in Eco can create loan and bond agreements between two parties, tracking automatically the interest payment and due date of the funds.  Loans and bonds are a great way for new citizens to collaborate with long-time citizens with more wealth in a way that benefits both parties and increases societal progress.
 
 If a citizen takes a loan, the offering party gives them money which they are expected to pay with interest.
@@ -640,7 +640,7 @@ Laws determine rules and processes that all citizens are compelled to follow.  A
 Elections will be started automatically when making changes that require them, as determined by the constitution. They can have many effects (changing laws, electing leaders, performing executive actions).
 
 200;[Election Processes]
-An election process determines how elections work: who can vote and veto, how long they last, what majorities are required, etc. A [BoardOfElectionsItem] can hold up to three election processes.
+Un proceso electoral determina el funcionamiento de unas elecciones: quién puede votar y vetar, cuánto tiempo dura el proceso, qué mayorías son necesarias... Un [BoardOfElectionsItem] puede tener hasta un total de tres procesos electorales simultáneos.
 
 201;[Elected Titles]
 An Elected Title is a government position that can be given special privileges. A [GovernmentOfficeItem] can hold one elected title.
@@ -723,7 +723,7 @@ Many types of power generation exist, and each has different fuel needs as well 
   
 220;Land Property Rights
 221;
-  Land can be claimed as property by using a [Land Claim Stake|Property Tool Item] and targeting an unclaimed plot of land.  When targeted, a [Land Claim Paper|Property Claim Item] will be consumed, and the citizen will become the owner on the deed. The property at your current position can be seen in the world panel in the bottom right of the screen, and clicking the title will open the deed.
+  Podrás reclamar tierras para tu propiedad usando el [Land Claim Stake|Property Tool Item] y apuntando a un trozo de tierra sin dueño. Al hacerlo, se consumirá un [Land Claim Paper|Property Claim Item], y el ciudadano se convertirá en el dueño de esa parcela. Podrás ver tus propiedades actuales en el panel del mundo (en la parte inferior derecha de la pantalla); además, haciendo clic sobre el título, podrás abrir la parcela.
 222;Object Property Rights
 223;Objects can have their access rights set separately from the land they are on, to allow consumer access to objects that are on private land.  These settings are determined in an [Authorization Component].  
 
@@ -744,14 +744,15 @@ Room Material Quality
 The average tier of the room material will also determine your housing value, by setting a soft cap.  Once your room value has exceeded the soft cap for the room, then you will get diminishing returns for additional housing points.  When this happens, it may be time to renovate the materials of the room.
 
 228;Rooms protect you and your equipment from the elements, providing skill points and allowing equipment to function.
-229;Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
+229;
+Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
 
 Sewage systems are created by connecting a [MechanicalWaterPumpItem] or [ElectricWaterPumpItem] to a water source, and then building Pipes between the different objects that need supplying.  On the waste side, pipes will take the waste water from the object to either dump it into the environment (producing [Pollution] at the exit point), or process it at a [Waster Filter|WasteFilterItem], which will generate [Compost|CompostItem] from the wastewater.
 
 Pipes will automatically connect to any adjacent pipe block of the same type.  To make sewage systems with different pipes in close proximity, use different materials of pipes.
 
 230;Certain items require sewage to supply water and remove wastewater.
-231;Components related to industry.
+231;Elementos relacionados con la industria.
 232;As you gain experience in Eco you will be able to unlock new specialties and new abilities within those specialties. There are two types of experience you will gain, Character Experience and Specialty Experience.  Both are increased by your Experience Multiplier.
 
 Character Experience
@@ -766,7 +767,8 @@ Your Experience Multiplier (or XP Multiplier) is a personal value representing y
 
 
 233;There are two kinds of experience in Eco: Character Experience (gained by food and housing) and Specialty Experience (gained by performing actions in a specialty).
-234;Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
+234;
+Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
 
 There are four nutrients represented in foods: Protein, Fat, Vitamins, and Carbs.  By adding up the average of each of these nutrients in all the food you’ve eaten in the last 24 hours, your experience multiplier is determined.   This means that if you eat junk food (low nutrients) it will affect you for 24 hours before it has passed through your body.
 
@@ -780,16 +782,14 @@ Calories
 Calories, unlike nutrients, are spent when you perform work, and when you run out of calories you’ll be unable to work until you eat more.  Calorie usage can be greatly reduced by upgraded tools and leveling-up skills.
 All food provides both calories and nutrients, so while gaining calories from food you’re also determining your skill multiplier, so watch that diet.
 
-Feeding the World
-Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
-
 235;Nutrition, alongside housing, determines how fast you gain experience.
 236;Central to a thriving economy is the ability to specialize and trade, thereby working more efficiently than if you attempted to do everything yourself.  Achieving a successful society depends on successfully accomplishing both.  
     
     A citizen's skills give them unique abilities and enhancements, which allows them to [Trade] with other citizens having different skills in the economy. As you gain [Experience], you can unlock new [Specialties] and level-up existing ones.  The experience you gain is multiplied by you [Nutrition] and [Housing|Housing Overview].    
   
 237;The skill system allows citizens to specialize in specific trades.
-238;Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
+238;
+    Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
 
 Professions and Specialties
 [Professions|Profession Overview] are simply groupings of skills, and don’t serve any other purpose besides storing similar skills together.
@@ -905,7 +905,7 @@ Hunting an animal is only the first step in making the most use out of it. Butch
 To get started with hunting, you'll need to craft a [WoodenBowItem] and some [Arrows|Arrow Item]. More advanced bows will make it easier to hit your target quickly. Keep in mind that animals can be killed more quickly with a well-aimed shot, and that it may be easier to hunt some animals based on the time of day. 
   
 268;The living system of plants and animals which provides the means for humans to survive.
-269;Ecopedia guide for getting started.
+269;Una guía de la Ecopedia para tus primeros pasos en el juego.
 270;
     Once you've covered your basic needs, it's time to think about how you want to contribute to the joint project of society, and your profession is how you do that.
   
@@ -935,7 +935,7 @@ Each profession has a number of [Specialties] beneath it which will unlock speci
 276;
     Each of these options are available at a variety of locations which must be constructed by citizens. The current government can be viewed by selecting the Government icon in the action bar and hovering over each section will specify where the civic object is defined.
   
-277;Your civic duties are the many different ways you can interact with the government.
+277;Los deberes cívicos son las diferentes maneras que tienes de interactuar con tu gobierno.
 278;To bring a society through the ages to the peaks of technology, a thriving [Economy|Economy Overview] is needed, and by participating in it citizens can both help progress society as well advance their own abilities and wealth.
  
 Participating in the economy takes place through [Trade] of both goods and services.  Finding existing settlements with [Stores|Store Component], [Contracts], and [Work Parties] will give citizens to trade the goods and labor they specialize in for the specialties of others, achieving their individual goals faster than if they had each worked alone.  
@@ -944,21 +944,20 @@ As you take on new projects that require materials or labor you don't yourself h
 As you build up your capabilities and have more needs of other citizens, you can create your own stores, contracts, and work parties to seek their aid.  As you acquire wealth, your power to effect change (both good and bad) rises.
  
 279;The most efficient way to progress in knowledge and technology is trade within the economy.
-280;While a functioning society is necessary to stop the meteor, each individual must have their own needs met, starting with food and shelter.
- 
+280;Aunque necesitarás un gobierno funcional para detener el meteorito, todos los individuos deben haber cubierto sus necesidades primero, empezando con comida y refugio. 
 281;Choosing a Settlement
 282;When choosing a location to settle in, you'll want to consider the following factors:
-283;Proximity to Resources
-Natural food sources and building supplies nearby will greatly speed up initial progress.
+283;Cercanía a recursos
+La presencia de fuentes naturales de comida y de materiales para construir acelerará enormemente tu progreso inicial.
 
-Proximity to Others
-Setting up near other settlements offers a distinct advantage, as you can then trade with others to gain progress faster.  However, an overcrowded area may also have limited options for expansion and natural food in the vicinity. You'll want to find a balance based on personal preference.
+Proximidad a otros humanos
+Si creas una base en las cercanías de otros jugadores obtendrás una ventaja distintiva, ya que podrás comerciar con ellos para progresar más rápidamente. Sin embargo, una zona con demasiada gente limitará tus opciones para expandirte y conseguir comida en sus proximidades. Encuentra el equilibrio entre ambos factores que más se ajuste a tus preferencias personales.
   
-284;Claiming Your Plot
-285; Once you've selected a place to build your first settlement, you'll want to claim [Property] around it.  When placing your starting tent this will automatically occur, and further property can be claimed with land papers.  Property you claim will be protected from other citizens, unless you give them access.
+284;Reclamar tu parcela
+285; Una vez escojas un lugar para construir tu primer asentamiento, convierte dicha zona en tu [Property].  Al colocar tu primera tienda de campaña, esto ocurrirá automáticamente, pero cuando debas hacerlo de nuevo, usa papeles de propiedad.  Las propiedades que sean tuyas estarán protegidas frente a otros ciudadanos (a menos que tú les des acceso a ellas).
 286;Food
 287;Finding a food supply is critical to having the calories you need to work.  Additionally, the [Nutrition] of the food you eat impacts how fast you gain experience, so you'll want to eat the best food available for the fastest gains.  When settling in the wilderness, look for food sources nearby you can take from, or plan to setup a [Farm|Farming].  When settling near an existing village, have a look at the local economy to see what you can [Trade] in order to get food.
-288;Setting up a source of food and shelter is a first priority. 
+288;Establecer un lugar donde conseguir comida y refugio es tu prioridad. 
 289;The [Ecosystem|Ecosystem Overview] is the provider of a vast number of resources citizens can make use of, but it also vulnerable to their impact.  Succeeding as a society will require intelligent management of impact, using the [Government|Government Overview] to regulate what is allowed. 
  
 Various forms of [Pollution] can affect the environment, creating the potential for catastrophes that could destroy your food supply and halt progress, leading to ecological collapse.  Using [Data] tools, citizens can monitor the impact they're having on the world and use that data to argue for specific regulations to protect it, or accelerate the economy in other avenues.
@@ -967,26 +966,26 @@ The world begins as a vast untouched wilderness, and through the ages citizens w
 
 290;The ecosystem provides many resources, but is vulnerable to human actions.
 291;
-  Eco is a world bookended by two threats: Environmental collapse, and the ever-looming [Meteor|The Meteor].
+  Eco es un mundo que tiene dos amenazas: el colapso medioambiental y un enorme [Meteor|The Meteor].
   
-To succeed, you'll need to progress through the ages, advancing science and industry to a level that can destroy the meteor without causing ecological collapse in the process.  You will do this as individual member of a larger society, and the creating a positive interplay between individual needs and societal needs is critical to success.  
+Para salir adelante, necesitarás avanzar por diferentes épocas de desarrollo, mejorando tu ciencia e industria hasta un nivel que te permita destruir el meteorito sin provocar un colapso ecológico en el proceso. Podrás asociarte con otros jugadores o hacerlo solo, aunque la mejor manera de tener éxito es colaborar con otros y conseguir una relación positiva que ayude a todos a progresar.  
 
-Your focus in Eco will be on managing your individual progress while simultaneously working to progress the [Economy|Economy Overview] as a whole, and doing so inside a rich [Ecosystem|Ecosystem Overview] of plants and animals that are affected by what you do.  
+En Eco, tus esfuerzos estarán dirigidos a la administración de tu progreso individual, que compaginarás con el trabajo para hacer que la [Economy|Economy Overview] general progrese, y todo esto dentro de un [Ecosystem|Ecosystem Overview] lleno de plantas y animales que se verán afectados por tus decisiones.  
 
-To aid in creating a positive relationship between this triangle of Individuals, Economy, and Ecosystem, you have the tools of [Government|Government Overview] at your disposal. You can set binding [Laws] that determine what is allowed and run for [Election|Elections] to gain governmental powers to make changes and guide society.
+Para ayudarte en la creación de relaciones positivas entre estos tres grupos (individusio, economía y ecosistema), tendrás una serie de herramientas de [Government|Government Overview] a tu disposición. Podrás crear [Laws] vinculantes that que determinarán lo que está permitido y lo que no, y podrás presentarte a [Election|Elections] para ganar el control del gobierno y poder hacer cambios y guiar a tu sociedad.
 
- But first matters first, you'll need to take care of your basic needs before you can save the world.  To do that, you'll start with [Food and Shelter].
+ Pero es mejor empezar por el principio, y para ello vas a tener que cuidar de tus necesidades básicas primero, antes de poder salvar al mundo. Para hacerlo, empieza con la misión [Food and Shelter].
 292;Your journey in Eco.
-293;The world has been given an expiration date, a meteor in a collapsing orbit around the globe, set to collide in 30 real-time days, destroying everything on it in the process.  
+293;El mundo tiene una fecha límite antes de que un meteorito en órbita descendente alrededor del planeta colisione con él (lo que ocurrirá en 30 días de tiempo real, destrozando todo el planeta en el proceso).  
   
-However, hope is not lost, for with the right technology this crisis can be prevented. By working together to generate a thriving [Economy|economy overview] and advance progress with [Research], humanity has a chance to build the [Laser|LaserItem] needed to destroy this threat.
+Sin embargo, aún no se ha perdido toda esperanza, ya que con la tecnología adecuada la humanidad podrá salvarse. Si todos trabajan juntos para generar una [Economy|economy overview] próspera y se avanza lo suficiente en el campo de la [Research], la humanidad tendrá una oportunidad de conseguir desarrollar un [Laser|LaserItem] que podría eliminar esta amenaza.
 
-It will not be an easy task, and the industry required to reach such levels of advancement will pose a real threat to the [Ecosystem|Ecosystem Overview].  To combat this and avoid falling victim to an ecological collapse of your own creation, a well-regulated [Government|Government Overview] must be designed, implemented, and created by its citizens.
+Pero no va a ser una tarea fácil, y la industria que se necesita para conseguirlo necesita tal grado de desarrollo tecnológico que podría resultar un verdadero reto conseguirlo sin destruir el [Ecosystem|Ecosystem Overview] en el proceso. Para evitar generar un colapso ecológico en el proceso, deberás diseñar, crear e implementar un [Government|Government Overview] adecuadamente regulado para todos los ciudadanos del mundo.
 
-The fate of the world depends on its citizens acting together in harmony with the ecosystem to achieve great technological feats, and only through studied collaboration can they succeed.
+El destino del mundo dependerá de que sus ciudadanos actúen en armonía con el ecosistema, alcanzando grandes hitos tecnológicos a través de la colaboración y el respeto por el medio ambiente. Solo así esta misión tendrá éxito.
   
 294;A looming threat from above.
-295;Through the use of tools, citizens can build great structures and move mountains.  The starting tools will allow you to effect small change only, but as technology advances you will gain tools that can perform batch operations, and eventually [Vehicle|Vehicle Component] that can make massive transformations to the world. 
+295;A través del uso de herramientas, los ciudadanos pueden fabricar grandes estructuras y mover montañas. Las herramientas básicas te permitirán hacer solo pequeños cambios, pero a medida que avances tecnológicamente, conseguirás herramientas que podrán realizar operaciones por lotes, e incluso un [Vehicle|Vehicle Component] que podrá cambiar completamente el entorno que te rodea. 
 296;There are a number of different tool types available:
   - [Building] Tools.  Hammers will allow you to place construction materials in 'Forms', shovels allow moving soil.  
   - [Farming] Tools.  Plowing, planting, and sowing all have tools to increase their efficiency.
@@ -1003,15 +1002,14 @@ All tools have Durability associated with them, which drops as they are used.  O
   
 299;Using a hammer or a crane, citizens can create buildings for homes and industry.
 300;
-The My Deeds Component allows citizens to see view and manage all [Property] that they own, providing an interface to access them easily.
-  
+El elemento Mis títulos permite a los ciudadanos ver y administrar todas las [Property] que tienen, empleando una interfaz con la que acceder a ellas fácilmente.  
 301;Allows citizens to see view and manage all property they own.
 302;
-The Text Component can be found on Signs, [Vehicles|Vehicle Component], and the [Distribution Station|Item Distribution Component].
+El elemento Texto se puede encontrar en carteles, [Vehicles|Vehicle Component] y en el [Distribution Station|Item Distribution Component].
   
-Text can be useful for giving directions, advertising, or just writing a friendly greeting
+El texto es útil para dar direcciones, crear anuncios o simplemente escribir un mensaje amistoso.
 
-For those familar with text markup, a variety of tags may be use to alter the size, color, and formatting of text.
+Para aquellos familiares con el codificado de texto, se pueden usar varios tipos de etiquetas para alterar el tamaño, color y formato del texto.
 
 303;Allows citizens write text that is displayed to other citizens.
 304;
@@ -1022,9 +1020,9 @@ Animal's prey and predators can be viewed through the web interface and checking
 305;The living system of plants and animals which provides the means for humans to survive.
 306;Follow the development of Eco.
 307;
-    We intend Eco to be a forever-game, growing in depth and breadth and connections to other future games, a system of unlimited possibilities that aims to go beyond entertainment.  This tree contains the past, present, and future of Eco.
+    Queremos que Eco sea un juego para siempre, que crezca en profundidad y en amplitud de conceptos y que conecte con otros juegos que desarrollemos en el futuro mediante un sistema de posibilidades infinitas que lleguen a ser mucho más que un entretenimiento. Este árbol contiene el pasado, presente y futuro de Eco.
 
-    Via our website, you can view all the interactive parts of the tree and see where we're headed and the guiding philosophy behind the game.
+    A través de nuestra página web, podrás ver las partes interactivas del árbol, ver hacia dónde nos dirigimos y conocer más sobre la filosofía detrás del juego.
   
 308;View Eco Tree at
 309;Follow the development of Eco.
@@ -1043,11 +1041,11 @@ Some of these uses include:
 - Housing the various [Civic Objects|Civic Object Component] neccesary to establish a government
 
 314;Creating Buildings
-315;When carrying a building material, the hammer is able to switch between different block shapes and building patterns.
+315;Al transportar un material de construcción, el martillo podrá moldearlo para crear diferentes formas de bloques y patrones de edificación.
 
-Citizens build their first homes using a [StoneHammerItem], but as technology progresses increasingly better building tools become available that consume less calorie when used.
+Los ciudadanos pueden construir su primera casa usando un [StoneHammerItem], pero al mejorar tu tecnología, podrás acceder a herramientas más avanzadas que consumen menos calorías al ser usadas.
 
-Large-scale construction projects can be quickly be completed with the use of a [CraneItem], but at the cost of creating [Pollution].
+Los proyectos de construcción a gran escala se pueden completar rápidamente usando una [CraneItem], pero esto generará más [Pollution].
   
 316;Types of Vehicles
 317;Types of Civic Objects
@@ -1155,7 +1153,7 @@ The [Tailor] specializes in making high end furniture and specialized clothing t
 342;Superviviente
 343;
 [Survivalists|Survivalist] specializes in carrying extra weight and reducing the calories expended when using basic tools. All citizens are survivalists in the world of Eco. 
-   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers, shovels, and drills.
+   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers and shovels.
 
 344;A general overview of the current economy that contains information such as available trades, work parties, and contracts.
 345;The Economy Viewer provides a general overview of the current economy and is an incredibly useful tool for economic participation. Among other users, the Economy Viewer shows the location of every [StoreItem] and what is currently being bought and sold.
@@ -1171,4 +1169,7 @@ The Economy Viewer provides detailed information about the following:
 In additon, the Economy Viewer allows citizens to directly transfer currency to other citizens and quickly check the status of their own [Bank Accounts] and any outstanding debts.
    
 347;Accessing the Economy Viewer
-348;The Economy Viewer can be accessed by clicking the Economy button located at the bottom right of the screen.
+348;Podrás acceder al visor de economía haciendo clic en el botón Economía (zona inferior derecha de la pantalla).
+349;Feeding the World
+Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
+

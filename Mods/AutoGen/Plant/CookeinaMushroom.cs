@@ -79,7 +79,7 @@ namespace Eco.Mods.Organisms
                 this.ResourceList = new List<SpeciesResource>()
                 {
                     new SpeciesResource(typeof(CookeinaMushroomsItem), new Range(1, 2), 1),
-                   new SpeciesResource(typeof(CookeinaMushroomSporesItem), new Range(1, 2), 0.2f)
+                   new SpeciesResource(typeof(CookeinaMushroomSporesItem), new Range(1, 2), 0.2f),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

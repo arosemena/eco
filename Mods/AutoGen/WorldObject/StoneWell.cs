@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public partial class StoneWellItem :
         WorldObjectItem<StoneWellObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("PLACEHOLDER"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("PLACEHOLDER");
 
         static StoneWellItem()
         {

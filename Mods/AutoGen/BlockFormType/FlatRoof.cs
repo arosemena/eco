@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class FlatRoofFormType : FormType
     {
         public override string Name => "FlatRoof";
-        public override LocString DisplayName => Localizer.DoStr("FlatRoof");
+        public override LocString DisplayName => Localizer.DoStr("Flat Roof");
         public override LocString DisplayDescription => Localizer.DoStr("Flat Roof");
         public override Type GroupType => typeof(BasicFormGroup);
         public override int SortOrder => 4;

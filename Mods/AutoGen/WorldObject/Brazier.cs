@@ -57,7 +57,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
     public partial class BrazierItem :
         WorldObjectItem<BrazierObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A metal stand which can hold burning fuel to provide light."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A metal stand which can hold burning fuel to provide light.");
 
         static BrazierItem()
         {

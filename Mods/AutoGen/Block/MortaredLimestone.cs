@@ -24,28 +24,30 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MasonrySkill), 3)]
     public partial class MortaredLimestoneRecipe :
         Recipe
     {
         public MortaredLimestoneRecipe()
         {
-            var product = new Recipe(
-                "MortaredLimestone",
-                Localizer.DoStr("Mortared Limestone"),
-                new IngredientElement[]
-                {
-                    new IngredientElement(typeof(LimestoneItem), 4, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
-                    new IngredientElement(typeof(MortarItem), 1, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
-                },
-
-				new CraftingElement[]
-                {
-                    new CraftingElement<MortaredLimestoneItem>()
-				});
-            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(MortaredStoneRecipe), product);
-
+            this.Name        = "MortaredLimestone";
+            this.DisplayName = Localizer.DoStr("Mortared Limestone");
+            this.Ingredients = new List<IngredientElement>
+            {
+                new IngredientElement(typeof(LimestoneItem), 4, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
+                new IngredientElement(typeof(MortarItem), 1, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
+            };
+            this.Items = new List<CraftingElement>
+            {
+                new CraftingElement<MortaredLimestoneItem>()
+            };
+            this.ModsPostInitialize();
+            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(MortaredStoneRecipe), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -61,16 +63,17 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Mortared Limestone")]
-    [MaxStackSize(30)]
+    [MaxStackSize(45)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("MortaredStone", 1)]
     [Tag("Constructable", 1)]
     [Tier(1)]
     public partial class MortaredLimestoneItem :
     BlockItem<MortaredLimestoneBlock>
     {
+        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Mortared Limestone"); } }
         public override LocString DisplayDescription { get { return Localizer.DoStr("Used to create tough but rudimentary buildings."); } }
 
         public override bool CanStickToWalls { get { return false; } }

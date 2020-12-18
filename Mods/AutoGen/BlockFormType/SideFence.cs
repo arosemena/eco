@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class SideFenceFormType : FormType
     {
         public override string Name => "SideFence";
-        public override LocString DisplayName => Localizer.DoStr("SideFence");
+        public override LocString DisplayName => Localizer.DoStr("Side Fence");
         public override LocString DisplayDescription => Localizer.DoStr("Side Fence");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 13;

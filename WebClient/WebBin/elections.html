@@ -299,6 +299,11 @@
                                             </div>
 
                                             <!-- Map & Info -->
+                                            <div style="line-height: 16px;position: absolute;bottom: 82px;left: 134px;border-radius: 3px;overflow: hidden;">
+                                <img src="inc/images/map-key.png" style="width: 218px;">
+                                <div style="position: absolute;color: white;top: -3px;padding: 8px;font-size: 14px;">Low</div>
+                                <div style="position: absolute;color: black;top: -3px;padding: 8px;font-size: 14px;right: 0;">High</div>
+                            </div>
                                             <div id="main-map" class="view-map">
                                                 <p id="map-position-text"></p>
                                                 <p id="map-info-text">.</p>
@@ -436,51 +441,74 @@
   <div class="election-name">
     <h2><span class="name-box"><span class="election-name-title">{{>Name}}</span></span></h2>
     <span class="election-info section-info-wrapper"><span class="election-name-description">{{:ElectionDescription}}</span></span>
+    {{if Finished}}
+        <span class="election-info section-info-wrapper"><span class="election-name-description">{{:Results.Result}}</span></span>
+    {{/if}}
   </div>
-
 </script>
 
 <script id="election-action-on-complete-table-template" type="text/x-jsrender">
-    <table id="election-info-tbl" class="flat-table table" style="width: auto; margin-bottom:0px; border:none;">
-        {{if ActionOnCompleteTable }}
-            <tbody>
-                <tr class="table-top">
-                   {{for ActionOnCompleteTable.splice(0, 1) }}
-                        <td class=" table-top-left election-rule">{{:#data[0]}}</td>
-                        <td class=" table-top-left election-rule-description">{{:#data[2]}}</td>
-                        {{if #data[3] !== undefined }}
-                            <td class=" table-top-left election-rule-description">{{:#data[3]}}</td>
-                        {{/if}}
-                    {{/for}}
-                    </tr>
-              {{for ActionOnCompleteTable }}
-                   <tr class="table-middle
-                   {{if (#data[3] !== undefined) && (#data[2] !== #data[3])}} highlight-row {{/if}}"
-                   {{if (#data[3] !== undefined) && (#data[2] !== #data[3])}} style="background: #fff4a0d1" {{/if}}>
-                        <td class="table-left election-rule" data-toggle="tooltip" data-container="body" data-placement="left" title="{{:#data[1]}}">{{:#data[0]}}</td>
+    <div class="panel-group" id="accordion">
+        {{for Provisions}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#provisionBody{{:#index}}">
+                            {{if ActionOnCompleteTableHeader}}
+                                {{:ActionOnCompleteTableHeader}}
+                            {{else}}
+                                Provision #{{:#getIndex()+1}}
+                            {{/if}}
+                            <span class="glyphicon glyphicon-chevron-{{if !#index}}up{{else}}down{{/if}} pull-right"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="provisionBody{{:#index}}" class="panel-collapse collapse {{if !#index}}in{{/if}}">
+                    <div class="panel-body">
+                        <table id="election-info-tbl" class="flat-table table" style="width: auto; margin-bottom:0px; border:none;">
+                            {{if ActionOnCompleteTable}}
+                                <tbody class="collapsible">
+                                    <tr class="table-top">
+                                    {{for ActionOnCompleteTable.splice(0, 1)}}
+                                        <td class="table-top-left election-rule">{{:#data[0]}}</td>
+                                        <td class="table-top-left election-rule-description">{{:#data[2]}}</td>
+                                        {{if #data[3] !== undefined}}
+                                            <td class=" table-top-left election-rule-description">{{:#data[3]}}</td>
+                                        {{/if }}
+                                    {{/for }}
+                                    </tr>
+                                    {{for ActionOnCompleteTable }}
+                                        <tr class="table-middle
+                                            {{if (#data[3] !== undefined) && (#data[2] !== #data[3])}} highlight-row {{/if}}"
+                                            {{if (#data[3] !== undefined) && (#data[2] !== #data[3])}} style="background: #fff4a0d1" {{/if}}>
+                                        <td class="table-left election-rule" data-toggle="tooltip" data-container="body" data-placement="left" title="{{:#data[1]}}">{{:#data[0]}}</td>
 
-                        <td class="table-left change-to"><span class="change-to">{{:#data[2]}}</span></td>
-                        {{if #data[3] !== undefined }}
-                        <td class="table-left current"><span class="current">{{:#data[3]}}</span></td>
-                        {{/if}}
-                    </tr>
-              {{/for}}
-            </tbody>
-        {{else ActionOnCompleteFullDescription}}
-            <tbody style="display:table-row-group">
-               <tr class="table-top">
-               <td class="table-top-left" style="text-align:left;">{{:ActionOnCompleteFullDescription}}</td>
-                </tr>
-             </tbody>
-        {{else}}
-             <tbody style="display:table-row-group">
-               <tr class="table-top">
-               <td class="table-top-left">No Data</td>
-                </tr>
-             </tbody>
-        {{/if}}
-    </table>
-
+                                        <td class="table-left change-to"><span class="change-to">{{:#data[2]}}</span></td>
+                                        {{if #data[3] !== undefined }}
+                                            <td class="table-left current"><span class="current">{{:#data[3]}}</span></td>
+                                        {{/if}}
+                                        </tr>
+                                    {{/for}}
+                                </tbody>
+                            {{else ActionOnCompleteFullDescription}}
+                                <tbody style="display:table-row-group">
+                                   <tr class="table-top">
+                                   <td class="table-top-left" style="text-align:left;">{{:ActionOnCompleteFullDescription}}</td>
+                                    </tr>
+                                 </tbody>
+                            {{else}}
+                                 <tbody style="display:table-row-group">
+                                   <tr class="table-top">
+                                   <td class="table-top-left">No Data</td>
+                                    </tr>
+                                 </tbody>
+                            {{/if}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {{/for }}
+    </div>
 </script>
 
 <script id="position-for-winner-table-template" type="text/x-jsrender">
@@ -529,7 +557,7 @@
     <div class="btn-group btn-group-toggle bool-choice-controls vote-item vote-button" data-toggle="buttons">
         {{for Choices}}
             <label class="btn btn-success form-check-label bool-choice-control eco-button">
-                <input id="bool-choice-input-{{>Name}}" class="form-check-input boolean-choice-input" type="radio" name="options" value="{{>Name}}" choice-id="{{:Id}}"> {{>Name}}
+                <input id="bool-choice-input-{{:Id}}" class="form-check-input boolean-choice-input" type="radio" name="options" value="{{>Name}}" data-choice-id="{{:Id}}"> {{>Name}}
             </label>
         {{/for}}
     </div>

@@ -69,11 +69,10 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Small Table")]
     [Category("Hidden"), Tag("NotInBrowser")] 
-    [Tag("Housing", 1)]
     public partial class SmallTableItem :
         WorldObjectItem<SmallTableObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("More of a nightstand than a table, really."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("More of a nightstand than a table, really.");
 
         static SmallTableItem()
         {

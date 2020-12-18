@@ -6,6 +6,7 @@ namespace Eco.Mods.TechTree
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Eco.Core.Items;
     using Eco.Gameplay.Components;
     using Eco.Gameplay.Components.Auth;
     using Eco.Gameplay.GameActions;
@@ -13,15 +14,13 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Objects;
     using Eco.Gameplay.Players;
     using Eco.Shared.Localization;
+    using Eco.Shared.Math;
     using Eco.Shared.Serialization;
     using Eco.Shared.Utils;
     using Eco.World.Blocks;
+    using Eco.World;
 
-    public partial class ExcavatorItem : WorldObjectItem<ExcavatorObject>, IPerformsToolAction
-    {
-        public ToolInteractAction MakeAction(ToolActionType tool) => new DigOrMine();
-    }
-
+    public partial class ExcavatorItem : WorldObjectItem<ExcavatorObject> { }
 
     [Serialized]
     [RequireComponent(typeof(StandaloneAuthComponent))]
@@ -66,7 +65,7 @@ namespace Eco.Mods.TechTree
             this.GetComponent<FuelSupplyComponent>().Initialize(2, fuelTagList);
             this.GetComponent<FuelConsumptionComponent>().Initialize(70);
             this.GetComponent<AirPollutionComponent>().Initialize(0.7f);
-            this.GetComponent<VehicleComponent>().Initialize(30, 1);
+            this.GetComponent<VehicleComponent>().Initialize(24, 1);
             this.GetComponent<VehicleToolComponent>().Initialize(7, 3000000, new DirtItem(),
                 100, 200, 0, VehicleUtilities.GetInventoryRestriction(this));
         }

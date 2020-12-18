@@ -51,7 +51,7 @@ namespace Eco.Mods.TechTree
         public override Type TalentGroupType { get { return typeof(LoggingCleanupCrewTalentGroup); } }
         public LoggingCleanupCrewTalent()
         {
-            this.Value = 0.66f;
+            this.Value = 1;
         }
     }
     

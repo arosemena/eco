@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class PeakSetFormType : FormType
     {
         public override string Name => "PeakSet";
-        public override LocString DisplayName => Localizer.DoStr("PeakSet");
+        public override LocString DisplayName => Localizer.DoStr("Peak Set");
         public override LocString DisplayDescription => Localizer.DoStr("Peak Set");
         public override Type GroupType => typeof(SlopesFormGroup);
         public override int SortOrder => 47;

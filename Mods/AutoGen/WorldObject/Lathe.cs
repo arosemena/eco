@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         ModuleItem<LatheObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A set of smoothing and woodworking tools that assist in creating wheels and transportation."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A set of smoothing and woodworking tools that assist in creating wheels and transportation.");
 
         static LatheItem()
         {

@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<TreasuryObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Allows the setting of taxes."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Allows the setting of taxes.");
 
         static TreasuryItem()
         {

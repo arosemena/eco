@@ -68,7 +68,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -99,7 +99,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CementKilnObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A rotary kiln that produces AdvancedMasonry and concrete products."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A rotary kiln that produces cement and concrete products.");
 
         static CementKilnItem()
         {

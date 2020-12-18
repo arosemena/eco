@@ -58,7 +58,7 @@ namespace Eco.Mods.TechTree
     public partial class WoodenBowItem : BowItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(20, typeof(HuntingSkill), typeof(WoodenBowItem), new WoodenBowItem().UILink());
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(WoodenBowItem), typeof(ToolEfficiencyTalent)), CreateCalorieValue(20, typeof(HuntingSkill), typeof(WoodenBowItem), new WoodenBowItem().UILink()));
         private static IDynamicValue damage = CreateDamageValue(1, typeof(HuntingSkill), typeof(WoodenBowItem), new WoodenBowItem().UILink()); 
         private static IDynamicValue exp = new ConstantValue(1);
         private static IDynamicValue tier = new ConstantValue(1);

@@ -79,7 +79,7 @@ namespace Eco.Mods.Organisms
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(RiceItem), new Range(1, 5), 1)
+                    new SpeciesResource(typeof(RiceItem), new Range(1, 5), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

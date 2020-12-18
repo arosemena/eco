@@ -1,8 +1,8 @@
 1;404 page non trouvée;
 2;Autoriser le débogage;
 3;Serveur privé;
-4;Whitelist;
-5;Blacklist;
+4;Liste blanche;
+5;Liste noire;
 6;Admin;
 7;Emplacements maximum;
 8;Point d'apparition;
@@ -65,7 +65,7 @@
 70;jours/sec;
 71;Actions en jeu;
 72;Lois d'Eco;
-73;Select a law from the menu;
+73;Sélectionnez une loi dans le menu;
 74;Informations sur la loi;
 75;Raisonnement;
 76;Résultats actuels;
@@ -153,15 +153,16 @@
 159;Le vainqueur était;
 160;Loi;
 161;Comparer les cartes;
-162;Elected Officials;
+162;Représentants élus;
 163;Élection en cours;
 164;Aucune élection en cours;
-165;Elected Officials;
+165;Représentants élus;
 167;Détenteurs d'un titre;
 168;Statut;
-169;Election Info;
-170;Since;
-171;Submitting;
-172;Your vote has been counted;
-173;Voting will end in;
-174;choice
+169;Infos électorales;
+170;Depuis;
+171;Soumission;
+172;Votre vote a été pris en compte;
+173;Les votes prendront fin dans;
+174;choix;
+175;No Active Titles

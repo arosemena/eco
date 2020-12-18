@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public partial class LaserItem :
         WorldObjectItem<LaserObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("AVOID DIRECT EYE EXPOSURE"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("AVOID DIRECT EYE EXPOSURE");
 
         static LaserItem()
         {

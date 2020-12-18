@@ -37,7 +37,11 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     
     [Serialized]
-    [RequireComponent(typeof(OnOffComponent))]                   
+    [RequireComponent(typeof(AirPollutionComponent))]           
+    [RequireComponent(typeof(OnOffComponent))]                  
+    [RequireComponent(typeof(ChimneyComponent))]                
+    [RequireComponent(typeof(LiquidProducerComponent))]         
+    [RequireComponent(typeof(AttachmentComponent))]             
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(LinkComponent))]                   
     [RequireComponent(typeof(FuelSupplyComponent))]                      
@@ -46,6 +50,7 @@ namespace Eco.Mods.TechTree
     [RequireComponent(typeof(PowerGeneratorComponent))]         
     [RequireComponent(typeof(HousingComponent))]                  
     [RequireComponent(typeof(SolidGroundComponent))]            
+    [RequireComponent(typeof(LiquidConsumerComponent))]         
     [PowerGenerator(typeof(ElectricPower))]                 
     public partial class SteamEngineObject : 
         WorldObject,    
@@ -60,7 +65,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -72,6 +77,9 @@ namespace Eco.Mods.TechTree
             this.GetComponent<PowerGeneratorComponent>().Initialize(1000);                       
             this.GetComponent<HousingComponent>().Set(SteamEngineItem.HousingVal);                               
 
+            this.GetComponent<LiquidProducerComponent>().Setup(typeof(SmogItem), 1.4f, this.NamedOccupancyOffset("ChimneyOut"));  
+            this.GetComponent<AirPollutionComponent>().Initialize(this.GetComponent<LiquidProducerComponent>());  
+            this.GetComponent<LiquidConsumerComponent>().Setup(typeof(WaterItem), 0.3f, this.NamedOccupancyOffset("WaterInputPort"), 0.9f); 
         }
 
         public override void Destroy()
@@ -84,10 +92,11 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Steam Engine")]
     [Ecopedia("Crafted Objects", "Power Generation", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
+    [LiquidProducer(typeof(SmogItem), 1.4f)] 
     public partial class SteamEngineItem :
         WorldObjectItem<SteamEngineObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large steam engine for generating power."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large steam engine for generating power.");
 
         static SteamEngineItem()
         {

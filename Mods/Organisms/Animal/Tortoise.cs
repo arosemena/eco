@@ -12,6 +12,7 @@ namespace Eco.Mods.Organisms
     using Eco.Gameplay.Interactions;
     using Eco.Gameplay.Items;
     using Eco.Gameplay.Players;
+    using Eco.Gameplay.UI;
     using Eco.Mods.TechTree;
     using Eco.Shared.Localization;
     using Eco.Shared.Math;
@@ -100,10 +101,10 @@ namespace Eco.Mods.Organisms
             return damage;
         }
         
-        public override Result TryApplyDamage(INetObject damager, float damage, InteractionContext context, Item tool, Type damageDealer = null)
+        public override Result TryApplyDamage(INetObject damager, float damage, InteractionContext context, Item tool, Type damageDealer = null, float experienceMultiplier = 1f)
         {
             damage = BlockDamage(damager, damage, this);
-            return base.TryApplyDamage(damager, this.State == AnimalState.Hiding ? damage / 4 :  damage, context, tool, damageDealer);
+            return base.TryApplyDamage(damager, this.State == AnimalState.Hiding ? damage / 4 :  damage, context, tool, damageDealer, experienceMultiplier);
         }
     }
 }

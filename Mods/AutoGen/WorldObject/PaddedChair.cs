@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class PaddedChairItem :
         WorldObjectItem<PaddedChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A comfy chair to rest in."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A comfy chair to rest in.");
 
         static PaddedChairItem()
         {

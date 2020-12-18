@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class SmallSinkItem :
         WorldObjectItem<SmallSinkObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A small household sink."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A small household sink.");
 
         static SmallSinkItem()
         {

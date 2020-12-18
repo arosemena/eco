@@ -44,8 +44,8 @@ namespace Eco.Mods.Organisms.Behaviors
 
         //Random behavior that wanders, lies, or idles.
         public static Behavior<Animal> Relax = BT.Random("Relax", 
-            (RelaxBehaviors.TryLay, 1f), 
-            (RelaxBehaviors.TryIdle, 1f), 
+            (TryLay, 1f), 
+            (TryIdle, 1f), 
             (MovementBehaviors.Wander, 1f));
     }
 }

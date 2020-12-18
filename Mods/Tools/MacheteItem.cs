@@ -13,7 +13,6 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Plants;
     using Eco.Shared.Items;
     using Eco.Shared.Localization;
-    using Eco.Simulation;
     using Eco.World;
 
     [Tag("Harvester")]
@@ -29,20 +28,7 @@ namespace Eco.Mods.TechTree
         public override InteractResult OnActLeft(InteractionContext context)
         {
             if (context.HasBlock && context.Block!.Is<Clearable>())
-            {
-                var pack = new GameActionPack();
-                pack.PrepareMultiblockToolAction(this, context, (blockPos, actionPack) =>
-                {
-                    if (EcoSim.PlantSim.GetPlant(blockPos.Pos) is PlantEntity)
-                    {
-                        actionPack.DestroyPlant(context.Player, blockPos.Pos, this, DeathType.Harvesting);
-                        return true;
-                    }
-                    return false;
-                }, null, LocString.Empty);
-
-                return (InteractResult)pack.TryPerform(false);
-            }
+                return (InteractResult)AtomicActions.DestroyPlantNow(this.CreateMultiblockContext(context), notify: false);
 
             if (context.Target is WorldObject) return this.BasicToolOnWorldObjectCheck(context);
 

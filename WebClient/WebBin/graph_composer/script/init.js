@@ -681,13 +681,16 @@
                 unselectCategories();
 
                 let $dataList = $('#data-list');
-
                 graph.clear();
 
+                // Adding time gap for HighCharts to clear everything (it's not synchronous process seems, but also has no callback)
                 setTimeout(() => {
-                    for (let key of e.currentTarget.dataset.keys.split(',')) {
-                        $dataList.find(`a.miniListItem[data-name="${key}"]`).click();
-                    }
+                    // Create a work around for HighCharts where we click trigger a click on each key every 250ms, because otherwise HighCharts bug and add only last clicked series.
+                    e.currentTarget.dataset.keys.split(',').forEach((key, i) => {
+                        setTimeout(() => {
+                            $dataList.find(`a.miniListItem[data-name="${key}"]`).click();
+                        }, i * 250);
+                    });
                 }, 500);
             })
         });

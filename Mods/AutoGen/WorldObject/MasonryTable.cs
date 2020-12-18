@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<MasonryTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A workstation for hewing and shaping stone into usable objects."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A workstation for hewing and shaping stone into usable objects.");
 
         static MasonryTableItem()
         {

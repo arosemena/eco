@@ -56,7 +56,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -82,7 +82,7 @@ namespace Eco.Mods.TechTree
     public partial class BrickFireplaceItem :
         WorldObjectItem<BrickFireplaceObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A rustic brick fireplace. Nothing beats sitting around the fire on a cold day."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A rustic brick fireplace. Nothing beats sitting around the fire on a cold day.");
 
         static BrickFireplaceItem()
         {

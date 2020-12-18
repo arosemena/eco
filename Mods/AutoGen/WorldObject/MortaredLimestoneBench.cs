@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class MortaredLimestoneBenchItem :
         WorldObjectItem<MortaredLimestoneBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A basic stone bench for sitting."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A basic stone bench for sitting.");
 
         static MortaredLimestoneBenchItem()
         {

@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class AdornedAshlarShaleBenchItem :
         WorldObjectItem<AdornedAshlarShaleBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A fancy ashlar stone bench that has been adorned with gold."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A fancy ashlar stone bench that has been adorned with gold.");
 
         static AdornedAshlarShaleBenchItem()
         {

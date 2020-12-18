@@ -29,13 +29,13 @@ namespace Eco.Mods.TechTree
     public partial class WorkBootsItem :
         ClothingItem        
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Boots designed to be rugged and reduce muscle strain while working.\n\nDecreases calories consumed by 10\u0025."); } }
+        public override LocString DisplayDescription  { get { return Localizer.DoStr("Boots designed to be rugged and reduce muscle strain while working.\n\nDecreases calories consumed when using tools by 10\u0025."); } }
         public override string Slot             { get { return ClothingSlot.Shoes; } }             
         public override bool Starter            { get { return false ; } }                       
 
         private static Dictionary<UserStatType, float> flatStats = new Dictionary<UserStatType, float>()
     {
-                { UserStatType.CalorieRate, -0.1f }
+                { UserStatType.CalorieRate, -0.1f },
     };
 public override Dictionary<UserStatType, float> GetFlatStats() { return flatStats; }
     }

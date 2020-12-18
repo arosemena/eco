@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class CompositeBirchBenchItem :
         WorldObjectItem<CompositeBirchBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A composite bench built to last."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A composite bench built to last.");
 
         static CompositeBirchBenchItem()
         {

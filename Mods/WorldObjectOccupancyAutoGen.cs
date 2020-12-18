@@ -1333,6 +1333,7 @@ namespace Eco.Mods
             });
             // SolarGeneratorObject
             WorldObject.AddOccupancy<SolarGeneratorObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(1, 0, 0), typeof(PipeSlotBlock), new Quaternion(0f, -1f, 0f, 0f), "WaterInputPort"),
             new BlockOccupancy(new Vector3i(0, 0, 0)),
             new BlockOccupancy(new Vector3i(0, 0, 1)),
             new BlockOccupancy(new Vector3i(0, 0, 2)),
@@ -1361,7 +1362,6 @@ namespace Eco.Mods
             new BlockOccupancy(new Vector3i(0, 3, 4)),
             new BlockOccupancy(new Vector3i(0, 3, 5)),
             new BlockOccupancy(new Vector3i(0, 3, 6)),
-            new BlockOccupancy(new Vector3i(1, 0, 0)),
             new BlockOccupancy(new Vector3i(1, 0, 1)),
             new BlockOccupancy(new Vector3i(1, 0, 2)),
             new BlockOccupancy(new Vector3i(1, 0, 3)),
@@ -2359,7 +2359,8 @@ namespace Eco.Mods
             });
             // SteamEngineObject
             WorldObject.AddOccupancy<SteamEngineObject>(new List<BlockOccupancy>(){
-            new BlockOccupancy(new Vector3i(1, 2, 1), typeof(PipeSlotBlock), new Quaternion(0f, 0f, 0f, 1f), "ChimneyOut"),
+            new BlockOccupancy(new Vector3i(1, 2, 1), typeof(PipeSlotBlock), new Quaternion(-0.7071071f, 2.634177E-07f, 2.634179E-07f, 0.7071065f), "ChimneyOut"),
+            new BlockOccupancy(new Vector3i(2, 0, 2), typeof(PipeSlotBlock), new Quaternion(0f, 0f, 0f, 1f), "WaterInputPort"),
             new BlockOccupancy(new Vector3i(0, 0, 0)),
             new BlockOccupancy(new Vector3i(0, 0, 1)),
             new BlockOccupancy(new Vector3i(0, 0, 2)),
@@ -2379,7 +2380,6 @@ namespace Eco.Mods
             new BlockOccupancy(new Vector3i(1, 2, 2)),
             new BlockOccupancy(new Vector3i(2, 0, 0)),
             new BlockOccupancy(new Vector3i(2, 0, 1)),
-            new BlockOccupancy(new Vector3i(2, 0, 2)),
             new BlockOccupancy(new Vector3i(2, 1, 0)),
             new BlockOccupancy(new Vector3i(2, 1, 1)),
             new BlockOccupancy(new Vector3i(2, 1, 2)),
@@ -8113,6 +8113,53 @@ namespace Eco.Mods
             new BlockOccupancy(new Vector3i(0, 0, 1)),
             new BlockOccupancy(new Vector3i(0, 1, 0)),
             new BlockOccupancy(new Vector3i(0, 1, 1)),
+            });
+            // LargeStandingMortaredStoneSignObject
+            WorldObject.AddOccupancy<LargeStandingMortaredStoneSignObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(-1, 0, 0)),
+            new BlockOccupancy(new Vector3i(-1, 1, 0)),
+            new BlockOccupancy(new Vector3i(0, 0, 0)),
+            new BlockOccupancy(new Vector3i(0, 1, 0)),
+            });
+            // LargeHangingMortaredStoneSignObject
+            WorldObject.AddOccupancy<LargeHangingMortaredStoneSignObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(-1, 0, 0)),
+            new BlockOccupancy(new Vector3i(-1, 1, 0)),
+            new BlockOccupancy(new Vector3i(0, 0, 0)),
+            new BlockOccupancy(new Vector3i(0, 1, 0)),
+            });
+            // LargeStandingMortaredLimestoneSignObject
+            WorldObject.AddOccupancy<LargeStandingMortaredLimestoneSignObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(-1, 0, 0)),
+            new BlockOccupancy(new Vector3i(-1, 1, 0)),
+            new BlockOccupancy(new Vector3i(0, 0, 0)),
+            new BlockOccupancy(new Vector3i(0, 1, 0)),
+            });
+            // LargeHangingMortaredLimestoneSignObject
+            WorldObject.AddOccupancy<LargeHangingMortaredLimestoneSignObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(-1, 0, 0)),
+            new BlockOccupancy(new Vector3i(-1, 1, 0)),
+            new BlockOccupancy(new Vector3i(0, 0, 0)),
+            new BlockOccupancy(new Vector3i(0, 1, 0)),
+            });
+            // MortaredGraniteDoorObject
+            WorldObject.AddOccupancy<MortaredGraniteDoorObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(0, 0, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            new BlockOccupancy(new Vector3i(0, 1, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            });
+            // MortaredSandstoneDoorObject
+            WorldObject.AddOccupancy<MortaredSandstoneDoorObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(0, 0, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            new BlockOccupancy(new Vector3i(0, 1, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            });
+            // MortaredLimestoneDoorObject
+            WorldObject.AddOccupancy<MortaredLimestoneDoorObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(0, 0, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            new BlockOccupancy(new Vector3i(0, 1, 0), typeof(BuildingWorldObjectBlock), new Quaternion(0f, 0f, 0f, 1f), ""),
+            });
+            // WoodenElevatorCallPostObject
+            WorldObject.AddOccupancy<WoodenElevatorCallPostObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(0, 0, 0)),
             });
         }
     }

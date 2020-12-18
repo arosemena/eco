@@ -36,6 +36,7 @@ namespace Eco.Mods.Organisms
                 // Movement
                 this.Flying = false;
                 this.Swimming = true;
+                this.CanSwimNearCoast = false;
                 // Resources
                 this.ResourceList = new List<SpeciesResource>()
                 {

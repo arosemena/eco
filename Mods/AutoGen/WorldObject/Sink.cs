@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class SinkItem :
         WorldObjectItem<SinkObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An industrial sink."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An industrial sink.");
 
         static SinkItem()
         {

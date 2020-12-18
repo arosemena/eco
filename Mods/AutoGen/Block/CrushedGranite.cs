@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MiningSkill), 1)]
     public partial class CrushedGraniteRecipe :
         RecipeFamily
     {
         public CrushedGraniteRecipe()
         {
-            this.Initialize(Localizer.DoStr("Crushed Granite"), typeof(CrushedGraniteRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -49,11 +49,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(MiningSkill), typeof(CrushedGraniteRecipe), this.UILink());
             this.ExperienceOnCraft = 0.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(CrushedGraniteRecipe), this.UILink(), 1.5f, typeof(MiningSkill));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Crushed Granite"), typeof(CrushedGraniteRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(ArrastraObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -68,13 +74,14 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Crushed Granite")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [Weight(30000)]
     [StartsDiscovered]
     [Ecopedia("Blocks", "Processed Rock", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("CrushedRock", 1)]
     [Tag("Silica", 1)]
+    [Tag("Excavatable", 1)]
     [RequiresTool(typeof(ShovelItem))]
     public partial class CrushedGraniteItem :
     BlockItem<CrushedGraniteBlock>

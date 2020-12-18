@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class CladWallFormType : FormType
     {
         public override string Name => "CladWall";
-        public override LocString DisplayName => Localizer.DoStr("CladWall");
+        public override LocString DisplayName => Localizer.DoStr("Clad Wall");
         public override LocString DisplayDescription => Localizer.DoStr("Clad Wall");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 7;

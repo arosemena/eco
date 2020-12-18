@@ -89,6 +89,61 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(FlatRoofFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelFlatRoofBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(FlatSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(ThinColumnFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelThinColumnBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(FlatSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(DoubleWindowFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelDoubleWindowBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(FlatSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(FlatSteelItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(FlatSteelItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(FlatSteelStairsBlock), typeof(FlatSteelStairs90Block), typeof(FlatSteelStairs180Block), typeof(FlatSteelStairs270Block))]
     [Serialized]
@@ -141,6 +196,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(4)] 
     public partial class FlatSteelLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(FlatSteelRoofSideBlock), typeof(FlatSteelRoofSide90Block), typeof(FlatSteelRoofSide180Block), typeof(FlatSteelRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofSideFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(FlatSteelRoofTurnBlock), typeof(FlatSteelRoofTurn90Block), typeof(FlatSteelRoofTurn180Block), typeof(FlatSteelRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(FlatSteelRoofCornerBlock), typeof(FlatSteelRoofCorner90Block), typeof(FlatSteelRoofCorner180Block), typeof(FlatSteelRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(FlatSteelRoofPeakBlock), typeof(FlatSteelRoofPeak90Block), typeof(FlatSteelRoofPeak180Block), typeof(FlatSteelRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(FlatSteelItem))]
+    public partial class FlatSteelRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class FlatSteelRoofPeak270Block : Block
     { }
 
 }

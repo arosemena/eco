@@ -60,8 +60,8 @@ namespace Eco.Mods.TechTree
     public partial class StoneRoadToolItem : RoadToolItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(20, typeof(BasicEngineeringSkill), typeof(StoneRoadToolItem), new StoneRoadToolItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(StoneRoadToolItem), typeof(ToolEfficiencyTalent)), CreateCalorieValue(20, typeof(BasicEngineeringSkill), typeof(StoneRoadToolItem), new StoneRoadToolItem().UILink()));
+        private static IDynamicValue exp = new ConstantValue(0.1f);
         private static IDynamicValue tier = new ConstantValue(1);
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(5, BasicEngineeringSkill.MultiplicativeStrategy, typeof(BasicEngineeringSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 
         

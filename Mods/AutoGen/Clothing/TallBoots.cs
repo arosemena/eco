@@ -23,6 +23,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [LocDisplayName("Tall Boots")]
+    [StartsDiscovered]
     [Weight(100)]
     [Tag("Clothes", 1)]
     [Ecopedia("Items", "Clothing", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]

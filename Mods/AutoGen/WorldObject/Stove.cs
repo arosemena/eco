@@ -96,7 +96,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<StoveObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A heavy stove for cooking more complex dishes."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A heavy stove for cooking more complex dishes.");
 
         static StoveItem()
         {
@@ -117,7 +117,7 @@ namespace Eco.Mods.TechTree
         [Serialized, TooltipChildren] public object PersistentData { get; set; } 
     }
 
-    [RequiresSkill(typeof(AdvancedSmeltingSkill), 1)]     
+    [RequiresSkill(typeof(MechanicsSkill), 1)]     
     public partial class StoveRecipe :
         RecipeFamily
     {
@@ -128,16 +128,16 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Stove"),
                 new IngredientElement[]
                 {
-               new IngredientElement(typeof(SteelPlateItem), 16, typeof(AdvancedSmeltingSkill), typeof(AdvancedSmeltingLavishResourcesTalent)), 
-               new IngredientElement(typeof(RivetItem), 12, typeof(AdvancedSmeltingSkill), typeof(AdvancedSmeltingLavishResourcesTalent)),    
+               new IngredientElement(typeof(SteelPlateItem), 16, typeof(MechanicsSkill), typeof(MechanicsLavishResourcesTalent)), 
+               new IngredientElement(typeof(RivetItem), 12, typeof(MechanicsSkill), typeof(MechanicsLavishResourcesTalent)),    
                 },
                new CraftingElement<StoveItem>()
             );
             this.Initialize(Localizer.DoStr("Stove"), typeof(StoveRecipe));
             this.Recipes = new List<Recipe> { product };
             this.ExperienceOnCraft = 5;  
-            this.LaborInCalories = CreateLaborInCaloriesValue(1500, typeof(AdvancedSmeltingSkill), typeof(StoveRecipe), this.UILink()); 
-            this.CraftMinutes = CreateCraftTimeValue(typeof(StoveRecipe), this.UILink(), 10, typeof(AdvancedSmeltingSkill), typeof(AdvancedSmeltingFocusedSpeedTalent), typeof(AdvancedSmeltingParallelSpeedTalent));     
+            this.LaborInCalories = CreateLaborInCaloriesValue(1500, typeof(MechanicsSkill), typeof(StoveRecipe), this.UILink()); 
+            this.CraftMinutes = CreateCraftTimeValue(typeof(StoveRecipe), this.UILink(), 10, typeof(MechanicsSkill), typeof(MechanicsFocusedSpeedTalent), typeof(MechanicsParallelSpeedTalent));     
             this.Initialize(Localizer.DoStr("Stove"), typeof(StoveRecipe));
             CraftingComponent.AddRecipe(typeof(ElectricMachinistTableObject), this);
         }

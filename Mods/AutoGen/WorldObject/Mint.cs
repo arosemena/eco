@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<MintObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Allows for the creation of currency."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Allows for the creation of currency.");
 
         static MintItem()
         {

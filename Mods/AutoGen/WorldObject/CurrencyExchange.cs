@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CurrencyExchangeObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Allows players to exchange currency."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Allows players to exchange currency.");
 
         static CurrencyExchangeItem()
         {

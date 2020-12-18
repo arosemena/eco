@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class RoadBarrierFormType : FormType
     {
         public override string Name => "RoadBarrier";
-        public override LocString DisplayName => Localizer.DoStr("RoadBarrier");
+        public override LocString DisplayName => Localizer.DoStr("Road Barrier");
         public override LocString DisplayDescription => Localizer.DoStr("Road Barrier");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 81;

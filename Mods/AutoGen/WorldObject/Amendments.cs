@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<AmendmentsObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Changes to the constituion are made here."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Changes to the constituion are made here.");
 
         static AmendmentsItem()
         {

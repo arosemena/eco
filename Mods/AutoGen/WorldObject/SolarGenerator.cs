@@ -43,6 +43,7 @@ namespace Eco.Mods.TechTree
     [RequireComponent(typeof(PowerGeneratorComponent))]         
     [RequireComponent(typeof(HousingComponent))]                  
     [RequireComponent(typeof(SolidGroundComponent))]            
+    [RequireComponent(typeof(LiquidConsumerComponent))]         
     [PowerGenerator(typeof(ElectricPower))]                 
     public partial class SolarGeneratorObject : 
         WorldObject,    
@@ -63,6 +64,7 @@ namespace Eco.Mods.TechTree
             this.GetComponent<PowerGeneratorComponent>().Initialize(750);                       
             this.GetComponent<HousingComponent>().Set(SolarGeneratorItem.HousingVal);                               
 
+            this.GetComponent<LiquidConsumerComponent>().Setup(typeof(WaterItem), 0.3f, this.NamedOccupancyOffset("WaterInputPort"), 0.9f); 
         }
 
         public override void Destroy()
@@ -78,7 +80,7 @@ namespace Eco.Mods.TechTree
     public partial class SolarGeneratorItem :
         WorldObjectItem<SolarGeneratorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Generates electrical power from the sun! It also stores energy to work at night."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Generates electrical power from the sun! It also stores energy to work at night.");
 
         static SolarGeneratorItem()
         {

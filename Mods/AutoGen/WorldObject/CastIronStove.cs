@@ -63,7 +63,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -92,7 +92,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CastIronStoveObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("The perfect stove for the fledgling chef."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("The perfect stove for the fledgling chef.");
 
         static CastIronStoveItem()
         {

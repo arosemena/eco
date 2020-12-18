@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class LumberDoorItem :
         WorldObjectItem<LumberDoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A door made from finely cut lumber."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A door made from finely cut lumber.");
 
         static LumberDoorItem()
         {

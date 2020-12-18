@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ArrastraObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A primitive rock mill of dragged boulders."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A primitive rock mill of dragged boulders.");
 
         static ArrastraItem()
         {

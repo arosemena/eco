@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class MortaredLimestoneTableItem :
         WorldObjectItem<MortaredLimestoneTableObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An early stone table. Not much to look at but it does the job."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An early stone table. Not much to look at but it does the job.");
 
         static MortaredLimestoneTableItem()
         {

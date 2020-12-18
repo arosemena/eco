@@ -60,10 +60,10 @@ namespace Eco.Mods.TechTree
     public partial class IronAxeItem : AxeItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(17, typeof(LoggingSkill), typeof(IronAxeItem), new IronAxeItem().UILink());
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(IronAxeItem), typeof(LoggingToolEfficiencyTalent)), CreateCalorieValue(17, typeof(LoggingSkill), typeof(IronAxeItem), new IronAxeItem().UILink()));
         private static IDynamicValue damage = CreateDamageValue(1.5f, typeof(LoggingSkill), typeof(IronAxeItem), new IronAxeItem().UILink()); 
         private static IDynamicValue exp = new ConstantValue(0.1f);
-        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(2), new TalentModifiedValue(typeof(LoggingToolStrengthTalent), 0));
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(2), new TalentModifiedValue(typeof(IronAxeItem), typeof(LoggingToolStrengthTalent), 0));
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(4, SmeltingSkill.MultiplicativeStrategy, typeof(SmeltingSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 
         
 

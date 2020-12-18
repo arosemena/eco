@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<BallotBoxObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A tamper proof box where votes are cast. Citizens can run for elected office here."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A tamper proof box where votes are cast. Citizens can run for elected office here.");
 
         static BallotBoxItem()
         {

@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CapitolObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Forms the foundation of a government. The constituion is created here."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Forms the foundation of a government. The constituion is created here.");
 
         static CapitolItem()
         {

@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<TailoringTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Spearhead the fashion movement with the finest clothes and hair!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Spearhead the fashion movement with the finest clothes and hair!");
 
         static TailoringTableItem()
         {

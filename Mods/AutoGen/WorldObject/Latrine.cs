@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class LatrineItem :
         WorldObjectItem<LatrineObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A wooden potty."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A wooden potty.");
 
         static LatrineItem()
         {

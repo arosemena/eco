@@ -17,13 +17,13 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(AdvancedCookingSkill), 1)] 
-    public class RefineTallowRecipe :
+    public partial class RefineTallowRecipe :
         RecipeFamily
     {
         public RefineTallowRecipe()
         {
-            this.Initialize(Localizer.DoStr("Refine Tallow"), typeof(RefineTallowRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -42,7 +42,15 @@ namespace Eco.Mods.TechTree
             this.ExperienceOnCraft = 0.5f;  
             this.LaborInCalories = CreateLaborInCaloriesValue(30, typeof(AdvancedCookingSkill), typeof(RefineTallowRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(RefineTallowRecipe), this.UILink(), 0.8f, typeof(AdvancedCookingSkill), typeof(AdvancedCookingFocusedSpeedTalent), typeof(AdvancedCookingParallelSpeedTalent));     
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Refine Tallow"), typeof(RefineTallowRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

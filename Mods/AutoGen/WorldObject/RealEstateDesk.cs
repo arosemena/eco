@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
     public partial class RealEstateDeskItem :
         WorldObjectItem<RealEstateDeskObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A place to manage the sale and transfer of deeds and property."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A place to manage the sale and transfer of deeds and property.");
 
         static RealEstateDeskItem()
         {

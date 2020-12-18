@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Without any leavening the flatbread isn't very puffy. But it's still tasty."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 17, Fat = 3, Protein = 8, Vitamins = 0};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 17, Fat = 3, Protein = 8, Vitamins = 2};
         public override float Calories                          { get { return 500; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }

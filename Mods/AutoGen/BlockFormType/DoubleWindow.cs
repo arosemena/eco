@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class DoubleWindowFormType : FormType
     {
         public override string Name => "DoubleWindow";
-        public override LocString DisplayName => Localizer.DoStr("DoubleWindow");
+        public override LocString DisplayName => Localizer.DoStr("Double Window");
         public override LocString DisplayDescription => Localizer.DoStr("Double Window");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 9;

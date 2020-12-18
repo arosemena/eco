@@ -81,7 +81,7 @@ namespace Eco.Mods.Organisms
                 {
                     new SpeciesResource(typeof(BeetItem), new Range(1, 3), 1),
                    new SpeciesResource(typeof(BeetGreensItem), new Range(1, 1), 0.5f),
-                   new SpeciesResource(typeof(BeetSeedItem), new Range(1, 2), 0.2f)
+                   new SpeciesResource(typeof(BeetSeedItem), new Range(1, 2), 0.2f),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

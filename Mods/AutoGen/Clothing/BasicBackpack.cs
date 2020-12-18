@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
 
         private static Dictionary<UserStatType, float> flatStats = new Dictionary<UserStatType, float>()
     {
-                { UserStatType.MaxCarryWeight, 5000 }
+                { UserStatType.MaxCarryWeight, 5000 },
     };
 public override Dictionary<UserStatType, float> GetFlatStats() { return flatStats; }
     }

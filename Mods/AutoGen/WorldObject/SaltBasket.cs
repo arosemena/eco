@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
     public partial class SaltBasketItem :
         WorldObjectItem<SaltBasketObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A basket of salt."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A basket of salt.");
 
         static SaltBasketItem()
         {

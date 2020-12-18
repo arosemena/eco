@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<RegistrarObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Allows the setting management of titles."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Allows the setting management of titles.");
 
         static RegistrarItem()
         {

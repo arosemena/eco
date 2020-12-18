@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CensusBureauObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Demographics are created here using data about the population."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Demographics are created here using data about the population.");
 
         static CensusBureauItem()
         {

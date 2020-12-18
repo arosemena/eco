@@ -55,10 +55,9 @@ namespace Eco.Mods.Organisms.Behaviors
         public static BTResult MoveTo(Animal agent, Vector3 target, bool wandering)
         {
             var routeProps = new RouteProperties {MaxTargetLocationHeightDelta = agent.Species.ClimbHeight};
-            var route      = AIUtil.GetRouteFacingTarget(agent.FacingDir, agent.Position, target, agent.Species.GetTraversalData(wandering), agent.Species.HeadDistance * 2, routeProps: routeProps);
-            if (!route.IsValid)                            return BTResult.Failure("Can't build route");
-            if (route.Options.HasFlag(RouteOptions.Basic)) return BTResult.Failure("Enemy is in an inaccessible position");
-
+            var route      = AIUtil.GetRouteFacingTarget(agent.FacingDir, agent.Position, target, agent.Species.GetTraversalData(wandering), agent.Species.HeadDistance * 2, routeProps: routeProps, allowBasic: false);
+            if (!route.IsValid) return BTResult.Failure("Can't build route");
+            
             // Prevent setting route with 0 time length
             var timeToFinishRoute = agent.SetRoute(route, wandering ? AnimalState.Wander : AnimalState.Flee);
             if (timeToFinishRoute < float.Epsilon) return BTResult.Failure("route not set");
@@ -110,7 +109,8 @@ namespace Eco.Mods.Organisms.Behaviors
                 return BTResult.Failure("target position is current position.");
 
             // Avoid fish swimming too close to coast line
-            if (agent.Species.BrainType == typeof(FishBrain))
+            // TODO: Avoid building routes near coast, cache available points far away from coast
+            if (!agent.Species.CanSwimNearCoast)
             {
                 var isNearCoast = ((WorldPosition3i) World.World.ClampToGroundOrWaterHeight(targetPos)).SpiralOutXZIter(3)
                     .Any(topGroundPos => World.World.GetBlock((Vector3i) topGroundPos).Is<Solid>());
@@ -119,6 +119,7 @@ namespace Eco.Mods.Organisms.Behaviors
 
             var targetBlock = World.World.GetBlock(targetPos);
             // If an animal can't float on water surface - move it a block below highest water block TODO: make them move on underwater ground
+            // TODO: Remove after pathfinder improvements
             if (!agent.Species.FloatOnSurface && targetBlock is WaterBlock && World.World.GetBlock(targetPos + Vector3i.Up).Is<Empty>())
                 targetPos += Vector3i.Down;
             //if (targetBlock.Is<Solid>()) targetPos += Vector3i.Up;
@@ -131,6 +132,7 @@ namespace Eco.Mods.Organisms.Behaviors
             }
             // Clamp current position to ground or water, if can't float on water surface - stay below water height TODO: make them move on underwater ground
             var pos       = World.World.ClampToGroundOrWaterHeight(agent.Position.XYZi);
+            // TODO: Remove after pathfinder improvements
             if (!agent.Species.FloatOnSurface && pos.y == World.World.GetWaterHeight(agent.Position.XZi)) pos += Vector3i.Down;
             
             var route     = Route.Basic(agent.Species.GetTraversalData(wandering), agent.FacingDir, pos + Vector3i.Down, targetPos); //For fish, we need to compensate, since route is built from positions of the ground below
@@ -153,13 +155,12 @@ namespace Eco.Mods.Organisms.Behaviors
                 return LandMovement(agent, generalDirection, wandering, state, minDistance, maxDistance);
             
             generalDirection = generalDirection == Vector2.zero ? Vector2.right.Rotate(RandomUtil.Range(0f, 360)) : generalDirection.Normalized;
-    
+            
+            // Take random ground position in the given direction
             var targetGround = (agent.Position + (generalDirection * RandomUtil.Range(minDistance, maxDistance)).X_Z()).WorldPosition3i;
+            // Floating animals will stick to water surface or land, non floating - land or return to swimming state
             if (World.World.IsUnderwater(targetGround) && agent.Species.FloatOnSurface)
-            {
-                if (!agent.Species.FloatOnSurface) return BTResult.Failure("Can't float, continue swimming");
                 targetGround.y = World.World.MaxWaterHeight[targetGround];
-            }
             else
             {
                 targetGround = RouteManager.NearestWalkableXYZ(targetGround, 5);

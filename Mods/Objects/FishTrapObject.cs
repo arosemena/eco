@@ -17,6 +17,13 @@ namespace Eco.Mods.TechTree
     [RequireComponent(typeof(AnimalTrapComponent))]
     public partial class FishTrapObject : WorldObject
     {
+        static FishTrapObject()
+        {
+            WorldObject.AddOccupancy<FishTrapObject>(new List<BlockOccupancy>(){
+            new BlockOccupancy(new Vector3i(0, 0, 0), typeof(UnderwaterObjectBlock)),
+            new BlockOccupancy(new Vector3i(1, 0, 0), typeof(UnderwaterObjectBlock)),
+            });
+        }
         protected override void PostInitialize()
         {
             base.PostInitialize();

@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class HewnDoorItem :
         WorldObjectItem<HewnDoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A door made from roughly hewn logs."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A door made from roughly hewn logs.");
 
         static HewnDoorItem()
         {

@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
     public partial class WashingMachineItem :
         WorldObjectItem<WashingMachineObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Why hand scrub your clothes on a washboard when you could throw them into this magical cleaning machine?"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Why hand scrub your clothes on a washboard when you could throw them into this magical cleaning machine?");
 
         static WashingMachineItem()
         {

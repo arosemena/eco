@@ -22,6 +22,7 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Civics.Constitutional;
     using System.Linq;
     using Eco.Core.Utils;
+    using Eco.Shared.Items;
 
     //A component for performing specific civic actions
     public partial class BallotBoxItem : WorldObjectItem<BallotBoxObject> { }
@@ -115,18 +116,25 @@ namespace Eco.Mods.TechTree
         public virtual Type[] CivicSlotTypes        => null;
         public virtual Type[] AvailableCivicActions => null;
         public virtual int SlotCount => 3;
-        public override LocString PickupConfirmation {
-            get {
-                var result      = new LocStringBuilder();
-                var activeSlots = this.GetComponent<CivicObjectComponent>()?.Slots?.Where(x => x.ActiveEntry != null)?.Select(x => x.ActiveEntry.MarkedUpName).CommaList(); 
+        public override LocString PickupConfirmation {get 
+        {
+            if (this.CivicSlotTypes == null) return LocString.Empty; // Don't show confirmation popup if slots type is null
 
-                result.AppendLineLoc($"You are attempting to pickup {this.MarkedUpName}.");
-                if (activeSlots?.Count() > 0) result.AppendLineLoc($"This will disable all active {this.CivicSlotTypes?.FirstOrDefault()?.GetLocDisplayName().Pluralize()} on it after a timer expires. This includes: {activeSlots}"); 
-                result.AppendLineLocStr("Do you wish to proceed?");
+            var result      = new LocStringBuilder();
 
-                return result.ToLocString();
-            }
-        }
+            //Get active proposables and ones that are in an election, and make them considered orphaned. The rest (drafts) we let destroy.
+            var activeSlots = 
+                    CivicsUtils.GetHostedProposables(this.CivicSlotTypes, this).Where(x=>x.State == ProposableState.Active || 
+                                                                                         ElectionUtils.ElectionsConcerningProposables(x).Any())
+                    .Select(x => x.MarkedUpName)
+                    .CommaList(); 
+
+            result.AppendLineLoc($"You are attempting to pickup {this.MarkedUpName}.");
+            if (activeSlots?.Count() > 0) result.AppendLineLoc($"This will disable all active and in-election {this.CivicSlotTypes?.FirstOrDefault()?.GetLocDisplayName().Pluralize()} on it after a timer expires. This includes: {activeSlots}"); 
+            result.AppendLineLocStr("Do you wish to proceed?");
+
+            return result.ToLocString();
+        }}
 
         protected override void Initialize()
         {

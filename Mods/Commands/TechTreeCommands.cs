@@ -17,6 +17,7 @@ namespace Eco.Mods
     using Eco.Shared.Localization;
     using Eco.Gameplay.Systems.TextLinks;
     using Eco.Core.Tests;
+    using Eco.Gameplay.UI;
 
     public class TechTreePath
     {

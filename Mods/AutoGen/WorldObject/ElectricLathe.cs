@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ElectricLatheObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An electric powered machine that has a spinning blade to craft a variety of metal products."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An electric powered machine that has a spinning blade to craft a variety of metal products.");
 
         static ElectricLatheItem()
         {

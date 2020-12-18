@@ -24,28 +24,30 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MasonrySkill), 2)]
     public partial class MortaredGraniteRecipe :
         Recipe
     {
         public MortaredGraniteRecipe()
         {
-            var product = new Recipe(
-                "MortaredGranite",
-                Localizer.DoStr("Mortared Granite"),
-                new IngredientElement[]
-                {
-                    new IngredientElement(typeof(GraniteItem), 4, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
-                    new IngredientElement(typeof(MortarItem), 1, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
-                },
-
-				new CraftingElement[]
-                {
-                    new CraftingElement<MortaredGraniteItem>()
-				});
-            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(MortaredStoneRecipe), product);
-
+            this.Name        = "MortaredGranite";
+            this.DisplayName = Localizer.DoStr("Mortared Granite");
+            this.Ingredients = new List<IngredientElement>
+            {
+                new IngredientElement(typeof(GraniteItem), 4, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
+                new IngredientElement(typeof(MortarItem), 1, typeof(MasonrySkill), typeof(MasonryLavishResourcesTalent)),
+            };
+            this.Items = new List<CraftingElement>
+            {
+                new CraftingElement<MortaredGraniteItem>()
+            };
+            this.ModsPostInitialize();
+            CraftingComponent.AddTagProduct(typeof(MasonryTableObject), typeof(MortaredStoneRecipe), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -61,16 +63,17 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Mortared Granite")]
-    [MaxStackSize(30)]
+    [MaxStackSize(45)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("MortaredStone", 1)]
     [Tag("Constructable", 1)]
     [Tier(1)]
     public partial class MortaredGraniteItem :
     BlockItem<MortaredGraniteBlock>
     {
+        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Mortared Granite"); } }
         public override LocString DisplayDescription { get { return Localizer.DoStr("Used to create tough but rudimentary buildings."); } }
 
         public override bool CanStickToWalls { get { return false; } }

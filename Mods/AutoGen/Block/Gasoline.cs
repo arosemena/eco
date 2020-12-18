@@ -25,13 +25,13 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Pipes;
     using Eco.Gameplay.Pipes.LiquidComponents;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(OilDrillingSkill), 1)]
     public partial class GasolineRecipe :
         RecipeFamily
     {
         public GasolineRecipe()
         {
-            this.Initialize(Localizer.DoStr("Gasoline"), typeof(GasolineRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,11 +50,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(200, typeof(OilDrillingSkill), typeof(GasolineRecipe), this.UILink());
             this.ExperienceOnCraft = 0.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(GasolineRecipe), this.UILink(), 0.8f, typeof(OilDrillingSkill), typeof(OilDrillingFocusedSpeedTalent), typeof(OilDrillingParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Gasoline"), typeof(GasolineRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(OilRefineryObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -69,11 +75,11 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Gasoline")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [Weight(30000)]
     [Fuel(100000)][Tag("Fuel")]
     [Ecopedia("Blocks", "Liquids", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Liquid Fuel", 1)]
     public partial class GasolineItem :
     BlockItem<GasolineBlock>

@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ResearchTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A basic table for researching new technologies and skills."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A basic table for researching new technologies and skills.");
 
         static ResearchTableItem()
         {

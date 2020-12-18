@@ -88,7 +88,7 @@ typeof(ElectronicsUpgradeItem), })]
         WorldObjectItem<RoboticAssemblyLineObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A complex set of machinery for creating equally complex things."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A complex set of machinery for creating equally complex things.");
 
         static RoboticAssemblyLineItem()
         {

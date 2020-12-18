@@ -44,7 +44,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ComputerLabObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A place where you can sit all day and play video games! Or work on expert-level research."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A place where you can sit all day and play video games! Or work on expert-level research.");
 
         static ComputerLabItem()
         {

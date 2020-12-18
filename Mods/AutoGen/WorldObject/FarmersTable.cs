@@ -82,7 +82,7 @@ typeof(FertilizersUpgradeItem), })]
         WorldObjectItem<FarmersTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A basic workspace for crafting fertilizer and extracting seeds from crops."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A basic workspace for crafting fertilizer and extracting seeds from crops.");
 
         static FarmersTableItem()
         {

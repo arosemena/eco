@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(PaperMillingSkill), 0)]      
     public partial class PaperRecipe :
         RecipeFamily
     {
         public PaperRecipe()
         {
-            this.Initialize(Localizer.DoStr("Paper"), typeof(PaperRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -52,17 +52,24 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(35, typeof(PaperMillingSkill), typeof(PaperRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(PaperRecipe), this.UILink(), 0.1f, typeof(PaperMillingSkill), typeof(PaperMillingFocusedSpeedTalent), typeof(PaperMillingParallelSpeedTalent));     
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Paper"), typeof(PaperRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(CarpentryTableObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
     [LocDisplayName("Paper")]
     [Weight(100)]      
     [Fuel(100)][Tag("Fuel")]          
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Products", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("Burnable Fuel", 1)]                                 
     public partial class PaperItem :

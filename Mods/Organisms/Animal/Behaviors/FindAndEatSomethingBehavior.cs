@@ -54,7 +54,7 @@ namespace Eco.Mods.Organisms.Behaviors
                         agent.SetRoute(route.Value, AnimalState.LookingForFood, route.Value.EndPosition.Round);
                         yield return BTResult.RunningChanged("walking to food");
                         
-                        // Stop walking to food if a distance to it has changed or it disappeared
+                        // Stop walking to food if the distance to it has changed or it disappeared
                         var agentTarget = agent.Target;
                         if (agentTarget == null || Vector3.WrappedDistanceSq(agentTarget.Value, target) > 2f) break;
                     }

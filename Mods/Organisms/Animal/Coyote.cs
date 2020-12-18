@@ -18,7 +18,7 @@ namespace Eco.Mods.Organisms
     {
         public Coyote(Animal parent, Vector3 pos, bool corpse = false) : base(parent, pos, species, corpse) { }
         static AnimalSpecies species;
-
+        
         [Ecopedia("Animals", "Mammals", true, InPageTooltip.DynamicTooltip)]
         public class CoyoteSpecies : AnimalSpecies
         {
@@ -46,7 +46,7 @@ namespace Eco.Mods.Organisms
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Behavior
                 this.BrainType = typeof(LandPredatorBrain);
-                this.IsPredator = false;
+                this.IsPredator = true;
                 this.WanderingSpeed = 0.5f;
                 this.Speed = 4.5f;
                 this.ClimbHeight = 1;

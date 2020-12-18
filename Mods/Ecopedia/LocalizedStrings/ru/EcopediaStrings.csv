@@ -79,14 +79,14 @@ The owner of the Currency Exchange has the option to setup Balance Restrictions.
 The number on the left is the minimum currency holding and the number on the right is the maximum currency holding. If either value for the balance restriction is left at 0, there will be no limit for that part of the balance restriction.
 	
 22;Позволяет жителям настраивать обмен валюты .
-23;The Item Distribution Component allows the owner to provide free items to new citizens, as an act of good will and to boost initial citizen prosperity.
+23;Станция распределения позволяет её владельцу отдавать товары бесплатно новым жителям в качестве акта доброй воли и способствовать более быстрому достижению процветания.
 24;
 Все новые жители, имеющие квалификацию (в зависимости от того, как долго они играли), могут забрать предметы, посетив [DistributionStationItem]. При входе в новый мир, новые жители смогут увидеть глобальный маркер на карте, который предупредит игроков о доступных предметах. Обратите внимание, что [Storage Component] должен иметь в запасе предметы для распределения, чтобы новые жители могли их забрать.
 
 Владелец может указать, какие предметы должны быть распределены, их количество, а так же срок получения, относительно первого входа в новый мир.
   
-25;Allows the owner to provide free items to new citizens, as an act of good will and to boost initial citizen prosperity.
-26;The Mint Component allows citizens to create [Currencies|Currency] which are backed by a resource. 
+25;Позволяет владельцу предоставлять бесплатные предметы новым жителям, как акт доброй воли и для повышения первоначального благосостояния граждан.
+26;[MintItem] позволяет жителям создавать [Currencies|Currency], которая обеспечена одним из ресурсов.
 
 27;
 When creating a currency at a [MintItem], a backing item is chosen, as well as an amount of Coins per Item that are generated from each item consumed.  By using a backing item for currency, the total possible amount of currency can be limited to the number of items contributed, thus providing more stability as it becomes harder to flood the market with new currency.  The choice in backing item will affect this, with more rare items generally providing more stability by being harder to obtain.
@@ -95,12 +95,12 @@ The backing material and coins per item are permanent, so take care when decidin
 
 Citizens who have been granted consumer rights in the [Authorization Component] can use the Mint Component to mint additional currency. Currency can be minted into the target [Bank Account|Bank Accounts] selected by the mint owner, or any bank account the citizen minting has access to in the [Bank Component].
   
-28;Allows citizens to create and print backed currencies.
+28;Позволяет жителям создавать и выпускать обеспеченные валюты.
 29;
 The Store Component allows citizens to set items they wish to buy from and sell to other citizens. These actions can happen automatically, not requiring the store owner to be online.
   
 30;
-The currency and bank account selected in the [Credit Component] will be used for all transactions at the store. When selecting None for the currency in a store, direct trades are possible that are not subject to sales tax. 
+Валюта и банковский счет, выбранные в [Credit Component], будут использоваться для всех транзакций в магазине. При выборе Нет для валюты в магазине, возможны прямые сделки, не облагаемые налогом с продаж. 
  
 A store owner can link specific containers in the [Storage Component] to pick which items are considered part of the store's inventory. By default, all nearby storage containers are linked to the store when it is first placed.
 
@@ -125,7 +125,7 @@ Citizens who have been granted Veto power in the current [Election Process|Elect
 
 To run for elected titles, first an eligible citizen must use the Start Election action. Once an election has started, eligible citizens can select Enter Election to join the race and give a campaign speech. Candidates can opt to Withdraw from Election at any time using the option available on a Ballot Box.
 
-37;Performing Executive Actions
+37;Выполнение действий правительства
 38;
 Using the Civic Action Component at an [Executive Office|Executive Office Item] allows an elected title to perform one-time executive actions that affect a set of citizens.
 
@@ -141,18 +141,17 @@ The Resign from Office action allows any elected official to step down from thei
 
 The Remove Official from Office action allows citizens who have be given the authority the remove elected titles from office. The same rules for finding a successor apply as if the official resigned.
 
-41;Allows citizens to participate in elections and perform executive actions.
+41;Позволяет жителям участвовать в голосованиях и принимать распоряжения.
 42;    
 The Civic Object Component allows citizens to propose, amend, and repeal various Civic Objects. 
 43;Гражданский долг
 44;Within a Civic Object Component, you will see a list of your [Civic Duties]. This informs the citizen what permissions they have regarding civic objects, given the current [Constitution].The possibilities of different civic duties are:
 45;The Civic Object Component allows citizens to propose, amend, and repeal civic objects.
-46;The Registrar Component allows for the creation and management of non-elected [Titles].  These titles can be used for many of the same purposes as [Elected Titles], but they are appointed at the Registrar.
+46;Регистратура позволяет создавать и управлять простыми [Titles]. Созданные титулы могут быть использованы так же как и [Elected Titles], но они присваиваются в регистраторе.
 47;Назначение должностей
-48;Title Managers can rename the title and assign new managers and title holders. Title Managers are not considered Title Users.
+48;Управляющие могут переименовывать титулы и добавлять новых управляющих и назначить титулы жителям. Менеджеры не являются обладателями титулов.
 
-Title Users are the citizens considered title holders and receive all associated benefits and conditions.
-	
+Титулованными жителями считаются обладатели титула и получают все связанные с титулом условия и привилегии.
 49;Расширенные настройки
 50;
 In the Advanced Settings, requirements for title holders can be set, and hourly wages can be assigned to title holders who qualify.
@@ -161,18 +160,17 @@ When deciding what is Required of Office Holders a variety of conditions can be 
  
 Wages are paid to Title Users from any [Bank Account|Bank Accounts] that a Title Manager has been given to permission to use in the [Bank Component]. Wages are paid each hour (depending on World settings) into the personal account of each Title User. The Wage Type can be used to exclude offline hours from wage payments.
 	
-51;Allows creation and management of non-elected titles.
-52;The Treasury Component allows [Elected Titles] that have been granted the right to 'Set Taxes at the Treasury' to adjust the tax rate and select the World Default Currency.
+51;Позволяет создавать и управлять не выборными титулами.
+52;Казна предоставляет [Elected Titles], которым дана возможность 'Назначать налоги в Казне', изменять налоги и выбирать мировую валюту по умолчанию.
 53;Налоги
 54;After [Taxes] are set in the Treasury Component, they are automatically applied to all relevant transactions. All revenue goes into the Treasury [Bank Account|Bank Accounts]. Elected titles that have the setting 'Government Banking Privileges' can transact directly from the Treasury account (allowing selection of the account within the [Credit Component]).  Money can also come out of the treasury via [Laws] that make payments to citizens.
 55;Стандартная мировая валюта
 56;The World Default Currency is the default [Currency] used when placing a new object that contain the Credit Component. Citizens can still choose to use any currency in a [Trade], but having a World Default Currency makes it is easier to establish an economy with a common currency.
 57;Прямые налоги
-58;Elected Titles with rights to 'Set Taxes at the Treasury' can tax or allocate funds directly from citizens. This is done through managing the desired currency and selecting which citizens the action will apply to. An elected title must always give a reason why they are performing this action that is displayed to all citizens.
-	  
-Treasury management also includes the option to dump currency from the Treasury account. This will remove the currency permanently, so take care when using this ability on backed currencies.
-	  
-59; Allows citizens holding an Elected Title with tax permission to set taxes and select the World Default Currency.
+58;Выборные должности с правом 'изменять Налоги в Казне' могут облагать налогом или выделять  денежные средства напрямую Жителям. Это делается путем управления нужной валютой и выбора жителя, к которому будет применяться действие.  Выборная должность должен всегда указывать причину, по которой они выполняют это действие, которое отображается всем жителям.
+
+Управление Казной также включает возможность списывания валюты со счета Казны. Это приведет к окончательному удалению валюты, поэтому будьте осторожны при использовании этой возможности при работе с обеспеченными валютами.  
+59; Позволяет жителям, имеющим выборную должность с правом 'изменять Налоги в Казне' устанавливать налоги и выбирать Единую валюту используемую по умолчанию.
 60;Разделы, связанные с жильем.
 61;The Authorization Component allows specifying what permissions citizens have on the object.
     
@@ -202,25 +200,23 @@ By adding an upgrade in the [Modules Component], work orders on a crafting table
 
 If a project is cancelled early (by right clicking the order), the resources will be refunded but the spent labor will be lost.
   
-70;Adding Labor
+70;Вложение работы
 71;
 For every unit of labor needed, [Calories|Nutrition] are consumed. After a work order is started, citizens can add labor by pressing the 'Work' button in the Crafting Component. 
 
 Once a project is started, labor can quickly be added from outside the Crafting Component by right clicking on a crafting table. When adding labor in this way, holding down 'Ctrl' will add 5x the normal amount of labor. Holding down 'Alt' will add all available calories.
   
-72;Tagged Ingredients
+72;Группированные ингредиенты
 73;
-Some recipes use Tagged Ingredients that can accept similar items as inputs. For example, an item may specify it needs 'Rock', and will accept any type of rock with that tag ([GraniteItem], [BasaltItem], etc).
-	
-Tagged ingredients will be consumed automatically, so there is no need to create separate orders using the different ingredients.
-  
-74;Parent Recipes
+В некоторых рецептах используются Группированные ингредиенты, которые состоят из аналогичных элементов. Например, для изготовления элемента необходим Камень — это значит, что данный рецепт будет принимать любой тип камня с такими тегами ([GraniteItem], [BasaltItem] и т. д.)
+Группированные ингредиенты будут добавляться автоматически, поэтому нет необходимости создавать отдельные заказы с использованием разных ингредиентов.  
+74;Исходные рецепты
 75;
 Some recipes are part of larger group of recipes, known as Parent Recipes. When crafting one of these recipes, a citizen may select a specific variation to produce. The number crafted will be the quantity selected for the parent recipe.
 
 By default only recipes that have available resources will be displayed. By checking 'Show All', all possible variations will be displayed.
   
-76;The Crafting Component is used to craft items and add labor to projects.
+76;Верстаки используются для крафта предметов и добавления Работы в проекты.
 77; The Module Component allows citizens to insert upgrades into their [Crafting] tables. After inserting an upgrade, work orders on that table will have reduced resource costs and crafting times.
 78;Использование улучшений
 79;
@@ -256,7 +252,7 @@ By checking the water tooltip in the Pipe Component, a citizen can see exactly h
 
 Pipes containing Sewage Output function similar to water pipes, but the [Sewage] they contain is a source of ground pollution. After [Waste Filters|Waste Filter Item] are invented, the sewage output can be piped into to a filter to mitigate the ground pollution.
 	
-88;The Pipe Component allows a citizen to check the status of an object’s smog output and water usage.
+88;Порт подключения труб позволяет жителям проверять информацию о выбросе Смога и использовании воды.
 89;The Power Component is used to check the status of local power grid. It is also used to check the consumption of objects that require fuel to operate.
 90;Топливо
 91;
@@ -266,10 +262,9 @@ While operating, an object consumes fuel every second, measured in Watts (W). Ea
   
 92;Показатели энергии
 93;
-There are two types of [Power] that can be used by an object, Electric and Mechanical. The power grid displays the type and availability of the needed power for this object. If there is not enough power supply to match the power demanded, objects will become inactive.
+Существует 2 типа [Power] которые Вы можете использовать, это Электрическая и Механическая. Энергоподключение отображает тип энергии, а так же доступную и требуемую мощность потребляемую верстаком. Если мощности недостаточно, объекты станут неактивными.
 
-Power generators that consume fuel become inactive if there are no nearby objects demanding power. There is no need to turn them on and off to conserve fuel.
-  
+Генераторы энергии работающие на топливе отключаются автоматически без участие жителя как только в области действия нет потребителей для экономии топлива.  
 94;The Power Component is used to check the supply and demand for power and fuel.
 95;The Repair Component allows citizens to repair tools at a [ToolBenchItem].
 96;
@@ -277,7 +272,7 @@ After inserting a broken tool, the repair costs will appear. Advanced tools can 
 
 The owner of a Tool Bench can allow other citizens access to repair their own tools for a fee set in the [Credit Component]. When offering tool repair to the public, consumer rights must be given in the [Authorization Component].
   
-97;Allows citizens to repair tools.
+97;Позволяет жителям ремонтировать инструменты.
 98;
 The Status Component allows citizens to see the requirements for an object to be active, and which of those requirements are met. If an object causes [Pollution], the status component also shows the lifetime pollution production for that object.
 	
@@ -296,8 +291,7 @@ Each condition in the Status Component must be satisfied before an object can be
 When interacting with an object with a Status Component, citizens can quickly see the status of the object by checking the status indicator in the top left corner. A green circle means an object is active while a red circle means it is inactive.
 	
 103;Displays if an object is active or inactive and why.
-104;The Storage Component is used to manage the inventory of storage containers and link them to objects that need storage.
-  
+104;Закладка Хранилище используется для управления инвентарем предметов типа склад и подключает их к объектам требующим хранилище.  
 105;Управление хранилищем
 106;
 Inventory can be moved between containers by dragging stacks of items from one container to another.
@@ -310,8 +304,8 @@ Some storage containers, like a [StockpileItem], can contain any type of item. O
 108;
 An object can be linked to containers in the Storage Component by selecting the check box for the container. Once linked, the object gain access to all items in the containers and can use the container for storage. When linking storage containers, the topmost container in the Storage Component will be used first for storage.  The order can be changed by clicking and dragging the storage displays in the list. 
   
-109;Manages inventory and allows linking storage to other objects.
-110;An economy thriving with trade is essential to developing the technology needed to stop the meteor.
+109;Управляет инвентарем предметов типа склад и подключает их к объектам требующим хранилище.
+110;Экономика, процветающая благодаря торговле, важна для исследование технологий, необходимых для уничтожения метеорита.
 111;Bank accounts are storages of [Currency] that one or more citizen can access.  Each citizen enters the world with a permanent Personal Bank Account, containing an infinite amount of their Personal Credit. Additional bank accounts can be granted and have their access-rights adjusted at a [Bank|bank component].
 
 Bank accounts are useful for organizing currency, allowing access to funds by multiple parties, and storing the collection of taxes and designating who can access them.  Governments will generally setup a number of bank accounts to manage the in-flow of taxes, ensuring the funds are used as intended.  Each bank account can hold unlimited amounts of unlimited currencies, with each currency tracked separately. Clicking on the bank account will display the ledger listing all transactions to or from it, as all transactions in Eco are public.
@@ -325,7 +319,7 @@ Bank accounts are useful for organizing currency, allowing access to funds by mu
     - Build a room of given requirements at a specific location.
     - Custom requirements described in text, and accepted/rejected by the client upon completion.
   
-115;Contracts maintain an agreement between two citizens.
+115;Договоры заключаются между двумя жителями.
 116;
 Crafting is the creation of new products from ingredients, labor, and/or power.  Crafting may also create byproducts that cause pollution and negatively affec the environemnt.  It forms the backbone of the economy, generating demand for resources which come from the ecosystem around them, as well as demand for individual skilled labor and shared services like [Power|Power Component] or [Sewage].
 
@@ -335,7 +329,7 @@ The inputs and outputs can either be taken directly from the crafting table, or 
 
 Many recipes require labor of a specific [Skill|skills overview].  While any citizen can start a crafting recipe or contribute ingredients, only a citizen with the required skills may add labor to it.  To form a group and have many citizens contribute to a work order while sharing in payment, [Work Parties] may be created.
   
-117;Crafting is the creation of products by citizens at specific tables.
+117;Изготовление это создание продукции жителями на специализированных столах.
 118;Currencies are a means of facilitating trade, as a representation of value. Their value is entirely determined by how they’re used.
 
 There are two types of currencies in Eco, backed and unbacked.
@@ -346,7 +340,7 @@ Backed currencies are much more stable. A backed currency is created at a [Mint|
   
 Currencies can be transferred to others in the Economy Viewer, as well as through [Trade].  All currency is stored in a [Bank Account|Bank Accounts].
 
-119;Currency is a societal construct that makes trade easier.
+119;Валюта - это социальный инструмент, который упрощает торговлю.
 120;Economy has frequently nothing whatever to do with the amount of money being spent, but with the wisdom used in spending it.
     Henry Ford
 
@@ -364,7 +358,7 @@ Currencies can be transferred to others in the Economy Viewer, as well as throug
   - [Bank Accounts]. Containers of currency with configurable access.
   - [Finance]. Providing capital to other citizens to help them progress while making a profit yourself.
   
-124;The economy consists of all resource usage, trade, and technological progress by citizens.
+124;Экономика состоит из использования всех ресурсов, торговли и технологического прогресса жителей.
 125;Through the use of [Contracts], Citizens in Eco can create loan and bond agreements between two parties, tracking automatically the interest payment and due date of the funds.  Loans and bonds are a great way for new citizens to collaborate with long-time citizens with more wealth in a way that benefits both parties and increases societal progress.
 
 If a citizen takes a loan, the offering party gives them money which they are expected to pay with interest.
@@ -456,29 +450,29 @@ Each Eco world stores every action in the game and monitors the progress of ever
 
 Graphs are most useful for comparing the states of various metrics and viewing them overtime. As such, they’re especially useful for determining the results of laws and regulations in retrospect, by studying how things changed after they were implemented.  They are also useful for extrapolating into future effects, projecting the rate at which things are changing (i.e., population dropping as a result of deforestation) and making changes before they occur. Reading, composing, and understanding graphs is a very powerful tool for the government, and citizens are given the tools to craft graphs that support or refute arguments and present them to their fellow citizens directly on discussions for civic actions.
 
-145;Heatmaps
+145;Тепловая карта
 146;
 Eco worlds are varied places, with many different biomes and locations of human development and environmental impact. To view how different parts of the world vary, heatmaps are available for all the various world effects in the game.  Such values as citizen activity, population rates, pollution rates, temperature, moisture, and dozens more can be viewed through heatmaps, with changes recorded over time that can be played back and used for scientific argumentation.
 
 Players can view these in two ways: through the minimap in game, which can also display colored terrain in the game.   Secondly, they can be viewed in the web browser, where their ability to play back over time is taken advantage of. A snapshot of each heatmap is stored in the server data every 10 minutes (configurable), and citizens can view time lapse views of how the heat maps change over time.  This is essential to measuring impacts in specific locations and determining the best routes to build infrastructures and news settlements.
 
-147;Mini-Map
+147;Миникарта
 148;
 The minimap is a powerful tool within the game that serves many purposes: navigation, planning, data viewing, property locating, and many more. It can be enabled to view the various world layers of the game (heatmaps), highlighting regions that are high/low in population, pollution, citizen activity, etc using a gradient of colors.  World markers can be added manually, or globally for all citizens, to direct to specific points, aiding the coordination of human activity. These markers are also used to direct citizens automatically to dynamic work, specifying where roads should be built in a contract, where to deliver goods for transport, and so on.
 
 Currently we’re working on adding in-game designation of property and districts, as well as specifying specific land areas for work parties and contracts, allowing for example citizens to highlight in-game the areas they wish to hire others to plow a field, or build a road, etc. This will greatly open up the ability for the labor market, letting citizens be much more specific in an easier way when designating where they would like work performed.
 
 149;The living system of plants and animals which provides the means for humans to survive.
-150;The true meaning of life is to plant trees, under whose shade you do not expect to sit.\n– Nelson Henderson
+150;Истинный смысл жизни в том, чтобы сажать деревья, под тенью которых ты не планируешь укрыться.\n - Нельсон Хендерсон
 151;
 
 The ecosystem is an end unto itself in Eco, and its continued prosperity is the primary goal of the game, alongside economic progress. That is, the ecosystem starts in a win-state, and players must use its resources without bringing it into a lose-state, which would mean destruction for humanity.
 
 The ecosystem in Eco runs on a continuous simulation, active as long as the server is running, regardless of whether players are in the game or not. Each simulated plant and animal are growing, consuming food sources and reproducing. It is the sole source of materials from which players must build their society, and the process of extracting them will affect it greatly. Chopping down a forest might destroy a creature’s habitat, driving them to extinction. Mine tailings may pollute nearby rivers and lakes, poisoning farms that rely on it. The actions players take in Eco affect their environment, and players will need to understand the impact they’re having in order to thrive and stop the meteor. It is not an option to leave the ecosystem in a pristine, untouched state; the meteor ensures that choice will also lead to the ecosystem’s destruction. To save it, citizens must take from it, building a society that has the power to stop the meteor, while also having the restraint to not destroy the ecosystem in the process.
 
-152;Gameplay
+152;Игровой процесс
 153;The ecosystem is the foundational system which citizens must understand and contend with. From growing large [Farms|Farming] and [Mines|Mining] to understanding the impact of [Pollution] through study, the impact of citizens on the ecosystem will determine the success or failure of player decisions. Understanding how it functions using in-game [Data] becomes a key requirement of survival. Unlike the [Economy|Economy Overview] and the [Government|Government Overview], the ecosystem is not a citizen construct – its behavior is absolute, nothing about how it functions can be changed by fiat the way the economy can. In this sense it’s a reality check, the place where the conflicting biases and beliefs of citizens collide and reveal the true consequences.
-154;Between Economy and Government
+154;Между экономикой и государством
 155;As citizens progress society, they must beware the ‘Tragedy of the Commons’; that giving a population unfettered access to a common resource will frequently result in its destruction. To prevent this, citizens must organize, deciding rules for the common good through [Laws] and other civic regulations which may limit the individual but allow the group to survive. This conflict, the individual vs the group, forms the heart of the challenge of building a civilization.
   
 156;The living system of plants and animals which provides the means for humans to survive.
@@ -489,7 +483,7 @@ Farmers will need to pay attention to the resources and health of their soil, av
 
 Farming is a big activity in Eco that we want to enhance and expand as we move forward with development. Balancing and storage will be a core part of farming improvements to start, as we make sure that Eco societies generate an appropriate demand from farmers to fuel technological growth, and that the storage objects and mechanics exist to support these demands. Farming itself has many possible improvements and expansions, among them developing and modifying seeds and organisms to be more productive or resistant to pollutants, or other environmental factors.
   
-158;Soil
+158;Почва
 159;
 The soil of Eco contains nutrients that allow plants to grow and thrive: too much or too little of any given type can change the yield and growth speed of both naturally occurring and farmed plants. As plants grow, they take nutrients from the soil and return it when they die bringing the world into a natural state of equilibrium. Players influence these changes by removing the plants from the environment through harvesting, deforesting, mining, or introducing pollution which slowly removes nutrients from the soil. Players can reintroduce nutrients or modify the existing ratios by using fertilizers on their land.
 
@@ -499,11 +493,11 @@ As we increase the dependencies of the animals on the plant layers, we can have 
 161;
 The ground beneath you is host to a huge variety of resources, such as rocks, metals, and other mineral deposits. Different types of rock host different kinds of mineral deposits or lend themselves to trapping other resources like petroleum. Due to the immense complexity of earth resources in reality and the necessity in Eco of providing players with a predictable balance of raw materials to start with, rocks and their deposits are generated based on Biomes. Each biome comes with a suite of associated rocks and deposits that sprawls out beneath it in layers.
 
-162;Mining by Hand
+162;Добывать вручную
 163;
-To mine ore, first you must locate it. Ores in Eco are each hosted in particular host rocks, so learning which rocks have the type of ore you want and then digging near rocks of those type is a good way to start. Use a [WoodenShovelItem] or better to dig away soil from the surface or start digging into a hill from the side. Once you hit rock you want to go through, you'll need to use a pickaxe like the [StonePickaxeItem] to break it. When breaking rocks with the pickaxe, sometimes you'll break off a larger piece of rock that needs to be hit again to break into pieces small enough to pick up. It's a good idea to pick up rock as you break it, and stack it elsewhere for use, preferably in a [StockpileItem] or vehicle you're using to transport your ore like a [WoodCartItem].
+Чтобы добыть руду, сначала Вы должны её найти. Каждая руда в Eco находится в определенных вмещающих породах, поэтому изучение того, в каких породах содержится нужный вам тип руды, а затем копание рядом с породами этого типа - хороший способ заняться горным делом. Вам потребуется [WoodenShovelItem] или лучше, чтобы откапывать почву с поверхности, или начните копать холм сбоку. Как только Вы ударите породу, через которую хотите пройти, Вам понадобится кирка, например [StonePickaxeItem], чтобы разбить её. Разбивая породы киркой, иногда будет отламываться более крупный кусок, который нужно ударить снова, чтобы он разбился на достаточно мелкие для поднятия куски. Хорошей идеей будет подбирать куски породы, после того как Вы её разобьёте, и складывать их в другом месте для использования, предпочтительно в [StockpileItem] или транспортное средстве, которое вы используете для перевозки руды, например [WoodCartItem].
 
-164;Mineral Processing
+164;Обработка минералов
 165;
 Once you have collected a large amount of metal ore, you'll need to process the ore before you can craft metal products with it. This is a dirty and expensive process, and optimizing it and the byproducts from it will be an ongoing matter of consideration. The three main steps of mineral processing are:
 
@@ -527,13 +521,13 @@ Many player activities can create harmful emissions which if released into the a
 
 Concentrations of air pollution will fall back to the ground as acid rain, which we simulate using the air pollution and local rainfall quantities. 
 
-172;Water Pollution
+172;Загрязнение воды
 173;
 Water is a medium through which pollution spreads more quickly and further, rushing downstream and blossoming out in lakes or oceans. Pollution in the water generally comes from nearby ground pollution sources, but also may be entering the water via the acid rain mechanic in areas with lots of air pollution. 
 
 Removal of the source is the only way to currently stop water pollution, but clean-up and remediation strategies are features we are considering for the future.
 
-174;Containment
+174;Сдерживание
 175;
 In many cases, there is no perfect solution to deal with polluting materials. Space must be made to store various pollutants, and pollutants must be stored in a way that prevents them from re-entering the surrounding environment. This is a challenge that should be key to environmental management of industry in Eco. Currently tailings mechanics require deep underground storage; this will be improved with further development. 
 
@@ -546,7 +540,7 @@ Constitutional Articles can be added in two places.  On a [CapitolItem], you can
 
 Defining the rules of the government is very important for keeping it a stable, society-supporting structure.  Governments can be granted a great deal of power over the world with laws, and there's a danger of this power being abused.  By setting a system of checks and balances, citizens can design a government that can undergo a number of changes, including changes of leadership, while maintaining the power to effect positive changes in the world.
 
-178;A set of rules about how the government works.
+178;Определяет принципы работы правительства.
 179;A constitution is a founding document defining how a society will be governed.  A constitution must be created before any other government object. They are created at a [Capitol|CapitolItem].
  
 Overthrowing Governments
@@ -555,7 +549,7 @@ Once a capitol is placed, a constitution can be ratified by opening it and click
 If there is already a constitution active, a new constitution can only take its place if the housing value of its room exceeds the existing constitution by a significant amount, depending on the server settings. 
  
 Note: A forthcoming update of Eco will allow multiple concurrent governments.
-180;The founding document for a government.
+180;Учредительный документ правительства.
 181;
   Demographics are classes of citizen, created in the government. These can then be used anywhere you can specify a citizen (permissions, laws, etc).
 
@@ -565,14 +559,14 @@ Demographics are defined at a [Census Bureau|CensusBureauItem].
 
 Demographics can also have wages set on them. Wages are paid periodically as long as a citizen remains within the demographic.
 
-182;Defines a set of citizens matchings some criteria.
+182;Определяет выбор граждан, соответствующих некоторым критериям.
 183;Districts are created by players at a [ZoningOfficeItem] and can be used as areas that are specified by laws.
 
 A district is a selected area of land, non-contiguous, which players can adjust at will.  Districts are contained in District Maps, and there can be multiple district maps in the world. However, within each district map, no districts may overlap.
 
 Districts can be used to designate where actions are allowed with laws. A law can be created, for example, that prevents creating chopping trees in a 'Protected Zone' district.
 
-184;A defined section of land, which can be referenced by laws and other systems.
+184;Определяет территорию, на которую могут ссылаться законы и другие системы.
 185;Elected Titles are government officials that can be assigned permissions to manage government policy. These titles can be used anywhere you can specify a citizen (permissions, laws, etc.). 
 
 Elected titles are created at a [GovernmentOfficeItem]. Several conditions can be set when defining an elected title:
@@ -598,7 +592,7 @@ Elected titles can be assigned wages that are paid periodically to the citizens 
 
 Each Election Process can define a different set of voters, vetoers, timings, percent needed to win, etc.  Using different types of elections, citizens can design their government to have different seats of power. For example, they can define a powerful Title that must be elected by the general population but can be impeached by them as well. 
 
-188;Defines how an election takes place.
+188;Определяет, как проходят выборы.
 189;Elections can take two forms:
   
     - Elections of Officials . These are elections of [Elected Titles] which give specific powers to a citizen.
@@ -717,7 +711,7 @@ Early on, most power will come from calories expended by citizens.  Local-power 
   
 Many types of power generation exist, and each has different fuel needs as well as environmental impact.  The building, fueling, and operation of power plants can become a major [Pollution] source as technology advances, and citizens will need to carefully regulate the types of power used and how pollution is handled to prevent an ecological catastrophe.
   
-218;Many objects require power to function, which can be generated in a variety of ways.
+218;Для работы многих объектов требуется энергия, генерировать которую можно различными способами.
 219;
     By claiming Property, citizens can protect access to plots of land, determining who is allowed to access the land and what they are allowed to do on objects contained on it.
   
@@ -743,8 +737,9 @@ Repeats of the same furniture inside a room or repeats of the same room type in 
 Room Material Quality
 The average tier of the room material will also determine your housing value, by setting a soft cap.  Once your room value has exceeded the soft cap for the room, then you will get diminishing returns for additional housing points.  When this happens, it may be time to renovate the materials of the room.
 
-228;Rooms protect you and your equipment from the elements, providing skill points and allowing equipment to function.
-229;Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
+228;Комнаты защищают Вас и ваше оборудование от непогоды, повышают очки навыков и позволяют оборудованию функционировать.
+229;
+Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
 
 Sewage systems are created by connecting a [MechanicalWaterPumpItem] or [ElectricWaterPumpItem] to a water source, and then building Pipes between the different objects that need supplying.  On the waste side, pipes will take the waste water from the object to either dump it into the environment (producing [Pollution] at the exit point), or process it at a [Waster Filter|WasteFilterItem], which will generate [Compost|CompostItem] from the wastewater.
 
@@ -766,7 +761,8 @@ Your Experience Multiplier (or XP Multiplier) is a personal value representing y
 
 
 233;There are two kinds of experience in Eco: Character Experience (gained by food and housing) and Specialty Experience (gained by performing actions in a specialty).
-234;Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
+234;
+Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
 
 There are four nutrients represented in foods: Protein, Fat, Vitamins, and Carbs.  By adding up the average of each of these nutrients in all the food you’ve eaten in the last 24 hours, your experience multiplier is determined.   This means that if you eat junk food (low nutrients) it will affect you for 24 hours before it has passed through your body.
 
@@ -780,16 +776,14 @@ Calories
 Calories, unlike nutrients, are spent when you perform work, and when you run out of calories you’ll be unable to work until you eat more.  Calorie usage can be greatly reduced by upgraded tools and leveling-up skills.
 All food provides both calories and nutrients, so while gaining calories from food you’re also determining your skill multiplier, so watch that diet.
 
-Feeding the World
-Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
-
 235;Питание, наряду с жильем, определяет, как быстро вы набираете опыт.
 236;Central to a thriving economy is the ability to specialize and trade, thereby working more efficiently than if you attempted to do everything yourself.  Achieving a successful society depends on successfully accomplishing both.  
     
     A citizen's skills give them unique abilities and enhancements, which allows them to [Trade] with other citizens having different skills in the economy. As you gain [Experience], you can unlock new [Specialties] and level-up existing ones.  The experience you gain is multiplied by you [Nutrition] and [Housing|Housing Overview].    
   
 237;Система навыков позволяет жителям специализироваться на определенных профессиях.
-238;Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
+238;
+    Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
 
 Professions and Specialties
 [Professions|Profession Overview] are simply groupings of skills, and don’t serve any other purpose besides storing similar skills together.
@@ -885,7 +879,7 @@ Many vehicles require [Power|Power Component] to operate and each have their own
 
 - Contruction: The [CraneItem] can quickly perform large-scale [Building] projects. The crane has a much larger building range than a citizen who is building with a hammer and can access large amounts of storage.
 
-264;Vehicles can be used for performing a variety of tasks.
+264;Транспортные средства могут использоваться для выполнения различных задач.
 265;
 In Eco, players harvest food initially from the wild biomes around them. Plants ripe for the opportunity to harvest sustainably abound. Wild food sources can serve as a supplementary renewable resource, but will quickly crash if taken advantage of. Some plants will be useful for more than just food-- they may provide chemical compounds that can be found no-where else, or the raw materials needed for textiles and clothing.
 
@@ -904,18 +898,17 @@ Hunting an animal is only the first step in making the most use out of it. Butch
 To get started with hunting, you'll need to craft a [WoodenBowItem] and some [Arrows|Arrow Item]. More advanced bows will make it easier to hit your target quickly. Keep in mind that animals can be killed more quickly with a well-aimed shot, and that it may be easier to hunt some animals based on the time of day. 
   
 268;The living system of plants and animals which provides the means for humans to survive.
-269;Ecopedia guide for getting started.
+269;Руководство как начать играть.
 270;
-    Once you've covered your basic needs, it's time to think about how you want to contribute to the joint project of society, and your profession is how you do that.
+    Когда вы обеспечили базовые потребности, настало время подумать про свою роль в развитии общества, и это делается через профессии.
   
 271;
 
-Each profession has a number of [Specialties] beneath it which will unlock special abilities. Because citizens can only have a limited number of specialties, a good approach is to take different specialties and then [Trade] between each other.  In the skills window, you can see how many citizens have chosen each profession and look for the most-needed skills, choosing those to focus on.
-  
+У каждой профессии есть несколько [специальностей|Specialties], которые открывают особые умения. Поскольку каждый житель может иметь ограниченное количество специальностей, хорошей идеей будет взять разные специальности и потом [торговать|Trade] между собой. В окне навыков вы можете посмотреть, сколько жителей взяли ту или иную специальность, и поискать самые нужные недостающие специальности, выбирая, какую из них изучить.  
 272;
-    Check out the [Profession Overview] for a tour of the different options.
+    Посетите [Profession Overview], чтобы ознакомиться с различными вариантами.
   
-273;(Note: the skills dialog is hidden until later in the tutorial.  It can be made visible by completing the tutorial or skipping it.)
+273;(Примечание: окно навыков скрыто до конца обучения. Его можно сделать видимым, завершив обучение или пропустив его.)
  
 274;A world with a range of professions can trade for mutual benefits.
 275;
@@ -943,74 +936,70 @@ As you take on new projects that require materials or labor you don't yourself h
 As you build up your capabilities and have more needs of other citizens, you can create your own stores, contracts, and work parties to seek their aid.  As you acquire wealth, your power to effect change (both good and bad) rises.
  
 279;The most efficient way to progress in knowledge and technology is trade within the economy.
-280;While a functioning society is necessary to stop the meteor, each individual must have their own needs met, starting with food and shelter.
- 
+280;В то время как функционирующее общество необходимо, чтобы уничтожить метеорит, каждому жителю так же нужно удовлетворить свои потребности, начиная с еды и укрытия. 
 281;Выбор поселения
 282;Выбирая место для поселения, вы должны учитывать следующие факторы:
 283;Близость к ресурсам
-Природные источники питания и строительные материалы поблизости значительно ускорят первоначальный прогресс.
+Природные источники пищи и строительные материалы поблизости значительно ускорят первоначальный прогресс.
 
 Близость к другим людям
-Создание вблизи других поселений дает явное преимущество, так как вы можете торговать с ними, чтобы быстрее развиваться. Однако перенаселенный район может также иметь ограниченные возможности для расширения и естественного питания в непосредственной близости. Вы захотите найти баланс, основанный на личных предпочтениях.
+Постройка дома вблизи других поселений дает явное преимущество, так как вы можете торговать с ними, чтобы быстрее развиваться. Однако перенаселенный район может также иметь ограниченные возможности для расширения и поиска пищи в непосредственной близости. Вы захотите найти баланс, основанный на личных предпочтениях.
   
-284;Claiming Your Plot
-285; Once you've selected a place to build your first settlement, you'll want to claim [Property] around it.  When placing your starting tent this will automatically occur, and further property can be claimed with land papers.  Property you claim will be protected from other citizens, unless you give them access.
+284;Застолбить свой участок
+285; Когда вы выбрали место для постройки дома, вам понадобится застолбить [Property] на земельный участок под постройку. Во время установки первоначальной палатки это произойдёт автоматически, а дальше собственность можно застолбить с помощью колышка и квитанций землемера. Собственность в вашем владении будет защищена от других жителей, но вы сможете выдать им доступ.
 286;Пища
-287;Finding a food supply is critical to having the calories you need to work.  Additionally, the [Nutrition] of the food you eat impacts how fast you gain experience, so you'll want to eat the best food available for the fastest gains.  When settling in the wilderness, look for food sources nearby you can take from, or plan to setup a [Farm|Farming].  When settling near an existing village, have a look at the local economy to see what you can [Trade] in order to get food.
+287;Поиск еды очень важен, чтобы иметь калории для работы. Также, [питательные вещества|Nutrition] еды влияют на скорость получения опыта, так что вам захочется кушать лучшую еду для быстрейшего развития. Поселяясь в дикой природе, обращайте внимание на источники пищи или подумайте о выращивании [огорода|Farming]. Поселяясь возле существующей деревни, смотрите на местную экономику, какие предметы вы сможете [продать|Trade], чтобы купить еду.
 288;Setting up a source of food and shelter is a first priority. 
-289;The [Ecosystem|Ecosystem Overview] is the provider of a vast number of resources citizens can make use of, but it also vulnerable to their impact.  Succeeding as a society will require intelligent management of impact, using the [Government|Government Overview] to regulate what is allowed. 
+289;[Ecosystem|Ecosystem Overview] даёт большое количество ресурсов, которые пригодятся жителям, но также она уязвима к их влиянию. Чтобы добиться успеха, всему обществу нужно разумно подходить к этому вопросу, используя [Government|Government Overview], чтобы определить, что разрешено, а что - нет. 
  
-Various forms of [Pollution] can affect the environment, creating the potential for catastrophes that could destroy your food supply and halt progress, leading to ecological collapse.  Using [Data] tools, citizens can monitor the impact they're having on the world and use that data to argue for specific regulations to protect it, or accelerate the economy in other avenues.
+Разные формы [загрязнения|Pollution] влияют на окружающую среду, приближая возможность катастрофы, которая может уничтожить ваши источники пищи и остановить развитие, а также привести к разрушению экологии. С помощью инструментов анализа [данных|Data] жители могут следить за своим влиянием на мир и пользоваться этими данными при обсуждении законов для защиты природы или для перехода на другой путь развития экономики.
 
-The world begins as a vast untouched wilderness, and through the ages citizens will need to radically transform it using technology to build the industry and knowledge required to stop [The Meteor].  Citizens will need to execute a careful navigation between using the resources of the ecosystem maximally and avoiding damaging the environment beyond the repair.
+В начале мира везде царит дикая природа, но по мере развития через века жителям понадобится значительно менять мир вокруг себя с помощью технологии, чтобы построить промышленность и добыть знания, необходимые для сбития [метеорита|The Meteor]. Жителям понадобится осторожно балансировать между использованием природных ресурсов по максимуму и необратимым повреждением окружающей среды.
 
 290;The ecosystem provides many resources, but is vulnerable to human actions.
 291;
-  Eco is a world bookended by two threats: Environmental collapse, and the ever-looming [Meteor|The Meteor].
-  
-To succeed, you'll need to progress through the ages, advancing science and industry to a level that can destroy the meteor without causing ecological collapse in the process.  You will do this as individual member of a larger society, and the creating a positive interplay between individual needs and societal needs is critical to success.  
+Eco - мир, которому может прийти конец из-за двух опасностей: экологической катастрофы или падающего [метеорита|The Meteor].
+ 
+Для победы вам нужно строить цивилизацию, начиная с древних веков, развивая науку и промышленность до уровня, на котором можно сбить метеорит, но при этом не допустить экологической катастрофы. Вы будете состоять в обществе, где важно учитывать и личные нужды, и общественные потребности, чтобы достигнуть успеха.  
 
-Your focus in Eco will be on managing your individual progress while simultaneously working to progress the [Economy|Economy Overview] as a whole, and doing so inside a rich [Ecosystem|Ecosystem Overview] of plants and animals that are affected by what you do.  
+В Eco вы будете в основном развивать себя, свой дом и мастерскую, заодно создавая [экономику|Economy Overview] и находясь в богатой [экосистеме|Ecosystem Overview] растений и животных, на которую влияют ваши действия.  
 
-To aid in creating a positive relationship between this triangle of Individuals, Economy, and Ecosystem, you have the tools of [Government|Government Overview] at your disposal. You can set binding [Laws] that determine what is allowed and run for [Election|Elections] to gain governmental powers to make changes and guide society.
+Для хорошего, грамотного взаимодействия между личностями, экономикой и экосистемой, вы можете создать [Government|Government Overview]. Можно принимать [законы|Laws], которые обязательны к исполнению и запрещают или поощряют определённые действия, и есть возможность участвовать в [выборах|Elections], чтобы получить власть и направлять общество в нужное русло.
 
- But first matters first, you'll need to take care of your basic needs before you can save the world.  To do that, you'll start with [Food and Shelter].
-292;Your journey in Eco.
-293;The world has been given an expiration date, a meteor in a collapsing orbit around the globe, set to collide in 30 real-time days, destroying everything on it in the process.  
+ Однако, перед тем, как спасать мир, вам нужно удовлетворить свои основные потребности. Для этого нужно обзавестись [едой и укрытием|Food and Shelter].
+292;Ваше путешествие в Eco.
+293;У игрового мира есть срок жизни. Метеорит кружит над планетой и постепенно приближается к ней. Через 30 реальных дней он упадёт на планету и уничтожит всё.  
   
-However, hope is not lost, for with the right technology this crisis can be prevented. By working together to generate a thriving [Economy|economy overview] and advance progress with [Research], humanity has a chance to build the [Laser|LaserItem] needed to destroy this threat.
+Тем не менее, надежда ещё есть, с помощью современных технологий катастрофу можно предотвратить. Создавая вместе процветающую [экономику|economy overview] и развиваясь через [Research], у человечества есть шанс построить [Laser|LaserItem] для уничтожения метеорита.
 
-It will not be an easy task, and the industry required to reach such levels of advancement will pose a real threat to the [Ecosystem|Ecosystem Overview].  To combat this and avoid falling victim to an ecological collapse of your own creation, a well-regulated [Government|Government Overview] must be designed, implemented, and created by its citizens.
+Это будет непростой задачей, так как развитие промышленности до необходимых высот представляет настоящую угрозу для [экосистемы|Ecosystem Overview]. Чтобы бороться с ней и не допустить экологической катастрофы, жителям планеты нужно спроектировать и построить [Government|Government Overview].
 
-The fate of the world depends on its citizens acting together in harmony with the ecosystem to achieve great technological feats, and only through studied collaboration can they succeed.
+Судьба мира зависит от его жителей, работающих сообща в гармонии с экосистемой, чтобы достичь технологических высот. Только через продуманное сотрудничество жители могут добиться успеха.  
+294;Надвигающаяся угроза сверху.
+295;С помощью инструментов жители могут строить великие здания и двигать горы. Начальные инструменты позволяют работать понемногу, но при развитии техники появятся инструменты для более масштабных работ, а потом [транспортные средства|Vehicle Component] позволят значительно изменять мир. 
+296;Существуют разные типы инструментов:
+  - Для [строительства|Building]. Молотки позволяют размещать строительные материалы в разных формах, лопатой можно перемещать землю.  
+  - Для [фермерства|Farming]. Есть инструменты для вспахивания, посадки и посева разной эффективности.
+  - Для [транспорта|Transport]. Средства передвижения и инструменты для строительства дорог особенно полезны при транспортировке товаров.
+  - Для [сбора урожая|Harvesting]. Позволяют собирать растительные ресурсы в экосистеме.
+  - Для [охоты|Hunting]. Охота на животных ради пропитания проводится с помощью специальных инструментов.
   
-294;A looming threat from above.
-295;Through the use of tools, citizens can build great structures and move mountains.  The starting tools will allow you to effect small change only, but as technology advances you will gain tools that can perform batch operations, and eventually [Vehicle|Vehicle Component] that can make massive transformations to the world. 
-296;There are a number of different tool types available:
-  - [Building] Tools.  Hammers will allow you to place construction materials in 'Forms', shovels allow moving soil.  
-  - [Farming] Tools.  Plowing, planting, and sowing all have tools to increase their efficiency.
-  - [Transport] Tools.  Vehicles and tools for constructing roads are especially are useful for transporting goods.
-  - [Harvesting] Tools.  These tools allow collection of resources from the ecosystem.
-  - [Hunting] Tools.  Hunting animals for food requires specialized tools.
-  
-Tools that are manually powered require Calories, affecting your [Nutrition].
-All tools have Durability associated with them, which drops as they are used.  Once a tool has lost its durability, it will take a tremendous amount of calories to use, and should be repaired at a [Repair|Repair Component] Table.
-  
-297;Having access to the best tools allow you to achieve the most progress.
-298;After collecting some basic raw materials, building is one of the first things a citizen will do to establish themselves in the world.
-  
-  
-299;Using a hammer or a crane, citizens can create buildings for homes and industry.
+Ручные инструменты требуют калории, влияя на [Nutrition].
+
+У инструментов есть прочность, которая понижается при использовании. Когда инструмент теряет прочность полностью и ломается, он будет тратить огромное количество калорий, и его нужно чинить в [ремонтном|Repair Component] верстаке.  
+297;Доступ к лучшим инструментам позволит вам добиться максимального прогресса.
+298;После сбора некоторого количества сырья, постройка здания - это одна из первых задач которую должен решить житель, что бы обосноваться в мире.  
+299;Используя молоток или подъемный кран, жители могут создавать здания для дома и промышленности.
 300;
 The My Deeds Component allows citizens to see view and manage all [Property] that they own, providing an interface to access them easily.
   
 301;Allows citizens to see view and manage all property they own.
 302;
-The Text Component can be found on Signs, [Vehicles|Vehicle Component], and the [Distribution Station|Item Distribution Component].
+Надписи могут быть сделаны на Табличках, [Vehicles|Vehicle Component], и [Distribution Station|Item Distribution Component].
   
-Text can be useful for giving directions, advertising, or just writing a friendly greeting
+Текст может быть использован для информирования, указания направления, рекламных объявлений или просто дружественного приветствия
 
-For those familar with text markup, a variety of tags may be use to alter the size, color, and formatting of text.
+Те кто знаком с разметкой текста могут использовать Теги для указания размера, цвета и форматирования текста.
 
 303;Allows citizens write text that is displayed to other citizens.
 304;
@@ -1019,14 +1008,14 @@ A foundational goal of the ecosystem simulation in Eco is to contain a multitude
 Animal's prey and predators can be viewed through the web interface and checking the linked layers. Currently the prey-predator relationship is one way: the predators require the prey to exist, but they don't actually remove any from the simulation. This means that an explosion of elk would increase the wolf population, but this wouldn't put pressure onto the elk. Changing this relationship to consume both ways while ensuring it doesn't spiral out of control in an unexpected and sudden way is important as we move forward.
   
 305;The living system of plants and animals which provides the means for humans to survive.
-306;Follow the development of Eco.
+306;Следите за разработкой Eco.
 307;
     We intend Eco to be a forever-game, growing in depth and breadth and connections to other future games, a system of unlimited possibilities that aims to go beyond entertainment.  This tree contains the past, present, and future of Eco.
 
     Via our website, you can view all the interactive parts of the tree and see where we're headed and the guiding philosophy behind the game.
   
-308;View Eco Tree at
-309;Follow the development of Eco.
+308;Перейти на сайт
+309;Следите за разработкой Eco.
 310;Настройка магазина
 311;Ремонт инструмента
 312;Здания в Эко
@@ -1092,29 +1081,28 @@ By holding the mouse over the display for one of the pipes, a tooltip appears wi
   
 326;Плотник
 327;
-[Carpenters|Carpenter] specialize in harvesting trees and processing the wood into furniture and building material for homes.
-  - [LoggingSkill] allows citizens to harvest trees more efficiently. In addition, Logging is used to produce [Hewn Logs|HewnLogItem] which are the primary building material for the carpentry profession.
-  - [CarpentrySkill] allows citizens to produce wooden furniture and [Boards|Board Item]. By using a [SawmillItem], citizens with this specialty can produce [LumberItem].
-  - [CompositesSkill] allows citizens to use advanced technology to produce the finest quality [CompositeLumberItem] building material.
-  - [PaperMillingSkill] allows citizens to refine wood pulp into [PaperItem]. Paper is used for some specialty furniture.
+[Carpenters|Carpenter] специализируются на заготовке деревьев, переработке древесины в мебель и строительных материалах для дома.
+  - [LoggingSkill] позволяет жителям более эффективно собирать деревья. Кроме того, заготовка леса используется для производства [Hewn Logs|HewnLogItem], который являются основным строительным материалом для профессии плотника.
+   - [CarpentrySkill] позволяет жителям производить деревянную мебель и [Boards|Board Item]. Используя [SawmillItem] жители с этой специальностью могут производить [LumberItem].
+   - [CompositesSkill] позволяет жителям использовать продвинутые технологии для производства высочайшего качества [CompositeLumberItem] строительный материал.
+  - [PaperMillingSkill] позволяет гражданам перерабатывать древесную массу в [PaperItem]. Бумага используется для изготовления некоторой мебели.
 
 328;Повар
 329;
-[Chefs|Chef] specialize in cooking more nutritious food to boost the rate citizens gain experience.
-  - [CampfireCookingSkill] is the entry level Chef specialty that uses a [CampfireItem] to prepare basic meals.
-  - [CookingSkill] is the second step in the Chef profession that uses a [CastIronStoveItem] to produce higher quality meals.
-  - [BakingSkill] is an alternative to Cooking that uses [FlourItem] to produce baked goods.
-  - [AdvancedCookingSkill] is a high-level Chef profession that produces the most nutritious food.
-  - [AdvancedBakingSkill] is an alternative to Advanced Cooking that uses [LeavenedDoughItem] to make high quality baked goods. 
- 
+[Chefs|Chef]  специализируются на приготовлении более питательной еды, чтобы граждане получали больше опыта.
+  - [CampfireCookingSkill] - это специальность от шеф-повара начального уровня, которая использует [CampfireItem] для приготовления основных блюд.
+  - [CookingSkill] это второй этап в профессии шеф-повара, который использует [CastIronStoveItem] для приготовления блюд более высокого качества.
+  - [BakingSkill] - это альтернатива Cooking, которая использует [FlourItem] для производства выпечки.
+  - [AdvancedCookingSkill] - это профессия шеф-повара высокого уровня, которая готовит самые питательные блюда.
+  - [AdvancedBakingSkill] - это альтернатива продвинутой кулинарии, которая использует [LeavenedDoughItem] для приготовления высококачественной выпечки. 
 330;Инженер
 331;
-[Engineers|Engineer] specialize in producing vehicles and advanced crafting materials for use by other professions.
-  - [BasicEngineeringSkill] allows citizens to produce roads and carts to help with transportation. In addition, basic engineering creates the crafting tables necessary to process and smelt ore.
-  - [MechanicsSkill] allows to citizens to create early motorized vehicles, like a [SteamTruckItem]. Mechanics provides the first source of electric power to help enable tecnological progression.
-  - [IndustrySkill] allows citizens to create advanced vehicles, like an [ExcavatorItem] that can quickly collect large amounts of natural resources.
-  - [OilDrillingSkill] allows citizens to use a [PumpJackItem] to collect [PetroleumItem] for use in fuel and a variety of industrial projects.
-  - [ElectronicsSkill] uses expensive ingredients to produce the most advanced materials needed for modern crafting projects. In addition to providing a source of green electricity, electronics is used to craft the [LaserItem] needed to save the world from the meteor.
+[Engineers|Engineer] специализируется на производстве транспортных средств и современных материалов для изготовления предметов для других профессий.
+  - [BasicEngineeringSkill] позволяет гражданам строить дороги и телеги для транспортировки. Кроме того, основы инженерного дела создает столы для крафта, необходимые для обработки и плавки руды.
+  - [MechanicsSkill]позволяет жителям создавать ранние моторизованные транспортные средства, такие как [SteamTruckItem]. Механика является первым источником электроэнергии, который способствует технологическому прогрессу.
+  - [IndustrySkill]  позволяет жителям создавать современные транспортные средства, такие как [ExcavatorItem], которые могут быстро собирать большие количества природных ресурсов.
+  - [OilDrillingSkill] позволяет гражданам использовать [PumpJackItem] для сбора [PetroleumItem] который использования в топливе и различных промышленных проектах.
+  - [ElectronicsSkill] использует дорогие ингредиенты для производства самых продвинутых материалов, необходимых для современных ремесленных проектов. В дополнение к источнику экологически чистого электричества электроника используется для создания [LaserItem], необходимого для спасения мира от метеора.
 
 332;Фермер
 333;
@@ -1152,21 +1140,24 @@ The [Tailor] specializes in making high end furniture and specialized clothing t
 
 342;Живучий
 343;
-[Survivalists|Survivalist] specializes in carrying extra weight and reducing the calories expended when using basic tools. All citizens are survivalists in the world of Eco. 
-   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers, shovels, and drills.
+[Survivalists|Survivalist] специализируется в переносе дополнительного веса и и сокращении калорий, расходуемых при использовании основных инструментов. В мире Eco все жители являются Выживальщиками.
+   - Опыт в [SelfImprovementSkill] повышается каждый раз как житель повышает свой уровень в другой специальности. Самосовершенствование имеет два основных преимущества. По мере прокачки у жителей будет увеличиваться грузоподъемность и объем желудка для дополнительных калорий, при этом снижаются затраты калорий при использовании молотков, лопат и буров.
 
-344;A general overview of the current economy that contains information such as available trades, work parties, and contracts.
-345;The Economy Viewer provides a general overview of the current economy and is an incredibly useful tool for economic participation. Among other users, the Economy Viewer shows the location of every [StoreItem] and what is currently being bought and sold.
+344;Просмотр экономики отображает такую информацию как доступные товары, работы и договора.
+345;Средство просмотра экономики обеспечивает общий обзор текущей экономики и является невероятно полезным инструментом для участия в экономической жизни. Среди других пользователей программа просмотра экономики показывает местонахождение каждого [StoreItem] и что в настоящее время продается и покупается.
 346;
-The Economy Viewer provides detailed information about the following:
+Просмотр экономики предоставляет подробную информацию о следующем:
 
-   - Current [Trade] offers
-   - Existing [Work Parties] and their status
-   - Any [Contracts] that are posted
-   - Locations of [Public Crafting Stations|Crafting Component]
-   - Information on existing [Currencies|Currency]
+   - Текущии [Trade] предложения
+   - Существующии [Work Parties] и их статус
+   - Любые опубликованные [Contracts]
+   - Расположение [Public Crafting Stations|Crafting Component]
+   - Информация о существующих[Currencies|Currency]
    
-In additon, the Economy Viewer allows citizens to directly transfer currency to other citizens and quickly check the status of their own [Bank Accounts] and any outstanding debts.
+Кроме того, просмотр экономики позволяет жителям напрямую переводить валюту другим жителям и быстро проверять свой [Bank Accounts] и любые непогашенные долги.
    
-347;Accessing the Economy Viewer
-348;The Economy Viewer can be accessed by clicking the Economy button located at the bottom right of the screen.
+347;Доступ к просмотру экономики
+348;Чтобы посмотреть экономику нужно нажать кнопку «Просмотр экономики» в правом нижнем углу экрана.
+349;Накормить мир
+Продовольствие составляет основу растущего общества в Eco, способствуя повышению навыков, необходимых для построения цивилизации. Хорошо организованная сеть производителей продуктов питания, от фермеров до поваров, гарантирует, что жители получают навыки с необходимой им скоростью.
+

@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class WindowWallFormType : FormType
     {
         public override string Name => "WindowWall";
-        public override LocString DisplayName => Localizer.DoStr("WindowWall");
+        public override LocString DisplayName => Localizer.DoStr("Window Wall");
         public override LocString DisplayDescription => Localizer.DoStr("Window Wall");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 11;

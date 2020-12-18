@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class StoneDoorItem :
         WorldObjectItem<StoneDoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A heavy stone door."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A heavy stone door.");
 
         static StoneDoorItem()
         {

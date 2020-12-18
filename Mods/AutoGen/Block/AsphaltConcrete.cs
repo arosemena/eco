@@ -25,13 +25,13 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Pipes;
     using Eco.Gameplay.Pipes.LiquidComponents;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(BasicEngineeringSkill), 1)]
     public partial class AsphaltConcreteRecipe :
         RecipeFamily
     {
         public AsphaltConcreteRecipe()
         {
-            this.Initialize(Localizer.DoStr("Asphalt Concrete"), typeof(AsphaltConcreteRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -52,11 +52,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(300, typeof(BasicEngineeringSkill), typeof(AsphaltConcreteRecipe), this.UILink());
             this.ExperienceOnCraft = 1.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(AsphaltConcreteRecipe), this.UILink(), 4, typeof(BasicEngineeringSkill), typeof(BasicEngineeringFocusedSpeedTalent), typeof(BasicEngineeringParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Asphalt Concrete"), typeof(AsphaltConcreteRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(WainwrightTableObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -71,11 +77,12 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Asphalt Concrete")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [Weight(20000)]
     [MakesRoads]
     [Ecopedia("Blocks", "Roads", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     [Tag("Road", 1)]
+    [Tag("RoadType", 1)]
     [Tag("Constructable", 1)]
     public partial class AsphaltConcreteItem :
     RoadItem<AsphaltConcreteBlock>

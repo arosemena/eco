@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
     public partial class BookshelfItem :
         WorldObjectItem<BookshelfObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A place to store knowledge and information; leads to the town hall."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A place to store knowledge and information; leads to the town hall.");
 
         static BookshelfItem()
         {

@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<FisheryObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A place to create fishing poles, traps and prepare seafood."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A place to create fishing poles, traps and prepare seafood.");
 
         static FisheryItem()
         {

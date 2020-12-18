@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A prime cut of meat surrounded by pastry."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 12, Fat = 12, Protein = 20, Vitamins = 8};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 12, Fat = 22, Protein = 20, Vitamins = 8};
         public override float Calories                          { get { return 1400; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
@@ -49,7 +49,7 @@ namespace Eco.Mods.TechTree
                 new IngredientElement[]
                 {
             new IngredientElement(typeof(LeavenedDoughItem), 2, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)), 
-            new IngredientElement(typeof(PrimeCutItem), 2, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)),   
+            new IngredientElement(typeof(PrimeCutItem), 4, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)),   
                 },
                     new CraftingElement<ElkWellingtonItem>(1)  
                 

@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class DoorItem :
         WorldObjectItem<DoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A sturdy wooden door. Can be locked for certain players."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A sturdy wooden door. Can be locked for certain players.");
 
         static DoorItem()
         {

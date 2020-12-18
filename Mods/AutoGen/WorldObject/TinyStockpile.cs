@@ -71,7 +71,7 @@ namespace Eco.Mods.TechTree
     public partial class TinyStockpileItem :
         WorldObjectItem<TinyStockpileObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Designates a 2x3x2 area as storage for large items."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Designates a 2x3x2 area as storage for large items.");
 
         static TinyStockpileItem()
         {

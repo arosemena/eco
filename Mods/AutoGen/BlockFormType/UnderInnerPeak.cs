@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class UnderInnerPeakFormType : FormType
     {
         public override string Name => "UnderInnerPeak";
-        public override LocString DisplayName => Localizer.DoStr("UnderInnerPeak");
+        public override LocString DisplayName => Localizer.DoStr("Under Inner Peak");
         public override LocString DisplayDescription => Localizer.DoStr("Under Inner Peak");
         public override Type GroupType => typeof(SlopesFormGroup);
         public override int SortOrder => 49;

@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A soft, slightly sweet bread studded with juicy fruits."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 5, Fat = 4, Protein = 5, Vitamins = 16};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 10, Fat = 4, Protein = 5, Vitamins = 16};
         public override float Calories                          { get { return 800; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
@@ -49,7 +49,7 @@ namespace Eco.Mods.TechTree
                 new IngredientElement[]
                 {
             new IngredientElement(typeof(FlourItem), 4, typeof(BakingSkill), typeof(BakingLavishResourcesTalent)),   
-            new IngredientElement("Fruit", 8, typeof(BakingSkill), typeof(BakingLavishResourcesTalent)),   
+            new IngredientElement("Fruit", 4, typeof(BakingSkill), typeof(BakingLavishResourcesTalent)),   
                 },
                     new CraftingElement<FruitMuffinItem>(1)  
                 

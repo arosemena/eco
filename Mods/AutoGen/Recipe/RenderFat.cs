@@ -17,13 +17,13 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(CampfireCookingSkill), 1)] 
-    public class RenderFatRecipe :
+    public partial class RenderFatRecipe :
         RecipeFamily
     {
         public RenderFatRecipe()
         {
-            this.Initialize(Localizer.DoStr("Render Fat"), typeof(RenderFatRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -42,7 +42,15 @@ namespace Eco.Mods.TechTree
             this.ExperienceOnCraft = 0.5f;  
             this.LaborInCalories = CreateLaborInCaloriesValue(30, typeof(CampfireCookingSkill), typeof(RenderFatRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(RenderFatRecipe), this.UILink(), 0.8f, typeof(CampfireCookingSkill), typeof(CampfireCookingFocusedSpeedTalent), typeof(CampfireCookingParallelSpeedTalent));     
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Render Fat"), typeof(RenderFatRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(CampfireObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

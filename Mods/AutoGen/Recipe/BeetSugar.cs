@@ -17,13 +17,13 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MillingSkill), 1)] 
-    public class BeetSugarRecipe :
+    public partial class BeetSugarRecipe :
         RecipeFamily
     {
         public BeetSugarRecipe()
         {
-            this.Initialize(Localizer.DoStr("Beet Sugar"), typeof(BeetSugarRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -42,7 +42,15 @@ namespace Eco.Mods.TechTree
             this.ExperienceOnCraft = 0.5f;  
             this.LaborInCalories = CreateLaborInCaloriesValue(80, typeof(MillingSkill), typeof(BeetSugarRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(BeetSugarRecipe), this.UILink(), 2, typeof(MillingSkill), typeof(MillingFocusedSpeedTalent), typeof(MillingParallelSpeedTalent));     
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Beet Sugar"), typeof(BeetSugarRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(MillObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

@@ -12,6 +12,7 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Serialization;
     using Eco.Gameplay.DynamicValues;
     using Eco.Shared.Localization;
+    using Eco.Gameplay.UI;
 
     public partial class EckoTheDolphinItem : ToolItem
     {
@@ -22,7 +23,7 @@ namespace Eco.Mods.TechTree
         public override InteractResult OnActRight(InteractionContext context)
         {
             if (string.IsNullOrEmpty(this.wantedItem))
-                this.wantedItem = SearchAndSelectItemSets.DiscoveredItemsDeprecated.Items.Shuffle().First().DisplayName;
+                this.wantedItem = DiscoveryManager.Obj.GetRandomDiscoveredNotCarriedItem().DisplayName;
 
             var itemStack = context.Player.User.Inventory.NonEmptyStacks.Where(stack => stack.Item.DisplayName == this.wantedItem).FirstOrDefault();
             if (itemStack != null)
@@ -37,7 +38,7 @@ namespace Eco.Mods.TechTree
                 if (result.Success)
                 {                    
                     context.Player.Msg(Localizer.Format("Ecko accepts your tribute of {0:wanted} and grants you {1:given} for your devotion.", this.wantedItem, gift.DisplayName));
-                    this.wantedItem = SearchAndSelectItemSets.DiscoveredItemsDeprecated.Items.Shuffle().First().DisplayName;
+                    this.wantedItem = DiscoveryManager.Obj.GetRandomDiscoveredNotCarriedItem().DisplayName;
                 }
             }
             else

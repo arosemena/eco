@@ -13,6 +13,8 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Animals;
     using Eco.Gameplay.Utils;
     using Eco.Shared.Localization;
+    using Eco.Shared.Math;
+    using Eco.Gameplay.GameActions;
 
     //this is going to be a real item at some point
 
@@ -32,7 +34,21 @@ namespace Eco.Mods.TechTree
         static FishingPoleItem() { }
 
         public override IDynamicValue CaloriesBurn { get { return caloriesBurn; } }
-       
+
+        /// <summary> Creates the LureEntity from a Client-command, assigning its controller, position, and the force to apply at spawn. </summary>
+        [RPC]
+        public int CastLure(Player player, Vector3 position, Vector3 castForce)
+        {
+            var lure = new LureEntity   // Set up the new lure here server-side.
+            {
+                Controller = player,
+                Position = position,
+                CastForce = castForce,
+            };
+            lure.SetActiveAndCreate();  // Create the lure and send it out.
+            return lure.ID;
+        }
+
         [RPC]
         void FinalizeCatch(Player player, INetObject target)
         {
@@ -52,25 +68,50 @@ namespace Eco.Mods.TechTree
         }
     }
 
-    public class LureEntity : NetPhysicsEntity
+    public class LureEntity : NetEntity
     {
+        public INetObjectViewer Controller { get; set; }
+        public Vector3 CastForce;
+
         public LureEntity() : base("Lure") { }
 
-        public override bool IsNotRelevant(INetObjectViewer viewer)
+        [RPC]
+        public override void Destroy()
         {
-            bool isNot = base.IsNotRelevant(viewer);
-            if (this.Controller == null)
-                this.Destroy();
-
-            return isNot;
+            // Let clients help decide when to destroy the lure.
+            base.Destroy();
         }
 
+        public override bool IsRelevant(INetObjectViewer viewer) => base.IsRelevant(viewer);
+
+        public override bool IsNotRelevant(INetObjectViewer viewer) => base.IsNotRelevant(viewer);
+
+        public override void SendInitialState(BSONObject bsonObj, INetObjectViewer viewer)
+        {
+            base.SendInitialState(bsonObj, viewer);
+            bsonObj["pos"] = this.Position;
+            bsonObj["force"] = this.CastForce;
+            if (this.Controller != null && this.Controller is INetObject)
+                bsonObj["controller"] = ((INetObject)this.Controller).ID;
+        }
         public override void ReceiveUpdate(BSONObject bsonObj)
         {
-            base.ReceiveUpdate(bsonObj);
+            // Store the received position if valid.
+            if (bsonObj.TryGetValue("pos", out var pos) && Vector3.IsValid(pos.Vector3Value)) { this.Position = pos; }
 
-            if (this.Position.y <= 0)
-                this.Destroy();
+            // If the Lure has no controller or has descended below the world, destroy it.
+            bsonObj.TryGetValue("controlled", out var controlled);
+            if ((this.Position.y < -30.0f) || !controlled) { this.Destroy(); }
+
+            base.ReceiveUpdate(bsonObj);
+        }
+
+        public override bool IsUpdated(INetObjectViewer viewer) => this.Controller != viewer;   // Trigger an update to anyone not the owner of this Lure.
+
+        public override void SendUpdate(BSONObject bsonObj, INetObjectViewer viewer)
+        {
+            bsonObj["pos"] = this.Position;
+            base.SendUpdate(bsonObj, viewer);
         }
     }
 

@@ -79,7 +79,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<RockerBoxObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A tool for miners to concentrate ore. The run off produces wet tailings."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A tool for miners to concentrate ore. The run off produces wet tailings.");
 
         static RockerBoxItem()
         {

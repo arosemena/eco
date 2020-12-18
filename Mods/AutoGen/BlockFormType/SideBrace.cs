@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class SideBraceFormType : FormType
     {
         public override string Name => "SideBrace";
-        public override LocString DisplayName => Localizer.DoStr("SideBrace");
+        public override LocString DisplayName => Localizer.DoStr("Side Brace");
         public override LocString DisplayDescription => Localizer.DoStr("Side Brace");
         public override Type GroupType => typeof(SupportsFormGroup);
         public override int SortOrder => 27;

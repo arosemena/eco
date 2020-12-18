@@ -89,7 +89,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-        "Burnable Fuel"
+        "Burnable Fuel",
         };
 
         private SteamTruckObject() { }

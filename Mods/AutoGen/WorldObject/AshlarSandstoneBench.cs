@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class AshlarSandstoneBenchItem :
         WorldObjectItem<AshlarSandstoneBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An ashlar stone bench. Great for display  though maybe not as comfy as a padded couch."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An ashlar stone bench. Great for display  though maybe not as comfy as a padded couch.");
 
         static AshlarSandstoneBenchItem()
         {

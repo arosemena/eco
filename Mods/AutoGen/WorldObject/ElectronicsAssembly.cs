@@ -85,7 +85,7 @@ typeof(IndustryUpgradeItem), })]
         WorldObjectItem<ElectronicsAssemblyObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A set of machinery to create electronics."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A set of machinery to create electronics.");
 
         static ElectronicsAssemblyItem()
         {

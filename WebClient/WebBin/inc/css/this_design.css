@@ -677,10 +677,6 @@ nav.navbar.navbar-inverse {
     border: none;
 }
 
-.nav .collapse {
-    display: block;
-}
-
 .side-nav {
     width: 275px;
     top: 0px;
@@ -5247,4 +5243,8 @@ html {
     .col-xl-1 {
         width: 8.33333333%;
     }
+}
+
+h4.panel-title .glyphicon {
+    font-size: 16px;
 }

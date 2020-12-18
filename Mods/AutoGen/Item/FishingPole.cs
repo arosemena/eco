@@ -24,12 +24,12 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     public partial class FishingPoleRecipe :
         RecipeFamily
     {
         public FishingPoleRecipe()
         {
-            this.Initialize(Localizer.DoStr("Fishing Pole"), typeof(FishingPoleRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,10 +50,17 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(40); 
             this.CraftMinutes = CreateCraftTimeValue(5);
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Fishing Pole"), typeof(FishingPoleRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(FisheryObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
 }

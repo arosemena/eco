@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Baked heart of palm that retains more nutrients than more simple methods of cooking."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 12, Fat = 4, Protein = 6, Vitamins = 6};
-        public override float Calories                          { get { return 560; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

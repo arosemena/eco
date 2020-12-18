@@ -26,13 +26,13 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Stuffed Turkey")]
-    [Weight(1000)]
+    [Weight(500)]
     [Ecopedia("Food", "Baking", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     public partial class StuffedTurkeyItem : FoodItem
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("To give thanks for fact that this food items gives two nutrients more than other food at the same tier."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 9, Fat = 12, Protein = 16, Vitamins = 7};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 17, Fat = 16, Protein = 20, Vitamins = 11};
         public override float Calories                          { get { return 1500; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }

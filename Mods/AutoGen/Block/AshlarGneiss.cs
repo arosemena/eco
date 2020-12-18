@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(AdvancedMasonrySkill), 1)]
     public partial class AshlarGneissRecipe :
         RecipeFamily
     {
         public AshlarGneissRecipe()
         {
-            this.Initialize(Localizer.DoStr("Ashlar Gneiss"), typeof(AshlarGneissRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -45,7 +45,7 @@ namespace Eco.Mods.TechTree
                     new CraftingElement[]
                     {
                     new CraftingElement<AshlarGneissItem>(),
-                   new CraftingElement<CrushedGneissItem>(typeof(AdvancedMasonrySkill), 2)
+                   new CraftingElement<CrushedGneissItem>(typeof(AdvancedMasonrySkill), 2),
 
                     }
                 )
@@ -53,11 +53,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(300, typeof(AdvancedMasonrySkill), typeof(AshlarGneissRecipe), this.UILink());
             this.ExperienceOnCraft = 1.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(AshlarGneissRecipe), this.UILink(), 2, typeof(AdvancedMasonrySkill), typeof(AdvancedMasonryFocusedSpeedTalent), typeof(AdvancedMasonryParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Ashlar Gneiss"), typeof(AshlarGneissRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(AdvancedMasonryTableObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -73,10 +79,10 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Ashlar Gneiss")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(30000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("AshlarStone", 1)]
     [Tag("Constructable", 1)]
     [Tier(4)]

@@ -88,7 +88,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-        "Liquid Fuel"
+        "Liquid Fuel",
         };
 
         private TruckObject() { }

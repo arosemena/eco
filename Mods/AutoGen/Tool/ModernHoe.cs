@@ -60,7 +60,7 @@ namespace Eco.Mods.TechTree
     public partial class ModernHoeItem : HoeItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(10, typeof(FarmingSkill), typeof(ModernHoeItem), new ModernHoeItem().UILink());
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(ModernHoeItem), typeof(ToolEfficiencyTalent)), CreateCalorieValue(10, typeof(FarmingSkill), typeof(ModernHoeItem), new ModernHoeItem().UILink()));
         private static IDynamicValue exp = new ConstantValue(0.1f);
         private static IDynamicValue tier = new ConstantValue(4);
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(15, AdvancedSmeltingSkill.MultiplicativeStrategy, typeof(AdvancedSmeltingSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 

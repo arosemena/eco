@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MiningSkill), 0)]      
     public partial class MetallurgyResearchPaperBasicRecipe :
         RecipeFamily
     {
         public MetallurgyResearchPaperBasicRecipe()
         {
-            this.Initialize(Localizer.DoStr("Metallurgy Research Paper Basic"), typeof(MetallurgyResearchPaperBasicRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -52,10 +52,17 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(50, typeof(MiningSkill), typeof(MetallurgyResearchPaperBasicRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(1);
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Metallurgy Research Paper Basic"), typeof(MetallurgyResearchPaperBasicRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(ResearchTableObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]

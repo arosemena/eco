@@ -65,7 +65,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Burnable Fuel"
+            "Burnable Fuel",
         };
 
         protected override void Initialize()
@@ -98,7 +98,7 @@ typeof(SmeltingUpgradeItem), })]
         WorldObjectItem<BlastFurnaceObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A superior replacement for the bloomery that can produce steel."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A superior replacement for the bloomery that can produce steel.");
 
         static BlastFurnaceItem()
         {

@@ -53,7 +53,7 @@ namespace Eco.Mods.Organisms
                 this.BrainType = typeof(AmphibiousBrain);
                 this.IsPredator = true;
                 this.WanderingSpeed = 0.21f;
-                this.Speed = 1f;
+                this.Speed = 1.5f;
                 this.ClimbHeight = 0 ;
                 this.Health = 7f;
                 this.Damage = 3f;

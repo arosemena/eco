@@ -34,7 +34,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Baked meat is less fatty than other methods of cooking."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 0, Fat = 17, Protein = 13, Vitamins = 0};
-        public override float Calories                          { get { return 600; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

@@ -26,7 +26,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Prepared Meat")]
-    [Weight(500)]
+    [Weight(400)]
     [Ecopedia("Food", "Meat", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
     public partial class PreparedMeatItem : FoodItem
     {

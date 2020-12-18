@@ -24,30 +24,32 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(CompositesSkill), 1)]
     public partial class CompositeSaguaroLumberRecipe :
         Recipe
     {
         public CompositeSaguaroLumberRecipe()
         {
-            var product = new Recipe(
-                "CompositeSaguaroLumber",
-                Localizer.DoStr("Composite Saguaro Lumber"),
-                new IngredientElement[]
-                {
-                    new IngredientElement(typeof(SaguaroRibItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
-                    new IngredientElement(typeof(PlasticItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
-                    new IngredientElement(typeof(EpoxyItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
-                    new IngredientElement("Lumber", 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
-                },
-
-				new CraftingElement[]
-                {
-                    new CraftingElement<CompositeSaguaroLumberItem>()
-				});
-            CraftingComponent.AddTagProduct(typeof(AdvancedCarpentryTableObject), typeof(CompositeLumberRecipe), product);
-
+            this.Name        = "CompositeSaguaroLumber";
+            this.DisplayName = Localizer.DoStr("Composite Saguaro Lumber");
+            this.Ingredients = new List<IngredientElement>
+            {
+                new IngredientElement(typeof(SaguaroRibItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
+                new IngredientElement(typeof(PlasticItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
+                new IngredientElement(typeof(EpoxyItem), 1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
+                new IngredientElement("Lumber",  1, typeof(CompositesSkill), typeof(CompositesLavishResourcesTalent)),
+            };
+            this.Items = new List<CraftingElement>
+            {
+                new CraftingElement<CompositeSaguaroLumberItem>()
+            };
+            this.ModsPostInitialize();
+            CraftingComponent.AddTagProduct(typeof(AdvancedCarpentryTableObject), typeof(CompositeLumberRecipe), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -63,10 +65,10 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Composite Saguaro Lumber")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("CompositeLumber", 1)]
     [Tag("Constructable", 1)]
     [Tier(4)]

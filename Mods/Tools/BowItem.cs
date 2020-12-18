@@ -47,24 +47,18 @@ namespace Eco.Mods.TechTree
         [RPC]
         public int FireArrow(Player player, Vector3 position, Vector3 velocity)
         {
-            using (var pack = new GameActionPack())
-            {
-                if (player.User.Inventory.TryRemoveItem<ArrowItem>(player.User))
+            if (player.User.Inventory.TryRemoveItem<ArrowItem>(player.User))
+                if (AtomicActions.UseToolNow(this.CreateMultiblockContext(player)))
                 {
-                    pack.UseTool(player, this);
-                    if (pack.TryPerform())
+                    var arrow = new ArrowEntity
                     {
-                        var arrow = new ArrowEntity
-                        {
-                            Damage = this.Damage.GetCurrentValue(player.User), Controller = player, Position = position,
-                            Velocity = velocity,
-                            BowType = this.GetType()
-                        };
-                        arrow.SetActiveAndCreate();
-                        return arrow.ID;
-                    }
+                        Damage = this.Damage.GetCurrentValue(player.User), Controller = player, Position = position,
+                        Velocity = velocity,
+                        BowItem = this
+                    };
+                    arrow.SetActiveAndCreate();
+                    return arrow.ID;
                 }
-            }
             return -1;
         }
 
@@ -76,13 +70,13 @@ namespace Eco.Mods.TechTree
 
     public class ArrowEntity : NetEntity, IDetectHarvest
     {
-        public Type BowType { get; set; }
+        public BowItem BowItem { get; set; }
         public float Damage { get; set; }
         public INetObjectViewer Controller { get; set; }
         public Vector3 Velocity { get; set; }
         public NetObjAttachInfo Attached;
         private readonly double destroyTime;
-    private const double LifeTime = 120f;
+        private const double LifeTime = 120f;
 
         public ArrowEntity()
             : base("Arrow")
@@ -102,33 +96,38 @@ namespace Eco.Mods.TechTree
         [RPC]
         public void Hit(NetObjAttachInfo hitAttachInfo, Vector3 position, string location)
         {
-            var player  = this.Controller as Player;
-            if (player == null) return;
+            if (!(this.Controller is Player player)) return;
 
             var target = NetObjectManager.GetObject<INetObject>(hitAttachInfo.ParentID);
 
-            // bow only damages animals // Auth will be checked inside TryApplyDamage via HarvestOrHunt. Other cases are harmless.
-            if (target is AnimalEntity targetAnimal)
+            switch (target)
             {
-                targetAnimal.AttachedEntities.Add(this);
-                var tool = Item.Get(this.BowType);
-                var locationMultiplier = location.Contains("Head")
-                    ? (player.User.Talentset.HasTalent(typeof(HuntingDeadeyeTalent)) ? 4 : 2)
-                    : 1;
-                if (targetAnimal.Dead || targetAnimal.TryApplyDamage(player, this.Damage * locationMultiplier, 
-                        new InteractionContext() {SelectedItem = tool }, tool, typeof(ArrowItem)))
+                // bow only damages animals // Auth will be checked inside TryApplyDamage via HarvestOrHunt. Other cases are harmless.
+                case AnimalEntity targetAnimal:
+                {
+                    targetAnimal.AttachedEntities.Add(this);
+
+                    var hitHead = location.Contains("Head");
+                    // player will get x2.5 exp when hit head
+                    var experienceMultiplier = hitHead ? 2.5f : 1f;
+                    // player will do x2 damage when hit head and x2 again if they have HuntingDeadeyeTalent
+                    var locationMultiplier = hitHead ? player.User.Talentset.HasTalent(typeof(HuntingDeadeyeTalent)) ? 4 : 2 : 1;
+                    var interactionContext = new InteractionContext() {SelectedItem = this.BowItem};
+                    if (targetAnimal.Dead || targetAnimal.TryApplyDamage(player, this.Damage * locationMultiplier, interactionContext, this.BowItem, typeof(ArrowItem), experienceMultiplier))
+                        this.Attached = hitAttachInfo;
+                    else
+                        this.Destroy();
+                    break;
+                }
+                case Player targetPlayer:
+                    // arrows look silly sticking in player capsule colliders
+                    player.ErrorLoc($"You must obtain authorization to shoot {targetPlayer.User.MarkedUpName}.");
+                    this.Destroy();
+                    break;
+                default:
                     this.Attached = hitAttachInfo;
-                else
-                    this.Destroy();                    
+                    break;
             }
-            else if (target is Player targetPlayer)
-            {
-                // arrows look silly sticking in player capsule colliders
-                player.ErrorLoc($"You must obtain authorization to shoot {targetPlayer.User.MarkedUpName}.");
-                this.Destroy();
-            }
-            else
-                this.Attached = hitAttachInfo;
 
             Animal.AlertNearbyAnimals(this.Position, 15f);
 
@@ -168,7 +167,10 @@ namespace Eco.Mods.TechTree
         public override bool IsNotRelevant(INetObjectViewer viewer)
         {
             if (TimeUtil.Seconds > this.destroyTime)
+            {
                 this.Destroy();
+                return true;
+            }
 
             if (this.Attached != null)
             {

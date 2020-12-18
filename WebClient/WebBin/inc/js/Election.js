@@ -130,8 +130,9 @@
                         }
                         data.Results.ChoiceRanks[i] = item;
                     }
-                    // saving election data, because not to do ajax second time
-                    that.electionData = data;
+
+                    // saving election data, because not to do ajax second time and clearing from XSS attacks
+                    that.electionData = clearFromXSS(data);
                     if (data.Comments.length == 0) {
                         $('#graph_composer').remove();
                     }
@@ -591,14 +592,14 @@
             let rankedVotes = [];
 
             if (election.electionData.BooleanElection) {
-                rankedVotes.push($("input[name=options]:checked").val());
+                rankedVotes.push($("input[name=options]:checked").data('choiceId'));
 
                 $('input[name=options]:not(:checked)').each(function() {
-                    rankedVotes.push(decodeURIComponent(this.value).escapeQuotes());
+                    rankedVotes.push($(this).data('choiceId'));
                 });
             } else {
                 $('#ranked-election-vote-wrapper .add-self-wrapper').children('.vote-item').each(function(i) {
-                    rankedVotes[i] = decodeURIComponent($(this).data('user').escapeQuotes());
+                    rankedVotes[i] = $(this).data('user');
                 });
 
                 if (!rankedVotes.length) {
@@ -622,7 +623,6 @@
                     }),
                 });
 
-                location.reload();
                 resolve();
             } catch (e) {
                 election.showError(e);
@@ -899,13 +899,13 @@
                     $('.votes-per-round table').append(r);
 
                     if (candidates[i].Speech !== undefined) {
-                        let name   = encodeURIComponent(candidates[i].Name);
+                        let voteId   = encodeURIComponent(candidates[i].Id);
 
-                        let row = $(`<div class="vote-item grab" data-user="${name}"></div>`);
+                        let row = $(`<div class="vote-item grab" data-user="${voteId}"></div>`);
                         row.append('<span>&#x21C5;</span>');
                         row.append('<div class="choice"><span>#1</span></div>');
 
-                        row.append(`<p data-id="${name}" class="candidate-name" id="${name}">
+                        row.append(`<p data-id="${voteId}" class="candidate-name" id="${voteId}">
                             <span class="candidate-name-title">${candidates[i].Name}</span>
                             <span class='candidate-speech'>${decode(candidates[i].Speech)}</span>
                         </p>`);
@@ -1096,7 +1096,7 @@
         };
 
         /* loads previous elections pages */
-        this.loadElectionPage = function (id) {
+        this.loadElectionPage = function (id, update = false) {
 
             let electionCallback = (electionData) => {
                 $('#elections-page-instructions-wrapper').hide();
@@ -1109,10 +1109,9 @@
                 let hideVoting = (electionData.Finished || !this.authtoken);
 
                 if (electionData.BooleanElection) {
+                    // Simply moved method call here to get rid of condition doubling
                     this.showElectionActionOnCompleteTable(id);
-                }
 
-                if (electionData.BooleanElection) {
                     let candidatesTemplate   = $.templates("#boolean-election-voting-template");
                     let yesNoChoicesTemplate = $.templates("#yes-no-vote-items");
 
@@ -1144,7 +1143,8 @@
                 $(".current-rankings").show();
             };
 
-            this.getElectionById(id, electionCallback, false);
+            // Force to re-fetch election data if needed
+            this.getElectionById(id, electionCallback, update);
         };
 
 
@@ -1279,7 +1279,7 @@
                 userSelection.find("td.rank").each(function () {
                     let item = {};
                     item.candidate = $(this).attr("data-user");
-                    item.vote = $(this).attr("data-value");
+                    item.vote = $(this).attr("data-rank");
                     obj.push(item);
                 });
 
@@ -1384,6 +1384,16 @@
     $(document).ready(function () {
         if (typeof bindAllElectionEvents !== 'undefined' && $.isFunction(bindAllElectionEvents))
             bindAllElectionEvents(election);
-    })
+    });
 
+    // Flip chevron on collapse/explode section
+    $(document).on('show.bs.collapse', '.panel-collapse', function() {
+        console.log($(this).prev().find('.glyphicon'));
+        $(this).prev().find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+    });
+
+    $(document).on('hide.bs.collapse', '.panel-collapse', function() {
+        console.log($(this).prev().find('.glyphicon'));
+        $(this).prev().find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+    });
 })();

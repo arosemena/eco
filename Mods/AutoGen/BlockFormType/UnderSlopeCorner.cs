@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class UnderSlopeCornerFormType : FormType
     {
         public override string Name => "UnderSlopeCorner";
-        public override LocString DisplayName => Localizer.DoStr("UnderSlopeCorner");
+        public override LocString DisplayName => Localizer.DoStr("Under Slope Corner");
         public override LocString DisplayDescription => Localizer.DoStr("Under Slope Corner");
         public override Type GroupType => typeof(SlopesFormGroup);
         public override int SortOrder => 52;

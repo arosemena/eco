@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class CouchItem :
         WorldObjectItem<CouchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A sweet couch to lounge on. Now with room for your friends!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A sweet couch to lounge on. Now with room for your friends!");
 
         static CouchItem()
         {

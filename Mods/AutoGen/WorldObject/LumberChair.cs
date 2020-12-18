@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class LumberChairItem :
         WorldObjectItem<LumberChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A nice, sturdy lumber chair."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A sturdy lumber chair. It doesn't feel as wobbly as more basic wooden chairs.");
 
         static LumberChairItem()
         {

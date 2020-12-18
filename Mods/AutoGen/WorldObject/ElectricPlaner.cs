@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ElectricPlanerObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A sander and a jointer rolled into one."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A sander and a jointer rolled into one.");
 
         static ElectricPlanerItem()
         {

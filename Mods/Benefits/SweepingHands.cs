@@ -20,12 +20,12 @@ namespace Eco.Mods.TechTree
         public override void RegisterTalent(User user)
         {
             base.RegisterTalent(user);
-            user.OnPickupObject.Add(this.ApplyAction);
+            user.OnPickupingObject.Add(this.ApplyAction);
         }
         public override void UnRegisterTalent(User user)
         {
             base.UnRegisterTalent(user);
-            user.OnPickupObject.Remove(this.ApplyAction);
+            user.OnPickupingObject.Remove(this.ApplyAction);
         }
         void ApplyAction(User user, INetObject target, INetObject tool, GameActionPack pack)
         {
@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
                 if (!(rubble is IRepresentsItem rubbleRepresentsItem) || rubbleRepresentsItem.RepresentedItemType != itemType)
                     continue;
                 
-                var addedToPack = pack.PickupRubble(player, userInventory, rubble, itemType, checkAuthFirst: positionIsNew); // Check auth before adding to the pack if the position is new.
+                var addedToPack = pack.PickupRubble(player, userInventory, rubble, itemType, checkAuthFirst: positionIsNew, notificate: false); // Check auth before adding to the pack if the position is new.
                 if (addedToPack && ++numTaken == numToTake) break;
 
                 if (positionIsNew) checkedPlots.Add(plotPosition, addedToPack); // Add auth check for this plot to the dictionary.

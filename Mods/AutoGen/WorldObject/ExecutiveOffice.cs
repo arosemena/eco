@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ExecutiveOfficeObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Elected officials can perform one-time executive actions here."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Elected officials can perform one-time executive actions here.");
 
         static ExecutiveOfficeItem()
         {

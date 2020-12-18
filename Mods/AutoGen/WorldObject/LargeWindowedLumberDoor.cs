@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class LargeWindowedLumberDoorItem :
         WorldObjectItem<LargeWindowedLumberDoorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large door."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large door.");
 
         static LargeWindowedLumberDoorItem()
         {

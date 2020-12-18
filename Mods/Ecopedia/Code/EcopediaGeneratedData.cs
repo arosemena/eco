@@ -61,7 +61,7 @@ namespace Eco.Mods.TechTree
         public string GetEcopediaData(Player player, EcopediaPage page)
         {
             var sb = new StringBuilder();
-            sb.AppendLineLoc($"A citizen may grant reputation to others with a limit of {Text.StyledNum(Reputation.MaxGivableRep)} points (positive of negative) per day.");
+            sb.AppendLineLoc($"A citizen may grant reputation to others with a limit of {Text.StyledNum(Reputation.MaxGivableRep)} points (positive or negative) per day.");
             sb.AppendLine();
             var reps = UserManager.Config.Reputations.Select(x=>x.ToString());
             sb.AppendListLoc($"Reputation Titles", reps, false, false);

@@ -30,7 +30,7 @@ namespace Eco.Mods.TechTree
     public partial class HenleyItem :
         ClothingItem        
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A Henley shirt is a collarless pullover shirt, characterized by a placket beneath the round neckline, about 8 to 13 cm long and usually having 2?5 buttons. It essentially resembles a collarless polo shirt."); } }
+        public override LocString DisplayDescription  { get { return Localizer.DoStr("A Henley shirt is a collarless pullover shirt, characterized by a placket beneath the round neckline, about 8 to 13 cm long and usually having 2 to 5 buttons. It essentially resembles a collarless polo shirt."); } }
         public override string Slot             { get { return ClothingSlot.Shirt; } }             
         public override bool Starter            { get { return true ; } }                       
 

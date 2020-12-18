@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class CompositeJoshuaChairItem :
         WorldObjectItem<CompositeJoshuaChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A composite chair built to last."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A composite chair built to last.");
 
         static CompositeJoshuaChairItem()
         {

@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ToolBenchObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A place to craft and fix up tools."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A place to craft and fix up tools.");
 
         static ToolBenchItem()
         {

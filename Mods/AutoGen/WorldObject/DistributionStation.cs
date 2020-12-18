@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class DistributionStationItem :
         WorldObjectItem<DistributionStationObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A stockpile for distributing items to new players.  Allows you to choose a specific set of items which each new player will be able to take."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A stockpile for distributing items to new players.  Allows you to choose a specific set of items which each new player will be able to take.");
 
         static DistributionStationItem()
         {

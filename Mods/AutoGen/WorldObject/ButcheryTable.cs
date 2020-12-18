@@ -84,7 +84,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ButcheryTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A block and cleaver to process raw meat into fancier dishes."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A block and cleaver to process raw meat into fancier dishes.");
 
         static ButcheryTableItem()
         {

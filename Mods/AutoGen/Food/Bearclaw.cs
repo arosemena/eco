@@ -37,7 +37,7 @@ namespace Eco.Mods.TechTree
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 
-    [RequiresSkill(typeof(AdvancedBakingSkill), 2)]    
+    [RequiresSkill(typeof(AdvancedBakingSkill), 1)]    
     public partial class BearclawRecipe :
         RecipeFamily
     {

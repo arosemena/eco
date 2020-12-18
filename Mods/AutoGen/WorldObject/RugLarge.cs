@@ -73,7 +73,8 @@ namespace Eco.Mods.TechTree
     public partial class RugLargeItem :
         WorldObjectItem<RugLargeObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large area rug to cover that weird stain."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large area rug to cover that weird stain.");
+        public override LocString DisplayNamePlural => Localizer.DoStr("Large Rugs");
 
         static RugLargeItem()
         {

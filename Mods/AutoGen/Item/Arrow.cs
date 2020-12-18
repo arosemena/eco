@@ -24,12 +24,12 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     public partial class ArrowRecipe :
         RecipeFamily
     {
         public ArrowRecipe()
         {
-            this.Initialize(Localizer.DoStr("Arrow"), typeof(ArrowRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,17 +50,24 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(30); 
             this.CraftMinutes = CreateCraftTimeValue(0.1f);
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Arrow"), typeof(ArrowRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(ToolBenchObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
     [LocDisplayName("Arrow")]
     [Weight(10)]      
     [Fuel(500)][Tag("Fuel")]          
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Tools", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("Burnable Fuel", 1)]                                 
     public partial class ArrowItem :

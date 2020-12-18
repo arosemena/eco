@@ -70,7 +70,7 @@ namespace Eco.Mods.TechTree
     public partial class StopSignItem :
         WorldObjectItem<StopSignObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A traffic sign used to notify drivers to come to a complete stop and make sure the interesection is clear before proceeding."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A traffic sign used to notify drivers to come to a complete stop and make sure the interesection is clear before proceeding.");
 
         static StopSignItem()
         {

@@ -38,7 +38,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(CustomTextComponent))]              
+    [RequireComponent(typeof(CustomTextComponent))]             
     [RequireComponent(typeof(SolidGroundComponent))]            
     public partial class SmallStandingJoshuaSignObject : 
         WorldObject,    
@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<SmallStandingJoshuaSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A small sign for all of your smaller text needs!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A small sign for all of your smaller text needs!");
 
         static SmallStandingJoshuaSignItem()
         {

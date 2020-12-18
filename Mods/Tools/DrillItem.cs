@@ -59,7 +59,7 @@ namespace Eco.Mods.TechTree
         {
             if (context.HasBlock)
             {
-                var prospectResult = AtomicActions.UseToolNow(context.Player, this, 1f);
+                var prospectResult = AtomicActions.UseToolNow(this.CreateMultiblockContext(context));
                 if (prospectResult.Success) context.Player.OpenUI(this.GetProspectData(context), "ProspectingUI");
 
                 return (InteractResult)prospectResult;

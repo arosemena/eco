@@ -54,7 +54,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Fat"
+            "Fat",
         };
 
         protected override void Initialize()
@@ -80,7 +80,7 @@ namespace Eco.Mods.TechTree
     public partial class CandleStandItem :
         WorldObjectItem<CandleStandObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A fancy candelabra for providing small amounts of light."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A fancy candelabra for providing small amounts of light.");
 
         static CandleStandItem()
         {

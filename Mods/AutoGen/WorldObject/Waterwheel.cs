@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
     public partial class WaterwheelItem :
         WorldObjectItem<WaterwheelObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Use the power of flowing water to produce mechanical power."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Use the power of flowing water to produce mechanical power.");
 
         static WaterwheelItem()
         {

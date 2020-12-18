@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
     public partial class ModernStreetLightItem :
         WorldObjectItem<ModernStreetLightObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A towering metal light post that requires electricity to run."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A towering metal light post that requires electricity to run.");
 
         static ModernStreetLightItem()
         {

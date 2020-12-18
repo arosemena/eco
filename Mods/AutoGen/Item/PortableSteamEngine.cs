@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MechanicsSkill), 1)]      
     public partial class PortableSteamEngineRecipe :
         RecipeFamily
     {
         public PortableSteamEngineRecipe()
         {
-            this.Initialize(Localizer.DoStr("Portable Steam Engine"), typeof(PortableSteamEngineRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -56,10 +56,17 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(2000, typeof(MechanicsSkill), typeof(PortableSteamEngineRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(PortableSteamEngineRecipe), this.UILink(), 8, typeof(MechanicsSkill), typeof(MechanicsFocusedSpeedTalent), typeof(MechanicsParallelSpeedTalent));     
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Portable Steam Engine"), typeof(PortableSteamEngineRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(MachinistTableObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]

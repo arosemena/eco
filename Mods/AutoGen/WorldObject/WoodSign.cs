@@ -70,7 +70,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<WoodSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large sign for all your large text needs!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large sign for all your large text needs!");
 
         static WoodSignItem()
         {

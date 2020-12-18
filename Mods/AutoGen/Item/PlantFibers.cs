@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [LocDisplayName("Plant Fibers")]
@@ -31,13 +32,14 @@ namespace Eco.Mods.TechTree
     [Weight(10)]      
     [Fuel(100)][Tag("Fuel")]          
     [Yield(typeof(PlantFibersItem), typeof(GatheringSkill), new float[] { 1f, 1.4f, 1.5f, 1.6f, 1.7f, 1.8f, 1.9f, 2.0f })]  
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Products", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("NaturalFiber", 1)]
-    [Tag("Burnable Fuel", 1)]                                 
+    [Tag("Burnable Fuel", 1)]
+    [Tag("Harvestable", 1)]                                 
     public partial class PlantFibersItem :
     Item                                    
     {
-        public override LocString DisplayDescription { get { return Localizer.DoStr("Harvested from a number of plants, these fibers are useful for a suprising number of things."); } }
+        public override LocString DisplayDescription { get { return Localizer.DoStr("Harvested from a number of plants, these fibers are useful for a surprising number of things."); } }
     }
 }

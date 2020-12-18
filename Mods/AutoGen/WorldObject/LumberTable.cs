@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class LumberTableItem :
         WorldObjectItem<LumberTableObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A nice, sturdy lumber table."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large lumber table for eating meals or getting some work done.");
 
         static LumberTableItem()
         {

@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class HewnChairItem :
         WorldObjectItem<HewnChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A raised surface supported by legs. Without the back, it might be a stool."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A raised surface supported by legs. Without the back, it might be a stool.");
 
         static HewnChairItem()
         {

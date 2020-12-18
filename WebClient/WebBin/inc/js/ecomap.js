@@ -465,8 +465,8 @@
 	        var texture = new THREE.Texture(tcanvas);
 	        texture.minFilter = filter;
 	        texture.magFilter = filter;
-	        //texture.wrapS = THREE.RepeatWrapping;
-	        //texture.wrapT = THREE.RepeatWrapping;
+	        texture.wrapS = THREE.RepeatWrapping;
+	        texture.wrapT = THREE.RepeatWrapping;
 	        texture.needsUpdate = true;
 	        texture.flipY = false;
 
@@ -1892,7 +1892,9 @@
 	                            texture.flipY = false;
 	                            texture.magFilter = THREE.LinearFilter;
 	                            texture.minFilter = THREE.LinearFilter;
-	                            view.mainMat.uniforms.map.value = texture;
+                                texture.wrapS = THREE.RepeatWrapping;
+                                texture.wrapT = THREE.RepeatWrapping;
+                                view.mainMat.uniforms.map.value = texture;
 	                            view.loading = false;
                                 if (view.OnInfoUpdated) view.OnInfoUpdated("");
 	                        });

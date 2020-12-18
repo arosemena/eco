@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class AsphaltRampBFormType : FormType
     {
         public override string Name => "AsphaltRampB";
-        public override LocString DisplayName => Localizer.DoStr("AsphaltRampB");
+        public override LocString DisplayName => Localizer.DoStr("Asphalt RampB");
         public override LocString DisplayDescription => Localizer.DoStr("Asphalt RampB");
         public override Type GroupType => typeof(RampsFormGroup);
         public override int SortOrder => 73;

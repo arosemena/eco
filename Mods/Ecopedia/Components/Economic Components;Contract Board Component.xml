@@ -19,7 +19,7 @@ Any payment offered for a contract will be held in a special <b>Escrow</b> [Bank
   <section image="IllustrationWorkParty" loc="8">
 [Work Parties] can also be posted on a Contract Board, allowing the creation of tasks that can be completed by multiple other citizens, as opposed to contracts which are an agreement between two parties only. Before posting a work party, a citizen must start a work order on a crafting table they own.
 
-After posting a work party, <b>Laborers</b> can join the project at the Contract Board. By default anyone can join the work party as a laborer, but requirements can set for individual roles or general requirements for anyone to join. When 'Expand Roles When Full' is checked, space for new laborers to join is created automatically when all roles are filled.
+After posting a work party, <b>Laborers</b> can join the project at the Contract Board. By default anyone can join the work party as a laborer, but requirements can be set for individual roles or general requirements for anyone to join. When 'Expand Roles When Full' is checked, space for new laborers to join is created automatically when all roles are filled.
 
 When setting the <b>Work</b> desired, the poster of the work party can decide to hire for labor, resources, or both. Any citizen who contributes to the work party will recieve a share of the payment based on the amount of work they provided. By assigning additional <b>Weight</b> to a particular job in a work party, that job will recieve a higher share of the payment.
 </section>

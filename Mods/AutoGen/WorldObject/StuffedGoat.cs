@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
     public partial class StuffedGoatItem :
         WorldObjectItem<StuffedGoatObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("It looks so real!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("It looks so real!");
 
         static StuffedGoatItem()
         {

@@ -37,7 +37,7 @@ namespace Eco.Mods.TechTree
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 
-    [RequiresSkill(typeof(AdvancedCookingSkill), 1)]    
+    [RequiresSkill(typeof(MillingSkill), 1)]    
     public partial class HuckleberryExtractRecipe :
         RecipeFamily
     {
@@ -48,17 +48,17 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Huckleberry Extract"),
                 new IngredientElement[]
                 {
-            new IngredientElement(typeof(HuckleberriesItem), 20, typeof(AdvancedCookingSkill), typeof(AdvancedCookingLavishResourcesTalent)),   
+            new IngredientElement(typeof(HuckleberriesItem), 20, typeof(MillingSkill), typeof(MillingLavishResourcesTalent)),   
                 },
                     new CraftingElement<HuckleberryExtractItem>(1)  
                 
             );
             this.Initialize(Localizer.DoStr("Huckleberry Extract"), typeof(HuckleberryExtractRecipe));
             this.Recipes = new List<Recipe> { product };
-            this.LaborInCalories = CreateLaborInCaloriesValue(20, typeof(AdvancedCookingSkill), typeof(HuckleberryExtractRecipe), this.UILink()); 
-            this.CraftMinutes = CreateCraftTimeValue(typeof(HuckleberryExtractRecipe), this.UILink(), 2, typeof(AdvancedCookingSkill), typeof(AdvancedCookingFocusedSpeedTalent), typeof(AdvancedCookingParallelSpeedTalent));    
+            this.LaborInCalories = CreateLaborInCaloriesValue(20, typeof(MillingSkill), typeof(HuckleberryExtractRecipe), this.UILink()); 
+            this.CraftMinutes = CreateCraftTimeValue(typeof(HuckleberryExtractRecipe), this.UILink(), 2, typeof(MillingSkill), typeof(MillingFocusedSpeedTalent), typeof(MillingParallelSpeedTalent));    
             this.Initialize(Localizer.DoStr("Huckleberry Extract"), typeof(HuckleberryExtractRecipe));
-            CraftingComponent.AddRecipe(typeof(KitchenObject), this);
+            CraftingComponent.AddRecipe(typeof(MillObject), this);
         }
     }
 }

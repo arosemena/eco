@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class LimestoneOwlStatueItem :
         WorldObjectItem<LimestoneOwlStatueObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An owl statue carved from limestone."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An owl statue carved from limestone.");
 
         static LimestoneOwlStatueItem()
         {

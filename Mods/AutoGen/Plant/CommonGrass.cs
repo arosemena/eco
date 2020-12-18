@@ -80,7 +80,7 @@ namespace Eco.Mods.Organisms
                 this.RequireHarvestable = false; 
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(PlantFibersItem), new Range(1, 3), 1)
+                    new SpeciesResource(typeof(PlantFibersItem), new Range(1, 3), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

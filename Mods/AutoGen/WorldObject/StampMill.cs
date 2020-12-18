@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<StampMillObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A crushing machine that uses iron stamps to pound rocks into small pieces."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A crushing machine that uses iron stamps to pound rocks into small pieces.");
 
         static StampMillItem()
         {

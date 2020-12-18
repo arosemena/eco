@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
     public partial class WasteFilterItem :
         WorldObjectItem<WasteFilterObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Treats raw sewage."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Treats raw sewage.");
 
         static WasteFilterItem()
         {

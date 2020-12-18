@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [Solid, Wall, Minable(4)]
@@ -36,12 +37,13 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Gneiss")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(15000)]
     [ResourcePile]
     [Ecopedia("Natural Resources", "Stone", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Rock", 1)]
+    [Tag("Excavatable", 1)]
     public partial class GneissItem :
     BlockItem<GneissBlock>
     {

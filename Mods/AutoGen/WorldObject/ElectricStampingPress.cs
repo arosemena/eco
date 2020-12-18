@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ElectricStampingPressObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A tool for shaping or cutting metal by deforming it with a die."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A tool for shaping or cutting metal by deforming it with a die.");
 
         static ElectricStampingPressItem()
         {

@@ -148,7 +148,7 @@ The Civic Object Component allows citizens to propose, amend, and repeal various
 44;Within a Civic Object Component, you will see a list of your [Civic Duties]. This informs the citizen what permissions they have regarding civic objects, given the current [Constitution].The possibilities of different civic duties are:
 45;The Civic Object Component allows citizens to propose, amend, and repeal civic objects.
 46;The Registrar Component allows for the creation and management of non-elected [Titles].  These titles can be used for many of the same purposes as [Elected Titles], but they are appointed at the Registrar.
-47;Assigning Titles
+47;Nadawanie stanowisk
 48;Title Managers can rename the title and assign new managers and title holders. Title Managers are not considered Title Users.
 
 Title Users are the citizens considered title holders and receive all associated benefits and conditions.
@@ -744,7 +744,8 @@ Room Material Quality
 The average tier of the room material will also determine your housing value, by setting a soft cap.  Once your room value has exceeded the soft cap for the room, then you will get diminishing returns for additional housing points.  When this happens, it may be time to renovate the materials of the room.
 
 228;Rooms protect you and your equipment from the elements, providing skill points and allowing equipment to function.
-229;Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
+229;
+Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
 
 Sewage systems are created by connecting a [MechanicalWaterPumpItem] or [ElectricWaterPumpItem] to a water source, and then building Pipes between the different objects that need supplying.  On the waste side, pipes will take the waste water from the object to either dump it into the environment (producing [Pollution] at the exit point), or process it at a [Waster Filter|WasteFilterItem], which will generate [Compost|CompostItem] from the wastewater.
 
@@ -766,7 +767,8 @@ Your Experience Multiplier (or XP Multiplier) is a personal value representing y
 
 
 233;There are two kinds of experience in Eco: Character Experience (gained by food and housing) and Specialty Experience (gained by performing actions in a specialty).
-234;Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
+234;
+Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
 
 There are four nutrients represented in foods: Protein, Fat, Vitamins, and Carbs.  By adding up the average of each of these nutrients in all the food you’ve eaten in the last 24 hours, your experience multiplier is determined.   This means that if you eat junk food (low nutrients) it will affect you for 24 hours before it has passed through your body.
 
@@ -780,16 +782,14 @@ Calories
 Calories, unlike nutrients, are spent when you perform work, and when you run out of calories you’ll be unable to work until you eat more.  Calorie usage can be greatly reduced by upgraded tools and leveling-up skills.
 All food provides both calories and nutrients, so while gaining calories from food you’re also determining your skill multiplier, so watch that diet.
 
-Feeding the World
-Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
-
 235;Nutrition, alongside housing, determines how fast you gain experience.
 236;Central to a thriving economy is the ability to specialize and trade, thereby working more efficiently than if you attempted to do everything yourself.  Achieving a successful society depends on successfully accomplishing both.  
     
     A citizen's skills give them unique abilities and enhancements, which allows them to [Trade] with other citizens having different skills in the economy. As you gain [Experience], you can unlock new [Specialties] and level-up existing ones.  The experience you gain is multiplied by you [Nutrition] and [Housing|Housing Overview].    
   
 237;The skill system allows citizens to specialize in specific trades.
-238;Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
+238;
+    Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
 
 Professions and Specialties
 [Professions|Profession Overview] are simply groupings of skills, and don’t serve any other purpose besides storing similar skills together.
@@ -1100,7 +1100,7 @@ By holding the mouse over the display for one of the pipes, a tooltip appears wi
   - [CompositesSkill] allows citizens to use advanced technology to produce the finest quality [CompositeLumberItem] building material.
   - [PaperMillingSkill] allows citizens to refine wood pulp into [PaperItem]. Paper is used for some specialty furniture.
 
-328;Szef Kuchni
+328;Kuchmistrz
 329;
 [Chefs|Chef] specialize in cooking more nutritious food to boost the rate citizens gain experience.
   - [CampfireCookingSkill] is the entry level Chef specialty that uses a [CampfireItem] to prepare basic meals.
@@ -1126,13 +1126,13 @@ By holding the mouse over the display for one of the pipes, a tooltip appears wi
   - [FertilizersSkill] allows citizens craft fertilizer and test soil conditions with a [SoilSamplerItem].
   - [MillingSkill] allows citizens to process produce in a [MillItem] for use by chefs in more advanced recipes.
 
-334;Łowca
+334;Hunter
 335;
 [Hunters|Hunter] are specialists at efficiently hunting animals and preparing meat for use by chefs. The two hunter specialties are closely linked as the animals hunted must be processed before the meat can be used by a chef. 
   - [HuntingSkill] grants citizens bonus damage when hunting animals and allows them to approach animals at a closer distance without causing them to run.
   - [ButcherySkill] allows citizens to process animal carcasses into prepared meat for chefs. The pelts and hides they create can be used for clothing and other crafting projects.
 
-336;Murarz
+336;Kamieniarz
 337;
 [Masons|Mason] are specialists at mining and working with stone. They provide a valuable source of building material and furniture for homes. The ore they collect is used by Smiths to smelt metal bars.
   -[MiningSkill] allows citizens to expend less calories while mining stone and ore. Miners also process collected ore to be used for smelting.
@@ -1155,7 +1155,7 @@ The [Tailor] specializes in making high end furniture and specialized clothing t
 342;Umiejętność Przetrwania
 343;
 [Survivalists|Survivalist] specializes in carrying extra weight and reducing the calories expended when using basic tools. All citizens are survivalists in the world of Eco. 
-   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers, shovels, and drills.
+   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers and shovels.
 
 344;A general overview of the current economy that contains information such as available trades, work parties, and contracts.
 345;The Economy Viewer provides a general overview of the current economy and is an incredibly useful tool for economic participation. Among other users, the Economy Viewer shows the location of every [StoreItem] and what is currently being bought and sold.
@@ -1172,3 +1172,6 @@ In additon, the Economy Viewer allows citizens to directly transfer currency to 
    
 347;Accessing the Economy Viewer
 348;The Economy Viewer can be accessed by clicking the Economy button located at the bottom right of the screen.
+349;Feeding the World
+Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
+

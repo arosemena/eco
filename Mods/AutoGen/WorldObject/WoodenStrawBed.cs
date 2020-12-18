@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class WoodenStrawBedItem :
         WorldObjectItem<WoodenStrawBedObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A nice, scratchy and horrible uncomfortable bed. But at least it keeps you off the ground."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A nice, scratchy and horrible uncomfortable bed. But at least it keeps you off the ground.");
 
         static WoodenStrawBedItem()
         {

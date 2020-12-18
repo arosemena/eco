@@ -17,12 +17,12 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
-    public class MortaredStonesRecipe :
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
+    public partial class MortaredStonesRecipe :
         RecipeFamily
     {
         public MortaredStonesRecipe()
         {
-            this.Initialize(Localizer.DoStr("Mortared Stones"), typeof(MortaredStonesRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -40,7 +40,15 @@ namespace Eco.Mods.TechTree
             };
             this.LaborInCalories = CreateLaborInCaloriesValue(30); 
             this.CraftMinutes = CreateCraftTimeValue(0.25f);
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Mortared Stones"), typeof(MortaredStonesRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(WorkbenchObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

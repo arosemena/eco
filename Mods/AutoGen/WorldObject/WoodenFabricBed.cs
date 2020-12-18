@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class WoodenFabricBedItem :
         WorldObjectItem<WoodenFabricBedObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A much more comfortable bed made with fabric."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A much more comfortable bed made with fabric.");
 
         static WoodenFabricBedItem()
         {

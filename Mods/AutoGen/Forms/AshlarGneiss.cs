@@ -987,4 +987,58 @@ namespace Eco.Mods.TechTree
     public partial class AshlarGneissUnderInnerPeak270Block : Block
     { }
 
+
+    [RotatedVariants(typeof(AshlarGneissBraceTurnBlock), typeof(AshlarGneissBraceTurn90Block), typeof(AshlarGneissBraceTurn180Block), typeof(AshlarGneissBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(BraceTurnFormType), typeof(AshlarGneissItem))]
+    public partial class AshlarGneissBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissBraceTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(AshlarGneissUnderBraceTurnBlock), typeof(AshlarGneissUnderBraceTurn90Block), typeof(AshlarGneissUnderBraceTurn180Block), typeof(AshlarGneissUnderBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(UnderBraceTurnFormType), typeof(AshlarGneissItem))]
+    public partial class AshlarGneissUnderBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissUnderBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissUnderBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGneissUnderBraceTurn270Block : Block
+    { }
+
 }

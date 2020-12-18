@@ -66,7 +66,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Liquid Fuel"
+            "Liquid Fuel",
         };
 
         protected override void Initialize()
@@ -97,7 +97,7 @@ namespace Eco.Mods.TechTree
     public partial class CombustionGeneratorItem :
         WorldObjectItem<CombustionGeneratorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Consumes most fuels to produce energy."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Consumes most fuels to produce energy.");
 
         static CombustionGeneratorItem()
         {

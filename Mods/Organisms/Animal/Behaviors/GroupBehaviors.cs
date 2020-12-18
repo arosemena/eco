@@ -89,7 +89,7 @@ namespace Eco.Mods.Organisms.Behaviors
                             if (other.Alertness < Animal.FleeThreshold)
                                 other.Alertness = agent.Alertness;
                             other.FleePosition = other.Position + Vector3.WrappedDirectionalVector(agent.FleePosition, agent.Position);
-                            other.NextTick = WorldTime.Seconds + 0.5f; //Wake them up
+                            other.NextTick = WorldTime.Seconds; //Wake them up
                         }
             }
         }

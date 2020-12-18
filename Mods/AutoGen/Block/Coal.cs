@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [Minable(1), Solid,Wall]
@@ -36,14 +37,15 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Coal")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(20000)]
     [Fuel(20000)][Tag("Fuel")]
     [ResourcePile]
     [Ecopedia("Natural Resources", "Ore", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Coal", 1)]
     [Tag("Burnable Fuel", 1)]
+    [Tag("Excavatable", 1)]
     public partial class CoalItem :
     BlockItem<CoalBlock>
     {

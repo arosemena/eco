@@ -60,9 +60,9 @@ namespace Eco.Mods.TechTree
     public partial class ModernScytheItem : ScytheItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(10, typeof(GatheringSkill), typeof(ModernScytheItem), new ModernScytheItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
-        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(4), new TalentModifiedValue(typeof(GatheringToolStrengthTalent), 0));
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(ModernScytheItem), typeof(GatheringToolEfficiencyTalent)), CreateCalorieValue(10, typeof(GatheringSkill), typeof(ModernScytheItem), new ModernScytheItem().UILink()));
+        private static IDynamicValue exp = new ConstantValue(0.1f);
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(4), new TalentModifiedValue(typeof(ModernScytheItem), typeof(GatheringToolStrengthTalent), 0));
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(15, AdvancedSmeltingSkill.MultiplicativeStrategy, typeof(AdvancedSmeltingSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 
         
         private static Vector2i[] areaBlocks = new Vector2i[]

@@ -60,9 +60,8 @@ namespace Eco.Mods.TechTree
     public partial class IronRockDrillItem : DrillItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(15, typeof(SelfImprovementSkill), typeof(IronRockDrillItem), new IronRockDrillItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
-        private static IDynamicValue tier = new ConstantValue(2);
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(IronRockDrillItem), typeof(MiningToolEfficiencyTalent)), CreateCalorieValue(15, typeof(MiningSkill), typeof(IronRockDrillItem), new IronRockDrillItem().UILink()));
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(2), new TalentModifiedValue(typeof(IronRockDrillItem), typeof(MiningToolStrengthTalent), 0));
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(4, SmeltingSkill.MultiplicativeStrategy, typeof(SmeltingSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 
         
 
@@ -71,8 +70,6 @@ namespace Eco.Mods.TechTree
 		public override int   DrillDepth    => 15;
 
         public override IDynamicValue CaloriesBurn      => caloriesBurn;
-        public override Type ExperienceSkill            => typeof(SelfImprovementSkill);
-        public override IDynamicValue ExperienceRate    => exp;
         public override IDynamicValue Tier              => tier;
         public override IDynamicValue SkilledRepairCost => skilledRepairCost;
         public override float DurabilityRate            => DurabilityMax / 1000f;

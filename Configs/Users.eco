@@ -3,16 +3,21 @@
   "MaxRepFromOnePerson": 30.0,
   "MinRepFromOnePerson": -10.0,
   "AllowDebugCalls": false,
-  "AdminCommandsLoggingLevel": "LogFileAndNotifyEveryone",
   "WhiteList": {
     "System.String": {
-      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+      "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
       "$values": []
     }
   },
   "BlackList": {
     "System.String": {
-      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+      "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+      "$values": []
+    }
+  },
+  "MuteList": {
+    "System.String": {
+      "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
       "$values": []
     }
   },
@@ -27,7 +32,7 @@
   },
   "Reputations": {
     "Eco.Gameplay.Economy.ReputationTitle": {
-      "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], mscorlib",
+      "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], System.Private.CoreLib",
       "$values": [
         {
           "MaxReputation": -500.0,
@@ -128,14 +133,15 @@
     }
   },
   "UnStuckDisableTime": 60.0,
+  "AdminCommandsLoggingLevel": "LogFileAndNotifyEveryone",
   "DelayNearbyFoodCheckMinutes": 4.0,
   "NearbyFoodSpawnLocationRadius": 20.0,
   "NearbyFoodSpawnCount": 5,
-  "UseExactSpawnLocation": true,
+  "UseExactSpawnLocation": false,
   "SpawnLocation": {
-    "x": 913,
-    "y": 66,
-    "z": 1419
+    "x": 609,
+    "y": 63,
+    "z": 698
   },
   "IgnoreVersionMismatch": false
 }

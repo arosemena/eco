@@ -12,7 +12,7 @@ namespace Eco.Mods.TechTree
         protected override void PostInitialize()
         {
             base.PostInitialize();
-            this.GetComponent<LinkComponent>().Initialize(10);
+            this.GetComponent<LinkComponent>().Initialize(5);
         }
     }
 }

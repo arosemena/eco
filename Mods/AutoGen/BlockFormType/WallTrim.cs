@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class WallTrimFormType : FormType
     {
         public override string Name => "WallTrim";
-        public override LocString DisplayName => Localizer.DoStr("WallTrim");
+        public override LocString DisplayName => Localizer.DoStr("Wall Trim");
         public override LocString DisplayDescription => Localizer.DoStr("Wall Trim");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 14;

@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class HewnHardwoodBenchItem :
         WorldObjectItem<HewnHardwoodBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A basic wooden bench."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A basic wooden bench.");
 
         static HewnHardwoodBenchItem()
         {

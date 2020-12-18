@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
     public partial class ShelfCabinetItem :
         WorldObjectItem<ShelfCabinetObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("When a shelf and a cabinet aren't enough individually."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("When a shelf and a cabinet aren't enough individually.");
 
         static ShelfCabinetItem()
         {

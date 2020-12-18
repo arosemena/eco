@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(GlassworkingSkill), 1)]
     public partial class FramedGlassRecipe :
         RecipeFamily
     {
         public FramedGlassRecipe()
         {
-            this.Initialize(Localizer.DoStr("Framed Glass"), typeof(FramedGlassRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,11 +50,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(200, typeof(GlassworkingSkill), typeof(FramedGlassRecipe), this.UILink());
             this.ExperienceOnCraft = 1.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(FramedGlassRecipe), this.UILink(), 2, typeof(GlassworkingSkill), typeof(GlassworkingFocusedSpeedTalent), typeof(GlassworkingParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Framed Glass"), typeof(FramedGlassRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(ElectricMachinistTableObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -70,10 +76,10 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Framed Glass")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(10000)]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Constructable", 1)]
     [Tier(4)]
     public partial class FramedGlassItem :

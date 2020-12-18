@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<BankObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Allows players to create and use bank accounts."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Allows players to create and use bank accounts.");
 
         static BankItem()
         {

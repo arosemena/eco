@@ -34,8 +34,8 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Baked tomatoes might not look as red or plump as the raw variety, but they are nice and tasty."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 9, Fat = 5, Protein = 1, Vitamins = 15};
-        public override float Calories                          { get { return 560; } }
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 9, Fat = 5, Protein = 1, Vitamins = 13};
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

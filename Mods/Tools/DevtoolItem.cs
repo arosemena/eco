@@ -23,6 +23,11 @@ using Eco.Shared.Networking;
 using System.Threading.Tasks;
 using Eco.Gameplay.Systems.Chat;
 using System.Collections.Generic;
+using System.Text;
+using Eco.Core.Utils;
+using Eco.Gameplay.Systems.TextLinks;
+using Eco.Gameplay.Systems.Tooltip;
+using Eco.Gameplay.UI;
 
 [Serialized]
 [LocDisplayName("Dev Tool")]
@@ -77,16 +82,32 @@ public class DevtoolItem : HammerItem
         if (context.HasBlock)
         {
             var item = BlockItem.CreatingItem(context.Block.GetType());
-            if(item != null)
-                context.Player.User.Inventory.ReplaceStack(context.Player, context.Player.User.Inventory.Carried.Stacks.First(), item.TypeID, 1);
+            if (item != null)
+            {
+                // Adds max item count with key modifier, else => 1
+                var count = context.Modifier == InteractionModifier.Ctrl ? item.MaxStackSize : 1;
+                context.Player.User.Inventory.ReplaceStack(context.Player, context.Player.User.Inventory.Carried.Stacks.First(), item.TypeID, count);
+            }
         }
         return InteractResult.NoOp;
     }
 
+    [Tooltip(200)]
+    public TooltipSection ControllsTooltip(TooltipContext context)
+    {
+        var res = new StringBuilder();
+
+        res.AppendLine(Localizer.DoStr("Can smite any block or world object."));
+        res.AppendLine(Localizer.DoStr("Can be used as a hammer to place infinite amount of blocks."));
+        res.AppendLine(Localizer.DoStr("Can ignore auth for different actions (storage, vehicles, blocks)."));
+        res.AppendLine(Localizer.DoStr("Can copy world block to carried slot with \"E\", hold \"Ctrl\" to add whole stack."));
+
+        return new TooltipSection(Localizer.DoStr("Special Actions"), res.ToStringLoc());
+    }
+
     public override void OnUsed(Player player, ItemStack itemStack)
     {
-        var task = player.Client.RPCAsync<List<Type>>("PopupTypePicker", player.Client, Localizer.DoStr("Pick Material"), typeof(BlockItem));
-        task.ContinueWith(task => this.SetMaterial(task.Result, player));
+        player.PopupTypePicker(Localizer.DoStr("Pick Material for DevTool"), typeof(BlockItem), material => this.SetMaterial(material, player));
     }
 
     private void SetMaterial(List<Type> result, Player player)

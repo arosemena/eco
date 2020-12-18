@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class LumberBenchItem :
         WorldObjectItem<LumberBenchObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A sturdy lumber bench. It doesn't feel as wobbly as more basic wooden benches."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A lumber bench for when you need extra seating space than a traditional chair.");
 
         static LumberBenchItem()
         {

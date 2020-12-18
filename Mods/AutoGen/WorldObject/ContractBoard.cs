@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ContractBoardObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A board to post contracts."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A board to post contracts.");
 
         static ContractBoardItem()
         {

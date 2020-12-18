@@ -111,6 +111,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(LumberItem))]
+    public partial class LumberRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(LumberItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(LumberItem))]
+    public partial class LumberRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(LumberItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(LumberStairsBlock), typeof(LumberStairs90Block), typeof(LumberStairs180Block), typeof(LumberStairs270Block))]
     [Serialized]
@@ -163,6 +185,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(2)] 
     public partial class LumberLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(LumberRoofSideBlock), typeof(LumberRoofSide90Block), typeof(LumberRoofSide180Block), typeof(LumberRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofSideFormType), typeof(LumberItem))]
+    public partial class LumberRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(LumberRoofTurnBlock), typeof(LumberRoofTurn90Block), typeof(LumberRoofTurn180Block), typeof(LumberRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(LumberItem))]
+    public partial class LumberRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(LumberRoofCornerBlock), typeof(LumberRoofCorner90Block), typeof(LumberRoofCorner180Block), typeof(LumberRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(LumberItem))]
+    public partial class LumberRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(LumberRoofPeakBlock), typeof(LumberRoofPeak90Block), typeof(LumberRoofPeak180Block), typeof(LumberRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(LumberItem))]
+    public partial class LumberRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class LumberRoofPeak270Block : Block
     { }
 
 }

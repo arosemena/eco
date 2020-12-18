@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class MortaredGraniteChairItem :
         WorldObjectItem<MortaredGraniteChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An early stone chair. Not too comfy but it does the job."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An early stone chair. Not too comfy but it does the job.");
 
         static MortaredGraniteChairItem()
         {

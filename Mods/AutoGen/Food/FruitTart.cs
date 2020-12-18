@@ -32,12 +32,12 @@ namespace Eco.Mods.TechTree
     {
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A sweet pastry that is great for breakfast or anytime you need a quick boost in energy."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 14, Fat = 9, Protein = 5, Vitamins = 18};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 14, Fat = 9, Protein = 5, Vitamins = 20};
         public override float Calories                          { get { return 800; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 
-    [RequiresSkill(typeof(AdvancedBakingSkill), 2)]    
+    [RequiresSkill(typeof(AdvancedBakingSkill), 1)]    
     public partial class FruitTartRecipe :
         RecipeFamily
     {

@@ -69,7 +69,7 @@ namespace Eco.Mods.TechTree
     public partial class ElkSkypiercerItem :
         WorldObjectItem<ElkSkypiercerObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("You can hear the faint cries of Ecko when this mythical elk antler is held aloft."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("You can hear the faint cries of Ecko when this mythical elk antler is held aloft.");
 
         static ElkSkypiercerItem()
         {

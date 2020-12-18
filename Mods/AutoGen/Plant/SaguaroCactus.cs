@@ -68,7 +68,7 @@ namespace Eco.Mods.Organisms
                 this.Name = "SaguaroCactus";
                 this.DisplayName = Localizer.DoStr("Saguaro Cactus");
                 // Lifetime
-                this.MaturityAgeDays = 3;
+                this.MaturityAgeDays = 1;
                 // Generation
                 this.Height = 1;
                 // Food
@@ -79,7 +79,7 @@ namespace Eco.Mods.Organisms
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(SaguaroRibItem), new Range(0, 30), 1)
+                    new SpeciesResource(typeof(SaguaroRibItem), new Range(0, 30), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

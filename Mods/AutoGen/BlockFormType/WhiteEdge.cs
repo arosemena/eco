@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class WhiteEdgeFormType : FormType
     {
         public override string Name => "WhiteEdge";
-        public override LocString DisplayName => Localizer.DoStr("WhiteEdge");
+        public override LocString DisplayName => Localizer.DoStr("White Edge");
         public override LocString DisplayDescription => Localizer.DoStr("White Edge");
         public override Type GroupType => typeof(BasicFormGroup);
         public override int SortOrder => 80;

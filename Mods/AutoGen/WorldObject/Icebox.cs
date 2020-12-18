@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
     public partial class IceboxItem :
         WorldObjectItem<IceboxObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A box of ice. It's in the name!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A box of ice. It's in the name!");
 
         static IceboxItem()
         {

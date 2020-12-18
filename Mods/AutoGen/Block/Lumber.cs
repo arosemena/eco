@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(CarpentrySkill), 1)]
     public partial class LumberRecipe :
         RecipeFamily
     {
         public LumberRecipe()
         {
-            this.Initialize(Localizer.DoStr("Lumber"), typeof(LumberRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,11 +50,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(60, typeof(CarpentrySkill), typeof(LumberRecipe), this.UILink());
             this.ExperienceOnCraft = 1;
             this.CraftMinutes = CreateCraftTimeValue(typeof(LumberRecipe), this.UILink(), 0.5f, typeof(CarpentrySkill), typeof(CarpentryFocusedSpeedTalent), typeof(CarpentryParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Lumber"), typeof(LumberRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(SawmillObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -70,12 +76,12 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Lumber")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(10000)]
     [Fuel(4000)][Tag("Fuel")]
     [ResourcePile]
     [Ecopedia("Blocks", "Building Materials", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Lumber", 1)]
     [Tag("Burnable Fuel", 1)]
     [Tag("Constructable", 1)]

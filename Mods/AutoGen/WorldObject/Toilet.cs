@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class ToiletItem :
         WorldObjectItem<ToiletObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("When you gotta go, you gotta go."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("When you gotta go, you gotta go.");
 
         static ToiletItem()
         {

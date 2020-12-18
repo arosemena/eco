@@ -89,6 +89,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(SoftwoodHewnLogItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(SoftwoodHewnLogItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(SoftwoodHewnLogStairsBlock), typeof(SoftwoodHewnLogStairs90Block), typeof(SoftwoodHewnLogStairs180Block), typeof(SoftwoodHewnLogStairs270Block))]
     [Serialized]
@@ -141,6 +163,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(1)] 
     public partial class SoftwoodHewnLogLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodHewnLogRoofSideBlock), typeof(SoftwoodHewnLogRoofSide90Block), typeof(SoftwoodHewnLogRoofSide180Block), typeof(SoftwoodHewnLogRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofSideFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodHewnLogRoofTurnBlock), typeof(SoftwoodHewnLogRoofTurn90Block), typeof(SoftwoodHewnLogRoofTurn180Block), typeof(SoftwoodHewnLogRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodHewnLogRoofCornerBlock), typeof(SoftwoodHewnLogRoofCorner90Block), typeof(SoftwoodHewnLogRoofCorner180Block), typeof(SoftwoodHewnLogRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodHewnLogRoofPeakBlock), typeof(SoftwoodHewnLogRoofPeak90Block), typeof(SoftwoodHewnLogRoofPeak180Block), typeof(SoftwoodHewnLogRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(SoftwoodHewnLogItem))]
+    public partial class SoftwoodHewnLogRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class SoftwoodHewnLogRoofPeak270Block : Block
     { }
 
 }

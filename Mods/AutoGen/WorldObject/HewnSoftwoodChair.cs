@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class HewnSoftwoodChairItem :
         WorldObjectItem<HewnSoftwoodChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A raised surface supported by legs. Without the back, it might be a stool."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A raised surface supported by legs. Without the back, it might be a stool.");
 
         static HewnSoftwoodChairItem()
         {
@@ -106,8 +106,8 @@ namespace Eco.Mods.TechTree
                 new IngredientElement[]
                 {
                new IngredientElement(typeof(SoftwoodHewnLogItem), 12, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)), 
-               new IngredientElement(typeof(SoftwoodBoardItem), 12, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)),    
-               new IngredientElement("NaturalFiber", 12, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)),    
+               new IngredientElement(typeof(SoftwoodBoardItem), 12, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)), 
+               new IngredientElement(typeof(PlantFibersItem), 12, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)),    
                 },
                new CraftingElement<HewnSoftwoodChairItem>()
             );

@@ -38,7 +38,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(CustomTextComponent))]              
+    [RequireComponent(typeof(CustomTextComponent))]             
     [RequireComponent(typeof(SolidGroundComponent))]            
     public partial class LargeStandingStoneSignObject : 
         WorldObject,    
@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<LargeStandingStoneSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large sign for all your large text needs!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large sign for all your large text needs!");
 
         static LargeStandingStoneSignItem()
         {

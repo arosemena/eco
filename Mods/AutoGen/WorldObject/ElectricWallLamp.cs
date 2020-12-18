@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
     public partial class ElectricWallLampItem :
         WorldObjectItem<ElectricWallLampObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A wall mounted lamp that requires electricity to turn on."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A wall mounted lamp that requires electricity to turn on.");
 
         static ElectricWallLampItem()
         {

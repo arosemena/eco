@@ -29,82 +29,54 @@ namespace Eco.Mods.TechTree
     [Category("Hidden"), Tag("Logging")]
     public partial class AxeItem
     {
-        static IDynamicValue caloriesBurn = new ConstantValue(0);
-        static IDynamicValue damage = new ConstantValue(100);
-        static IDynamicValue tier = new ConstantValue(0);
-        static IDynamicValue skilledRepairCost = new ConstantValue(1);
+        static IDynamicValue caloriesBurn                = new ConstantValue(0);
+        static IDynamicValue damage                      = new ConstantValue(100);
+        static IDynamicValue tier                        = new ConstantValue(0);
+        static IDynamicValue skilledRepairCost           = new ConstantValue(1);
+        static IDynamicValue debisCaloriesBurnMultiplier = new TalentModifiedValue(typeof(AxeItem), typeof(LoggingCleanupCrewTalent), 3f); 
 
-        public override IDynamicValue SkilledRepairCost => skilledRepairCost;
-        public override Type ExperienceSkill => typeof(LoggingSkill);
-
-        public override Item RepairItem => Item.Get<StoneItem>();
-        public override int FullRepairAmount => 1;
-
-        public override IDynamicValue CaloriesBurn => caloriesBurn;
-        public override IDynamicValue Damage => damage;
-        public override IDynamicValue Tier => tier;
-
-        public override LocString LeftActionDescription => Localizer.DoStr("Chop");
+        public override Item            RepairItem            => Item.Get<StoneItem>();
+        public override int             FullRepairAmount      => 1;
+        public override IDynamicValue   CaloriesBurn          => caloriesBurn;
+        public override IDynamicValue   Damage                => damage;
+        public override IDynamicValue   Tier                  => tier;
+        public override IDynamicValue   SkilledRepairCost     => skilledRepairCost;
+        public override Type            ExperienceSkill       => typeof(LoggingSkill);
+        public override LocString       LeftActionDescription => Localizer.DoStr("Chop");
 
         public override bool IsValidFor(Item item) => item is LogItem;
 
+        // Highlight debris.
+        public override bool ShouldHighlight(Type block) => Block.Is<TreeDebris>(block);
+
+        // Delete debris or pass it.
         public override InteractResult OnActLeft(InteractionContext context)
         {
-            if (context.HasBlock)
-            {
-                var block = World.GetBlock(context.BlockPosition!.Value);
-                if (block.Is<TreeDebris>() || block.Is<Chopable>())
+            // Try delete tree debris with reduced XP multiplier.
+            if (context.HasBlock && context.Block.Get<TreeDebris>() is TreeDebris treeDebris)
+                // Create game action pack, compose and try to perform.
+                using (var pack = new GameActionPack()) 
                 {
-                    using (var changes = new InventoryChangeSet(context.Player!.User.Inventory, context.Player.User))
-                    {
-                        var pack = new GameActionPack();
-                        pack.PrepareMultiblockToolAction(this, context, (blockPos, actionPack) =>
-                            {
-                                var treeDebris = World.GetBlock(blockPos.Pos).Get<TreeDebris>();
-                                if (treeDebris != null)
-                                {
-                                    var species = EcoSim.GetSpecies(treeDebris.Species) as TreeSpecies;
-                                    foreach (var x in species!.DebrisResources)
-                                        changes.AddItems(x.Key, x.Value.RandInt);
+                    // Add debris items to inventory.
+                    foreach (var x in ((TreeSpecies)EcoSim.GetSpecies(treeDebris.Species)).DebrisResources)
+                        pack.AddToInventory(context.Player?.User.Inventory, Item.Get(x.Key), x.Value.RandInt, context.Player?.User);
 
-                                    actionPack.DeleteBlock(blockPos.Pos, context.Player, false, null, this);
+                    // Create multiblock context with reduced XP multiplier for cleaning debris. 
+                    var multiblockContext = this.CreateMultiblockContext(context);
+                    multiblockContext.ActionDescription    = Localizer.DoStr("clean up tree debris");
+                    multiblockContext.ExperiencePerAction *= 0.1f; 
 
-                                    actionPack.AddGameAction(new CleanupTreeDebris()
-                                    {
-                                        Citizen = context.Player?.User,
-                                        Location = context.BlockPosition.Value,
-                                        ToolUsed = this,
-                                    });
-                                    return true;
-                                }
-
-                                return false;
-                            },
-                            this.GetCaloriesMultiplier,
-                            Localizer.DoStr("removing tree debris"), 0.1f);
-
-                        if (pack.EarlyResult.Success) pack.AddChangeSet(changes);
-
-                        return (InteractResult)pack.TryPerform(false);
-                    }
+                    // Add block deletion to the pack and try to perform it.
+                    pack.DeleteBlock(multiblockContext);
+                    return (InteractResult)pack.TryPerform();
                 }
-                return InteractResult.NoOp;
-            }
 
+            // Try interact with a world object.
             if (context.Target is WorldObject) return this.BasicToolOnWorldObjectCheck(context);
 
+            // Fallback (try to damage target).
             return base.OnActLeft(context);
         }
 
-        private float GetCaloriesMultiplier(User? user, Block? block)
-        {
-            var isDebris = block?.Is<TreeDebris>() ?? false;
-            if (isDebris)
-                return user != null && user.Talentset.HasTalent<LoggingCleanupCrewTalent>() ? 1f : 3f;
-
-            return 1f;
-        }
-
-        public override bool ShouldHighlight(Type block) => Block.Is<TreeDebris>(block);
     }
 }

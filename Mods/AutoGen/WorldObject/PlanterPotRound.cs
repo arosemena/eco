@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
     public partial class PlanterPotRoundItem :
         WorldObjectItem<PlanterPotRoundObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Sometimes you just want to bring a little bit of nature into your house."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Sometimes you just want to bring a little bit of nature into your house.");
 
         static PlanterPotRoundItem()
         {

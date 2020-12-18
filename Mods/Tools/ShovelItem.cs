@@ -26,74 +26,41 @@ namespace Eco.Mods.TechTree
 
     [Category("Hidden"), Tag("Excavation"), Tag("Harvester")]
     [CarryTypesLimited]
-    public partial class ShovelItem : ToolItem, IPerformsToolAction
+    public partial class ShovelItem : ToolItem
     {
-        private static SkillModifiedValue caloriesBurn = CreateCalorieValue(20, typeof(SelfImprovementSkill), typeof(ShovelItem), new ShovelItem().UILink());
-        public override IDynamicValue CaloriesBurn            { get { return caloriesBurn; } }
-        public override ClientPredictedBlockAction LeftAction { get { return ClientPredictedBlockAction.PickupBlock; } }
-        public override LocString LeftActionDescription       { get { return Localizer.DoStr("Dig"); } }
+        private static SkillModifiedValue caloriesBurn      = CreateCalorieValue(20, typeof(SelfImprovementSkill), typeof(ShovelItem), new ShovelItem().UILink());
+        private static IDynamicValue      skilledRepairCost = new ConstantValue(1);
+        private static IDynamicValue      tier              = new ConstantValue(0);
 
-        static IDynamicValue tier = new ConstantValue(0);
-        public override IDynamicValue Tier                    { get { return tier; } }
-        private static IDynamicValue skilledRepairCost        = new ConstantValue(1);
-        public override IDynamicValue SkilledRepairCost       { get { return skilledRepairCost; } }
-
-        public override int FullRepairAmount                  { get { return 1; } }
-        public override int MaxTake                           { get { return 1; } }
-        public override bool ShouldHighlight(Type block)      { return Block.Is<Diggable>(block); }
-        public ToolInteractAction MakeAction(ToolActionType tool) => new DigOrMine();
+        public override LocString                  DescribeBlockAction               => Localizer.DoStr("dig up");
+        public override IDynamicValue              CaloriesBurn                      => caloriesBurn; 
+        public override ClientPredictedBlockAction LeftAction                        => ClientPredictedBlockAction.PickupBlock;
+        public override LocString                  LeftActionDescription             => Localizer.DoStr("Dig");
+        public override IDynamicValue              Tier                              => tier;
+        public override IDynamicValue              SkilledRepairCost                 => skilledRepairCost;
+        public override int                        FullRepairAmount                  => 1;
+        public override int                        MaxTake                           => 1;
+        public override bool                       ShouldHighlight(Type block)       => Block.Is<Diggable>(block);
 
         public override InteractResult OnActLeft(InteractionContext context)
         {
-            if (context.HasBlock)
+            // Try interact with a block.
+            if (context.HasBlock && context.Block.Is<Diggable>())
             {
-                if (context.Block is PlantBlock)
-                {
-                    var plant = EcoSim.PlantSim.GetPlant(context.BlockPosition.Value);
-                    if (plant != null && plant is PlantEntity harvestable)
-                    {
-                        Result result;
-                        using (var pack = new GameActionPack())
-                        {
-                            var changeSet = pack.GetOrCreateChangeSet(context.Player.User.Inventory, context.Player.User);
-                            harvestable.TryHarvest(context.Player, true, pack, changeSet, this);
-                            result = pack.TryPerform(false);
-                        }
+                // Is it a diggable plant? Treat it like a plant then.
+                if (context.Block is PlantBlock) return (InteractResult)AtomicActions.DestroyPlantNow(this.CreateMultiblockContext(context), harvestTo: context.Player?.User.Inventory);
 
-                        if (result.Success)
-                            this.BurnCaloriesNow(context.Player);
-                        return (InteractResult)result;
-                    }
-                    else
-                    {
-                        using (var pack = new GameActionPack())
-                        {
-                            pack.DeleteBlock(context.BlockPosition.Value, context.Player, false, null, this);
-                            pack.UseTool(context.Player, this);
-                            return (InteractResult)pack.TryPerform(false);
-                        }
-                    }
-                }
-                else if (context.Block.Is<Diggable>())
-                {
-                    if (TreeEntity.TreeRootsBlockDigging(context))
-                        return InteractResult.Failure(Localizer.DoStr("You attempt to dig up the soil, but the roots are too strong!"));
-
-                    // Destroy the plant and the block, adding to inventory.
-                    var pack = new GameActionPack();
-                    pack.PrepareMultiblockToolAction(this, context, (blockPos, actionPack) =>
-                    {
-                        actionPack.DestroyPlant(context.Player, blockPos.Pos + Vector3i.Up, this, DeathType.Construction);
-                        actionPack.DeleteBlock(blockPos.Pos, context.Player, true, new DirtItem(), this);
-                        return true;
-                    }, null, LocString.Empty);
-
-                    return (InteractResult)pack.TryPerform(false);
-                }
+                // Delete diggable block and add it to inventory.
+                return (InteractResult)AtomicActions.DeleteBlockNow(
+                    context:            this.CreateMultiblockContext(context),                                     // Get context with area of effect, calories, XP, etc.
+                    harvestPlantsAbove: World.GetBlock(context.BlockPosition.Value + Vector3i.Up).Is<Diggable>(),  // Also try harvest plants above if they are diggable.
+                    addTo:              context.Player?.User.Inventory);                                           // Deleted block (and maybe plants above) will be added to this inventory.
             }
 
+            // Try interact with a world object.
             if (context.Target is WorldObject) return this.BasicToolOnWorldObjectCheck(context);
 
+            // Fallback.
             return base.OnActLeft(context);
         }
     }

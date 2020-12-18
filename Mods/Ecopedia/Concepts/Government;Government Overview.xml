@@ -9,7 +9,7 @@
     The government is created by citizens, piece by piece, growing their power and capability alongside the power of the populace.  The parts of the government are:
   </section>
   <section image="Constitution" loc="196">[Constitution]
-Before any other aspect of government can be created, a Constitution must be created at a [CapitolItem]. It determines the how the government operates via civic articles.
+Before any other aspect of government can be created, a Constitution must be created at a [CapitolItem]. It determines how the government operates via civic articles.
 </section>
   <section image="ConstitutionalArticle" loc="197">[Civic Articles]
 A constitution contains civic articles which define how the government functions: who can do what, and how.  They can be created at a [CapitolItem] on a new constitution or added to an existing constitution at an [AmendmentsItem] table.

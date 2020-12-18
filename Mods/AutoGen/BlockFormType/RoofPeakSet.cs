@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class RoofPeakSetFormType : FormType
     {
         public override string Name => "RoofPeakSet";
-        public override LocString DisplayName => Localizer.DoStr("RoofPeakSet");
+        public override LocString DisplayName => Localizer.DoStr("Roof Peak Set");
         public override LocString DisplayDescription => Localizer.DoStr("Roof Peak Set");
         public override Type GroupType => typeof(RoofsFormGroup);
         public override int SortOrder => 55;

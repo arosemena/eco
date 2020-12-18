@@ -91,7 +91,7 @@ typeof(OilDrillingUpgradeItem), })]
         WorldObjectItem<ElectricMachinistTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A fancy toolbench that creates equally fancy toys."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A fancy toolbench that creates equally fancy toys.");
 
         static ElectricMachinistTableItem()
         {

@@ -33,7 +33,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayNamePlural             { get { return Localizer.DoStr("Macaroons"); } } 
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A small circular biscuit with a sweet huckleberry filling."); } }
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 16, Fat = 14, Protein = 7, Vitamins = 10};
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 20, Fat = 14, Protein = 7, Vitamins = 16};
         public override float Calories                          { get { return 850; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
@@ -49,8 +49,8 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Macaroons"),
                 new IngredientElement[]
                 {
-            new IngredientElement(typeof(FlourItem), 4, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)), 
-            new IngredientElement(typeof(SimpleSyrupItem), 1, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)), 
+            new IngredientElement(typeof(PastryDoughItem), 2, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)), 
+            new IngredientElement(typeof(SugarItem), 5, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)), 
             new IngredientElement(typeof(HuckleberryExtractItem), 1, typeof(AdvancedBakingSkill), typeof(AdvancedBakingLavishResourcesTalent)),   
                 },
                     new CraftingElement<MacaroonsItem>(1)  

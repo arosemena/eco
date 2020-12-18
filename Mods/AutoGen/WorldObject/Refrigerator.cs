@@ -82,7 +82,7 @@ namespace Eco.Mods.TechTree
     public partial class RefrigeratorItem :
         WorldObjectItem<RefrigeratorObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("An icebox from the future with significantly better cooling properties."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("An icebox from the future with significantly better cooling properties.");
 
         static RefrigeratorItem()
         {

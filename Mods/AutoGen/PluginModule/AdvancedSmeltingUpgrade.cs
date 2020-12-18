@@ -67,7 +67,7 @@ namespace Eco.Mods.TechTree
     public partial class AdvancedSmeltingUpgradeItem :
         EfficiencyModule 
     {
-        public override LocString DisplayDescription { get { return Localizer.DoStr("Advanced Upgrade that greatly increases efficiency when crafting Baking recipes."); } }
+        public override LocString DisplayDescription { get { return Localizer.DoStr("Advanced Upgrade that greatly increases efficiency when crafting Advanced Smelting recipes."); } }
 
         public AdvancedSmeltingUpgradeItem() : base(
             ModuleTypes.ResourceEfficiency | ModuleTypes.SpeedEfficiency,

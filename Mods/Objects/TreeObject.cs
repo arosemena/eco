@@ -34,6 +34,7 @@ using Eco.Gameplay.Systems.Tooltip;
 using Eco.Shared.Items;
 using Eco.Gameplay.Auth;
 using Eco.Core.IoC;
+using Eco.Gameplay.UI;
 
 [Serialized]
 class TrunkPiece
@@ -154,8 +155,6 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
             World.SetBlock(this.Species.BlockType, this.Position.XYZi + (Vector3i.Up * this.currentGrowthThreshold));
         }
     }
-
-    public static bool TreeRootsBlockDigging(InteractionContext context) { return Tree.TreeRootsBlockDigging(context.BlockPosition.Value); }
 
     private bool CanHarvest => this.branches.None(branch => branch != null && branch.Health > 0f);  // can't harvest if any branches are still alive
 
@@ -463,12 +462,15 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
 
         if (killer is Player)
         {
-            this.SetPhysicsController((INetObjectViewer)killer);
-            killer.RPC("YellTimber");
+            this.RPC("FellTree", trunkPiece.ID, this.ResourceMultiplier, killer.ID);    // Fell the tree AND set the SyncPhysics to be owned by this player.
+            this.SetPhysicsController((INetObjectViewer)killer, false);                 // LOCALLY (do not send RPC) set the killing player's client as the one in control of the physics of the tree. Handled by "FellTree".
+            killer.RPC("YellTimber");                                                   // Issue sound effect.
         }
-        Animal.AlertNearbyAnimals(this.Position, 15f);
+        else
+        {
+            this.RPC("FellTree", trunkPiece.ID, this.ResourceMultiplier);               // Fell the tree but do NOT set the SyncPhysics to be owned by any particular player.
+        }
 
-        this.RPC("FellTree", trunkPiece.ID, this.ResourceMultiplier);
         
         // break off any branches that are young
         for (int branchID = 0; branchID < this.branches.Count(); branchID++)
@@ -488,7 +490,7 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
         this.MarkDirty();
     }
 
-    public Result TryApplyDamage(INetObject damager, float amount, InteractionContext context, Item tool, Type damageDealer = null)
+    public Result TryApplyDamage(INetObject damager, float amount, InteractionContext context, Item tool, Type damageDealer = null, float experienceMultiplier = 1f)
     {
         // if the tree is really young, just outright uproot and destroy it.
         if (this.GrowthPercent < this.SaplingGrowthPercent)
@@ -758,7 +760,7 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
         return false;
     }
 
-    public bool SetPhysicsController(INetObjectViewer owner)
+    public bool SetPhysicsController(INetObjectViewer owner, bool sendRPC = true)
     {
         // Trees don't need physics until felled
         if (!this.Fallen)
@@ -773,8 +775,11 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
 
         this.Controller?.AddDestroyAction(this.RemovePhysicsController);
 
-        var id = ((INetObject)owner)?.ID ?? -1;
-        this.NetObj.Controller.RPC("UpdateController", id);
+        if (sendRPC)                                                            // In the case of a player felling the tree, don't send this RPC, that is already being handled by a different command.
+        {
+            var id = ((INetObject)owner)?.ID ?? -1;
+            this.NetObj.Controller.RPC("UpdatePhysicsPushPullState", id);
+        }
 
         return true;
     }

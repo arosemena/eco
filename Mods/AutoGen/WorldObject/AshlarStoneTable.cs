@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class AshlarStoneTableItem :
         WorldObjectItem<AshlarStoneTableObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large stone table crafted by an expert mason."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large stone table crafted by an expert mason.");
 
         static AshlarStoneTableItem()
         {

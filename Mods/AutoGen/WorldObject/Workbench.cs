@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<WorkbenchObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A bench for the basics and making even more benches."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A bench for the basics and making even more benches.");
 
         static WorkbenchItem()
         {

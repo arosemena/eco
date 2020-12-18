@@ -17,21 +17,27 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
-    public class SoftwoodBoardsRecipe :
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
+    public partial class SoftwoodBoardsRecipe :
         Recipe
     {
         public SoftwoodBoardsRecipe()
         {
-            var product = new Recipe(
-                "SoftwoodBoards",
-                Localizer.DoStr("Softwood Boards"),
-                new IngredientElement[]
-                {
-               new IngredientElement(typeof(SoftwoodHewnLogItem), 1),   
-                },
-               new CraftingElement<SoftwoodBoardItem>(1)
-            );
-            CraftingComponent.AddTagProduct(typeof(WorkbenchObject), typeof(BoardsRecipe), product);
+            this.Name        = "SoftwoodBoards";
+            this.DisplayName = Localizer.DoStr("Softwood Boards");
+            this.Ingredients = new List<IngredientElement>
+            {
+                new IngredientElement(typeof(SoftwoodHewnLogItem), 1),  
+            };
+            this.Items = new List<CraftingElement>
+            {
+                new CraftingElement<SoftwoodBoardItem>(1),
+            };
+            this.ModsPostInitialize();
+            CraftingComponent.AddTagProduct(typeof(WorkbenchObject), typeof(BoardsRecipe), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

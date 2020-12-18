@@ -29,14 +29,14 @@ namespace Eco.Mods.TechTree
     public partial class WorkBackpackItem :
         ClothingItem        
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Lighter pack that causes lower calorie consumption.\n\nDecreases calories consumed by 10\u0025 and increases max carry weight by 5 kg."); } }
+        public override LocString DisplayDescription  { get { return Localizer.DoStr("Lighter pack that causes lower calorie consumption.\n\nDecreases calories consumed when using tools by 10\u0025 and increases max carry weight by 5 kg."); } }
         public override string Slot             { get { return ClothingSlot.Back; } }             
         public override bool Starter            { get { return false ; } }                       
 
         private static Dictionary<UserStatType, float> flatStats = new Dictionary<UserStatType, float>()
     {
                 { UserStatType.MaxCarryWeight, 5000 },
-                { UserStatType.CalorieRate, -0.1f }
+                { UserStatType.CalorieRate, -0.1f },
     };
 public override Dictionary<UserStatType, float> GetFlatStats() { return flatStats; }
     }

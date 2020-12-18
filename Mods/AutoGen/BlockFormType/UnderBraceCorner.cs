@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class UnderBraceCornerFormType : FormType
     {
         public override string Name => "UnderBraceCorner";
-        public override LocString DisplayName => Localizer.DoStr("UnderBraceCorner");
+        public override LocString DisplayName => Localizer.DoStr("Under Brace Corner");
         public override LocString DisplayDescription => Localizer.DoStr("Under Brace Corner");
         public override Type GroupType => typeof(SupportsFormGroup);
         public override int SortOrder => 45;

@@ -24,10 +24,11 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [LocDisplayName("Coyote Carcass")]
-    [Weight(200)]      
+    [Weight(2000)]      
     [Ecopedia("Natural Resources", "Animal", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("SmallCarcass", 1)]
     [Tag("Carcass", 1)]

@@ -17,13 +17,13 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(ButcherySkill), 2)] 
-    public class ButcherMediumAnimalRecipe :
+    public partial class ButcherMediumAnimalRecipe :
         RecipeFamily
     {
         public ButcherMediumAnimalRecipe()
         {
-            this.Initialize(Localizer.DoStr("Butcher Medium Animal"), typeof(ButcherMediumAnimalRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -44,7 +44,15 @@ namespace Eco.Mods.TechTree
             this.ExperienceOnCraft = 9;  
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(ButcherySkill), typeof(ButcherMediumAnimalRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(ButcherMediumAnimalRecipe), this.UILink(), 1.5f, typeof(ButcherySkill), typeof(ButcheryFocusedSpeedTalent), typeof(ButcheryParallelSpeedTalent));     
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Butcher Medium Animal"), typeof(ButcherMediumAnimalRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(ButcheryTableObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

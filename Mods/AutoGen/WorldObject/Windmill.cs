@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
     public partial class WindmillItem :
         WorldObjectItem<WindmillObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Use wind to produce mechanical power."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Use wind to produce mechanical power.");
 
         static WindmillItem()
         {

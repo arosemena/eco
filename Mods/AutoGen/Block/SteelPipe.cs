@@ -25,13 +25,13 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Pipes;
     using Eco.Gameplay.Pipes.LiquidComponents;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(AdvancedSmeltingSkill), 1)]
     public partial class SteelPipeRecipe :
         RecipeFamily
     {
         public SteelPipeRecipe()
         {
-            this.Initialize(Localizer.DoStr("Steel Pipe"), typeof(SteelPipeRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,11 +50,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(AdvancedSmeltingSkill), typeof(SteelPipeRecipe), this.UILink());
             this.ExperienceOnCraft = 0.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(SteelPipeRecipe), this.UILink(), 1.5f, typeof(AdvancedSmeltingSkill), typeof(AdvancedSmeltingFocusedSpeedTalent), typeof(AdvancedSmeltingParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Steel Pipe"), typeof(SteelPipeRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(BlastFurnaceObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -71,14 +77,14 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Steel Pipe")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [Weight(2000)]
     [Ecopedia("Blocks", "Pipes", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Constructable", 1)]
     [Tier(3)]
     public partial class SteelPipeItem :
-    BlockItem<SteelPipeBlock>
+    PipeItem<SteelPipeBlock>
     {
         public override LocString DisplayDescription { get { return Localizer.DoStr("A pipe for transporting liquids."); } }
 

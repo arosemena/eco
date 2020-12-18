@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ZoningOfficeObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Districts are created and redefined here."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Districts are created and redefined here.");
 
         static ZoningOfficeItem()
         {

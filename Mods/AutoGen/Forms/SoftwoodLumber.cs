@@ -111,6 +111,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(SoftwoodLumberItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(SoftwoodLumberItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(SoftwoodLumberStairsBlock), typeof(SoftwoodLumberStairs90Block), typeof(SoftwoodLumberStairs180Block), typeof(SoftwoodLumberStairs270Block))]
     [Serialized]
@@ -163,6 +185,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(2)] 
     public partial class SoftwoodLumberLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodLumberRoofSideBlock), typeof(SoftwoodLumberRoofSide90Block), typeof(SoftwoodLumberRoofSide180Block), typeof(SoftwoodLumberRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofSideFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodLumberRoofTurnBlock), typeof(SoftwoodLumberRoofTurn90Block), typeof(SoftwoodLumberRoofTurn180Block), typeof(SoftwoodLumberRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodLumberRoofCornerBlock), typeof(SoftwoodLumberRoofCorner90Block), typeof(SoftwoodLumberRoofCorner180Block), typeof(SoftwoodLumberRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(SoftwoodLumberRoofPeakBlock), typeof(SoftwoodLumberRoofPeak90Block), typeof(SoftwoodLumberRoofPeak180Block), typeof(SoftwoodLumberRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(SoftwoodLumberItem))]
+    public partial class SoftwoodLumberRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(2)] 
+    public partial class SoftwoodLumberRoofPeak270Block : Block
     { }
 
 }

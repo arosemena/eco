@@ -10,51 +10,25 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Items;
     using Eco.Gameplay.Objects;
     using Eco.Shared.Localization;
-    using Eco.Shared.Math;
-    using Eco.Shared.Serialization;
-    using Eco.Simulation;
     using Eco.World;
     using Eco.World.Blocks;
 
     [Category("Hidden"), Tag("Tamper")]
-    public abstract partial class RoadToolItem : ToolItem, IPerformsToolAction
+    public abstract partial class RoadToolItem : ToolItem
     {
-        public ToolInteractAction MakeAction(ToolActionType tool) => new TampRoad();
+        public override LocString LeftActionDescription => Localizer.DoStr("Build road");
+        public override LocString DescribeBlockAction   => Localizer.DoStr("make a road");
 
-        public override LocString LeftActionDescription { get { return Localizer.DoStr("Build road"); } }
+        public override bool ShouldHighlight(Type block) =>  Block.Is<CanBeRoad>(block) && !Block.Is<Road>(block);
 
         public override InteractResult OnActLeft(InteractionContext context)
         {
-            if (context.HasBlock)
-            {
-                if (TreeEntity.TreeRootsBlockDigging(context))
-                    return InteractResult.Failure(Localizer.DoStr("You attempt to make a road, but the roots are too strong!"));
-                if (context.Block.Is<Road>())
-                    return InteractResult.Failure(LocString.Empty);
-
-                var blockType = this.GetRoadBlock(context.Block);
-                if (blockType != null)
-                {
-                    var pack = new GameActionPack();
-                    pack.PrepareMultiblockToolAction(this, context, (blockPos, actionPack) =>
-                    {
-                        actionPack.DestroyPlant(context.Player, blockPos.Pos + Vector3i.Up, this, DeathType.Construction);
-                        actionPack.PlaceBlock(blockType, blockPos.Pos, context.Player, true, null, false, this);
-                        return true;
-                    }, null, LocString.Empty);
-
-                    return (InteractResult)pack.TryPerform(false);
-                }
-                else
-                    return InteractResult.NoOp;
-            }
+            if (context.HasBlock && this.ShouldHighlight(context.Block!.GetType()))
+                return (InteractResult)AtomicActions.ChangeBlockNow(this.CreateMultiblockContext(context, () => new TampRoad()), typeof(DirtRoadBlock));            
 
             if (context.Target is WorldObject) return this.BasicToolOnWorldObjectCheck(context);
 
             return base.OnActLeft(context);
         }
-
-        /// <summary> Returns type of Road block which may be created from <see cref="currentBlock"/>. </summary>
-        private Type GetRoadBlock(Block currentBlock) => currentBlock.Is<CanBeRoad>() ? typeof(DirtRoadBlock) : null;
     }
 }

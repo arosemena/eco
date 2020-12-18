@@ -84,7 +84,7 @@ typeof(AdvancedSmeltingUpgradeItem), })]
         WorldObjectItem<AnvilObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A solid shaped piece of metal used to hammer ingots into tools and other useful things."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A solid shaped piece of metal used to hammer ingots into tools and other useful things.");
 
         static AnvilItem()
         {

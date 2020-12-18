@@ -81,7 +81,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<PumpJackObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Drill, baby! Drill!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Drill, baby! Drill!");
 
         static PumpJackItem()
         {

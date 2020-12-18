@@ -17,6 +17,7 @@ using Eco.Gameplay.Interactions;
 using Eco.Gameplay.Items;
 using Eco.Gameplay.Objects;
 using Eco.Gameplay.Players;
+using Eco.Gameplay.UI;
 using Eco.Gameplay.Utils;
 using Eco.Mods.TechTree;
 using Eco.Shared.Blueprints;
@@ -32,7 +33,7 @@ using Eco.World.Blocks;
 [LocDisplayName("Hammer")]
 [Category("Hidden")]
 [CanMakeBlockForm, Tag("Construction")]
-public class HammerItem : ToolItem, IPerformsToolAction
+public class HammerItem : ToolItem
 {
     static IDynamicValue tier = new ConstantValue(0);
     static IDynamicValue caloriesBurn = new ConstantValue(1);
@@ -48,8 +49,6 @@ public class HammerItem : ToolItem, IPerformsToolAction
     public override IDynamicValue SkilledRepairCost             { get { return skilledRepairCost; } }
     public override IDynamicValue Tier                          { get { return tier; } }
     public override IDynamicValue CaloriesBurn                  { get { return caloriesBurn; } }
-
-    public ToolInteractAction MakeAction(ToolActionType act) => new ConstructOrDeconstruct(act);
 
     public override bool IsValidFor(Item item)
     {
@@ -73,15 +72,8 @@ public class HammerItem : ToolItem, IPerformsToolAction
         if (context.HasBlock)
         {
             if (context.Block.Is<Constructed>())
-            {
-                using (var pack = new GameActionPack())
-                {
-                    pack.DeleteBlock(context.BlockPosition.Value, context.Player, true, null, this);
-                    pack.UseTool(context.Player, this);
-
-                    return (InteractResult)pack.TryPerform(false);
-                }
-            }
+                return (InteractResult)AtomicActions.DeleteBlockNow( context: this.CreateMultiblockContext(context, () => new ConstructOrDeconstruct() { ConstructedOrDeconstructed = ConstructedOrDeconstructed.Deconstructed }),
+                                                                     addTo:   context.Player?.User.Inventory);
             else if (context.Block is WorldObjectBlock block)
                 return this.TryPickUp(block.WorldObjectHandle.Object, context);
             else
@@ -95,7 +87,8 @@ public class HammerItem : ToolItem, IPerformsToolAction
 
     public override bool ShouldHighlight(Type block)
     {
-        return Block.Is<Constructed>(block);
+       
+        return Block.Is<Constructed>(block) || Block.Is<Empty>(block);
     }
 
     //Law todo
@@ -120,7 +113,7 @@ public class HammerItem : ToolItem, IPerformsToolAction
         try
         {
             if (!obj.PickupConfirmation.IsSet() || await player.ConfirmBox(obj.PickupConfirmation))
-                return (InteractResult)obj.TryPickUp(player, this.NeededCalories(player)).Notify(player);
+                return (InteractResult)obj.TryPickUp(player, this.NeededCalories(player));              
 
             return InteractResult.NoOp;
         }
@@ -165,22 +158,22 @@ public class HammerItem : ToolItem, IPerformsToolAction
         var blockType = BlockFormManager.GetBlockTypeToCreate(context.Player, context.SelectedItem, context.CarriedItem, form, rotation);
 
         // Let's give up! (Let the carried type handle it)
-        if (form == null || blockType == null)
+        if (form == null || blockType == null || blueprintInstance == null)
             return InteractResult.NoOp;
 
+        // Create game action pack, fill it and try to perform.
         using (var pack = new GameActionPack())
         {
-            if (blueprintInstance != null)
-            {
-                foreach (var blockPos in blueprintInstance)
-                {
-                    blockType = BlockManager.FromId(blockPos.BlockId);
-                    pack.PlaceBlock(blockType, blockPos.Offset, context.Player, false, creatingItem.GetType(), true, this);
-                }
+            // Fill the pack.
+            foreach (var blockPos in blueprintInstance)
+                pack.PlaceBlock(
+                    context:              this.CreateMultiblockContext(context.Player, blockPos.Offset.SingleItemAsEnumerable()), 
+                    blockType:            BlockManager.FromId(blockPos.BlockId),
+                    createBlockAction:    true, 
+                    removeFromInv:        context.Player?.User.Inventory, 
+                    itemToRemove:         creatingItem.GetType());
 
-                pack.UseTool(context.Player, this);
-            }
-
+            // Try to perform created actions.
             return (InteractResult)pack.TryPerform(false);
         }
     }

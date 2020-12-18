@@ -88,7 +88,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<MillObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Refines food resources by crushing them under a stone millstone."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Refines food resources by crushing them under a stone millstone.");
 
         static MillItem()
         {

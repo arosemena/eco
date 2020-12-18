@@ -89,6 +89,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(MortaredLimestoneItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(MortaredLimestoneItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(MortaredLimestoneStairsBlock), typeof(MortaredLimestoneStairs90Block), typeof(MortaredLimestoneStairs180Block), typeof(MortaredLimestoneStairs270Block))]
     [Serialized]
@@ -114,6 +136,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(1)] 
     public partial class MortaredLimestoneStairs270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredLimestoneRoofSideBlock), typeof(MortaredLimestoneRoofSide90Block), typeof(MortaredLimestoneRoofSide180Block), typeof(MortaredLimestoneRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofSideFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredLimestoneRoofTurnBlock), typeof(MortaredLimestoneRoofTurn90Block), typeof(MortaredLimestoneRoofTurn180Block), typeof(MortaredLimestoneRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredLimestoneRoofCornerBlock), typeof(MortaredLimestoneRoofCorner90Block), typeof(MortaredLimestoneRoofCorner180Block), typeof(MortaredLimestoneRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredLimestoneRoofPeakBlock), typeof(MortaredLimestoneRoofPeak90Block), typeof(MortaredLimestoneRoofPeak180Block), typeof(MortaredLimestoneRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(MortaredLimestoneItem))]
+    public partial class MortaredLimestoneRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredLimestoneRoofPeak270Block : Block
     { }
 
 }

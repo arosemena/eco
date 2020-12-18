@@ -471,7 +471,8 @@
 
     /* menu Running Elections */
     Variables.prototype.RunningElectionsMenu = function (obj) {
-        let data = obj.this.runningElections;
+        // Clearing elections array from XSS attacks
+        let data = clearFromXSS(obj.this.runningElections);
 
         setTimeout(function () {
             RunningElectionsMenu(data);
@@ -508,7 +509,8 @@
 
     /* menu Previous Elections */
     Variables.prototype.PreviousElectionsMenu = function (obj) {
-        let data = obj.this.previousElections;
+        // Clearing elections array from XSS attacks
+        let data = clearFromXSS(obj.this.previousElections);
 
         setTimeout(function () {
             PreviousElectionsMenu(data);

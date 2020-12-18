@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class UnderStairsFormType : FormType
     {
         public override string Name => "UnderStairs";
-        public override LocString DisplayName => Localizer.DoStr("UnderStairs");
+        public override LocString DisplayName => Localizer.DoStr("Under Stairs");
         public override LocString DisplayDescription => Localizer.DoStr("Under Stairs");
         public override Type GroupType => typeof(ClimbingFormGroup);
         public override int SortOrder => 30;

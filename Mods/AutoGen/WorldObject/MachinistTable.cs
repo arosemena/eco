@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         ModuleItem<MachinistTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A fancy tool bench that creates equally fancy toys."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A fancy tool bench that creates equally fancy toys.");
 
         static MachinistTableItem()
         {

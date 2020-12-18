@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Baked corn that retains more nutrients than more simple methods of cooking."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 6, Fat = 6, Protein = 7, Vitamins = 9};
-        public override float Calories                          { get { return 560; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

@@ -68,18 +68,18 @@ namespace Eco.Mods.Organisms
                 this.Name = "Palm";
                 this.DisplayName = Localizer.DoStr("Palm");
                 // Lifetime
-                this.MaturityAgeDays = 4.5f;
+                this.MaturityAgeDays = 1.5f;
                 // Generation
                 this.Height = 1;
                 // Food
                 this.CalorieValue = 12;
                 // Resources
                 this.PostHarvestingGrowth = 0;
-                this.ScythingKills = false; 
+                this.ScythingKills = false;
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(PalmLogItem), new Range(0, 30), 1)
+                    new SpeciesResource(typeof(PalmLogItem), new Range(0, 30), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals
@@ -89,10 +89,10 @@ namespace Eco.Mods.Organisms
                 this.MaxGrowthRate = 0.02f;
                 this.MaxDeathRate = 0.01f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f }); 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.0f, MaxResourceContent =  1.0f });
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  1 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  5 }); 
-                this.BlanketSpawnPercent = 0.7f; 
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  5 });
+                this.BlanketSpawnPercent = 0.7f;
                 this.IdealTemperatureRange = new Range(0.6f, 0.8f);
                 this.IdealMoistureRange = new Range(0.75f, 0.95f);
                 this.IdealWaterRange = new Range(0, 0.1f);

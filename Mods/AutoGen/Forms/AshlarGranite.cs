@@ -987,4 +987,58 @@ namespace Eco.Mods.TechTree
     public partial class AshlarGraniteUnderInnerPeak270Block : Block
     { }
 
+
+    [RotatedVariants(typeof(AshlarGraniteBraceTurnBlock), typeof(AshlarGraniteBraceTurn90Block), typeof(AshlarGraniteBraceTurn180Block), typeof(AshlarGraniteBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(BraceTurnFormType), typeof(AshlarGraniteItem))]
+    public partial class AshlarGraniteBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteBraceTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(AshlarGraniteUnderBraceTurnBlock), typeof(AshlarGraniteUnderBraceTurn90Block), typeof(AshlarGraniteUnderBraceTurn180Block), typeof(AshlarGraniteUnderBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(UnderBraceTurnFormType), typeof(AshlarGraniteItem))]
+    public partial class AshlarGraniteUnderBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteUnderBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteUnderBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarGraniteUnderBraceTurn270Block : Block
+    { }
+
 }

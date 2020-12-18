@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<BoardOfElectionsObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A building for deciding voting procedures."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A building for deciding voting procedures.");
 
         static BoardOfElectionsItem()
         {

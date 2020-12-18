@@ -84,7 +84,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<KitchenObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A prep area for food which allows for more complex dishes."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A prep area for food which allows for more complex dishes.");
 
         static KitchenItem()
         {

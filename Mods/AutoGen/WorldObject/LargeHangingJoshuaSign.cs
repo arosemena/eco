@@ -38,7 +38,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(CustomTextComponent))]              
+    [RequireComponent(typeof(CustomTextComponent))]             
     public partial class LargeHangingJoshuaSignObject : 
         WorldObject,    
         IRepresentsItem
@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<LargeHangingJoshuaSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large sign for all of your larger text needs!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large sign for all of your larger text needs!");
 
         static LargeHangingJoshuaSignItem()
         {

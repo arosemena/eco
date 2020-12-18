@@ -17,13 +17,13 @@ namespace Eco.Mods.TechTree
     using Gameplay.Systems.TextLinks;
     using Eco.Shared.Localization;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(MiningSkill), 2)] 
-    public class ConcentrateDryIronRecipe :
+    public partial class ConcentrateDryIronRecipe :
         RecipeFamily
     {
         public ConcentrateDryIronRecipe()
         {
-            this.Initialize(Localizer.DoStr("Concentrate Dry Iron"), typeof(ConcentrateDryIronRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -42,7 +42,15 @@ namespace Eco.Mods.TechTree
             this.ExperienceOnCraft = 1;  
             this.LaborInCalories = CreateLaborInCaloriesValue(150, typeof(MiningSkill), typeof(ConcentrateDryIronRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(ConcentrateDryIronRecipe), this.UILink(), 1.2f, typeof(MiningSkill));     
+            this.ModsPreInitialize();
+            this.Initialize(Localizer.DoStr("Concentrate Dry Iron"), typeof(ConcentrateDryIronRecipe));
+            this.ModsPostInitialize();
             CraftingComponent.AddRecipe(typeof(ScreeningMachineObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 }

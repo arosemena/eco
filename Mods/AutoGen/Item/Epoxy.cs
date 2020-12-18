@@ -24,13 +24,13 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(OilDrillingSkill), 1)]      
     public partial class EpoxyRecipe :
         RecipeFamily
     {
         public EpoxyRecipe()
         {
-            this.Initialize(Localizer.DoStr("Epoxy"), typeof(EpoxyRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
                     new CraftingElement[]
                     {
                     new CraftingElement<EpoxyItem>(2),  
-                    new CraftingElement<BarrelItem>(typeof(OilDrillingSkill), 3, typeof(OilDrillingLavishResourcesTalent))  
+                    new CraftingElement<BarrelItem>(typeof(OilDrillingSkill), 3, typeof(OilDrillingLavishResourcesTalent)),  
  
                     }
                 )
@@ -54,16 +54,23 @@ namespace Eco.Mods.TechTree
 
             this.LaborInCalories = CreateLaborInCaloriesValue(300, typeof(OilDrillingSkill), typeof(EpoxyRecipe), this.UILink()); 
             this.CraftMinutes = CreateCraftTimeValue(typeof(EpoxyRecipe), this.UILink(), 1.6f, typeof(OilDrillingSkill), typeof(OilDrillingFocusedSpeedTalent), typeof(OilDrillingParallelSpeedTalent));     
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Epoxy"), typeof(EpoxyRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(OilRefineryObject), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
     [LocDisplayName("Epoxy")]
     [Weight(1000)]      
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Products", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     public partial class EpoxyItem :
     Item                                    

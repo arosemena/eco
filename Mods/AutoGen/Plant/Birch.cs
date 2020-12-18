@@ -68,7 +68,7 @@ namespace Eco.Mods.Organisms
                 this.Name = "Birch";
                 this.DisplayName = Localizer.DoStr("Birch");
                 // Lifetime
-                this.MaturityAgeDays = 2;
+                this.MaturityAgeDays = 1;
                 // Generation
                 this.Height = 1;
                 // Food
@@ -79,7 +79,7 @@ namespace Eco.Mods.Organisms
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(BirchLogItem), new Range(0, 50), 1)
+                    new SpeciesResource(typeof(BirchLogItem), new Range(0, 50), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals

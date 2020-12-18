@@ -11,8 +11,8 @@ namespace Eco.Mods.TechTree
     public partial class FullWallFormType : FormType
     {
         public override string Name => "FullWall";
-        public override LocString DisplayName => Localizer.DoStr("FullWall");
-        public override LocString DisplayDescription => Localizer.DoStr("FullWall");
+        public override LocString DisplayName => Localizer.DoStr("Full Wall");
+        public override LocString DisplayDescription => Localizer.DoStr("Full Wall");
         public override Type GroupType => typeof(BasicFormGroup);
         public override int SortOrder => 2;
         public override int MinTier => 1;

@@ -86,7 +86,7 @@ typeof(IndustryUpgradeItem), })]
         WorldObjectItem<AssemblyLineObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("The assembly line allows for mass production of mechanical products"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("The assembly line allows for mass production of mechanical products");
 
         static AssemblyLineItem()
         {

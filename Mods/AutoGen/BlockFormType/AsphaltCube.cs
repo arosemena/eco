@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class AsphaltCubeFormType : FormType
     {
         public override string Name => "AsphaltCube";
-        public override LocString DisplayName => Localizer.DoStr("AsphaltCube");
+        public override LocString DisplayName => Localizer.DoStr("Asphalt Cube");
         public override LocString DisplayDescription => Localizer.DoStr("Asphalt Cube");
         public override Type GroupType => typeof(BasicFormGroup);
         public override int SortOrder => 60;

@@ -68,7 +68,7 @@ namespace Eco.Mods.Organisms
                 this.Name = "Spruce";
                 this.DisplayName = Localizer.DoStr("Spruce");
                 // Lifetime
-                this.MaturityAgeDays = 5.5f;
+                this.MaturityAgeDays = 1.5f;
                 // Generation
                 this.Height = 1;
                 // Food
@@ -78,7 +78,7 @@ namespace Eco.Mods.Organisms
                 this.PickableAtPercent = 0;
                 this.ResourceList = new List<SpeciesResource>()
                 {
-                    new SpeciesResource(typeof(SpruceLogItem), new Range(0, 50), 1)
+                    new SpeciesResource(typeof(SpruceLogItem), new Range(0, 50), 1),
                 };
                 this.ResourceBonusAtGrowth = 0.9f;
                 // Visuals
@@ -88,10 +88,10 @@ namespace Eco.Mods.Organisms
                 this.MaxGrowthRate = 0.02f;
                 this.MaxDeathRate = 0.01f;
                 this.SpreadRate = 0.001f;
-                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.5f }); 
+                this.ResourceConstraints.Add(new ResourceConstraint() { LayerName = "SoilMoisture", HalfSpeedConcentration =  0.1f, MaxResourceContent =  0.5f });
                 this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "FertileGround", ConsumedCapacityPerPop =  5 });
-                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  26 }); 
-                this.BlanketSpawnPercent = 0.5f; 
+                this.CapacityConstraints.Add(new CapacityConstraint() { CapacityLayerName = "CanopySpace", ConsumedCapacityPerPop =  26 });
+                this.BlanketSpawnPercent = 0.5f;
                 this.IdealTemperatureRange = new Range(0.22f, 0.3f);
                 this.IdealMoistureRange = new Range(0.25f, 0.45f);
                 this.IdealWaterRange = new Range(0, 0.1f);

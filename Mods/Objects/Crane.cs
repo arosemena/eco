@@ -3,7 +3,6 @@
 
 namespace Eco.Mods.TechTree
 {
-    using System;
     using Eco.Gameplay.Components;
     using Eco.Gameplay.Items;
     using Eco.Gameplay.Objects;
@@ -12,14 +11,11 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Serialization;
     using Eco.Gameplay.Components.Auth;
     using Eco.Gameplay.GameActions;
-    using Eco.Shared.Items;
     using Eco.Core.Items;
+    using Eco.Shared.Math;
 
     [Tag("Construction")]
-    public partial class CraneItem : WorldObjectItem<CraneObject>, IPerformsToolAction
-    {
-        public ToolInteractAction MakeAction(ToolActionType act) => new ConstructOrDeconstruct(act);
-    }
+    public partial class CraneItem : WorldObjectItem<CraneObject> { }
 
     [Serialized]
     [RequireComponent(typeof(StandaloneAuthComponent))] 

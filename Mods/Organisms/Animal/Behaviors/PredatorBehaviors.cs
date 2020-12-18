@@ -20,25 +20,30 @@ namespace Eco.Mods.Organisms.Behaviors
     {
         private const float RunTimeAfterAttackingPlayer   = 10f;
         private const float EnemyNearbyAlertness          = 100f;
-        private const float AngerLevelToAttack            = 4f;
         private const float ChanceToFleeFromEnemy         = 0.65f;
         private const float EatPreyTime                   = 3000f; //Have them sitting there eating for a very long time. 
+        
+        public static Behavior<Animal> TryFleeing { get; } = new BehaviorBasic<Animal>("Try to run", (beh, agent) =>
+        {
+            var (result, msg) = ConsiderFleeing(agent);
+            return result ? BTResult.Success(msg) : BTResult.Failure(msg);
+        });
 
-        public static (bool result, string msg) ConsiderFleeing(Animal agent)
+        public static (bool result, string msg) ConsiderFleeing(Animal agent, bool skipChance = false)
         {
             // Run immediately if just attacked player or randomly choose run or not
             // For immediate run remember that we need to run away for a long time
             var fleePosition = agent.Position + agent.FacingDir;
-            var chanceToFlee = RandomUtil.Chance(ChanceToFleeFromEnemy);
+            var chanceToFlee = !skipChance && RandomUtil.Chance(ChanceToFleeFromEnemy);
             agent.TryGetMemory(Animal.IsPlayerAttackedMemory, out bool attackedPlayer);
             if (attackedPlayer) chanceToFlee = true;
             if (agent.Prey != null)
             {
                 if (!chanceToFlee && agent.Prey is Player playerEnemy)
                 {
-                    // Be aware of a player with fire or a weapon
+                    // Be aware of a player with fire
                     var selectedItem   = playerEnemy.User.Inventory?.Toolbar?.SelectedItem;
-                    var playerWithFire = selectedItem != null && (selectedItem is TorchItem || selectedItem is WeaponItem);
+                    var playerWithFire = selectedItem is TorchItem;
                     if (playerWithFire) chanceToFlee = true;
                 } 
                 fleePosition = agent.Prey.Position;
@@ -67,8 +72,8 @@ namespace Eco.Mods.Organisms.Behaviors
                 if (!isAttackChoice) return (false, "no attack");
                 agent.SetMemory(Animal.RunOrAttackMemory, true);
             }
-            
-            if (!isAttackChoice) ConsiderFleeing(agent);
+            // Check special fleeing conditions like player keeps torch or weapon
+            ConsiderFleeing(agent, true);
 
             return (isAttackChoice, isAttackChoice ? "attacking" : "no attack");
         }
@@ -85,24 +90,24 @@ namespace Eco.Mods.Organisms.Behaviors
                 if (agent.Prey is Player)
                 { 
                     // Growl on target while we have low anger
-                    if (agent.Anger < AngerLevelToAttack)
+                    if (agent.Anger < Animal.AngerLevelToAttack)
                     {
                         agent.ClearRoute();
                         agent.LookAt(agent.Prey);
                         return (agent.ChangeState(AnimalState.Growl, 2, true).Status != BTStatus.Failure, "growling");
                     }
-                    // Have a chance to run away before attacking
-                    if (ConsiderFleeing(agent).result) return (true, "chose run away"); 
                 }
                 // Stopping an enemy before attacking to make a good chase
                 else if (agent.Prey is Animal animalPrey) animalPrey.ClearRoute();
                     
                 var attackResult = AttackTarget(agent.Prey, agent, agent.Species.TimeAttackToIdle);
                 return (attackResult.Status != BTStatus.Failure, attackResult.Msg);
-            } 
+            }
 
+            // Player chasing will be available only when we're anger (not executes for passive acting)
+            var canChasePlayer = !(agent.Prey is Player) || (agent.Prey is Player && agent.Anger > 0.1f);
             // Start chasing a prey if it's in our detection range
-            if (distanceToEnemy > agent.Species.AttackRange && distanceToEnemy < agent.Species.DetectRange)
+            if (distanceToEnemy > agent.Species.AttackRange && distanceToEnemy < agent.Species.DetectRange && canChasePlayer)
             {
                 var agentPreyPosition = agent.Prey.Position;
                 // Move to prey's direction closer
@@ -135,10 +140,7 @@ namespace Eco.Mods.Organisms.Behaviors
             agent.LookAt(agent.Prey);
 
             if (target is Player)
-            {
-                agent.SetMemory(Animal.IsPlayerAttackedMemory, true);
                 return agent.ChangeState(AnimalState.AttackPrey, attackTime, false);
-            }
             if (target is Animal animal && animal.Alive)
                 return agent.ChangeState(AnimalState.AttackPrey, attackTime, false);
 

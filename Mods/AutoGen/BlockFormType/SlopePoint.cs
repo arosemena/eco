@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class SlopePointFormType : FormType
     {
         public override string Name => "SlopePoint";
-        public override LocString DisplayName => Localizer.DoStr("SlopePoint");
+        public override LocString DisplayName => Localizer.DoStr("Slope Point");
         public override LocString DisplayDescription => Localizer.DoStr("Slope Point");
         public override Type GroupType => typeof(SlopesFormGroup);
         public override int SortOrder => 20;

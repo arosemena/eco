@@ -71,7 +71,7 @@ namespace Eco.Mods.TechTree
     public partial class BisonMountItem :
         WorldObjectItem<BisonMountObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A fluffy, but very dead, bison head on a mount."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A fluffy, but very dead, bison head on a mount.");
 
         static BisonMountItem()
         {

@@ -78,7 +78,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<GovernmentOfficeObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Elected titles are created and defined at the government office."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Elected titles are created and defined at the government office.");
 
         static GovernmentOfficeItem()
         {

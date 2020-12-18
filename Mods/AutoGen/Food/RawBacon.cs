@@ -34,7 +34,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A fatty cut of meat that happens to be inexplicably tastier than other cuts."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 0, Fat = 9, Protein = 3, Vitamins = 0};
-        public override float Calories                          { get { return 600; } }
+        public override float Calories                          { get { return 200; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 
@@ -49,10 +49,10 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Raw Bacon"),
                 new IngredientElement[]
                 {
-            new IngredientElement(typeof(RawMeatItem), 4, typeof(ButcherySkill), typeof(ButcheryLavishResourcesTalent)),   
+            new IngredientElement(typeof(RawMeatItem), 3, typeof(ButcherySkill), typeof(ButcheryLavishResourcesTalent)),   
                 },
                     new CraftingElement<RawBaconItem>(1),  
-                    new CraftingElement<ScrapMeatItem>(5f)  
+                    new CraftingElement<ScrapMeatItem>(4f)  
                 
             );
             this.Initialize(Localizer.DoStr("Raw Bacon"), typeof(RawBaconRecipe));

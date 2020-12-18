@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<ScreeningMachineObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A machine for dry concentration that produces less harmful tailings. Can only be used to concentrate Iron."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A machine for dry concentration that produces less harmful tailings. Can only be used to concentrate Iron.");
 
         static ScreeningMachineItem()
         {

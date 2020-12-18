@@ -35,20 +35,20 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Items;
     using Eco.Gameplay.Pipes;
     using Eco.World.Blocks;
-
+    
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(LinkComponent))]
-    [RequireComponent(typeof(PublicStorageComponent))]
-    public partial class StorageChestObject :
-        WorldObject,
+    [RequireComponent(typeof(LinkComponent))]                   
+    [RequireComponent(typeof(PublicStorageComponent))]                
+    public partial class StorageChestObject : 
+        WorldObject,    
         IRepresentsItem
     {
-        public override LocString DisplayName { get { return Localizer.DoStr("Storage Chest"); } }
+        public override LocString DisplayName { get { return Localizer.DoStr("Storage Chest"); } } 
 
-        public override TableTextureMode TableTexture => TableTextureMode.Wood;
+        public override TableTextureMode TableTexture => TableTextureMode.Wood; 
 
-        public virtual Type RepresentedItemType { get { return typeof(StorageChestItem); } }
+        public virtual Type RepresentedItemType { get { return typeof(StorageChestItem); } } 
 
 
 
@@ -56,7 +56,7 @@ namespace Eco.Mods.TechTree
         {
 
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(32);
+            storage.Initialize(16);
             storage.Storage.AddInvRestriction(new NotCarriedRestriction()); // can't store block or large items
 
         }
@@ -65,23 +65,23 @@ namespace Eco.Mods.TechTree
         {
             base.Destroy();
         }
-
+       
     }
 
     [Serialized]
     [LocDisplayName("Storage Chest")]
-    [Ecopedia("Crafted Objects", "Storage", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
+    [Ecopedia("Crafted Objects", "Storage", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     public partial class StorageChestItem :
-        WorldObjectItem<StorageChestObject>
+        WorldObjectItem<StorageChestObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A container you can store items in."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A container you can store items in.");
 
         static StorageChestItem()
         {
-
+            
         }
 
-
+        
 
     }
 
@@ -95,13 +95,13 @@ namespace Eco.Mods.TechTree
                 Localizer.DoStr("Storage Chest"),
                 new IngredientElement[]
                 {
-               new IngredientElement("Wood", 10),
+               new IngredientElement("Wood", 10),   
                 },
                new CraftingElement<StorageChestItem>()
             );
             this.Initialize(Localizer.DoStr("Storage Chest"), typeof(StorageChestRecipe));
             this.Recipes = new List<Recipe> { product };
-            this.LaborInCalories = CreateLaborInCaloriesValue(25);
+            this.LaborInCalories = CreateLaborInCaloriesValue(25); 
             this.CraftMinutes = CreateCraftTimeValue(2);
             this.Initialize(Localizer.DoStr("Storage Chest"), typeof(StorageChestRecipe));
             CraftingComponent.AddRecipe(typeof(WorkbenchObject), this);

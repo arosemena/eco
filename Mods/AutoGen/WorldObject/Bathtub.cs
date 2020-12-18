@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class BathtubItem :
         WorldObjectItem<BathtubObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A porcelain bathtub for when you need to get clean or just relax"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A porcelain bathtub for when you need to get clean or just relax");
 
         static BathtubItem()
         {

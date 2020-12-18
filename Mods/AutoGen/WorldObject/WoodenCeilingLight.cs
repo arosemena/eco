@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
     public partial class WoodenCeilingLightItem :
         WorldObjectItem<WoodenCeilingLightObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A more modern way to light up a room."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A more modern way to light up a room.");
 
         static WoodenCeilingLightItem()
         {

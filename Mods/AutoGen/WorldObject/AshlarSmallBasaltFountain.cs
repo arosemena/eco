@@ -75,7 +75,7 @@ namespace Eco.Mods.TechTree
     public partial class AshlarSmallBasaltFountainItem :
         WorldObjectItem<AshlarSmallBasaltFountainObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A beautiful ashlar stone fountain with flowing water that makes a great centerpiece. Small enough to fit indoors."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A beautiful ashlar stone fountain with flowing water that makes a great centerpiece. Small enough to fit indoors.");
 
         static AshlarSmallBasaltFountainItem()
         {

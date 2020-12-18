@@ -58,9 +58,9 @@ namespace Eco.Mods.TechTree
     public partial class StoneMacheteItem : MacheteItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(20, typeof(GatheringSkill), typeof(StoneMacheteItem), new StoneMacheteItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
-        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(GatheringToolStrengthTalent), 0));
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(StoneMacheteItem), typeof(GatheringToolEfficiencyTalent)), CreateCalorieValue(20, typeof(GatheringSkill), typeof(StoneMacheteItem), new StoneMacheteItem().UILink()));
+        private static IDynamicValue exp = new ConstantValue(0.1f);
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(StoneMacheteItem), typeof(GatheringToolStrengthTalent), 0));
         private static IDynamicValue skilledRepairCost = new ConstantValue(5);  
         
 

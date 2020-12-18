@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [LocDisplayName("Pickaxe")]
@@ -31,6 +32,6 @@ namespace Eco.Mods.TechTree
     public partial class PickaxeItem :
     ToolItem                        
     {
-        public override LocString DisplayDescription { get { return Localizer.DoStr("A pointy implement to break down stone and ore into managable rubble."); } }
+        public override LocString DisplayDescription { get { return Localizer.DoStr("A pointy implement to break down stone and ore into manageable rubble."); } }
     }
 }

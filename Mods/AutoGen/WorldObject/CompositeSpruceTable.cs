@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class CompositeSpruceTableItem :
         WorldObjectItem<CompositeSpruceTableObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A large composite table for eating meals or getting some work done."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A large composite table for eating meals or getting some work done.");
 
         static CompositeSpruceTableItem()
         {

@@ -18,11 +18,14 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Items;
     using Eco.Core.Items;
     using Eco.Gameplay;
+    using Eco.Gameplay.Utils;
+    using System.Linq;
+    using Eco.Gameplay.Systems.TextLinks;
 
     //Add Bed component to beds
-    [RequireComponent(typeof(BedComponent))] public partial class WoodenFabricBedObject { }
-    [RequireComponent(typeof(BedComponent))] public partial class WoodenStrawBedObject { }
-    [RequireComponent(typeof(BedComponent))] public partial class CampsiteObject { }
+    [RequireComponent(typeof(BedComponent))] public partial class WoodenFabricBedObject : WorldObject { public override LocString PickupConfirmation => this.GetComponent<BedComponent>().BedPickupConfirmation(); }
+    [RequireComponent(typeof(BedComponent))] public partial class WoodenStrawBedObject : WorldObject { public override LocString PickupConfirmation => this.GetComponent<BedComponent>().BedPickupConfirmation(); }
+    [RequireComponent(typeof(BedComponent))] public partial class CampsiteObject : WorldObject { public override LocString PickupConfirmation => this.GetComponent<BedComponent>().BedPickupConfirmation(); }
 
     //Bed component just has a button to open the sleep manager.
     [Serialized, AutogenClass, LocDisplayNameAttribute("Bed")]
@@ -40,8 +43,29 @@ namespace Eco.Mods.TechTree
 
         public InteractResult OnActInteract(InteractionContext context)
         {
-            if (context.Parameters != null && context.Parameters.ContainsKey("sleep")) { this.Sleep(context.Player); return InteractResult.Success; }
+            if (context.Parameters != null && context.Parameters.ContainsKey("sleep")) 
+            { 
+                this.Sleep(context.Player);
+                // If this bed is in a world object. Add the player to UsingUsers list.
+                this.Parent?.IncrementUsing(context.Player);
+                return InteractResult.Success; 
+            }
             return InteractResult.NoOp;
+        }
+
+        /// <summary>Return a warning text if there's any sleeping user on this bed</summary>
+        public LocString BedPickupConfirmation()
+        {
+            // Try to get a sleeping player on this bes
+            var sleepingPlayer = this.Parent.UsingPlayers.Select(p => p.Target as Player).Where(p => SleepManager.Obj.IsPlayerAsleep(p.User)).FirstOrDefault();
+            // return a confirmation text if there's a sleeping user
+            return sleepingPlayer != null ? Localizer.Do($"Are you sure you want to remove {sleepingPlayer.User.UILink()}'s bed while they are sleeping in it? This is generally considered quite rude and uncouth.") : LocString.Empty;
+        } 
+
+        public override void Initialize() 
+        {
+            this.Parent.IsHUDElement = true;
+            base.Initialize();
         }
 
         [ChatSubCommand("Test", "Spawn a bed and sleep in it.", ChatAuthorizationLevel.Developer)]
@@ -51,6 +75,13 @@ namespace Eco.Mods.TechTree
             var bed = WorldObjectDebugUtil.SpawnAndClaim<BedComponent>("WoodenFabricBedObject", user, user.Position.XYZi + Vector3i.Forward);
             Task.Delay(2000).Wait();
             bed.Sleep(user.Player);
+        }
+
+        public override void Destroy()
+        {
+            // Wake all the players are sleeping on this bed.
+            PlayerUseTracking.ForEachPlayer(this.Parent.UsingPlayers, p => SleepManager.Obj.WakePlayerUp(p));
+            base.Destroy();
         }
     }
 }

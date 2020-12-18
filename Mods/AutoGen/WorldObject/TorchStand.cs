@@ -57,7 +57,7 @@ namespace Eco.Mods.TechTree
 
         private static string[] fuelTagList = new string[]
         {
-            "Torch"
+            "Torch",
         };
 
         protected override void Initialize()
@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
     public partial class TorchStandItem :
         WorldObjectItem<TorchStandObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A stand for a torch."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A stand for a torch.");
 
         static TorchStandItem()
         {

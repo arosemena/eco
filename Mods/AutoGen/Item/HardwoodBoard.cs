@@ -24,30 +24,36 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(CarpentrySkill), 1)]      
     public partial class HardwoodBoardRecipe :
         Recipe
     {
         public HardwoodBoardRecipe()
         {
-            var product = new Recipe(
-                "HardwoodBoard",
-                Localizer.DoStr("Hardwood Board"),
-                new IngredientElement[]
-                {
-                    new IngredientElement(typeof(HardwoodHewnLogItem), 1, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)),    
-                }, 
-                    new CraftingElement<HardwoodBoardItem>() 
-            );
-            CraftingComponent.AddTagProduct(typeof(CarpentryTableObject), typeof(BoardRecipe), product);
+            this.Name        = "HardwoodBoard";
+            this.DisplayName = Localizer.DoStr("Hardwood Board");
+            this.Ingredients = new List<IngredientElement>
+            {
+                new IngredientElement(typeof(HardwoodHewnLogItem), 1, typeof(CarpentrySkill), typeof(CarpentryLavishResourcesTalent)),   
+            };
+            this.Items = new List<CraftingElement>
+            {
+                new CraftingElement<HardwoodBoardItem>() 
+            };
+            this.ModsPostInitialize();
+            CraftingComponent.AddTagProduct(typeof(CarpentryTableObject), typeof(BoardRecipe), this);
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
     [LocDisplayName("Hardwood Board")]
     [Weight(500)]      
     [Fuel(2000)][Tag("Fuel")]          
-    [Currency] 
+    [Tag("Currency")][Currency]              
     [Ecopedia("Items", "Products", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]                                                                           
     [Tag("WoodBoard", 1)]
     [Tag("Burnable Fuel", 1)]                                 

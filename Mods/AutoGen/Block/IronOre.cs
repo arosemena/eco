@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [Minable(1), Solid,Wall]
@@ -36,12 +37,13 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Iron Ore")]
-    [MaxStackSize(40)]
+    [MaxStackSize(60)]
     [Weight(20000)]
     [ResourcePile]
     [Ecopedia("Natural Resources", "Ore", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     [Tag("Ore", 1)]
+    [Tag("Excavatable", 1)]
     public partial class IronOreItem :
     BlockItem<IronOreBlock>
     {

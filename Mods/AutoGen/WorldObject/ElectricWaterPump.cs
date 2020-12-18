@@ -77,7 +77,7 @@ namespace Eco.Mods.TechTree
     public partial class ElectricWaterPumpItem :
         WorldObjectItem<ElectricWaterPumpObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Pumps water from a source into a pipe network."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Pumps water from a source into a pipe network.");
 
         static ElectricWaterPumpItem()
         {

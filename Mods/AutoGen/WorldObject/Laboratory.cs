@@ -87,7 +87,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<LaboratoryObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("For researching the science side of cooking. Science rules!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("For researching the science side of cooking. Science rules!");
 
         static LaboratoryItem()
         {

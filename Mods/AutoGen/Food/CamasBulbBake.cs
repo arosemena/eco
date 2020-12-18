@@ -35,7 +35,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("A spread of evenly baked camas bulbs; soft in the middle, golden brown on the outside."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 12, Fat = 5, Protein = 7, Vitamins = 4};
-        public override float Calories                          { get { return 560; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

@@ -83,7 +83,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<JawCrusherObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A heavy duty machine that uses compressive force to crush rocks into a fine gravel."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A heavy duty machine that uses compressive force to crush rocks into a fine gravel.");
 
         static JawCrusherItem()
         {

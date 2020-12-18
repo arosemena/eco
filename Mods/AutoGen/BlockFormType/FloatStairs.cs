@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class FloatStairsFormType : FormType
     {
         public override string Name => "FloatStairs";
-        public override LocString DisplayName => Localizer.DoStr("FloatStairs");
+        public override LocString DisplayName => Localizer.DoStr("Float Stairs");
         public override LocString DisplayDescription => Localizer.DoStr("Float Stairs");
         public override Type GroupType => typeof(ClimbingFormGroup);
         public override int SortOrder => 31;

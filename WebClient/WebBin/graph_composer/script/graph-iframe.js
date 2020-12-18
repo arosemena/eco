@@ -486,7 +486,6 @@ const DatasetGraph = function (selector) {
 
         if (chart) {
             for (let series of chart.series) {
-                console.log(series);
                 vars.push({Value: series.userOptions.id, Unit: series.userOptions.unit});
             }
         }

@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
     public partial class WoodenElevatorCallPostItem :
         WorldObjectItem<WoodenElevatorCallPostObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Used to call a nearby WoodenElevator."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Used to call a nearby WoodenElevator.");
 
         static WoodenElevatorCallPostItem()
         {

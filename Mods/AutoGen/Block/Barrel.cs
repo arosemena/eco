@@ -25,13 +25,13 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Pipes;
     using Eco.Gameplay.Pipes.LiquidComponents;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
     [RequiresSkill(typeof(OilDrillingSkill), 1)]
     public partial class BarrelRecipe :
         RecipeFamily
     {
         public BarrelRecipe()
         {
-            this.Initialize(Localizer.DoStr("Barrel"), typeof(BarrelRecipe));
             this.Recipes = new List<Recipe>
             {
                 new Recipe(
@@ -50,11 +50,17 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = CreateLaborInCaloriesValue(180, typeof(OilDrillingSkill), typeof(BarrelRecipe), this.UILink());
             this.ExperienceOnCraft = 0.5f;
             this.CraftMinutes = CreateCraftTimeValue(typeof(BarrelRecipe), this.UILink(), 0.5f, typeof(OilDrillingSkill), typeof(OilDrillingFocusedSpeedTalent), typeof(OilDrillingParallelSpeedTalent));
+            this.ModsPreInitialize();
             this.Initialize(Localizer.DoStr("Barrel"), typeof(BarrelRecipe));
+            this.ModsPostInitialize();
 
             CraftingComponent.AddRecipe(typeof(ElectricMachinistTableObject), this);
-
         }
+
+        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+        partial void ModsPreInitialize();
+        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+        partial void ModsPostInitialize();
     }
 
     [Serialized]
@@ -69,10 +75,10 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Barrel")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [Weight(2000)]
     [Ecopedia("Blocks", "Liquids", createAsSubPage: true, display: InPageTooltip.DynamicTooltip)]
-    [Currency]
+    [Currency][Tag("Currency")]
     public partial class BarrelItem :
     BlockItem<BarrelBlock>
     {

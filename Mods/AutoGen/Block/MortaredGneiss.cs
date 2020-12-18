@@ -24,6 +24,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
+    /// <summary>Auto-generated class. Don't modify it! All your changes will be wiped with next update! Use Mods* partial methods instead for customization.</summary>
 
     [Serialized]
     [Solid, Wall, Constructed,BuildRoomMaterialOption]
@@ -36,11 +37,12 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [LocDisplayName("Mortared Gneiss")]
-    [MaxStackSize(30)]
+    [MaxStackSize(45)]
     [Category("Hidden")]
     public partial class MortaredGneissItem :
     BlockItem<MortaredGneissBlock>
     {
+        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Mortared Gneiss"); } }
         public override LocString DisplayDescription { get { return Localizer.DoStr("Used to create tough but rudimentary buildings."); } }
 
         public override bool CanStickToWalls { get { return false; } }

@@ -58,9 +58,9 @@ namespace Eco.Mods.TechTree
     public partial class StoneSickleItem : SickleItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(20, typeof(GatheringSkill), typeof(StoneSickleItem), new StoneSickleItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
-        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(GatheringToolStrengthTalent), 0));
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(StoneSickleItem), typeof(GatheringToolEfficiencyTalent)), CreateCalorieValue(20, typeof(GatheringSkill), typeof(StoneSickleItem), new StoneSickleItem().UILink()));
+        private static IDynamicValue exp = new ConstantValue(0.1f);
+        private static IDynamicValue tier = new MultiDynamicValue(MultiDynamicOps.Sum, new ConstantValue(1), new TalentModifiedValue(typeof(StoneSickleItem), typeof(GatheringToolStrengthTalent), 0));
         private static IDynamicValue skilledRepairCost = new ConstantValue(5);  
         
 

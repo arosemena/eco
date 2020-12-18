@@ -89,6 +89,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(HewnLogItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(HewnLogItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(HewnLogStairsBlock), typeof(HewnLogStairs90Block), typeof(HewnLogStairs180Block), typeof(HewnLogStairs270Block))]
     [Serialized]
@@ -141,6 +163,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(1)] 
     public partial class HewnLogLadder270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(HewnLogRoofSideBlock), typeof(HewnLogRoofSide90Block), typeof(HewnLogRoofSide180Block), typeof(HewnLogRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofSideFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(HewnLogRoofTurnBlock), typeof(HewnLogRoofTurn90Block), typeof(HewnLogRoofTurn180Block), typeof(HewnLogRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(HewnLogRoofCornerBlock), typeof(HewnLogRoofCorner90Block), typeof(HewnLogRoofCorner180Block), typeof(HewnLogRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(HewnLogRoofPeakBlock), typeof(HewnLogRoofPeak90Block), typeof(HewnLogRoofPeak180Block), typeof(HewnLogRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(HewnLogItem))]
+    public partial class HewnLogRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class HewnLogRoofPeak270Block : Block
     { }
 
 }

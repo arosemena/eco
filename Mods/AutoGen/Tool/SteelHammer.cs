@@ -60,8 +60,7 @@ namespace Eco.Mods.TechTree
     public partial class SteelHammerItem : HammerItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(15, typeof(SelfImprovementSkill), typeof(SteelHammerItem), new SteelHammerItem().UILink());
-        private static IDynamicValue exp = new ConstantValue(1);
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(SteelHammerItem), typeof(ToolEfficiencyTalent)), CreateCalorieValue(15, typeof(SelfImprovementSkill), typeof(SteelHammerItem), new SteelHammerItem().UILink()));
         private static IDynamicValue tier = new ConstantValue(3);
         private static SkillModifiedValue skilledRepairCost = new SkillModifiedValue(8, AdvancedSmeltingSkill.MultiplicativeStrategy, typeof(AdvancedSmeltingSkill), Localizer.DoStr("repair cost"), DynamicValueType.Efficiency); 
         
@@ -69,8 +68,6 @@ namespace Eco.Mods.TechTree
         // Tool overrides
 
         public override IDynamicValue CaloriesBurn      => caloriesBurn;
-        public override Type ExperienceSkill            => typeof(SelfImprovementSkill);
-        public override IDynamicValue ExperienceRate    => exp;
         public override IDynamicValue Tier              => tier;
         public override IDynamicValue SkilledRepairCost => skilledRepairCost;
         public override float DurabilityRate            => DurabilityMax / 1250f;

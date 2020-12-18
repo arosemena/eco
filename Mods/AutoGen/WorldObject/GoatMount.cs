@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class GoatMountItem :
         WorldObjectItem<GoatMountObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A hunting trophy for your house."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A hunting trophy for your house.");
 
         static GoatMountItem()
         {

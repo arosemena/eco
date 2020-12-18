@@ -18,3 +18,27 @@ String.prototype.strip = function() {
     tmp.innerHTML = this;
     return tmp.textContent || tmp.innerText || "";
 };
+
+/**
+ * Recursive method for clearing vars of any types from XSS attacks
+ */
+function clearFromXSS(data) {
+    // Removing all <script tags
+    let pattern = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+
+    if (typeof data == 'string') {
+        return data.replace(pattern, '');
+    }
+
+    if (Array.isArray(data)) {
+        return data.map(clearFromXSS);
+    }
+
+    if (typeof data == 'object') {
+        for (let key in data) {
+            data[key] = clearFromXSS(data[key]);
+        }
+    }
+
+    return data;
+}

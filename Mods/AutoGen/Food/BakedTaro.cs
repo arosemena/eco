@@ -35,7 +35,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Baked taro root"); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 8, Fat = 2, Protein = 6, Vitamins = 12};
-        public override float Calories                          { get { return 560; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

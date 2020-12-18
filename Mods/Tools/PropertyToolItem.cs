@@ -17,6 +17,7 @@ namespace Eco.Mods.TechTree
     using Eco.Gameplay.Items;
     using Eco.Gameplay.Players;
     using Eco.Gameplay.Property;
+    using Eco.Gameplay.UI;
     using Eco.Shared.Items;
     using Eco.Shared.Localization;
     using Eco.Shared.Math;
@@ -146,7 +147,6 @@ namespace Eco.Mods.TechTree
             if (!position.HasValue) return InteractResult.NoOp;
             var plot = PropertyManager.GetPlot(position.Value);
             var deed = plot?.Deed;
-            if (deed != null && !deed.ContainsOwners(player.User)) return ErrorBelongsTo(deed.Owners?.MarkedUpName);
             if (deed == null) return ErrorAlreadyPublic;
 
             // shift + click

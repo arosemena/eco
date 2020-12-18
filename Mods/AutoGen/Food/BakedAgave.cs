@@ -35,7 +35,7 @@ namespace Eco.Mods.TechTree
         public override LocString DisplayDescription            { get { return Localizer.DoStr("Charred agave leaves are too fiberous to eat entirely, but you can certainly chew them."); } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 12, Fat = 6, Protein = 2, Vitamins = 8};
-        public override float Calories                          { get { return 560; } }
+        public override float Calories                          { get { return 700; } }
         public override Nutrients Nutrition                     { get { return nutrition; } }
     }
 

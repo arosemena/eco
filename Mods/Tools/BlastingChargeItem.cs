@@ -16,6 +16,7 @@ using Eco.Shared.Items;
 using Eco.Shared.Localization;
 using Eco.Shared.Math;
 using Eco.Shared.Serialization;
+using Eco.Shared.Utils;
 using Eco.World;
 using Eco.World.Blocks;
 
@@ -81,7 +82,7 @@ public class BlastingChargeItem : ToolItem
             var blockType = World.GetBlock(blockPos).GetType();
             if (RubbleObject.BecomesRubble(blockType))
             {
-                AtomicActions.DeleteBlockNow(blockPos, context.Player, false, null, this);
+                AtomicActions.DeleteBlockNow(this.CreateMultiblockContext(context));
                 RubbleObject.TrySpawnFromBlock(context.Player, blockType, blockPos, 4);
             }
         }

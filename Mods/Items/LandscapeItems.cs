@@ -20,14 +20,17 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Dirt")]
     [Weight(30000)]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [RequiresTool(typeof(ShovelItem))]
     [MakesRoads]
+    [Tag("RoadType")]
+    [Tag("Excavatable", 1)]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
     public class DirtItem : BlockItem<DirtBlock>, ICanExitFromPipe
     {
-        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Dirt"); } }
-        public override bool CanStickToWalls        { get { return false; } }
+        public override LocString DisplayNamePlural  => Localizer.DoStr("Dirt");
+        public override LocString DisplayDescription => Localizer.DoStr("Healthy soil is essential to support life. When displaced, dirt can be used to terraform an area to support buildings and infrastructure.");
+        public override bool CanStickToWalls         => false;
 
         public LocString FlowTooltip(float flowrate) => default;
 
@@ -47,14 +50,16 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Sand")]
     [Weight(30000)]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [RequiresTool(typeof(ShovelItem))]
     [StartsDiscovered]
+    [Tag("Excavatable", 1)]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
     public class SandItem : BlockItem<SandBlock>
     {
-        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Sand"); } }
-        public override bool CanStickToWalls      { get { return false; } }
+        public override LocString DisplayNamePlural  => Localizer.DoStr("Sand");
+        public override LocString DisplayDescription => Localizer.DoStr("High quality sand is a sought after resource used for making glass and concrete. Though desert sand is abundant, it is not suitable for these materials.");
+        public override bool CanStickToWalls         => false;
     }
 
     [RequiresTool(typeof(ShovelItem))]
@@ -65,16 +70,15 @@ namespace Eco.Mods.TechTree
     [Serialized, Liquid]
     [LocDisplayName("Water")]
     [Category("Hidden")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [StartsDiscovered]
     [Tag("Liquid", 1)]
     [Ecopedia("Natural Resources", "Blocks", true, InPageTooltip.DynamicTooltip)]
     public class WaterItem : BlockItem<WaterBlock>, ICanExitFromPipe
     {
-        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Water"); } }
-        public override LocString DisplayDescription { get { return Localizer.DoStr("Water is an abundant resource. Fresh water can be found in rivers and lakes while salt water is found in the ocean. In addition to being a home to fish, water is needed for a variety of objects to function."); } }
-
-        public override bool CanStickToWalls => false;
+        public override LocString DisplayNamePlural  => Localizer.DoStr("Water");
+        public override LocString DisplayDescription => Localizer.DoStr("Water is an abundant resource. Fresh water can be found in rivers and lakes while salt water is found in the ocean. In addition to being a home to fish, water is needed for a variety of objects to function.");
+        public override bool CanStickToWalls         => false;
         public LocString FlowTooltip(float flowrate) => default;
 
         public float OnPipeExit(WireOutput wire, Ray posDir, PipePayload payload)
@@ -108,9 +112,9 @@ namespace Eco.Mods.TechTree
     [Ecopedia("Blocks", "Byproducts", true, InPageTooltip.DynamicTooltip)]
     public class SewageItem : BlockItem<SewageBlock>, ICanExitFromPipe
     {
-        public override LocString DisplayNamePlural { get { return Localizer.DoStr("Sewage"); } }
-        public override LocString DisplayDescription { get { return Localizer.DoStr("Sewage is a byproduct that is often created when using water for industrial purposes. It is a source of ground pollution."); } }
-        public override bool CanStickToWalls      { get { return false; } }
+        public override LocString DisplayNamePlural  => Localizer.DoStr("Sewage");
+        public override LocString DisplayDescription => Localizer.DoStr("Sewage is a byproduct that is often created when using water for industrial purposes. It is a source of ground pollution.");
+        public override bool CanStickToWalls         => false;
         public LocString FlowTooltip(float flowrate) => default;
         public const float SewageItemsPerPollution = 1000;
 

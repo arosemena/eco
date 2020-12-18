@@ -38,7 +38,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(CustomTextComponent))]              
+    [RequireComponent(typeof(CustomTextComponent))]             
     [RequireComponent(typeof(SolidGroundComponent))]            
     public partial class StreetSignObject : 
         WorldObject,    
@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<StreetSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A metal sign that is especially useful when placed alongside a road to provide information or give instructions to road users."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A metal sign that is especially useful when placed alongside a road to provide information or give instructions to road users.");
 
         static StreetSignItem()
         {

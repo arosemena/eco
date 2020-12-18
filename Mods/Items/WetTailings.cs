@@ -10,10 +10,11 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Localization;
     using Eco.Core.Items;
 
-    [Serialized, Weight(30), StartsDiscovered]
+    [Serialized, Weight(30)]
     [LocDisplayName("Wet Tailings")]
-    [MaxStackSize(20)]
+    [MaxStackSize(30)]
     [RequiresTool(typeof(ShovelItem))]
+    [Tag("Excavatable", 1)]
     [Ecopedia("Blocks", "Byproducts", true, InPageTooltip.DynamicTooltip)]
     public class WetTailingsItem : BlockItem<WetTailingsBlock>
     {

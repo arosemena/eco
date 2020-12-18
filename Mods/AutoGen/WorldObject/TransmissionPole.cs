@@ -72,7 +72,7 @@ namespace Eco.Mods.TechTree
     public partial class TransmissionPoleItem :
         WorldObjectItem<TransmissionPoleObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Can link energy."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Can link energy.");
 
         static TransmissionPoleItem()
         {

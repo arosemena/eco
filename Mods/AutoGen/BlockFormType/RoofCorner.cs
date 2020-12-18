@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class RoofCornerFormType : FormType
     {
         public override string Name => "RoofCorner";
-        public override LocString DisplayName => Localizer.DoStr("RoofCorner");
+        public override LocString DisplayName => Localizer.DoStr("Roof Corner");
         public override LocString DisplayDescription => Localizer.DoStr("Roof Corner");
         public override Type GroupType => typeof(RoofsFormGroup);
         public override int SortOrder => 57;

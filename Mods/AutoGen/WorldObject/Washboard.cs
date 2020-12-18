@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class WashboardItem :
         WorldObjectItem<WashboardObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Sometimes it can be nice to have clean clothes."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Sometimes it can be nice to have clean clothes.");
 
         static WashboardItem()
         {

@@ -71,11 +71,10 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [LocDisplayName("Ecko Statue")]
     [Category("Hidden"), Tag("NotInBrowser")] 
-    [Tag("Housing", 1)]
     public partial class EckoStatueItem :
         WorldObjectItem<EckoStatueObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A statue of a dolphin. What could it mean?"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A statue of a dolphin. What could it mean?");
 
         static EckoStatueItem()
         {

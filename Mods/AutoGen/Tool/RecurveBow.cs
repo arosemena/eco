@@ -61,7 +61,7 @@ namespace Eco.Mods.TechTree
     public partial class RecurveBowItem : BowItem
     {
         // Static values
-        private static IDynamicValue caloriesBurn = CreateCalorieValue(10, typeof(HuntingSkill), typeof(RecurveBowItem), new RecurveBowItem().UILink());
+        private static IDynamicValue caloriesBurn = new MultiDynamicValue(MultiDynamicOps.Multiply, new TalentModifiedValue(typeof(RecurveBowItem), typeof(ToolEfficiencyTalent)), CreateCalorieValue(10, typeof(HuntingSkill), typeof(RecurveBowItem), new RecurveBowItem().UILink()));
         private static IDynamicValue damage = CreateDamageValue(1.2f, typeof(HuntingSkill), typeof(RecurveBowItem), new RecurveBowItem().UILink()); 
         private static IDynamicValue exp = new ConstantValue(1);
         private static IDynamicValue tier = new ConstantValue(3);

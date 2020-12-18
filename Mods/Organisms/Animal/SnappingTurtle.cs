@@ -78,10 +78,10 @@ namespace Eco.Mods.Organisms
             public override bool IsValidSpawnPathPos(Vector3i pos) { return true; }
         }
         
-        public override Result TryApplyDamage(INetObject damager, float damage, InteractionContext context, Item tool, Type damageDealer = null)
+        public override Result TryApplyDamage(INetObject damager, float damage, InteractionContext context, Item tool, Type damageDealer = null, float experienceMultiplier = 1f)
         {
             damage = Tortoise.BlockDamage(damager, damage, this);
-            return base.TryApplyDamage(damager, damage, context, tool, damageDealer);
+            return base.TryApplyDamage(damager, damage, context, tool, damageDealer, experienceMultiplier);
         }
     }
 }

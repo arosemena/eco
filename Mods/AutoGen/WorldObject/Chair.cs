@@ -69,7 +69,7 @@ namespace Eco.Mods.TechTree
     public partial class ChairItem :
         WorldObjectItem<ChairObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr(""); } }
+        public override LocString DisplayDescription => Localizer.DoStr("");
 
         static ChairItem()
         {

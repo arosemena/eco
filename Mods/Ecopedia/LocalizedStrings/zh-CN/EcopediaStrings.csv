@@ -1,106 +1,104 @@
-0;Components related to the economy.
-1;The Bank Component is where [Bank Accounts] are created and managed. Citizens can create multiple accounts for themselves or share accounts with other citizens. Accounts can also be assigned to [Titles] and [Demographics].
-2;Account Users can perform transactions using the account (adding and removing funds).
+0;与经济相关的组件。
+1;银行组件是创建和管理[Bank Accounts]的地方。公民可以为自己创建多个帐户，也可以与其他公民共享帐户。帐户也可以分配给[Titles]和[Demographics]。
+2;帐户用户可以使用该帐户执行交易（添加和删除资金）。
 
-Account Managers can change the users in both the manager list and the user list, rename the account, and perform transactions. 
+客户经理可以更改经理列表和用户列表中的用户，重命名帐户并执行交易。在高级设置中，您可以将帐户设置为游戏俱乐部帐户。
 
-In the Advanced Settings, you can set the account as a Government Account.  Government accounts can receive and pay out tax funds, and are ignored when collecting tax and calculating personal wealth. To set this, you must have government banking priviliges, assigned by an [Elected Title|Elected Titles].
-3;The Bank component is used to create and manage bank accounts
-4;The Contract Board Component allows citizens to post and accepts [Contracts] and [Work Parties], allowing enforced labor and other agreements between citizens.
-5;Setting Up a Contract
-6;
-When posting a contract, it may have as many or as few clauses as desired, and each clause can be configured to describe the job requested.  Each clause must be satisfied before the contract is considered complete.
+游戏俱乐部帐户可以接收和支付税收资金，在收取税收和计算个人财富时将被忽略。要进行此设置，您必须具有由[Elected Title|Elected Titles]分配的游戏俱乐部银行特权。
+3;银行组件用于创建和管理银行帐户
+4;合同公告板允许公民发布和接受[Contracts]和[Work Parties]，从而允许公民之间执行强制劳动和其他协议。
+5;订立合同
+6;在发布合同时，可以根据需要制定任意数量的条款，每个条款都可以制定为描述所请求的工作。必须满足每一项条款合同才会被认定为完成。
 
-When 'Auto-Accept' is checked, completion of contracts is auto-detected by the system.  For example, if a contract is set to build a road between two points, the contractor performing the work can open the contract in their side menu and press 'Job Finished', which will trigger a detection if the job is indeed complete. If so, the contract will be paid out according to the agreement and automatically closed.
+当“自动接受”被选择时，系统会自动检测到合同的完成。例如，如果一份合同被设定为在两点之间修建一条道路，执行该工作的承包商可以在其侧边菜单中打开该合同，并按下“工作完成”，这将触发检测工作是否确实完成。如果是，合同将按协议交付并自动结束。
 
-The 'Custom Clause' is a special clause that allows players to describe in words what they would like done. If a contract contains such a clause, it must be manually approved by the client (auto-accept may not be checked), since auto-detection can't determine when it's finished.
-  
-When auto-detection is unchecked, the contractor will click 'Job Finished' when they believe the job is done, and the contractor will then either accept or reject the completion.  Contracts without auto-accept require more trust between citizens, as there is no guarantee the contractor will honestly accept a completed job.  Citizens are advised to use [Reputation] as a means of determining trust in these situations.
+“自定义条款”是一种特殊条款，允许玩家用语言描述他们想要做的事情。如果一个合同包含这样的条款，它必须由客户手动批准(自动接受此时不可用)，因为自动检测不能确定何时完成。
 
-Contracts have a set time length they must be completed within, determined when posting the contract. In addition, contracts can be set to repeat for reoccurring jobs - when this is enabled, each time a contract is accepted the repetition counter will reduce by one.
+当自动检测未启用时，如果承包人认为任务已经完成，他们就可以点击“任务完成”，然后承包人就会接受或拒绝完成任务。没有自动接受的合同要求公民之间有更多的信任，因为不能保证承包商会诚实地接受完成的工作。建议公民在这些情况下使用[Reputation]作为确定声望的一种手段。
 
-Any payment offered for a contract will be held in a special Escrow [Bank Account|Bank Accounts] while the contract is active.  If the contract completes successfully, that payment will be transferred to the contractor, and if it fails it will be refunded to the client.  A deposit can also be collected by the contractor, which will be held in escrow and refunded to the contractor upon successful completion, or given to the client upon failure.
-  
-7;Work Parties
+合同有一个固定的时间限制，这个限制需在制定合同时确定。此外，可以将合同设置为可重复进行——当启用此功能时，每次接受一个合同时，重复计数器将减少1。
+
+合同有效时，为合同提供的任何款项都会保存在特殊的托管帐户[Bank Account|Bank Accounts]中。 如果合同成功完成，则该款项将转移给承包商，如果失败，则将退还给客户。 承包商也可以收取押金，该押金将由第三方保管，并在成功完成后退还给承包商，或者在失败时退还给客户。
+
+7;工作小组
 8;
-[Work Parties] can also be posted on a Contract Board, allowing the creation of tasks that can be completed by multiple other citizens, as opposed to contracts which are an agreement between two parties only. Before posting a work party, a citizen must start a work order on a crafting table they own.
+[Work Parties]也可以张贴在合同公告板上，允许创建可由其他多个公民完成的任务，而不是仅由两方之间达成协议的合同。在发布工作组之前，公民必须在其拥有的手工桌子上开始工作指令。
 
-After posting a work party, Laborers can join the project at the Contract Board. By default anyone can join the work party as a laborer, but requirements can set for individual roles or general requirements for anyone to join. When 'Expand Roles When Full' is checked, space for new laborers to join is created automatically when all roles are filled.
+发布工作组后，劳工可以在合同公告板中加入该项目。默认情况下，任何人都可以以劳动者的身份加入工作组，但是可以为每个人加入的个人角色或一般要求设置要求。选中“将角色扩展为“满员””后，将在填补所有角色后自动创建新的劳工栏位。
 
-When setting the Work desired, the poster of the work party can decide to hire for labor, resources, or both. Any citizen who contributes to the work party will recieve a share of the payment based on the amount of work they provided. By assigning additional Weight to a particular job in a work party, that job will recieve a higher share of the payment.
+在设置所需的工作时，工作组的发布者可以决定雇用劳动力，资源或两者兼而有之。向工作组捐款的任何公民都将根据他们提供的工作量获得一定比例的付款。通过为工作组中的特定工作分配额外的权重，该工作将获得更高的付款份额
 
 9;
-There are a variety of Payment options for a work party, and multiple payment options can be offered for the same work party.
+工作组有多种支付方式，每个工作组也可以使用多种支付方式。
 
-- When offering [Currency] as a payment, there is an option to 'Pay as you Go' which will pay out laborers as they contribute instead of paying a lump sum when the contract is finished.
+-使用[Currency]作为支付方式时，可以使用“随用随付”的选项，它将按劳工的贡献度来支付，而不是在合同完成时一次性付清。 
 
-- When offering [Reputation] as a payment, it will be split by all citizens who contributed when the work party is finished.
+-使用[Reputation]作为支付方式时，工作组完成后所有参与工作的公民将平分声望值。
 
-- When offering [Research] as a payment, all citizens who contribute the required amount will instantly discover the technology when the work party is finished. Research can be offered as payment only when the work party is creating a research book or if the citizen offering the work party has the research book in their inventory when posting the work party.
+-使用[Research]作为支付方式时，所有参与工作的公民将在工作组结束后立即发现该技术。仅当工作组正在创建研究书时，或者提供工作组的公民在发布工作组时其库存中有研究书时，才可以将研究作为支付方式。 
 
-- When granting a [Title|Titles] as a payment, the citizen posting the contract must be a title manager for the title being offered. All citizens who contribute the minimum amount will be granted the new title. The Access Type determines if they will become a title manager or title user.
+-授予[Title|Titles]作为支付方式时，发布合同的公民必须是所提供头衔的管理员。所有达到最低贡献值的公民将被授予新头衔。访问类型确定他们是否成为头衔管理员或头衔所有者。
 
-10;The Contract Board Component allows citizens to post or accept contracts and work party offers
-11;The Credit Component allows citizens to set the currency and bank account for all transactions on an object they own.
+10;合同公告板组件允许公民发布或接受合同以及工作组订单
+11;信用组件允许公民为他们拥有的对象上的所有交易设置货币和银行帐户
   
 12;
-When selecting [Bank Accounts], citizens can select any account they have been granted access to (performed in a [Bank Component]). By default, the citizen's personal account will be selected.
+选择[Bank Accounts]时，公民可以选择已被授予访问权限的任何帐户（在[Bank Component]中执行）。默认情况下，将选择公民的个人帐户。
 
-Any of the world's [Currencies|Currency] can be selected in the Credit Component. This is the currency that will be used for any transactions that take place on that object (for example a [Store|Store Component] will accept whatever currency is set here). 
+可以在信用组件中选择世界上任何一种[Currencies|Currency]。这将指定对某物品上发生的任何交易时采用的货币（例如[Store|Store Component]将接受此处设置的任何货币）。
 
-When selecting None for the currency in a store, direct trades are possible without the need for a currency.
+当为商店中的货币选择为无时，无需货币就可以进行直接交易。
 
 Objects with a [Crafting Component] can define a fee for authorized citizens to use them. The settings in the Credit Component will determine what currency that fee is charged in and what account the funds are deposited to.
 
 13;The Credit Component allows citizens to set the bank account and currency for transactions on an object.
-14;The Deed Sales Component allows citizens to buy and sell [Property].
+14;契据销售组件允许公民购买和出售[Property]
   
 15;
-By visiting a [Real Estate Desk|Real Estate Desk Item], citizens can create listings for their deeds and view the listings of other citizens. All posted listing can be accessed from any real estate desk.
+通过访问[Real Estate Desk|Real Estate Desk Item]，公民可以为其契据创建清单，并查看其他市民的清单。可以从任何房地产服务台查看所有发布的列表。
 
-When creating a listing, the property owner sets the price and [Currency] used. All revenue will go into the selected [Bank Account|Bank Accounts].
+创建清单时，业主设置价格以及使用的[Currency]。所有收入都将进入所选的[Bank Account|Bank Accounts]。
 
-When buying a deed, the currency will be taken from the bank account selected by the buyer. 
+购买契据时，货币将从购买者选择的银行帐户中提取。
 
-After property is sold, the deed and all objects contained on the deed are transferred to the new owner. 
+房产出售后，契据和契据中包含的所有物体均会移交给新所有者 
   
-16;The Deed Sales Component allows citizens to buy and sell property.
-17;The Exchange Component allows citizens to trade one [Currency] for another.
-18;Exchanging Currency
+16;契据销售组件允许公民购买和出售房产。
+17;货币兑换组件允许公民将一种[Currency]换成另一种货币。
+18;货币兑换
 19;
-The owner of a [CurrencyExchangeItem] uses the Exchange Component to offer currency exchanges to other citizens. When setting up an exchange, the Owner Currency is the currency being offered for sale. For each unit of owner currency purchased, citizens will be charged the set amount of alternate currency.
+[CurrencyExchangeItem]的所有者可以使用货币兑换组件向其他公民提供货币兑换。设置交易所时，所有者的货币是要出售的货币。对于购买的每单位所有者货币，将向公民收取设定的替代货币金额。
 
-When an [Authorized Consumer|Authorization Component] visits the currency exchange, they will see a list of all offered exchanges. By default, all citizens are authorized consumers.
+当[Authorized Consumer|Authorization Component]访问货币交易所时，他们会看到所有提供兑换的货币列表。默认情况下，所有公民都是授权消费者
 	
-20;Exchange Restrictions
+20;兑换限制
 21;
-The owner of the Currency Exchange has the option to setup Balance Restrictions. These will prevent citizens from exchanging currency if the amount of currency in the chosen account does not meet the restriction.
+货币兑换组件的所有者可以选择设置余额限制。如果所选帐户中的货币数量不符合限制，将会阻止公民兑换货币。
 
-The number on the left is the minimum currency holding and the number on the right is the maximum currency holding. If either value for the balance restriction is left at 0, there will be no limit for that part of the balance restriction.
+左边的数字是最小货币持有量，右边的数字是最大货币持有量。如果设置为0，则代表没有限制。
 	
-22;Allows citizens to setup a currency exchange .
-23;The Item Distribution Component allows the owner to provide free items to new citizens, as an act of good will and to boost initial citizen prosperity.
+22;允许公民设立货币交易所。
+23;物品分发组件允许所有者发起慈善捐赠，向新公民提供免费物品，促进前期发展。
 24;
-All new citizens who qualify (based on how long they have played) can collect their items by visiting the [DistributionStationItem]. Upon entering the world, new citizens will start with a global map marker to alert them that the items are available. Note that the [Storage Component] must remain stocked with the items being distributed to allow new citizens to collect them.
+所有符合条件的新公民（根据他们玩了多长时间）都可以访问[DistributionStationItem]来领取他们的物品。进入世界后，新公民将在大地图上看到标记，以提醒他们有物品可领取。请注意，[Storage Component]必须包含所分发的物品，这样新公民才能领取它们。
 
-The owner may designate what items are to be distributed, how many of each item, and how recently the citizen must have joined the world to be eligible.
+所有者可以指定要分发的物品，每件物品的数量以及公民必须玩多久才能获得领取资格。
   
-25;Allows the owner to provide free items to new citizens, as an act of good will and to boost initial citizen prosperity.
-26;The Mint Component allows citizens to create [Currencies|Currency] which are backed by a resource. 
-
+25;允许所有者发起慈善捐赠，向新公民提供免费物品，促进前期发展。
+26;铸币厂组件允许公民创建由资源担保的[Currencies|Currency]。
 27;
-When creating a currency at a [MintItem], a backing item is chosen, as well as an amount of Coins per Item that are generated from each item consumed.  By using a backing item for currency, the total possible amount of currency can be limited to the number of items contributed, thus providing more stability as it becomes harder to flood the market with new currency.  The choice in backing item will affect this, with more rare items generally providing more stability by being harder to obtain.
+在[MintItem]创建货币时，必须选择一种物品作为担保，以及消耗没单位物品生成的货币数量。通过设置担保物，可以将可能的货币总量限制为所提供担保物的数量，避免大量新货币冲击市场从而保证稳定性。选择的担保物会影响这一点，因为更稀有物品通常更难获得，因此可以提供更高的稳定性。
 
-The backing material and coins per item are permanent, so take care when deciding how to back a currency. Once a currency is minted, it will become tied to the mint it was created on, even if that mint is picked up.
+每个担保物对应的货币数量是永久性的，因此在选择担保物时请多加注意。货币铸造后，铸币厂将会与创建的货币绑定，即便铸币厂被移动。
 
-Citizens who have been granted consumer rights in the [Authorization Component] can use the Mint Component to mint additional currency. Currency can be minted into the target [Bank Account|Bank Accounts] selected by the mint owner, or any bank account the citizen minting has access to in the [Bank Component].
+在[Authorization Component]中被授予使用权利的公民可以使用铸币厂组件铸造其他货币。可以将货币铸造到所有者选择的目标[Bank Account|Bank Accounts]中，也可以铸造给任何[Bank Component]中公民可以访问的银行帐户中。
   
-28;Allows citizens to create and print backed currencies.
+28;允许公民创建和铸造担保货币。
 29;
-The Store Component allows citizens to set items they wish to buy from and sell to other citizens. These actions can happen automatically, not requiring the store owner to be online.
+商店组件允许公民设置他们希望从购买或出售的物品。这些操作可以自动发生，不需要商店所有者在线。
   
 30;
-The currency and bank account selected in the [Credit Component] will be used for all transactions at the store. When selecting None for the currency in a store, direct trades are possible that are not subject to sales tax. 
+在[Credit Component]中选择的货币和银行帐户将用于商店中的所有交易。当为商店中的货币选择为“无”时，可以进行不需缴纳营业税的直接交易。 
  
 A store owner can link specific containers in the [Storage Component] to pick which items are considered part of the store's inventory. By default, all nearby storage containers are linked to the store when it is first placed.
 
@@ -111,70 +109,48 @@ When creating a Purchase List, the price and Max to Buy quantity for each item m
 For tools with durability, a minimum durability to buy/sell can be set, and only items of that durability or higher will be eligible for trade via the store.
 
 32;Sets up an interface for other citizens to buy and sell goods from/to you automatically.
-33;Components related to the government.
+33;与游戏俱乐部相关的构成。
 34;
-The Civic Action Component allows citizens to participate in [Elections], perform [Executive Actions], and resign from office, depending on which object is being used.
+公民行动组件允许公民参与[Elections]，执行[Executive Actions]以及辞职，这取决于所使用的对象
 
-35;Participating in Elections
+35;参加推选
 36;
-When using the Civic Action Component at a [Ballot Box|Ballot Box Item], citizens can run for [Elected Titles] and participate in elections. 
+在[投票箱|投票箱项目]使用公民行动组件时，公民可以竞选[推选头衔]并参加推选。通过按下“投票”按钮，玩家将被重定向到Web界面，在这里他们可以查看所有正在进行的[Elections]（推选），与他们的同胞讨论，使用[Data]提供论证证据并投票。在当前的[Election Process | Election Processs]中获得否决权的公民可以立即颠覆推选。要竞选民选头衔，首先，符合条件的公民必须使用“开始推选”行动。推选开始后，符合条件的公民可以选择“参加推选”参加比赛并发表竞选演讲。候选人可以随时使用投票箱上的选项选择退出推选
 
-By pressing the Vote button, players are redirected to the web interface where they can see all running [Elections], discuss them with their fellow citizens, provide evidence for their arguments with [Data], and vote.  
-
-Citizens who have been granted Veto power in the current [Election Process|Election Processes] can instantly overturn an election.
-
-To run for elected titles, first an eligible citizen must use the Start Election action. Once an election has started, eligible citizens can select Enter Election to join the race and give a campaign speech. Candidates can opt to Withdraw from Election at any time using the option available on a Ballot Box.
-
-37;Performing Executive Actions
+37;执行行政行动
 38;
-Using the Civic Action Component at an [Executive Office|Executive Office Item] allows an elected title to perform one-time executive actions that affect a set of citizens.
+通过在[行政办公室|行政办公室项目]使用公民行动组件，可以使民选职务执行一次影响一系列公民的行政行动。公民条件规定了行政行为适用于哪些公民，并且可以为公民设定质量的多个条件。要对所有公民执行某项操作，请使用[Demographic]“所有人”作为公民条件。一旦批准行政行动，对每个公民的行动将立即生效。每个符合条件的公民可以一次执行多项行动
 
-The Citizen Conditions dictate which citizens the executive action applies to, and multiple conditions can be set for a citizen to quality. To perform an action for all citizens, use the [Demographic] ‘Everyone’ as the citizen condition.
-
-The Action on Each Citizen will take effect as soon as the executive action is approved. Multiple actions can be performed at once for each citizen who meets the conditions.
-
-39;Government Office Actions
+39;游戏俱乐部的行动
 40;
-At the [Government Office|Government Office Item], the Civic Action Component allows elected titles to resign or remove other elected titles from office.
+在[Government Office | Government Office Item]，公民行动组件允许民选职务辞职或将其他民选职务撤职。 “辞职”行动使任何当选官员都能辞职。如果创建后继头衔分配给当选头衔，将从拥有该头衔的所有公民中随机选出新官员；否则，当选头衔将空缺。 “罢免官员”行动允许已被授予权力的公民将当选头衔免职。寻找继任者的规则与正式辞职时相同
 
-The Resign from Office action allows any elected official to step down from their position. If a Successor title was assigned to the Elected Title when it was created, a new official will be randomly selected from all citizens holding that title; otherwise the Elected Title becomes vacant.
-
-The Remove Official from Office action allows citizens who have be given the authority the remove elected titles from office. The same rules for finding a successor apply as if the official resigned.
-
-41;Allows citizens to participate in elections and perform executive actions.
+41;允许公民参加推选和执行行政行为。
 42;    
-The Civic Object Component allows citizens to propose, amend, and repeal various Civic Objects. 
-43;Civic Duties
-44;Within a Civic Object Component, you will see a list of your [Civic Duties]. This informs the citizen what permissions they have regarding civic objects, given the current [Constitution].The possibilities of different civic duties are:
-45;The Civic Object Component allows citizens to propose, amend, and repeal civic objects.
-46;The Registrar Component allows for the creation and management of non-elected [Titles].  These titles can be used for many of the same purposes as [Elected Titles], but they are appointed at the Registrar.
-47;Assigning Titles
-48;Title Managers can rename the title and assign new managers and title holders. Title Managers are not considered Title Users.
-
-Title Users are the citizens considered title holders and receive all associated benefits and conditions.
+公民对象组件允许公民提议，修改和废除各种公民对象 
+43;公民职责
+44;在“市民对象”组件中，您将看到[市民职责]的列表。鉴于目前的《章程》，这将告知公民他们对公民物品具有哪些许可。:
+45;公民对象组件允许公民提议，修改和废除公民对象。
+46;注册服务商组件允许创建和管理非推选[Titles]。这些头衔可用于与[Elected Titles] 相同的目的，但它们是由书记官长任命的。
+47;分配头衔
+48;头衔管理员可以重命名头衔并分配新的管理员和头衔持有者。头衔管理员不被视为头衔用户。所有权使用者是被视为所有权持有人的公民，并会获得所有相关的利益和条件
 	
-49;Advanced Settings
+49;高级设置
 50;
-In the Advanced Settings, requirements for title holders can be set, and hourly wages can be assigned to title holders who qualify.
-  
-When deciding what is Required of Office Holders a variety of conditions can be set. If a citizen fails to maintain these requirements, they will lose their assignment as a Title User. By using a 'Set of Conditions', multiple requirements can be set for title holders.
- 
-Wages are paid to Title Users from any [Bank Account|Bank Accounts] that a Title Manager has been given to permission to use in the [Bank Component]. Wages are paid each hour (depending on World settings) into the personal account of each Title User. The Wage Type can be used to exclude offline hours from wage payments.
+在“高级设置”中，可以设置头衔持有者的要求，并且可以将小时工资分配给有资格的头衔持有者。在确定办公室持有人需要什么时，可以设置各种条件。如果公民未能遵守这些要求，他们将失去其作为“头衔用户”的分配。通过使用“一组条件”，可以为头衔持有者设置多个要求。工资是从头衔管理者已被允许在[银行组件] 中使用的任何[银行帐户|银行帐户] 中支付给头衔用户的。每小时（取决于世界设置）将工资支付给每个头衔用户的个人帐户。工资类型可用于从工资中排除离线时间
 	
-51;Allows creation and management of non-elected titles.
-52;The Treasury Component allows [Elected Titles] that have been granted the right to 'Set Taxes at the Treasury' to adjust the tax rate and select the World Default Currency.
+51;允许创建和管理非推选头衔。
+52;库房组件允许已被授予“在库房设置税款”的权利的[当选职位]调整税率并选择“世界默认货币”。
 53;税
-54;After [Taxes] are set in the Treasury Component, they are automatically applied to all relevant transactions. All revenue goes into the Treasury [Bank Account|Bank Accounts]. Elected titles that have the setting 'Government Banking Privileges' can transact directly from the Treasury account (allowing selection of the account within the [Credit Component]).  Money can also come out of the treasury via [Laws] that make payments to citizens.
-55;World Default Currency
-56;The World Default Currency is the default [Currency] used when placing a new object that contain the Credit Component. Citizens can still choose to use any currency in a [Trade], but having a World Default Currency makes it is easier to establish an economy with a common currency.
-57;Direct Taxes
-58;Elected Titles with rights to 'Set Taxes at the Treasury' can tax or allocate funds directly from citizens. This is done through managing the desired currency and selecting which citizens the action will apply to. An elected title must always give a reason why they are performing this action that is displayed to all citizens.
+54;在“库房组件”中设置[税]后，它们会自动应用于所有相关交易。所有收入都进入库房[银行帐户|银行帐户]。具有“游戏俱乐部银行特权”设置的选定头衔可以直接从金库帐户进行交易（允许在[信用组件]中选择该帐户）。钱也可以通过[Laws]从金库中出来，向公民付款。
+55;世界默认货币
+56;世界默认货币是放置包含信用成分的新对象时使用的默认[Currency]。公民仍然可以选择使用[Trade]中的任何货币，但是拥有世界默认货币可以更轻松地建立具有通用货币的经济。
+57;直接税
+58;具有“在金库设置税”的权利的当选头衔可以直接向公民征税或分配资金。这是通过管理所需货币并选择该操作将应用于哪些公民来完成的。当选头衔必须始终说明他们执行此操作的原因，该原因将显示给所有公民。资金管理还包括从资金帐户中转出货币的选项。这将永久删除货币，因此在对备用货币使用此功能时请务必小心。
 	  
-Treasury management also includes the option to dump currency from the Treasury account. This will remove the currency permanently, so take care when using this ability on backed currencies.
-	  
-59; Allows citizens holding an Elected Title with tax permission to set taxes and select the World Default Currency.
-60;Components related to housing.
-61;The Authorization Component allows specifying what permissions citizens have on the object.
+59; 允许拥有推选权并获得税收许可的公民设置税款并选择“世界默认货币”。
+60;与房屋有关的构成。
+61;授权构成允许指定公民对对象具有哪些权限。
     
 62;
 The Deed displayed here is simply a link to the deed of the [Property] which the object is on (or the deed associated with the [Vehicle|Vehicle Component] if it is one).
@@ -230,7 +206,7 @@ Crafting tables accept different types of upgrades. Early tables accept 'Basic U
 
 Some recipes have costs using Static Ingredients. Static ingredients are not affected by the resource cost reduction, but the recipes that contain them still get a reduction for crafting time. 
 		
-80;Specialty Upgrades
+80;专业升级
 81;
 The highest level of upgrade can only be crafted by a citizen who has reached the maximum level in their chosen [Specialty|Specialties]. Unlike other upgrades, these upgrades recieve an additional cost reduction when crafting recipes using the specified profession.
 
@@ -308,198 +284,99 @@ Some storage containers, like a [StockpileItem], can contain any type of item. O
   
 107;Linking Storage Containers
 108;
-An object can be linked to containers in the Storage Component by selecting the check box for the container. Once linked, the object gain access to all items in the containers and can use the container for storage. When linking storage containers, the topmost container in the Storage Component will be used first for storage.  The order can be changed by clicking and dragging the storage displays in the list. 
+通过选中容器的复选框，可以将对象链接到存储组件中的容器。链接后，对象就可以访问容器中的所有项目，并且可以使用容器进行存储。链接存储容器时，将首先使用存储组件中最顶层的容器进行存储。可以通过单击并拖动列表中的存储显示来更改顺序 
   
-109;Manages inventory and allows linking storage to other objects.
-110;An economy thriving with trade is essential to developing the technology needed to stop the meteor.
-111;Bank accounts are storages of [Currency] that one or more citizen can access.  Each citizen enters the world with a permanent Personal Bank Account, containing an infinite amount of their Personal Credit. Additional bank accounts can be granted and have their access-rights adjusted at a [Bank|bank component].
+109;管理库存并允许将存储链接到其他对象。
+110;在贸易中蓬勃发展的经济，对于开发制止流星所需的技术至关重要。
+111;银行帐户是一个或多个公民可以访问的[Currency]的存储。每个公民都使用永久的个人银行帐户进入世界，其中包含无限量的个人信用。可以授予其他银行帐户，并在[Bank | bank组件]调整其访问权限。银行帐户对于组织货币，允许多方访问资金，存储税收的收集并指定谁可以使用它们非常有用。游戏俱乐部通常会设置一些银行帐户来管理税收流入，以确保资金按计划使用。每个银行帐户可以容纳无限数量的不限货币，每种货币分别进行跟踪。单击银行帐户将显示分类帐，其中列出了与之进行的所有交易或从中进行的所有交易，因为Eco中的所有交易都是公开的
 
-Bank accounts are useful for organizing currency, allowing access to funds by multiple parties, and storing the collection of taxes and designating who can access them.  Governments will generally setup a number of bank accounts to manage the in-flow of taxes, ensuring the funds are used as intended.  Each bank account can hold unlimited amounts of unlimited currencies, with each currency tracked separately. Clicking on the bank account will display the ledger listing all transactions to or from it, as all transactions in Eco are public.
-
-112;Bank accounts serve as a storage and separation of currency for various uses by various citizens and government entities.
+112;银行账户用作货币的存储和分离，以供各种公民和游戏俱乐部实体使用。
 113;
-    A contract is an agreement between two citizens created at a [Contract Board|contract board component].  The agreement can have any number of clauses, and specify combinations of work to be performed and compensation to be paid.  It is posted by the client citizen, and can be accepted by any valid citizen asynchronously.
-114;Examples of contract include:
-    - Create a road between two designated points.
-    - Loan money between two parties with a given interest rate and due date.
-    - Build a room of given requirements at a specific location.
-    - Custom requirements described in text, and accepted/rejected by the client upon completion.
+    合同是在[合同委员会|合同委员会组成部分]创建的两个公民之间的协议。该协议可以包含任意数量的条款，并指定要执行的工作和要支付的赔偿的组合。它由客户公民发布，并且可以被任何有效公民异步接受。
+114;合同示例包括：-在两个指定点之间创建一条道路。 -在给定的利率和到期日之间，两方之间的贷款。 -在特定位置建立具有给定要求的房间。 -文字中描述的自定义要求，并在完成后被客户接受/拒绝
   
-115;Contracts maintain an agreement between two citizens.
+115;合同维持两个公民之间的协议。
 116;
-Crafting is the creation of new products from ingredients, labor, and/or power.  Crafting may also create byproducts that cause pollution and negatively affec the environemnt.  It forms the backbone of the economy, generating demand for resources which come from the ecosystem around them, as well as demand for individual skilled labor and shared services like [Power|Power Component] or [Sewage].
-
-Any table which has a [Crafting Component] can create products defined in a list. Crafting tables can be shared, each having configurable [Authorization Component] that determines who may access them, and fees can be set in the [Credit Component] on the table to earn money from sharing your table.
-
-The inputs and outputs can either be taken directly from the crafting table, or placed in an attached [Storage Component].  Placing ingredients and products in storage allows citizens to queue up large orders that run automatically. 
-
-Many recipes require labor of a specific [Skill|skills overview].  While any citizen can start a crafting recipe or contribute ingredients, only a citizen with the required skills may add labor to it.  To form a group and have many citizens contribute to a work order while sharing in payment, [Work Parties] may be created.
+手工制作是指通过成分，人工和/或力量来创造新产品。手工制作还会产生副产物，这些副产物会造成污染并对环境造成负面影响。它构成了经济的中坚力量，产生了对来自其周围生态系统的资源的需求，以及对个体熟练劳动力和共享服务（如[Power | Power Component]或[Sewage]）的需求。任何具有[工艺组件]的表都可以创建列表中定义的产品。工艺表可以共享，每个表都具有可配置的[Authorization Component]，该功能决定谁可以访问它们，并且可以在表的[Credit Component]中设置费用，以通过共享表赚钱。输入和输出既可以直接从制作台上获取，也可以放置在附加的[Storage Component]中。将配料和产品放入仓库后，市民可以排队自动运行的大订单。许多食谱都需要特定的[Skill |技能概述]。虽然任何公民都可以开始手工制作食谱或贡献食材，但只有具有所需技能的公民才可以增加劳动。为了组成一个团体并让许多公民在分担付款时为工作单供款，可以创建[工作组]
   
-117;Crafting is the creation of products by citizens at specific tables.
-118;Currencies are a means of facilitating trade, as a representation of value. Their value is entirely determined by how they’re used.
+117;手工制作是公民在特定餐桌上创造的产品。
+118;货币是促进贸易的一种手段，是价值的代表。它们的价值完全取决于它们的使用方式。 Eco中有两种类型的货币，有支持的和无支持的。无抵押货币是法定货币，每个玩家都以自己的无限数量的个人货币开始。这些在没有指定全球货币的情况下特别有用。但是，这些货币需要很多信任，即它们的所有者不会操纵其价值，因为它们的数量不受限制，并且很容易破坏使用它们的经济的稳定。支持的货币更加稳定。通过将货币支持材料转换为硬币，可以在[Mint | Mint Component]中创建支持的货币。只能通过获取更多给定材料来创建更多货币。这对可以引入世界的货币数量提供了更大的限制，并为全球贸易奠定了更坚实的基础。通常，随着经济在整个游戏过程中的发展，世界将选择从一系列个人货币过渡到一种或多种支持货币，并且需要更多的全球贸易与合作。可以在“经济查看器”中以及通过[Trade]将货币转移给其他人。所有货币都存储在[银行帐户|银行帐户]中
 
-There are two types of currencies in Eco, backed and unbacked.
-  
-An unbacked currency is currency by fiat, and every player starts with their own personal currency with an infinite amount. These are especially useful early game when there is no global currency designated.  However, these currencies require a lot of trust that the owner of them does not manipulate their value, as they have an unlimited amount and can easily destabilize an economy that uses them.
-  
-Backed currencies are much more stable. A backed currency is created at a [Mint|Mint Component] by converting a currency supporting material into coins.  More currency can only be created by acquiring more of the given material.  This provides a much stronger limit on the amounts of currency that can be introduced into the world and forms a stronger foundation for global trade.  Often, a world will choose to move from a collection of personal currencies to one or more backed currencies as the economy grows through the arc of the game, and more global trade and collaboration is required.
-  
-Currencies can be transferred to others in the Economy Viewer, as well as through [Trade].  All currency is stored in a [Bank Account|Bank Accounts].
-
-119;Currency is a societal construct that makes trade easier.
-120;Economy has frequently nothing whatever to do with the amount of money being spent, but with the wisdom used in spending it.
+119;货币是使贸易更容易的社会结构。
+120;经济常常与花的钱多钱少无关，而与花钱的智慧有关系。”
     Henry Ford
 
 121;The economy comprises the actions of harvesting, production and trade among citizens, taking from the [Ecosystem|Ecosystem Overview] under the regulation of the [Government|Government Overview]. Citizens will need to need to ensure a smoothly running economy in order to progress technology enough to stop the meteor, without letting it run amok and destroy the planet through pollution in the process.
 
 122;Economy Concepts
 123;
-  - [Crafting]. Using industrial tools to create new goods.
-  - [Trade]. Exchange of goods created by individuals with different specialties or access to resources.
-  - [Transport].  Moving resources from place to place, and building infrastructure throughout the world to do so.
-  - [Research]. Advancing human knowledge for the betterment of society.
-  - [Currency]. A representation of value created by citizens that facilitates economic activity.
-  - [Work Parties]. Organized labor groups sharing rewards.
-  - [Contracts]. Agreements between two citizens regarding labor or other arrangements.
-  - [Bank Accounts]. Containers of currency with configurable access.
-  - [Finance]. Providing capital to other citizens to help them progress while making a profit yourself.
+  -[Crafting]。使用工业工具创造新产品。 -[Trade]。交换具有不同专业的个人创造的商品或获得资源。 -[Transport]。将资源从一个地方移到另一个地方，并在全球范围内建立基础设施。 -[Research]。促进人类知识以改善社会。 -[Currency]。公民创造的促进经济活动的价值的代表。 -[Work Parties]。有组织的劳工团体分享奖励。 -[Contracts]。两名公民之间关于劳动或其他安排的协议。 -[Bank Accounts]。具有可配置访问权限的货币容器。 -[Finance]。向其他公民提供资金，以帮助他们进步，同时自己赚钱。
   
-124;The economy consists of all resource usage, trade, and technological progress by citizens.
-125;Through the use of [Contracts], Citizens in Eco can create loan and bond agreements between two parties, tracking automatically the interest payment and due date of the funds.  Loans and bonds are a great way for new citizens to collaborate with long-time citizens with more wealth in a way that benefits both parties and increases societal progress.
+124;经济包括公民的所有资源使用，贸易和技术进步。
+125;通过使用[Contracts]，Eco中的公民可以在两方之间创建贷款和债券协议，从而自动跟踪资金的利息支付和到期日。贷款和债券是新公民与拥有更多财富的长期公民合作的一种好方法，既可以使双方受益，也可以促进社会进步。如果公民借贷，则供款方会给他们钱，并期望他们支付利息。如果公民购买了债券，他们便向要约方支付钱款，并期望他们可以付息。可以使用[Laws]来构建对贷款违约的罚款，方法是关注“贷款/债券违约”触发器。然后可以采取行动，例如收回财产或施加其他处罚和罚款
 
-If a citizen takes a loan, the offering party gives them money which they are expected to pay with interest.
-If a citizen purchases a bond, they give money to the offering party which they expect to be repaid with interest.
+126;金融是管理货币以促进进步。
+127;每个参与者都可以影响任何其他参与者的声望，而后者又可以用作章程，合同等中的因素，可以查询公民声望并根据价值确定特权（或特权）（或特权）。要设置公民的声望，请将鼠标悬停在其姓名上，然后在工具提示中单击其声望列表（可在[Current Citizens]页面上找到所有公民的列表）
 
-Penalties for defaulting on loans can be constructed using [Laws], by watching for the Default on Loan/Bond trigger.  Actions can then be taken, such as repossessing property or applying other penalties and fines.
+128;声望由网络乘数修改，网络乘数的计算方式是：给每个给您正面声望的公民+1，给每个给您负面声望的公民-1。这样，与只关注少数几个公民相比，帮助许多公民并获得广泛的声望变得更加有益。相对声望是另一个价值，它仅考虑您对自己给予正面声望的公民。
 
-126;Finance is the management of currency to promote progress.
-127;Each player can affect the Reputation of any other player, which can in turn be used as a factor in laws, contracts, etc, which may query a citizens reputation and determine privileges (or lack thereof) based on the value). To set reputation on a citizen, hover over their name in chat and click their reputation listing in the tooltip (a list of all citizens can be found on the page [Current Citizens]).
-
-128;Reputation is modified by a Network Multiplier, which is a calculate as +1 for every citizen giving you positive reputation, and -1 for every citizen giving you negative reputation.  This way, it becomes more beneficial to help many citizens and gain a wide-spread reputation than to focus narrowly on a few citizens.  Relative Reputation is another value that only takes into account citizens that you have given positive reputation to.
-
-129;A value set by other citizens or from laws that represents your social standing.
-130;Research creates new shareable knowledge, unlocking new types of products and abilities.  It is conducted at a [ResearchTableItem] where you craft a skill book.  Once created, a skill book can be used to create an unlimited number of skill scrolls, which will unlock the specialty for a citizen that uses one.
-
-Each skill scroll is a one-time-use consumable that unlocks a new [Specialty|specialties] in whomever uses it, which must then be claimed with a level-up through the [Skills|skills overview] system.  Gaining a new skill scroll also grants the citizen the benefit of a set of [Property Claim Papers|Property], which allows them to claim more land as they gain in skill.
-    
-Skill books are some of the most difficult items to create, and citizens will typically need to collaborate to acquire all the various resources and labor required to produce them.  As such, research projects are especially well-suited for [Work Parties], as citizens can use them to share the work needed to create them along with the knowledge reward upon completion.
+129;由其他公民或代表您社会地位的章程而设定的一个值。
+130;研究创造了可共享的新知识，从而释放了新类型的产品和能力。它是在您制作技能手册的[ResearchTableItem] 上进行的。创建后，技能书可用于创建无限数量的技能卷轴，这将为使用该技能卷轴的公民解锁专业知识。每个技能卷轴都是一次性使用的消耗品，可在使用它的任何人中解锁新的[Specialty|specialties]，然后必须通过[Skills|skills overview] 系统进行升级以声明其权利。获得新的技能卷轴还会使公民受益于一套[Property Claim Papers|Property]，这使他们可以在获得技能时索取更多土地。技能书是最难创建的一些内容，市民通常需要协作以获取制作它们所需的所有各种资源和劳动力。因此，研究项目特别适合[Work Parties]，因为公民可以使用它们来共享创建它们所需的工作以及完成时的知识奖励。
   
-131;Research creates new shareable knowledge, unlocking new types of products and abilities.
-132;Trade with your fellow citizens is essential in Eco, as each player has a set of [Specialties] that they can contribute to most effectively while trading with other citizens who are skilled in professions in which they are not. 
+131;研究创造了可共享的新知识，释放了新类型的产品和能力。
+132;与您的同胞进行交易在Eco中至关重要，因为每个玩家都有一套[Specialties]，他们可以在与其他擅长职业的其他公民进行交易时最有效地做出贡献。 -可以在[Store Component] 设置交易，列出您想要的不同商品的买/卖价格。然后，公民可以在不存在的情况下异步地向您购买和出售商品。 -劳务交易可以通过[Contracts] 和[Work Parties] 进行，允许玩家在商定的条件下进行付款工作。这也可以异步执行。 -货币交易可以在[Currency Exchange|Exchange Component] 进行，其中列出了不同货币交换的买/卖价格。 -[Transport] 促进了贸易，在您的新兴文明中心之间建立运输基础设施将极大地提高贸易能力。 -贸易受游戏俱乐部[government overview] 设定的[Taxes] 的约束，这可以促进或减少某些贸易的价值。
 
- - Trades can be setup at a [Store Component], listing buy/sell prices for the different goods you would like.  Citizens can then buy and sell goods to you asynchronously, without being present.
- - Trade of labor can happen through [Contracts] and [Work Parties], allowing players to perform work for payment within agreed upon terms.  This can be performed asynchronously as well.
- - Trade of currencies can happen at a [Currency Exchange|Exchange Component], listing buy/sell prices for exchanges of different currencies.
- - Trade is facilitated by [Transport] and building transportation infrastructure between the burgeoning hubs of your civilization will greatly promote the ability to trade.
- - Trade is subject to [Taxes], set by the Government[government overview], which can either promote or reduce the value of certain trades.
+133;具有不同能力和拥有不同商品的公民之间的贸易是经济的支柱。
+134;随着资源分布在世界各地以及资源的收集和加工地点与使用地点不同，运输已成为生态成功的关键因素。为了有效地转换材质，您需要制造车辆来运送它们，而这些车辆需要将地面压平成道路。使用[StoneRoadToolItem] 可以平整地面并使其可用于车辆，而使用坡道则可以使车辆可以平缓行驶。更高阶的车辆将要求先进的道路有效行驶，并且随着新技术的出现，道路需要定期进行升级。在村庄之间建立道路和资源储备库将花费时间和许多公民的精力，并且是[Taxes] 资助并使用[Work Parties] 进行的公共工程项目的理想选择。随着世界技术的进步，将创建越来越多的运输基础设施来辅助商业流通，最终发展到道路建设和车辆使用会对环境产生影响的地步。认真管理这种影响将是保护它们所通过的生态系统的关键。
 
-133;Trade between citizens of different abilities and possessing different goods is the backbone of the economy.
-134;With resources spread out through the world and the locations where they are collected and processed differing from where they’re used, transport becomes a critical factor to success in Eco.
-
-To efficiently transform materials, you’ll need to create vehicles to carry them, and those require flattening the ground into roads.  Using a [StoneRoadToolItem] you can flatten ground and make it usable be vehicles, and with ramps you can make gentle slopes that vehicles can travel on.  More advanced vehicles will require mode advanced roads to travel efficiently, and roads will need to be upgraded periodically as new technology comes available.
-
-Building roads between villages and resource caches will take time and the effort of many citizens, and is a great candidate for public works projects funded by [Taxes] and built using [Work Parties].  As the world progresses in technology, more and more transportation infrastructure will be created to aid the flow of commerce, eventually growing to a point where the road construction and vehicle usage will create an impact on the environment.  Careful management of this influence will be key to preserving the ecosystems that they pass through.
-
-135;With resources and their usage spread out across the world, transforming the world by building transportation infrastructure becomes necessary.
-136;A Work Party is an agreement among multiple citizens to perform work.  They are started by an individual citizen by visiting a [Contract Board|Contract Board Component] after creating a work order.
-
-The citizen issuing a Work Party can define the various parameters of the work, which includes:
- - The work orders to be completed.
- - What is required of citizens who want to join the work party.
- - What payment will be given to people who participate.
- - How that payment will be distributed.
- - How that payment will be distributed.
-
-Work parties are especially useful for performing [Research]. A citizen can setup a research project, costing a large amount of resources, and attach a work party to it. Citizens can then automatically join the work party (even when the issuing citizen is offline, if they meet the designated requirements) and start performing the task.
-
-Payment can take a variety of forms:
-- [Currency], distributed based on how much work is performed, either immediately or upon completion.
-- [Reputation], given from the work party creator to the laborer (subject to the daily limits of reputation that may be given).
-- Knowledge of a specific specialty (the same effect as reading a skill-scroll). For this benefit, the work party creator must possess the skill book for the specialty, or it must be crafted in one of the work orders of the party.
-- Granting a [Title], which can give them new privileges for accessing property and other abilities.
-
-The economy of Eco is focused not just on trading of goods but trading of labor, and work parties make it easy to farm out many kinds of work to the general populace.
+135;随着资源及其使用遍及全球，通过建设交通基础设施来改变世界变得必要。
+136;工作小组是多个公民之间执行工作的协议。创建工作订单后，他们可以通过访问[Contract Board|Contract Board Component] 由个人公民启动。发布工作组的公民可以定义工作的各种参数，包括：-要完成的工作单。 -想要加入工作组的公民需要什么。 -将向参加活动的人支付什么费用。 -付款将如何分配。 -付款将如何分配。工作组对于执行[Research] 尤其有用。公民可以建立一个研究项目，花费大量资源，并为其配备一个工作小组。然后，公民可以自动加入工作组（即使发行公民是脱机的，如果他们满足指定的要求），也可以开始执行任务。付款可以采用多种形式：-[Currency]，根据立即执行或完成时执行的工作量进行分配。 -[Reputation]，由工作组创建者提供给劳动者（取决于每天可享有的声望限制）。 -特定专业的知识（与阅读技能卷的效果相同）。为此，工作团队的创建者必须拥有该专业的技能手册，或者必须在该团队的工作订单之一中制作。 -授予[Title]，这可以赋予他们访问属性和其他能力的新特权。生态经济不仅关注商品贸易，还关注劳动力贸易，而工作团体使向普通民众提供多种工作变得容易。
   
-137;Work Parties are joint agreements by a number of players to perform a given task, with compensation being distributed in various ways.
-138;The living biome of the world, providing resources which humans must use to survive.
+137;工作组是许多参与者共同执行特定任务的共同协议，并以各种方式分配报酬。
+138;世界上的生物群落，提供人类赖以生存的资源。
 139;
-The huge diversity and richness of life across the planet can be broadly categorized into areas called biomes. Biomes in Eco are regions of the world that fall into particular ranges of precipitation and temperature. Because of these simulated physical differences, different species of microorganisms, plants, fungi, and animals are able to survive and thrive in different biomes. Each biome in Eco hosts a unique set of resources for players to discover and extract in order to build and fuel their societies. Communities of life within each biome have interdependent relationships usually tied to habitat, diet, and soil which in turn arise because of the climate and earth resources present. 
-  
-Biomes are ecosystems within the global ecosystem, and within biomes there are sometimes further divisions or ‘sub-biomes’, such as the high desert, tallgrass prairie grasslands, glacial ice in the tundra, or marine coasts. Biomes and sub-biomes are contiguous units, many of which have restrictions about which biomes they can reside next to or within. Over time, as conditions change due to player influence biomes have the potential to be radically reshaped. 
-
-Climate change may shift the boundaries of biomes, displacing communities-- some species will survive and adapt, but others will not be so resilient. Direct displacement of soil and other habitat destruction from activities like construction, farming, mining, and logging will also have an impact on species within biomes to differing degrees. Species of plants or animals might not only prefer particular biomes, but particular parts of sub-biomes, which will mean a greater impact if those highly localized areas are altered or destroyed. Resilient and adaptive species will be able to thrive across biome boundaries as they are altered, but those same species may become a threat to more sensitive plants or animals in the new biomes they are introduced to.
+地球上巨大的生物多样性和丰富性可以大致归类为生物群落。生态中的生物群落是世界上属于降水和温度特定范围的区域。由于这些模拟的物理差异，不同种类的微生物，植物，真菌和动物能够在不同的生物群落中生存和繁衍。 Eco中的每个生物群落都拥有一套独特的资源，供玩家发现和提取，以建立并促进他们的社会。每个生物群落内的生活社区之间通常都有相互依存的关系，而这些相互联系是与栖息地，饮食和土壤联系在一起的，而这些联系又由于存在的气候和地球资源而产生。生物群落是全球生态系统内的生态系统，有时在生物群落内还有进一步的划分或“亚生物群落”，例如高沙漠，高草草原，冻原上的冰川冰层或海洋海岸。生物群落和亚生物群落是连续的单元，其中许多单元对它们可以位于附近或内部的生物群落有限制。随着时间的流逝，由于玩家的影响而导致的环境变化，生物群落有可能被彻底重塑。气候变化可能会改变生物群落的边界，使社区流离失所-一些物种将生存和适应，而另一些物种则不会如此灵活。建筑，耕作，采矿和伐木等活动对土壤的直接置换和其他栖息地破坏也将对生物群落内的物种产生不同程度的影响。动植物物种不仅可能喜欢特定的生物群落，而且更喜欢亚生物群落的某些部分，如果这些高度局部的地区被改变或破坏，这将意味着更大的影响。弹性和适应性物种将能够随着其改变而跨越生物群落边界，但是这些相同的物种可能会在引入它们的新生物群落中成为对更敏感的动植物的威胁。
  
-140;Biomes in Eco:
-141;Ocean : The parts of the ocean on the continental shelves, abundant with life.
-Deep Ocean : The deepest parts of the ocean, bearing the largest marine species and migrating populations of fish.
-Cold Coast : Beaches and shallow waters in colder climates.
-Warm Coast : Beaches and shallow waters in warmer climates.
-Wetlands : A unique biome characterized by a saturation of the soil with fresh or brackish water.
-Grasslands : A biome where there is enough water to support grasses but not many trees.
-Desert : The dryest biome, and in Eco currently the hottest as well.
-Cold Forest : A biome wet enough to support dense tree cover, and cold enough that conniferous trees tend to dominate.
-Warm Forest : A biome wet enough to support dense tree cover, and warm enough that broadleaf trees tend to dominate.
-Rainforest : A wet and warm biome that supports a forest abundant with plant and animal life.
-Taiga : A cold and somewhat dry biome that supports a sparse forest of conniferous trees.
-Tundra : A very cold biome that cannot support trees but is host to a unique plant and animal community.
-Ice : The coldest areas of the land, covered by glacial ice. 
-
-There are also a few sub-biomes in Eco currently:
-
-High Desert : A geologically uplifted part of the desert with species more tolerant to cold and that enjoy the steep cliffs caused by erosion.
-Cold Steppe : A slightly colder grassland, often characterized by even fewer trees and larger open spaces.  
+140;Eco中的生物群落:
+141;海洋：大陆架上的海洋部分，充满生命。深海：海洋中最深的部分，拥有最大的海洋物种和鱼类迁徙种群。冷海岸：较冷气候下的海滩和浅水区。温暖的海岸：温暖气候下的海滩和浅水区。湿地：一种独特的生物群落，其特征是土壤被淡水或微咸水浸透。草原：一个生物群落，那里有足够的水来支撑草，但树木不多。沙漠：最干燥的生物群落，而在Eco中，目前也是最热的。寒冷的森林：足够湿润以支撑茂密的树木覆盖物的生物群落，而寒冷的足以使针叶树占主导地位。温暖的森林：一个生物群落，足够湿润以支撑茂密的树木，并足够温暖，以致阔叶树占主导地位。雨林：一种湿热的生物群落，为拥有丰富动植物生命的森林提供支持。针叶林：一种寒冷且有些干燥的生物群落，支撑着针叶树的稀疏森林。苔原：一个非常寒冷的生物群落，不能支撑树木，但拥有独特的动植物群落。冰：该国最寒冷的地区，被冰川冰覆盖。当前，Eco中还存在一些亚生物群系：高沙漠：沙漠中的地质抬升部分，其物种更能耐寒冷，并享有由侵蚀引起的陡峭悬崖。寒冷草原：草原略冷，通常以更少的树木和更大的开放空间为特征。  
   
-142;The living system of plants and animals which provides the means for humans to survive.
+142;动植物的生存系统为人类的生存提供了手段。
 143;Graphs
 144;
-Each Eco world stores every action in the game and monitors the progress of every aspect of the simulation. Data is stored in a few major categories, specifically the ecosystem and the economy. As players perform actions or as the ecosystem changes, it will be represented on graphs visible to citizens.
+每个Eco世界都存储游戏中的每个动作，并监视模拟各个方面的进度。数据存储在几个主要类别中，特别是生态系统和经济。随着参与者的行动或生态系统的变化，它将以对市民可见的图形表示。图形对于比较各种指标的状态并随时间查看它们最有用。因此，通过研究事物在实施之后的变化，它们对于回顾章程和法规的结果特别有用。它们还有助于推断未来的影响，预测事物变化的速度（即因森林砍伐而导致的人口减少）并在变化发生之前进行更改。阅读，撰写和理解图表对于游戏俱乐部来说是一个非常强大的工具，为公民提供了制作图表的工具，这些图表可以支持或反驳论点，并在讨论公民行为时直接将其呈现给同胞。
 
-Graphs are most useful for comparing the states of various metrics and viewing them overtime. As such, they’re especially useful for determining the results of laws and regulations in retrospect, by studying how things changed after they were implemented.  They are also useful for extrapolating into future effects, projecting the rate at which things are changing (i.e., population dropping as a result of deforestation) and making changes before they occur. Reading, composing, and understanding graphs is a very powerful tool for the government, and citizens are given the tools to craft graphs that support or refute arguments and present them to their fellow citizens directly on discussions for civic actions.
-
-145;Heatmaps
+145;热图
 146;
-Eco worlds are varied places, with many different biomes and locations of human development and environmental impact. To view how different parts of the world vary, heatmaps are available for all the various world effects in the game.  Such values as citizen activity, population rates, pollution rates, temperature, moisture, and dozens more can be viewed through heatmaps, with changes recorded over time that can be played back and used for scientific argumentation.
+Eco世界的地方千差万别，有许多不同的生物群落和人类发展及环境影响的位置。要查看世界各地的变化情况，可为游戏中的所有各种世界特效提供热图。可以通过热图查看诸如公民活动，人口比率，污染率，温度，湿度等数十种值，并记录随时间变化的变化，可以回放并用于科学论证。玩家可以通过两种方式查看这些内容：通过游戏中的小地图，还可以在游戏中显示彩色地形。其次，可以在网络浏览器中查看它们，并利用其随时间回放的能力。每10分钟（可配置）将每个热图的快照存储在服务器数据中，市民可以查看热图随时间变化的时间推移视图。这对于衡量特定位置的影响并确定构建基础结构和新闻解决方案的最佳途径至关重要。
 
-Players can view these in two ways: through the minimap in game, which can also display colored terrain in the game.   Secondly, they can be viewed in the web browser, where their ability to play back over time is taken advantage of. A snapshot of each heatmap is stored in the server data every 10 minutes (configurable), and citizens can view time lapse views of how the heat maps change over time.  This is essential to measuring impacts in specific locations and determining the best routes to build infrastructures and news settlements.
-
-147;Mini-Map
+147;小地图
 148;
-The minimap is a powerful tool within the game that serves many purposes: navigation, planning, data viewing, property locating, and many more. It can be enabled to view the various world layers of the game (heatmaps), highlighting regions that are high/low in population, pollution, citizen activity, etc using a gradient of colors.  World markers can be added manually, or globally for all citizens, to direct to specific points, aiding the coordination of human activity. These markers are also used to direct citizens automatically to dynamic work, specifying where roads should be built in a contract, where to deliver goods for transport, and so on.
+迷你地图是游戏中功能强大的工具，可用于许多目的：导航，计划，数据查看，属性定位等。可以启用它来查看游戏的各个世界层（热图），并使用渐变色突出显示人口高/低，污染，公民活动等高/低的区域。可以手动添加标记，也可以在全球范围内为所有公民添加标记，以指向特定地点，以帮助协调人类活动。这些标记还用于自动引导市民从事动态工作，指定在合同中应在何处修建道路，在何处运送货物以进行运输等。目前，我们正在努力在游戏中添加对财产和地区的指定，并为工作方和合同指定特定的土地区域，例如允许公民在游戏中突出显示他们希望雇用其他人耕种的区域，或修建道路等。这将极大地开放劳动力市场的能力，使公民在指定他们希望工作的地点时以更轻松的方式更加明确。
 
-Currently we’re working on adding in-game designation of property and districts, as well as specifying specific land areas for work parties and contracts, allowing for example citizens to highlight in-game the areas they wish to hire others to plow a field, or build a road, etc. This will greatly open up the ability for the labor market, letting citizens be much more specific in an easier way when designating where they would like work performed.
-
-149;The living system of plants and animals which provides the means for humans to survive.
-150;The true meaning of life is to plant trees, under whose shade you do not expect to sit.\n– Nelson Henderson
+149;动植物的生存系统为人类的生存提供了手段。
+150;生命的真正含义是种下您不希望坐在树荫下的树木。“”\n–尼尔森·亨德森“
 151;
 
-The ecosystem is an end unto itself in Eco, and its continued prosperity is the primary goal of the game, alongside economic progress. That is, the ecosystem starts in a win-state, and players must use its resources without bringing it into a lose-state, which would mean destruction for humanity.
+生态系统本身就是生态系统的终结，它的持续繁荣是游戏的主要目标，同时也伴随着经济发展。也就是说，生态系统始于胜利状态，玩家必须使用其资源而不会使其陷入失败状态，这将意味着对人类的破坏。无论服务器是否在游戏中，Eco中的生态系统都在连续模拟中运行，只要服务器在运行，它就一直处于活动状态。每个模拟的动植物都在生长，消耗食物并繁殖。它是玩家必须建立自己的社会的唯一材料来源，而提取它们的过程将对其产生极大的影响。砍伐森林可能会破坏生物的栖息地，使它们灭绝。矿山尾矿可能污染附近的河流和湖泊，使依赖它的农场中毒。玩家在“生态”游戏中采取的行动会影响他们的环境，玩家需要了解他们所拥有的影响才能蓬勃发展并阻止流星。不能将生态系统保持在原始，未受破坏的状态。流星确保选择也将导致生态系统的破坏。为了保护它，公民必须从中受益，建立一个有权制止流星的社会，同时也要有制止其在此过程中不破坏生态系统的约束力。
 
-The ecosystem in Eco runs on a continuous simulation, active as long as the server is running, regardless of whether players are in the game or not. Each simulated plant and animal are growing, consuming food sources and reproducing. It is the sole source of materials from which players must build their society, and the process of extracting them will affect it greatly. Chopping down a forest might destroy a creature’s habitat, driving them to extinction. Mine tailings may pollute nearby rivers and lakes, poisoning farms that rely on it. The actions players take in Eco affect their environment, and players will need to understand the impact they’re having in order to thrive and stop the meteor. It is not an option to leave the ecosystem in a pristine, untouched state; the meteor ensures that choice will also lead to the ecosystem’s destruction. To save it, citizens must take from it, building a society that has the power to stop the meteor, while also having the restraint to not destroy the ecosystem in the process.
-
-152;Gameplay
-153;The ecosystem is the foundational system which citizens must understand and contend with. From growing large [Farms|Farming] and [Mines|Mining] to understanding the impact of [Pollution] through study, the impact of citizens on the ecosystem will determine the success or failure of player decisions. Understanding how it functions using in-game [Data] becomes a key requirement of survival. Unlike the [Economy|Economy Overview] and the [Government|Government Overview], the ecosystem is not a citizen construct – its behavior is absolute, nothing about how it functions can be changed by fiat the way the economy can. In this sense it’s a reality check, the place where the conflicting biases and beliefs of citizens collide and reveal the true consequences.
-154;Between Economy and Government
-155;As citizens progress society, they must beware the ‘Tragedy of the Commons’; that giving a population unfettered access to a common resource will frequently result in its destruction. To prevent this, citizens must organize, deciding rules for the common good through [Laws] and other civic regulations which may limit the individual but allow the group to survive. This conflict, the individual vs the group, forms the heart of the challenge of building a civilization.
+152;游戏玩法
+153;生态系统是公民必须理解和抗衡的基础系统。从不断发展的[Farms|Farming] 和[Mines|Mining] 到通过研究了解[Pollution] 的影响，公民对生态系统的影响将决定玩家决策的成败。借助游戏中的[Data] 了解其功能将成为生存的关键条件。与[Economy|Economy Overview] 和[Government|Government Overview] 不同，该生态系统不是公民构建的系统–它的行为是绝对的，其运行方式无法通过经济方式改变而改变。从这个意义上讲，这是一个现实检查，在这里，公民的偏见和信念发生冲突，并揭示出真正的后果。
+154;在经济与游戏俱乐部之间
+155;随着公民社会进步，他们必须提防“公地悲剧”。赋予人们不受限制地使用共同资源的机会，经常会导致其遭到破坏。为了避免这种情况，公民必须组织起来，通过[Laws] 和其他公民法规来决定共同利益的规则，这些规则可能会限制个人，但允许团体生存。个人与群体之间的冲突构成了建设文明挑战的核心。
   
-156;The living system of plants and animals which provides the means for humans to survive.
+156;动植物的生存系统为人类的生存提供了手段。
 157;
-Farming provides a way to take the plant species most useful to people and create a global scale food supply. Farming can also focus on plants useful for other industrial purposes, like biofuel for a potentially renewable source of energy.
-
-Farmers will need to pay attention to the resources and health of their soil, avoiding depletion and pollution. Fertilizers like [CompostFertilizerItem] and methods of monitoring soil resources like the [SoilSamplerItem] will be important tools to keep farmland productive. Various vehicles, storage technologies, and more powerful hand tools will allow players to scale up their farming operations as the food and fuel needs of their societies increases.
-
-Farming is a big activity in Eco that we want to enhance and expand as we move forward with development. Balancing and storage will be a core part of farming improvements to start, as we make sure that Eco societies generate an appropriate demand from farmers to fuel technological growth, and that the storage objects and mechanics exist to support these demands. Farming itself has many possible improvements and expansions, among them developing and modifying seeds and organisms to be more productive or resistant to pollutants, or other environmental factors.
+农业提供了一种方法，可以将对人类最有用的植物品种带入全球，并提供全球范围的粮食供应。农业也可以集中在对其他工业用途有用的植物上，例如用作潜在可再生能源的生物燃料。农民将需要注意其土壤的资源和健康，避免消耗和污染。像[CompostFertilizerItem] 这样的肥料和像[SoilSamplerItem] 这样的监测土壤资源的方法将是保持农田生产力的重要工具。随着社会对食物和燃料需求的增加，各种车辆，存储技术和更强大的手动工具将使玩家能够扩大他们的农业活动。农业是生态中的一项重要活动，我们希望在发展中不断发展壮大。平衡和存储将是开始进行农业改良的核心部分，因为我们确保生态社会能为农民带来适当的需求以推动技术发展，并确保存在存储对象和机械来满足这些需求。农业本身有许多可能的改进和扩展，其中包括发展和改良种子和生物，使其更具生产性或对污染物或其他环境因素产生抵抗力。
   
-158;Soil
+158;泥
 159;
-The soil of Eco contains nutrients that allow plants to grow and thrive: too much or too little of any given type can change the yield and growth speed of both naturally occurring and farmed plants. As plants grow, they take nutrients from the soil and return it when they die bringing the world into a natural state of equilibrium. Players influence these changes by removing the plants from the environment through harvesting, deforesting, mining, or introducing pollution which slowly removes nutrients from the soil. Players can reintroduce nutrients or modify the existing ratios by using fertilizers on their land.
+生态土壤含有能够使植物生长和繁衍的营养素：任何给定类型的过多或过少都会改变天然植物和农场植物的产量和生长速度。随着植物的生长，它们从土壤中吸收养分，死后将其返回，使世界进入自然平衡状态。玩家通过收割，砍伐森林，采矿或引入污染从土壤中去除养分的方式将植物从环境中清除，从而影响这些变化。玩家可以在自己的土地上使用肥料重新引入养分或修改现有比例。随着我们增加动物对植物层的依赖性，我们可以使生态系统的那些部分进一步影响土壤，因为食用植物的物种也可以从土壤中去除养分。另一个可以考虑的问题是表层土壤在Eco中的存在方式：目前，表层土壤是纯粹的化妆品，并与该地区的生物群落相关，但是与下面的致密粘土和污垢相比，在每个生物群落中，表层土壤都是一种独特而宝贵的资源。
 
-As we increase the dependencies of the animals on the plant layers, we can have those parts of the ecosystems further affect the soil as species that consume plants can also remove nutrients from the soil. Another addition that can be considered is how topsoil exists within Eco: currently it’s purely cosmetic and tied to the biome of the area, but in each biome the topsoil is a unique and valuable resource compared to the dense clay and dirt below.
-
-160;The living system of plants and animals which provides the means for humans to survive.
+160;动植物的生存系统为人类的生存提供了手段。
 161;
-The ground beneath you is host to a huge variety of resources, such as rocks, metals, and other mineral deposits. Different types of rock host different kinds of mineral deposits or lend themselves to trapping other resources like petroleum. Due to the immense complexity of earth resources in reality and the necessity in Eco of providing players with a predictable balance of raw materials to start with, rocks and their deposits are generated based on Biomes. Each biome comes with a suite of associated rocks and deposits that sprawls out beneath it in layers.
+您下方的地面蕴藏着多种资源，例如岩石，金属和其他矿藏。不同类型的岩石拥有不同种类的矿床，或者有助于捕获石油等其他资源。由于现实中地球资源的巨大复杂性以及在Eco中必须为玩家提供可预测的原材料平衡，因此，岩石及其沉积物是根据生物群落产生的。每个生物群落都带有一系列相关的岩石和沉积物，这些岩石和沉积物在其下方分层展开。
 
-162;Mining by Hand
+162;手工开采
 163;
 To mine ore, first you must locate it. Ores in Eco are each hosted in particular host rocks, so learning which rocks have the type of ore you want and then digging near rocks of those type is a good way to start. Use a [WoodenShovelItem] or better to dig away soil from the surface or start digging into a hill from the side. Once you hit rock you want to go through, you'll need to use a pickaxe like the [StonePickaxeItem] to break it. When breaking rocks with the pickaxe, sometimes you'll break off a larger piece of rock that needs to be hit again to break into pieces small enough to pick up. It's a good idea to pick up rock as you break it, and stack it elsewhere for use, preferably in a [StockpileItem] or vehicle you're using to transport your ore like a [WoodCartItem].
 
@@ -511,7 +388,7 @@ Comminution: Comminution means to crush the rock into smaller sized particles wh
 Concentration: Concentration is a way to separate the desired metals in an ore rock from the waste rock. This process is never perfect, and inevitably results in a large output of waste rock which still contains traces of freed metals. This waste rock with traces of heavy metals is known as [TailingsItem]. [CopperOreItem] and [GoldOreItem] require chemical leeching and wet processing to separate from their host rocks, and thus produce more polluted and volatile [WetTailingsItem] during the concentration process.  
 Smelting: Once you have precious ore concentrate, you can at last smelt it into metal products like [IronBarItem] at a [BloomeryItem] or using a more advanced smelting technology. 
 
-166;The living system of plants and animals which provides the means for humans to survive.
+166;动植物的生存系统为人类的生存提供了手段。
 167;
 As citizens burn fuel to cook or generate power, smelt metals, process sewage, and engage in countless other necessary industrial activities, a common byproduct is pollution. Pollution is any substance that can act as a contaminant or poison when introduced back into the environment. In Eco there are many sources and several varieties of pollution, some of which are more potent than others. Heavy metals can contaminate soil, affecting available nutrients and the health of plants and animals living on and in it. Water can spread contaminants rapidly and increase the size of their impact. Air pollution can pour invisibly or obviously from a stove or a power plant, adding to greenhouse gasses and impacting the air quality, as well as fall back down into the ground as acid rain. 
 
@@ -539,7 +416,7 @@ In many cases, there is no perfect solution to deal with polluting materials. Sp
 
 Containment mechanics are the forefront of features we want to improve related to the Pollution group of features in Eco. Players should be using containment to deal with the vast quantities of tailings and garbage that their societies produce.
 
-176;The living system of plants and animals which provides the means for humans to survive.
+176;动植物的生存系统为人类的生存提供了手段。
 177;Consitutional Articles define how things happen in the government: who can pass laws, set taxes, change the rules, etc.  It can also define certain actions as needing an election, by specifying an [Election Process|Election Processes] inside them.  
 
 Constitutional Articles can be added in two places.  On a [CapitolItem], you can add up to three, and on [AmendmentsItem] you can add up to another 10 more per item.
@@ -744,7 +621,8 @@ Room Material Quality
 The average tier of the room material will also determine your housing value, by setting a soft cap.  Once your room value has exceeded the soft cap for the room, then you will get diminishing returns for additional housing points.  When this happens, it may be time to renovate the materials of the room.
 
 228;Rooms protect you and your equipment from the elements, providing skill points and allowing equipment to function.
-229;Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
+229;
+Many industrial and housing objects require sewage support to function.  Typically, this means requiring water as an input, and an output for waste water.  Every object that has a [Pipe Component] will need a sewage connection.
 
 Sewage systems are created by connecting a [MechanicalWaterPumpItem] or [ElectricWaterPumpItem] to a water source, and then building Pipes between the different objects that need supplying.  On the waste side, pipes will take the waste water from the object to either dump it into the environment (producing [Pollution] at the exit point), or process it at a [Waster Filter|WasteFilterItem], which will generate [Compost|CompostItem] from the wastewater.
 
@@ -766,7 +644,8 @@ Your Experience Multiplier (or XP Multiplier) is a personal value representing y
 
 
 233;There are two kinds of experience in Eco: Character Experience (gained by food and housing) and Specialty Experience (gained by performing actions in a specialty).
-234;Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
+234;
+Your Experience[Experience] is determined by your nutrition and housing[Housing|Housing Overview], and the more nutritious the food you eat the faster you will gain [Experience].  The healthier you are, the faster you advance.
 
 There are four nutrients represented in foods: Protein, Fat, Vitamins, and Carbs.  By adding up the average of each of these nutrients in all the food you’ve eaten in the last 24 hours, your experience multiplier is determined.   This means that if you eat junk food (low nutrients) it will affect you for 24 hours before it has passed through your body.
 
@@ -780,16 +659,14 @@ Calories
 Calories, unlike nutrients, are spent when you perform work, and when you run out of calories you’ll be unable to work until you eat more.  Calorie usage can be greatly reduced by upgraded tools and leveling-up skills.
 All food provides both calories and nutrients, so while gaining calories from food you’re also determining your skill multiplier, so watch that diet.
 
-Feeding the World
-Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
-
 235;Nutrition, alongside housing, determines how fast you gain experience.
 236;Central to a thriving economy is the ability to specialize and trade, thereby working more efficiently than if you attempted to do everything yourself.  Achieving a successful society depends on successfully accomplishing both.  
     
     A citizen's skills give them unique abilities and enhancements, which allows them to [Trade] with other citizens having different skills in the economy. As you gain [Experience], you can unlock new [Specialties] and level-up existing ones.  The experience you gain is multiplied by you [Nutrition] and [Housing|Housing Overview].    
   
 237;The skill system allows citizens to specialize in specific trades.
-238;Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
+238;
+    Specialties are unlocked as you level-up from Character [Experience].  Each specialty (represented with a star) will unlock new abilities you can use.
 
 Professions and Specialties
 [Professions|Profession Overview] are simply groupings of skills, and don’t serve any other purpose besides storing similar skills together.
@@ -894,7 +771,7 @@ Different plants require different tools to harvest, such as a shovel, or a scyt
 
 
   
-266;The living system of plants and animals which provides the means for humans to survive.
+266;动植物的生存系统为人类的生存提供了手段。
 267;
 Animal species are inhabitants of the world in Eco that vary greatly in terms of possible use as resources. Some species make for excellent sources of meat and food like milk, where others may provide useful byproducts like wool, leather, tallow, or bone meal. But animals also vary greatly in terms of their resilience and adaptability to impacts on their populations, habitat, and food sources. 
 
@@ -904,7 +781,7 @@ Hunting an animal is only the first step in making the most use out of it. Butch
 
 To get started with hunting, you'll need to craft a [WoodenBowItem] and some [Arrows|Arrow Item]. More advanced bows will make it easier to hit your target quickly. Keep in mind that animals can be killed more quickly with a well-aimed shot, and that it may be easier to hunt some animals based on the time of day. 
   
-268;The living system of plants and animals which provides the means for humans to survive.
+268;动植物的生存系统为人类的生存提供了手段。
 269;Ecopedia guide for getting started.
 270;
     Once you've covered your basic needs, it's time to think about how you want to contribute to the joint project of society, and your profession is how you do that.
@@ -1019,7 +896,7 @@ A foundational goal of the ecosystem simulation in Eco is to contain a multitude
 
 Animal's prey and predators can be viewed through the web interface and checking the linked layers. Currently the prey-predator relationship is one way: the predators require the prey to exist, but they don't actually remove any from the simulation. This means that an explosion of elk would increase the wolf population, but this wouldn't put pressure onto the elk. Changing this relationship to consume both ways while ensuring it doesn't spiral out of control in an unexpected and sudden way is important as we move forward.
   
-305;The living system of plants and animals which provides the means for humans to survive.
+305;动植物的生存系统为人类的生存提供了手段。
 306;Follow the development of Eco.
 307;
     We intend Eco to be a forever-game, growing in depth and breadth and connections to other future games, a system of unlimited possibilities that aims to go beyond entertainment.  This tree contains the past, present, and future of Eco.
@@ -1155,7 +1032,7 @@ The [Tailor] specializes in making high end furniture and specialized clothing t
 342;生存专家
 343;
 [Survivalists|Survivalist] specializes in carrying extra weight and reducing the calories expended when using basic tools. All citizens are survivalists in the world of Eco. 
-   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers, shovels, and drills.
+   - Experience in [SelfImprovementSkill] is gained anytime a citizen levels up another specialty. Self-improvement has two main benefits. As citizens progress, they will have increased carry weight capacity and a larger stomach capacity for extra calories. In addition, less calories are consumed when using hammers and shovels.
 
 344;A general overview of the current economy that contains information such as available trades, work parties, and contracts.
 345;The Economy Viewer provides a general overview of the current economy and is an incredibly useful tool for economic participation. Among other users, the Economy Viewer shows the location of every [StoreItem] and what is currently being bought and sold.
@@ -1172,3 +1049,6 @@ In additon, the Economy Viewer allows citizens to directly transfer currency to 
    
 347;Accessing the Economy Viewer
 348;The Economy Viewer can be accessed by clicking the Economy button located at the bottom right of the screen.
+349;Feeding the World
+Food forms the backbone of a growing society in Eco, fueling the increase in skills needed to build a civilization.  A well-organized network of food producers, from farmers to chefs, ensures that citizens gain skills at the rate they need.
+

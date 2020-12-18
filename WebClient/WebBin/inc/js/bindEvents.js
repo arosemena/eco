@@ -253,6 +253,11 @@ function bindAllElectionEvents(election) {
             try {
                 await election.vote();
                 container.html('<span class="localize" translate-key="172">Your vote has been counted</span>');
+
+                // Refreshing election content w/o reloading the page
+                setTimeout(() => {
+                    election.loadElectionPage(election.electionData.Id, true);
+                }, 1500);
             } catch(e) {
                 $(this).removeAttr('disabled');
             }

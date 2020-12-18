@@ -38,7 +38,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(CustomTextComponent))]              
+    [RequireComponent(typeof(CustomTextComponent))]             
     public partial class SmallHangingStoneSignObject : 
         WorldObject,    
         IRepresentsItem
@@ -71,7 +71,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<SmallHangingStoneSignObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A small sign for all of your smaller text needs!"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A small sign for all of your smaller text needs!");
 
         static SmallHangingStoneSignItem()
         {

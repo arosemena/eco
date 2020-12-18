@@ -73,7 +73,7 @@ namespace Eco.Mods.TechTree
     public partial class FishTrapItem :
         WorldObjectItem<FishTrapObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A trap to catch river fish as they swim. It can only be used in fresh water as it's too small to catch the larger ocean fish. "); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A trap to catch river fish as they swim. It can only be used in fresh water as it's too small to catch the larger ocean fish. ");
 
         static FishTrapItem()
         {

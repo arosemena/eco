@@ -86,7 +86,7 @@ typeof(PaperMillingUpgradeItem), })]
         WorldObjectItem<CarpentryTableObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A table for basic wooden crafts for home improvement and progress."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A table for basic wooden crafts for home improvement and progress.");
 
         static CarpentryTableItem()
         {

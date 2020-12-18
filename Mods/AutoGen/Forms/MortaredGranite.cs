@@ -89,6 +89,28 @@ namespace Eco.Mods.TechTree
     }
 
 
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakSetFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofPeakSetBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(MortaredGraniteItem); } }
+    }
+
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCubeFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofCubeBlock :
+        Block, IRepresentsItem
+    {
+        public Type RepresentedItemType { get { return typeof(MortaredGraniteItem); } }
+    }
+
+
 
     [RotatedVariants(typeof(MortaredGraniteStairsBlock), typeof(MortaredGraniteStairs90Block), typeof(MortaredGraniteStairs180Block), typeof(MortaredGraniteStairs270Block))]
     [Serialized]
@@ -114,6 +136,114 @@ namespace Eco.Mods.TechTree
     [Wall, Constructed, Solid, BuildRoomMaterialOption] 
     [BlockTier(1)] 
     public partial class MortaredGraniteStairs270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredGraniteRoofSideBlock), typeof(MortaredGraniteRoofSide90Block), typeof(MortaredGraniteRoofSide180Block), typeof(MortaredGraniteRoofSide270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofSideFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofSideBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofSide90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofSide180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofSide270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredGraniteRoofTurnBlock), typeof(MortaredGraniteRoofTurn90Block), typeof(MortaredGraniteRoofTurn180Block), typeof(MortaredGraniteRoofTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofTurnFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredGraniteRoofCornerBlock), typeof(MortaredGraniteRoofCorner90Block), typeof(MortaredGraniteRoofCorner180Block), typeof(MortaredGraniteRoofCorner270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofCornerFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofCornerBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofCorner90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofCorner180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofCorner270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(MortaredGraniteRoofPeakBlock), typeof(MortaredGraniteRoofPeak90Block), typeof(MortaredGraniteRoofPeak180Block), typeof(MortaredGraniteRoofPeak270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    [IsForm(typeof(RoofPeakFormType), typeof(MortaredGraniteItem))]
+    public partial class MortaredGraniteRoofPeakBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofPeak90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofPeak180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(1)] 
+    public partial class MortaredGraniteRoofPeak270Block : Block
     { }
 
 }

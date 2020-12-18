@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class ThinColumnFormType : FormType
     {
         public override string Name => "ThinColumn";
-        public override LocString DisplayName => Localizer.DoStr("ThinColumn");
+        public override LocString DisplayName => Localizer.DoStr("Thin Column");
         public override LocString DisplayDescription => Localizer.DoStr("Thin Column");
         public override Type GroupType => typeof(SupportsFormGroup);
         public override int SortOrder => 28;

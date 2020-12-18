@@ -71,7 +71,7 @@ namespace Eco.Mods.TechTree
     public partial class CarvedPumpkinItem :
         WorldObjectItem<CarvedPumpkinObject> 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("Spooky pumpkin that emits a mystical light."); } }
+        public override LocString DisplayDescription => Localizer.DoStr("Spooky pumpkin that emits a mystical light.");
 
         static CarvedPumpkinItem()
         {

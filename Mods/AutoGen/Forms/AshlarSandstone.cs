@@ -987,4 +987,58 @@ namespace Eco.Mods.TechTree
     public partial class AshlarSandstoneUnderInnerPeak270Block : Block
     { }
 
+
+    [RotatedVariants(typeof(AshlarSandstoneBraceTurnBlock), typeof(AshlarSandstoneBraceTurn90Block), typeof(AshlarSandstoneBraceTurn180Block), typeof(AshlarSandstoneBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(BraceTurnFormType), typeof(AshlarSandstoneItem))]
+    public partial class AshlarSandstoneBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneBraceTurn270Block : Block
+    { }
+
+
+    [RotatedVariants(typeof(AshlarSandstoneUnderBraceTurnBlock), typeof(AshlarSandstoneUnderBraceTurn90Block), typeof(AshlarSandstoneUnderBraceTurn180Block), typeof(AshlarSandstoneUnderBraceTurn270Block))]
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    [IsForm(typeof(UnderBraceTurnFormType), typeof(AshlarSandstoneItem))]
+    public partial class AshlarSandstoneUnderBraceTurnBlock : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneUnderBraceTurn90Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneUnderBraceTurn180Block : Block
+    { }
+
+    [Serialized]
+    [Wall, Constructed, Solid, BuildRoomMaterialOption] 
+    [BlockTier(4)] 
+    public partial class AshlarSandstoneUnderBraceTurn270Block : Block
+    { }
+
 }

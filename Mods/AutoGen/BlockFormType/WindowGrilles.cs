@@ -11,7 +11,7 @@ namespace Eco.Mods.TechTree
     public partial class WindowGrillesFormType : FormType
     {
         public override string Name => "WindowGrilles";
-        public override LocString DisplayName => Localizer.DoStr("WindowGrilles");
+        public override LocString DisplayName => Localizer.DoStr("Fence");
         public override LocString DisplayDescription => Localizer.DoStr("Fence");
         public override Type GroupType => typeof(ThinFormGroup);
         public override int SortOrder => 10;

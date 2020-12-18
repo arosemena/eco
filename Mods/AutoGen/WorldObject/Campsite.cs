@@ -76,7 +76,7 @@ namespace Eco.Mods.TechTree
         WorldObjectItem<CampsiteObject> 
         ,IPersistentData 
     {
-        public override LocString DisplayDescription  { get { return Localizer.DoStr("A campsite"); } }
+        public override LocString DisplayDescription => Localizer.DoStr("A campsite");
 
         static CampsiteItem()
         {
