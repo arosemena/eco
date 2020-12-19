@@ -1,4 +1,4 @@
-﻿// Copyright (c) Strange Loop Games. All rights reserved.
+﻿﻿// Copyright (c) Strange Loop Games. All rights reserved.
 // See LICENSE file in the project root for full license information.
 
 namespace Eco.Mods.TechTree
@@ -21,9 +21,9 @@ namespace Eco.Mods.TechTree
     [RequireComponent(typeof(StockpileComponent))]
     [RequireComponent(typeof(WorldStockpileComponent))]
     public partial class LargeLumberStockpileObject : WorldObject
-    {    
+    {
         public static readonly Vector3i DefaultDim = new Vector3i(10, 10, 10);
-        
+
         protected override void OnCreate()
         {
             base.OnCreate();
@@ -33,12 +33,13 @@ namespace Eco.Mods.TechTree
         protected override void PostInitialize()
         {
             base.PostInitialize();
-            
+
             this.GetComponent<StockpileComponent>().Initialize(DefaultDim, 1);
-            
+            this.GetComponent<LinkComponent>().Initialize(20);
+
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(DefaultDim.x * DefaultDim.z);
-            storage.Storage.AddInvRestriction(new StockpileStackRestriction(DefaultDim.y)); // limit stack sizes to the y-height of the LumberStockpile
+            storage.Initialize(DefaultDim.x * DefaultDim.z * 2);
+            storage.Storage.AddInvRestriction(new StockpileStackRestriction(DefaultDim.y * 2)); // limit stack sizes to the y-height of the LumberStockpile
 
             this.GetComponent<LinkComponent>().Initialize(12);
         }

@@ -33,10 +33,11 @@ namespace Eco.Mods.TechTree
         protected override void PostInitialize()
         {
             base.PostInitialize();
-            
+
+            this.GetComponent<LinkComponent>().Initialize(10);
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(DefaultDim.x * DefaultDim.z);
-            storage.Storage.AddInvRestriction(new StockpileStackRestriction(DefaultDim.y)); // limit stack sizes to the y-height of the stockpile
+            storage.Initialize(DefaultDim.x * DefaultDim.z * 2);
+            storage.Storage.AddInvRestriction(new StockpileStackRestriction(DefaultDim.y * 2)); // limit stack sizes to the y-height of the stockpile
         }
     }
 }
